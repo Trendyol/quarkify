@@ -1,0 +1,15 @@
+@import "../variables";
+@import "../mixins/_defaults.scss";
+
+button {
+  cursor: pointer;
+  &.primary {
+    @include primary;
+  }
+  &.secondary {
+    @include secondary;
+  }
+  &.disabled {
+    @include disabled;
+  }
+}
