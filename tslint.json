@@ -3,7 +3,7 @@
   "rules": {
     // override tslint-react rules here
     "jsx-wrap-multiline": false,
-    "quotemark": false,
+    "quotemark": [true, "single"],
     "jsx-boolean-value": false,
     "no-implicit-dependencies": [true, "dev"]
   }

@@ -1,4 +1,4 @@
-import classNames from "classnames";
+import classNames from 'classnames';
 
 const classNamesDefault = (props: any) => {
     return classNames(

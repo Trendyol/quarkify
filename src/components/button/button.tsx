@@ -1,5 +1,5 @@
 import React from 'react';
-import IVariant from "../../interfaces/IVariant";
+import IVariant from '../../interfaces/IVariant';
 import '../../styles/components/_button.scss';
 import classNamesDefault from '../../utils/class-names-default';
 
