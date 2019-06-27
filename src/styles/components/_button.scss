@@ -3,6 +3,7 @@
 @import '../mixins/_button.scss';
 
 button {
+  @include button-size($button-padding-y, $button-padding-x, $button-font-size, $line-height, $border-radius);
   cursor: pointer;
   &.primary {
     @include primary;
