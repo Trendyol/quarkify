@@ -52,4 +52,11 @@ describe('button specs', () => {
         expect(wrapper.exists(".large")).toEqual(true);
     });
 
+    it("should have className fluid when given prop fluid", () => {
+
+        const wrapper = mount(<Button fluid />);
+
+        expect(wrapper.exists(".fluid")).toEqual(true);
+    });
+
 });

@@ -21,6 +21,7 @@ interface IProps {
   disabled?: boolean;
   className?: string;
   size?: string;
+  fluid?: boolean;
   onClick?: () => {};
 }
 

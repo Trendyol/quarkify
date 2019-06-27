@@ -6,6 +6,7 @@ const classNamesDefault = (props: any) => {
         props.variant && `${props.variant}`,
         props.disabled && 'disabled',
         props.size && `${props.size}`,
+        props.fluid && 'fluid',
     );
 };
 
