@@ -9,14 +9,11 @@ class Button extends React.Component<IProps, any> {
             <button
                 className={classNamesDefault(this.props)}
                 disabled={this.props.disabled}
-                onClick={this.a}
+                onClick={this.props.onClick}
             >
                 {this.props.children}
             </button>
         );
-    }
-    private a() {
-        alert('sa');
     }
 }
 
@@ -25,7 +22,7 @@ interface IProps extends IVariant {
     className?: string;
     width?: string;
     height?: string;
-    onClick?: () => {};
+    onClick?: () => void;
 }
 
 export default Button;
