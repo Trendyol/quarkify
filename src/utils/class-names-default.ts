@@ -1,12 +1,12 @@
-import classNames from 'classnames';
+import classNames from "classnames";
 
 const classNamesDefault = (props: any) => {
     return classNames(
         props.className,
-        props.variant && `${props.variant}`,
-        props.disabled && 'disabled',
+        props.type && `${props.type}`,
+        props.disabled && "disabled",
         props.size && `${props.size}`,
-        props.fluid && 'fluid',
+        props.fluid && "fluid",
     );
 };
 

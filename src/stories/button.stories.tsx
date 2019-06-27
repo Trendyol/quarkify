@@ -1,31 +1,41 @@
-import { storiesOf } from '@storybook/react';
-import React from 'react';
-import Button from '../components/button';
+import { storiesOf } from "@storybook/react";
+import React from "react";
+import Button from "../components/button";
 
-const stories = storiesOf('Button', module);
+const stories = storiesOf("Button", module);
 
-stories.add('Variants', () => (
+const action = () => alert("click");
+
+stories.add("Types", () => (
   <div>
-    <Button variant="primary">Primary</Button>
-    <Button variant="secondary">Secondary</Button>
+    <Button onClick={action}>Primary</Button>
+    <Button type="secondary" onClick={action}>
+      Secondary
+    </Button>
   </div>
 ));
 
-stories.add('Sizes', () => (
+stories.add("Sizes", () => (
   <div>
-    <Button variant="primary" size="small">
+    <Button type="primary" size="small" onClick={action}>
       Small
     </Button>
-    <Button variant="primary">Default</Button>
-    <Button variant="primary" size="large">
+    <Button type="primary" onClick={action}>
+      Default
+    </Button>
+    <Button type="primary" size="large" onClick={action}>
       Large
     </Button>
   </div>
 ));
 
-stories.add('Disabled', () => <Button disabled>Disabled</Button>);
-stories.add('Fluid', () => (
-  <Button variant="primary" fluid>
+stories.add("Disabled", () => (
+  <Button disabled onClick={action}>
+    Disabled
+  </Button>
+));
+stories.add("Fluid", () => (
+  <Button type="primary" fluid onClick={action}>
     Fluid
   </Button>
 ));

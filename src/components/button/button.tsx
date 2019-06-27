@@ -1,8 +1,12 @@
-import React from 'react';
-import '../../styles/components/_button.scss';
-import classNamesDefault from '../../utils/class-names-default';
+import React from "react";
+import "../../styles/components/_button.scss";
+import classNamesDefault from "../../utils/class-names-default";
 
-class Button extends React.Component<IProps, any> {
+class Button extends React.PureComponent<IProps> {
+  private static defaultProps = {
+    type: "primary",
+  };
+
   public render() {
     return (
       <button
@@ -17,12 +21,12 @@ class Button extends React.Component<IProps, any> {
 }
 
 interface IProps {
-  variant?: string;
+  type?: string;
   disabled?: boolean;
   className?: string;
   size?: string;
   fluid?: boolean;
-  onClick?: () => {};
+  onClick: () => void;
 }
 
 export default Button;
