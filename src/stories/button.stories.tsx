@@ -1,26 +1,26 @@
 import { storiesOf } from '@storybook/react';
-import React from "react";
-import Button from "../components/button";
+import React from 'react';
+import Button from '../components/button';
 
-const stories = storiesOf("Button", module);
+const stories = storiesOf('Button', module);
 
-stories.add("Primary", () => (
+stories.add('Primary', () => (
     <Button
-        primary
+        variant='primary'
     >
         Primary
     </Button>
 ));
 
-stories.add("Secondary", () => (
+stories.add('Secondary', () => (
     <Button
-        secondary
+        variant='secondary'
     >
         Secondary
     </Button>
 ));
 
-stories.add("Disabled", () => (
+stories.add('Disabled', () => (
     <Button
         disabled
     >
