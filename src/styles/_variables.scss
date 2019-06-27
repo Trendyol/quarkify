@@ -1,20 +1,46 @@
+// Colors
 $primary: #f27a1a;
 $black: #333333;
 $dark-grey: #666666;
 $light-grey: #999999;
 $dark-grey-two: #d2d2d2;
-
 $red: #b30808;
 $green: #0bc15c;
 $white: #f8f8f8;
 $white-two: #ffffff;
 $marigold: #ffc000;
 $very-light-pink:#e9e9e9;
+
+//Fonts
+$font-size-base: 1rem !default; // Assumes the browser default, typically `16px`
+$font-size-large: $font-size-base * 1.25 !default;
+$font-size-small: $font-size-base * .875 !default;
+$bold:600;
+$regular:400;
+
+//Spacing
 $space-small:5px;
 $space-medium:10px;
 $space-large:15px;
 $space-xlarge:20px;
-$bold:600;
-$regular:400;
-$line-height-medium: 18px;
+
+//Default Padding
+$button-padding-y: .375rem !default;
+$button-padding-x: .75rem !default;
+$button-font-size: $font-size-base !default;
+$line-height: 1.5 !default;
+$border-radius : 3px;
+
+//Small Padding
+$button-padding-y-small: .375rem !default;
+$button-padding-x-small: .75rem !default;
+$button-font-size-small: $font-size-small !default;
+$line-height-small: 1.5 !default;
+
+//Large Padding
+$button-padding-y-large: .375rem !default;
+$button-padding-x-large: .75rem !default;
+$button-font-size-large: $font-size-large !default;
+$line-height-large: 1.5 !default;
+
 $grid-breakpoints: ( xs: 0, sm: 576px, md: 768px, lg: 992px, xl: 1200px) !default;

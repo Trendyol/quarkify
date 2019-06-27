@@ -1,5 +1,6 @@
 @import '../variables';
 @import '../mixins/_defaults.scss';
+@import '../mixins/_button.scss';
 
 button {
   cursor: pointer;
@@ -12,4 +13,14 @@ button {
   &.disabled {
     @include disabled;
   }
+
+  // Button Sizes
+  &.large {
+    @include button-size($button-padding-y-large, $button-padding-x-large, $button-font-size-large, $line-height-large, $border-radius);
+  }
+
+  &.small {
+    @include button-size($button-padding-y-small, $button-padding-x-small, $button-font-size-small, $line-height-small, $border-radius);
+  }
+
 }
