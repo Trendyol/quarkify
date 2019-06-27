@@ -3,7 +3,7 @@ import classNames from 'classnames';
 const classNamesDefault = (props: any) => {
     return classNames(
         props.className,
-        props.variant && `${props.varianex}`,
+        props.variant && `${props.variant}`,
         props.disabled && 'disabled',
         props.size && `${props.size}`,
     );
