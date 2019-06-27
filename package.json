@@ -42,7 +42,9 @@
     "@types/storybook__react": "^4.0.2",
     "enzyme": "^3.10.0",
     "enzyme-adapter-react-16": "^1.14.0",
+    "faker": "^4.1.0",
     "node-sass": "^4.12.0",
+    "sinon": "^7.3.2",
     "prettier": "^1.18.2",
     "tslint": "^5.18.0",
     "tslint-react": "^4.0.0"
