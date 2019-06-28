@@ -8,9 +8,10 @@ const action = () => alert("click");
 
 stories.add("Text", () => (
   <div>
-    <Input type={"text"}/>
+    <Input type={"text"} variant="primary"/>
     <Input type={"text"} placeholder={"Placeholder value"}/>
     <Input type={"text"} placeholder={"Placeholder value"} disabled/>
+    <Input type={"text"} placeholder={"Placeholder value"} error/>
     <Input type={"text"} placeholder={"Required"} required/>
   </div>
 ));
@@ -20,6 +21,7 @@ stories.add("Email", () => (
     <Input type={"email"}/>
     <Input type={"email"} placeholder={"Placeholder value"}/>
     <Input type={"email"} placeholder={"Placeholder value"} disabled/>
+    <Input type={"email"} placeholder={"Placeholder value"} error/>
     <Input type={"email"} placeholder={"Placeholder value"} required/>
   </div>
 ));
@@ -29,6 +31,7 @@ stories.add("Password", () => (
     <Input type={"password"}/>
     <Input type={"password"} placeholder={"Placeholder value"}/>
     <Input type={"password"} placeholder={"Placeholder value"} disabled/>
+    <Input type={"password"} placeholder={"Placeholder value"} error/>
     <Input type={"password"} placeholder={"Placeholder value"} required/>
   </div>
 ));

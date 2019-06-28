@@ -1,6 +1,7 @@
 @import '../variables';
 @import '../mixins/_defaults.scss';
 @import '../mixins/_button.scss';
+@import '../mixins/_fluid.scss';
 
 button {
   @include button-size($button-padding-y, $button-padding-x, $button-font-size, $line-height, $border-radius);
@@ -16,7 +17,7 @@ button {
     @include disabled;
   }
   &.fluid{
-    width: 100%;
+    @include fluid;
   }
   &:focus{
     outline: 0;
