@@ -4,8 +4,8 @@ import classNamesDefault from "../../utils/class-names-default";
 
 class Input extends React.PureComponent<IProps> {
   private static defaultProps = {
-    type: "primary",
-    variant: "text",
+    type: "text",
+    variant: "primary",
   };
 
   public render() {
