@@ -4,7 +4,7 @@
 @import '../mixins/_fluid.scss';
 
 input {
-
+  @include input-size($input-padding-y, $input-padding-x, $input-font-size, $line-height, $border-radius);
   display: inline-block;
   &.primary {
     @include primary;
@@ -34,10 +34,10 @@ input {
 
   // Input Sizes
   &.large {
-    @include input-size($button-padding-y-large, $button-padding-x-large, $button-font-size-large, $line-height-large, $border-radius);
+    @include input-size($input-padding-y-large, $input-padding-x-large, $input-font-size-large, $line-height-large, $border-radius);
   }
 
   &.small {
-    @include input-size($button-padding-y-small, $button-padding-x-small, $button-font-size-small, $line-height-small, $border-radius);
+    @include input-size($input-padding-y-small, $input-padding-x-small, $input-font-size-small, $line-height-small, $border-radius);
   }
 }
