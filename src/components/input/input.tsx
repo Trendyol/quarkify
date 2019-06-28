@@ -41,7 +41,7 @@ interface IProps {
   min?: number;
   name?: string;
   value?: string;
-  onClick: () => void;
+  onClick?: () => void;
 }
 
 export default Input;
