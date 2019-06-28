@@ -12,7 +12,8 @@ class Input extends React.PureComponent<IProps> {
       <input
         className={classNamesDefault(this.props)}
         disabled={this.props.disabled}
-        onClick={this.props.onClick}
+        placeholder={this.props.placeholder}
+        type={this.props.type}
       />
     );
   }
@@ -24,7 +25,7 @@ interface IProps {
   className?: string;
   size?: string;
   fluid?: boolean;
-  onClick: () => void;
+  placeholder?: string;
 }
 
 export default Input;

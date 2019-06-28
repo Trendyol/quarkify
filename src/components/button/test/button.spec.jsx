@@ -39,8 +39,8 @@ describe("button specs", () => {
     expect(spy.callCount).toEqual(0);
   });
 
-  it("should be rendered with given primary type prop", () => {
-    const wrapper = mount(<Button onClick={() => {}} type="primary" />);
+  it("should be rendered with given primary variant prop", () => {
+    const wrapper = mount(<Button onClick={() => {}} variant="primary" />);
 
     expect(wrapper.exists(".primary")).toEqual(true);
   });
