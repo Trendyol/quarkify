@@ -7,16 +7,18 @@
     "@types/node": "12.0.10",
     "@types/react": "16.8.22",
     "@types/react-dom": "16.8.4",
+    "classnames": "^2.2.6",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-scripts": "3.0.1",
     "typescript": "3.5.2"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "start-storybook -p 9009 -s public",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "build-storybook": "build-storybook -s public"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -34,7 +36,16 @@
     ]
   },
   "devDependencies": {
+    "@storybook/addon-viewport": "^5.1.9",
+    "@storybook/react": "latest",
+    "@types/classnames": "^2.2.8",
+    "@types/storybook__react": "^4.0.2",
+    "enzyme": "^3.10.0",
+    "enzyme-adapter-react-16": "^1.14.0",
+    "faker": "^4.1.0",
     "node-sass": "^4.12.0",
+    "prettier": "^1.18.2",
+    "sinon": "^7.3.2",
     "tslint": "^5.18.0",
     "tslint-react": "^4.0.0"
   }

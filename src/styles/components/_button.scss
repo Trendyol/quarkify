@@ -1,0 +1,34 @@
+@import '../variables';
+@import '../mixins/_defaults.scss';
+@import '../mixins/_button.scss';
+
+button {
+  @include button-size($button-padding-y, $button-padding-x, $button-font-size, $line-height, $border-radius);
+  cursor: pointer;
+  display: inline-block;
+  &.primary {
+    @include primary;
+  }
+  &.secondary {
+    @include secondary;
+  }
+  &.disabled {
+    @include disabled;
+  }
+  &.fluid{
+    width: 100%;
+  }
+  &:focus{
+    outline: 0;
+  }
+
+  // Button Sizes
+  &.large {
+    @include button-size($button-padding-y-large, $button-padding-x-large, $button-font-size-large, $line-height-large, $border-radius);
+  }
+
+  &.small {
+    @include button-size($button-padding-y-small, $button-padding-x-small, $button-font-size-small, $line-height-small, $border-radius);
+  }
+
+}

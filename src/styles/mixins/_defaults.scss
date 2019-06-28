@@ -1,0 +1,21 @@
+@import '../variables';
+
+@mixin primary {
+  background-color: $white-two;
+  color: $primary;
+  border: 1px solid $primary;
+}
+
+@mixin secondary {
+  background-color: $white-two;
+  color: $dark-grey;
+  border: 1px solid $light-grey;
+}
+
+@mixin disabled {
+  background-color: $dark-grey-two;
+  opacity: 0.9;
+  color: $white-two;
+  cursor: not-allowed;
+  border: 0;
+}
