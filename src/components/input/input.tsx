@@ -22,6 +22,7 @@ class Input extends React.PureComponent<IProps> {
         name={this.props.name}
         value={this.props.value}
         onClick={this.props.onClick}
+        onChange={this.props.onChange}
         defaultValue={this.props.defaultValue}
       />
     );
@@ -43,6 +44,7 @@ interface IProps {
   name?: string;
   value?: string;
   onClick?: () => void;
+  onChange?: () => void;
   error?: boolean;
   defaultValue?: string;
 }
