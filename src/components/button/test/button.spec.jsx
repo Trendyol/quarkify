@@ -1,62 +1,53 @@
-import React from 'react';
-import Enzyme, { shallow, mount } from 'enzyme';
-import Adapter from 'enzyme-adapter-react-16';
+import React from "react";
+import Enzyme, { shallow, mount } from "enzyme";
+import Adapter from "enzyme-adapter-react-16";
 import Button from "../button";
 import faker from "faker";
 import sinon from "sinon";
 
 Enzyme.configure({ adapter: new Adapter() });
 
-describe('button specs', () => {
+describe("button specs", () => {
+  it("should render button component", () => {
+    const text = faker.random.word();
+    const wrapper = shallow(<Button>{text}</Button>);
 
-    it('should render button component', () => {
+    expect(wrapper.text()).toEqual(text);
+  });
 
-        const text = faker.random.word();
-        const wrapper = shallow(<Button>{text}</Button>);
+  it("should call callback function when clicked", () => {
+    const spy = sinon.spy();
+    const wrapper = mount(<Button onClick={spy} />);
 
-        expect(wrapper.text()).toEqual(text);
-    });
+    wrapper.find("button").simulate("click");
 
-    it("should call callback function when clicked", () => {
+    expect(spy.calledOnce).toEqual(true);
+  });
 
-        const spy = sinon.spy();
-        const wrapper = mount(<Button onClick={spy} />);
+  it("should not call callback function when clicked but button is disabled", () => {
+    const spy = sinon.spy();
+    const wrapper = mount(<Button onClick={spy} disabled />);
 
-        wrapper.find("button").simulate("click");
+    wrapper.find("button").simulate("click");
 
-        expect(spy.calledOnce).toEqual(true);
-    });
+    expect(spy.callCount).toEqual(0);
+  });
 
-    it("should not call callback function when clicked but button is disabled", () => {
+  it("should be rendered with given primary variant prop", () => {
+    const wrapper = mount(<Button variant={"primary"} />);
 
-        const spy = sinon.spy();
-        const wrapper = mount(<Button onClick={spy} disabled />);
+    expect(wrapper.exists(".primary")).toEqual(true);
+  });
 
-        wrapper.find("button").simulate("click");
+  it("should be rendered with given large size prop", () => {
+    const wrapper = mount(<Button size={"large"} />);
 
-        expect(spy.callCount).toEqual(0);
-    });
+    expect(wrapper.exists(".large")).toEqual(true);
+  });
 
-    it("should be rendered with given primary variant prop", () => {
+  it("should have className fluid when given prop fluid", () => {
+    const wrapper = mount(<Button fluid />);
 
-        const wrapper = mount(<Button variant={'primary'} />);
-
-        expect(wrapper.exists(".primary")).toEqual(true);
-    });
-
-
-    it("should be rendered with given large size prop", () => {
-
-        const wrapper = mount(<Button size={'large'} />);
-
-        expect(wrapper.exists(".large")).toEqual(true);
-    });
-
-    it("should have className fluid when given prop fluid", () => {
-
-        const wrapper = mount(<Button fluid />);
-
-        expect(wrapper.exists(".fluid")).toEqual(true);
-    });
-
+    expect(wrapper.exists(".fluid")).toEqual(true);
+  });
 });
