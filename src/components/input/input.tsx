@@ -43,10 +43,10 @@ interface IProps {
   min?: number;
   name?: string;
   value?: string;
-  onClick?: () => void;
-  onChange?: () => void;
   error?: boolean;
   defaultValue?: string;
+  onClick?(e: any): void;
+  onChange?(e: any): void;
 }
 
 export default Input;
