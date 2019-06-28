@@ -42,6 +42,7 @@ interface IProps {
   name?: string;
   value?: string;
   onClick?: () => void;
+  error?: boolean;
 }
 
 export default Input;
