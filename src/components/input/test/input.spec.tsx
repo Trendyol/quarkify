@@ -1,6 +1,5 @@
 import Enzyme, { mount, shallow } from "enzyme";
 import Adapter from "enzyme-adapter-react-16";
-import faker from "faker";
 import React from "react";
 import sinon from "sinon";
 import Input from "../input";
@@ -15,14 +14,12 @@ describe("input specs", () => {
   });
 
   it("should render input component", () => {
-    const spy = sinon.spy();
     const wrapper = shallow(<Input />);
 
     expect(wrapper).toHaveLength(1);
   });
 
   it("renders a text input by default", () => {
-    const spy = sinon.spy();
     const wrapper = shallow(<Input />);
 
     expect(wrapper.prop("type")).toBe("text");
