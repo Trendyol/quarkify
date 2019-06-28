@@ -70,10 +70,12 @@ stories.add("Submit", () => (
 
 stories.add("Reset", () => (
   <div>
-    <Input type={"text"} name={"firstname"} value={"Mickey"} />
-    <Input type={"text"} name={"secondname"} value={"Mouse"} />
-    <Input type="submit" value="Submit" />
-    <Input type="reset" />
+    <form>
+      <Input type={"text"} name={"firstname"} defaultValue={"Mickey"} />
+      <Input type={"text"} name={"secondname"} defaultValue={"Mouse"} />
+      <Input type="submit" value="Submit" />
+      <Input type="reset" />
+    </form>
   </div>
 ));
 
