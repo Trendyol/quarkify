@@ -2,7 +2,7 @@
 @import '../mixins/_defaults.scss';
 @import '../mixins/_input.scss';
 @import '../mixins/_fluid.scss';
- 
+
 input {
   @include input-size($input-padding-y, $input-padding-x, $input-font-size, $line-height, $border-radius);
   display: inline-block;
