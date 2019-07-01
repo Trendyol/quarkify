@@ -24,10 +24,11 @@
     }
   }
 
-  .modal-icon-position {
+  .icon-close {
     width: 100%;
     display: flex;
     justify-content: flex-end;
+    cursor: pointer;
   }
 
   .modal-icon-left {

@@ -5,7 +5,6 @@ function Title(props: any) {
   const classes = classNames(
     props.iconLeft && "modal-icon-left",
     "icon-close",
-    "modal-icon-position",
   );
   return (
     <div className={"modal-title"}>
