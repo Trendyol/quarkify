@@ -4,8 +4,6 @@ import Input from "../components/input";
 
 const stories = storiesOf("Input", module);
 
-const action = () => alert("click");
-
 const InputWrapper = () => {
   const [value, setValue] = useState();
   function handleChange(e: any) {

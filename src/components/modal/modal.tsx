@@ -15,8 +15,8 @@ function Modal({ show, children, animation = "slideInRight" }: IProps) {
 
 interface IProps {
   show: boolean;
-  children: ReactNode;
-  animation: string;
+  animation?: string;
+  children?: ReactNode;
 }
 
 Modal.Title = Title;
