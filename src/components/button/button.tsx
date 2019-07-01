@@ -1,4 +1,5 @@
 import React from "react";
+import IButton from "../../interfaces/button";
 import "../../styles/components/_button.scss";
 import classNamesDefault from "../../utils/class-names-default";
 
@@ -20,7 +21,7 @@ class Button extends React.PureComponent<IProps> {
   }
 }
 
-interface IProps {
+interface IProps extends IButton {
   variant?: string;
   size?: string;
   fluid?: boolean;
