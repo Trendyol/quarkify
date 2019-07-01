@@ -1,30 +1,21 @@
-import classNames from "classnames";
 import React from "react";
-import "../../styles/components/_popup.scss";
-import Button from "../button";
+import Actions from "./popup-actions";
+import Content from "./popup-content";
+import Title from "./popup-title";
 
-class Popup extends React.PureComponent<IProps> {
-  private classes = classNames("popup");
-  public render() {
-    if (!this.props.show) {
-      return null;
-    }
-    return (
-      <div className="popup-overlay">
-        <section className="popup-main">
-          <h1>Modal</h1>
-          <Button onClick={this.showAlert}>Click me</Button>
-        </section>
-      </div>
-    );
+function Popup(props: any) {
+  if (!props.show) {
+    return null;
   }
-  private showAlert = () => {
-    alert(1);
-  };
+  return (
+    <div>
+      {props.children}
+    </div>
+  );
 }
 
-interface IProps {
-  show: boolean;
-}
+Popup.Title = Title;
+Popup.Actions = Actions;
+Popup.Content = Content;
 
 export default Popup;
