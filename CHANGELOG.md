@@ -4,7 +4,18 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
-## [0.2.3] - 2019-06-27
+## [0.3.7] - 2019-07-01
+### Changed
+- `button` tests are now using sandbox spy.
+- `input` tests are now using sandbox spy.
+- `input` tests are now using shallow instead of mount.
+### Added
+- `popup` component and `popup tests added
+- `show` prop added to `popup` component
+- `children` prop added to `popup` component
+- `isModal` prop added to `popup` component
+
+## [0.2.4] - 2019-06-27
 ### Added
 - `input` component and `input` tests added
 - `size` prop added to `input` component
