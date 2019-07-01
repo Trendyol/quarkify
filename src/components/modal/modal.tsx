@@ -5,9 +5,8 @@ import Actions from "./modal-actions";
 import Content from "./modal-content";
 import Title from "./modal-title";
 
-function Modal({ show, children }: IProps) {
-  // const { show, children, isModal } = props;
-  const classes = classNames("modal-main", "slideInUp");
+function Modal({ show, children, animation = "slideInRight" }: IProps) {
+  const classes = classNames("modal-main", animation);
   if (!show) {
     return null;
   }
@@ -17,7 +16,7 @@ function Modal({ show, children }: IProps) {
 interface IProps {
   show: boolean;
   children: ReactNode;
-  slideIn?: string;
+  animation: string;
 }
 
 Modal.Title = Title;

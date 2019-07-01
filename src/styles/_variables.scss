@@ -69,7 +69,8 @@ $border-radius : 3px;
 //Popup Padding
 $popup-padding: 1rem !default;
 
-//Modal Padding
+//Modal
+$modal-z-index: 1022;
 $modal-padding: 1.25rem !default;
 
 $grid-breakpoints: ( xs: 0, sm: 576px, md: 768px, lg: 992px, xl: 1200px) !default;
