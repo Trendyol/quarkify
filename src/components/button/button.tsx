@@ -8,11 +8,11 @@ class Button extends React.PureComponent<IProps> {
   };
 
   public render() {
+    const { variant, size, fluid, ...props } = this.props;
     return (
       <button
-        className={classNamesDefault(this.props)}
-        disabled={this.props.disabled}
-        onClick={this.props.onClick}
+        className={classNamesDefault({ variant, size, fluid })}
+        {...props}
       >
         {this.props.children}
       </button>
@@ -22,11 +22,8 @@ class Button extends React.PureComponent<IProps> {
 
 interface IProps {
   variant?: string;
-  disabled?: boolean;
-  className?: string;
   size?: string;
   fluid?: boolean;
-  onClick: () => void;
 }
 
 export default Button;

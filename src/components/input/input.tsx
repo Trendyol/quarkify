@@ -9,44 +9,16 @@ class Input extends React.PureComponent<IProps> {
   };
 
   public render() {
+    const { error, variant, ...props } = this.props;
     return (
-      <input
-        className={classNamesDefault(this.props)}
-        disabled={this.props.disabled}
-        checked={this.props.checked}
-        required={this.props.required}
-        placeholder={this.props.placeholder}
-        type={this.props.type}
-        max={this.props.max}
-        min={this.props.min}
-        name={this.props.name}
-        value={this.props.value}
-        onClick={this.props.onClick}
-        onChange={this.props.onChange}
-        defaultValue={this.props.defaultValue}
-      />
+      <input className={classNamesDefault({ error, variant })} {...props} />
     );
   }
 }
 
 interface IProps {
   variant?: string;
-  type?: string;
-  disabled?: boolean;
-  className?: string;
-  size?: string;
-  fluid?: boolean;
-  placeholder?: string;
-  required?: boolean;
-  checked?: boolean;
-  max?: number;
-  min?: number;
-  name?: string;
-  value?: string;
   error?: boolean;
-  defaultValue?: string;
-  onClick?(e: any): void;
-  onChange?(e: any): void;
 }
 
 export default Input;
