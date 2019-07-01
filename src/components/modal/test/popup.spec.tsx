@@ -7,14 +7,14 @@ import Popup from "../index";
 
 Enzyme.configure({ adapter: new Adapter() });
 
-describe("popup specs", () => {
+describe("modal specs", () => {
   const sandbox = sinon.createSandbox();
 
   afterEach(() => {
     sandbox.verifyAndRestore();
   });
 
-  it("should render popup component", () => {
+  it("should render modal component", () => {
     const wrapper = shallow(<Popup show={true} />);
   });
 });

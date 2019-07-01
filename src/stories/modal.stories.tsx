@@ -1,12 +1,12 @@
 import { storiesOf } from "@storybook/react";
 import React, { useState } from "react";
 import Button from "../components/button";
-import Popup from "../components/popup";
+import Modal from "../components/modal";
 
-const stories = storiesOf("Popup", module);
+const stories = storiesOf("Modal", module);
 
-const PopupWrapper = () => {
-  const [show, setShow] = useState(true);
+const ModalWrapper = () => {
+  const [show, setShow] = useState(false);
   function handleChange() {
     setShow(!show);
   }
@@ -16,23 +16,19 @@ const PopupWrapper = () => {
   return (
     <>
       <Button onClick={handleChange}>Toggle Me</Button>
-      <Popup show={show} isModal>
-        <Popup.Title>My Title</Popup.Title>
-        <Popup.Content>
+      <Modal show={show}>
+        <Modal.Title>My Title</Modal.Title>
+        <Modal.Content>
           <p>Content text</p>
-        </Popup.Content>
-        <Popup.Actions>
+        </Modal.Content>
+        <Modal.Actions>
           <Button fluid onClick={closePopup}>
             Close
           </Button>
-        </Popup.Actions>
-      </Popup>
+        </Modal.Actions>
+      </Modal>
     </>
   );
 };
 
-stories.add("Default", () => (
-  <>
-    <PopupWrapper />
-  </>
-));
+stories.add("Default", () => <ModalWrapper />);

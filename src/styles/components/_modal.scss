@@ -1,0 +1,70 @@
+@import '../variables';
+@import '../globals';
+
+.modal-main{
+  position:fixed;
+  background: white;
+  top:50%;
+  left:50%;
+  transform: translate(-50%,-50%);
+  display: block;
+  text-align: center;
+  padding: $modal-padding;
+  height: 100vh;
+  width: 100vw;
+  border-radius: 0;
+
+  .modal-content {
+    overflow-y: scroll;
+    max-height: 50vh;
+    -ms-overflow-style: none;
+    &::-webkit-scrollbar {
+      width: 0;
+      height: 0;
+    }
+  }
+
+  .modal-icon-position {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .modal-icon-left {
+    justify-content: flex-start;
+  }
+
+  &.slideInUp {
+    animation-iteration-count: 1;
+    animation-duration: .3s;
+    animation-name: slideInUp;
+  }
+
+  &.slideInDown{
+    animation-iteration-count: 1;
+    animation-duration: .3s;
+    animation-name: slideInDown;
+  }
+
+  @keyframes slideInUp {
+    from {
+      transform: translate(-50%, 100%);
+    }
+
+    to {
+      transform: translate(-50%,-50%);
+    }
+  }
+
+  @keyframes slideInDown {
+    from {
+      transform: translate(-50%, -200%);
+    }
+
+    to {
+      transform: translate(-50%,-50%);
+    }
+  }
+}
+
+

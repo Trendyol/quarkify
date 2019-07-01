@@ -3,9 +3,9 @@ import * as React from "react";
 
 function Title(props: any) {
   const classes = classNames(
-    props.iconLeft && "popup-icon-left",
+    props.iconLeft && "modal-icon-left",
     "icon-close",
-    "popup-icon-position"
+    "modal-icon-position"
   );
   return (
     <div>
