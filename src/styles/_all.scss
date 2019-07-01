@@ -1,1 +1,11 @@
 @import './variables';
+
+// Mixins
+@import './mixins/button';
+@import './mixins/defaults';
+@import "./mixins/fluid";
+@import "./mixins/input";
+
+// Components
+@import './components/button';
+@import './components/input';

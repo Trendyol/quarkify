@@ -24,26 +24,46 @@ $space-medium:10px;
 $space-large:15px;
 $space-xlarge:20px;
 
-//Default Padding
+//Line Height
+$line-height: 1.5 !default;
+$line-height-small: 1.5 !default;
+$line-height-large: 1.5 !default;
+
+//Button Default Padding
 $button-padding-y: .375rem !default;
 $button-padding-x: .75rem !default;
 $button-font-size: $font-size-base !default;
-$line-height: 1.5 !default;
-$border-radius : 3px;
 
-//Small Padding
+//Button Small Padding
 $button-padding-y-small: .375rem !default;
 $button-padding-x-small: .75rem !default;
 $button-font-size-small: $font-size-small !default;
-$line-height-small: 1.5 !default;
 
-//Large Padding
+//Button Large Padding
 $button-padding-y-large: .375rem !default;
 $button-padding-x-large: .75rem !default;
 $button-font-size-large: $font-size-large !default;
-$line-height-large: 1.5 !default;
 
 //Popup Padding
 $popup-padding: 1rem !default;
+
+//Input Default Padding
+$input-padding-y: .375rem !default;
+$input-padding-x: .75rem !default;
+$input-font-size: $font-size-base !default;
+
+//Input Small Padding
+$input-padding-y-small: .375rem !default;
+$input-padding-x-small: .75rem !default;
+$input-font-size-small: $font-size-small !default;
+
+//Input Large Padding
+$input-padding-y-large: .375rem !default;
+$input-padding-x-large: .75rem !default;
+$input-font-size-large: $font-size-large !default;
+
+
+//Border Radius
+$border-radius : 3px;
 
 $grid-breakpoints: ( xs: 0, sm: 576px, md: 768px, lg: 992px, xl: 1200px) !default;
