@@ -6,10 +6,10 @@ const stories = storiesOf("Button", module);
 
 const action = () => alert("click");
 
-stories.add("Types", () => (
+stories.add("Variants", () => (
   <div>
     <Button onClick={action}>Primary</Button>
-    <Button type="secondary" onClick={action}>
+    <Button variant="secondary" onClick={action}>
       Secondary
     </Button>
   </div>
@@ -17,13 +17,13 @@ stories.add("Types", () => (
 
 stories.add("Sizes", () => (
   <div>
-    <Button type="primary" size="small" onClick={action}>
+    <Button variant="primary" size="small" onClick={action}>
       Small
     </Button>
-    <Button type="primary" onClick={action}>
+    <Button variant="primary" onClick={action}>
       Default
     </Button>
-    <Button type="primary" size="large" onClick={action}>
+    <Button variant="primary" size="large" onClick={action}>
       Large
     </Button>
   </div>
@@ -35,7 +35,7 @@ stories.add("Disabled", () => (
   </Button>
 ));
 stories.add("Fluid", () => (
-  <Button type="primary" fluid onClick={action}>
+  <Button variant="primary" fluid onClick={action}>
     Fluid
   </Button>
 ));

@@ -1,0 +1,43 @@
+@import '../variables';
+@import '../mixins/_defaults.scss';
+@import '../mixins/_input.scss';
+@import '../mixins/_fluid.scss';
+
+input {
+  @include input-size($input-padding-y, $input-padding-x, $input-font-size, $line-height, $border-radius);
+  display: inline-block;
+  &.primary {
+    @include primary;
+  }
+  &.secondary {
+    @include secondary;
+  }
+  &.disabled {
+    @include disabled;
+  }
+  &.fluid{
+    @include fluid;
+  }
+  &.error{
+    border-color: red;
+    color:red;
+    cursor: not-allowed;
+  }
+  &.error::placeholder{
+    color:red;
+  }
+  &:focus{
+    outline: 0;
+    cursor: pointer;
+  }
+
+
+  // Input Sizes
+  &.large {
+    @include input-size($input-padding-y-large, $input-padding-x-large, $input-font-size-large, $line-height-large, $border-radius);
+  }
+
+  &.small {
+    @include input-size($input-padding-y-small, $input-padding-x-small, $input-font-size-small, $line-height-small, $border-radius);
+  }
+}

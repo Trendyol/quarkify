@@ -4,7 +4,7 @@ import classNamesDefault from "../../utils/class-names-default";
 
 class Button extends React.PureComponent<IProps> {
   private static defaultProps = {
-    type: "primary",
+    variant: "primary",
   };
 
   public render() {
@@ -21,7 +21,7 @@ class Button extends React.PureComponent<IProps> {
 }
 
 interface IProps {
-  type?: string;
+  variant?: string;
   disabled?: boolean;
   className?: string;
   size?: string;
