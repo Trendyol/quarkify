@@ -5,14 +5,12 @@ function Title(props: any) {
   const classes = classNames(
     props.iconLeft && "popup-icon-left",
     "icon-close",
-    "popup-icon-position",
+    "popup-icon-position"
   );
   return (
     <div>
-      <i className={classes}/>
-      <div>
-        {props.children}
-      </div>
+      <i className={classes} />
+      <div>{props.children}</div>
     </div>
   );
 }

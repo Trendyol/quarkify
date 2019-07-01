@@ -1,10 +1,9 @@
 import React from "react";
 import Enzyme, { shallow, mount } from "enzyme";
 import Adapter from "enzyme-adapter-react-16";
-import Button from "../button";
 import faker from "faker";
 import sinon from "sinon";
-import Popup from '../index';
+import Popup from "../index";
 
 Enzyme.configure({ adapter: new Adapter() });
 

@@ -16,21 +16,23 @@ const PopupWrapper = () => {
   return (
     <>
       <Button onClick={handleChange}>Toggle Me</Button>
-      <Popup show={show}>
-        <Popup.Title iconLeft>
-          My Title
-        </Popup.Title>
+      <Popup show={show} isModal>
+        <Popup.Title>My Title</Popup.Title>
         <Popup.Content>
           <p>Content text</p>
         </Popup.Content>
         <Popup.Actions>
-          <Button fluid onClick={closePopup}>Close</Button>
+          <Button fluid onClick={closePopup}>
+            Close
+          </Button>
         </Popup.Actions>
       </Popup>
     </>
   );
 };
 
-stories.add("Default", () => <>
-  <PopupWrapper/>
-</>);
+stories.add("Default", () => (
+  <>
+    <PopupWrapper />
+  </>
+));
