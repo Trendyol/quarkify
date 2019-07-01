@@ -6,7 +6,7 @@ import Modal from "../components/modal";
 const stories = storiesOf("Modal", module);
 
 interface IProps {
-  animation: string;
+  animation?: string;
 }
 
 const ModalWrapper = ({ animation }: IProps) => {
@@ -20,11 +20,8 @@ const ModalWrapper = ({ animation }: IProps) => {
   return (
     <>
       <Button onClick={handleChange}>Toggle Me</Button>
-      <Modal show={show} animation={animation}>
+      <Modal show={show} animation={animation} onClose={closeModal}>
         <Modal.Title>My Title</Modal.Title>
-        <Modal.Content>
-          <p>Content text</p>
-        </Modal.Content>
         <Modal.Actions>
           <Button fluid onClick={closeModal}>
             Close
