@@ -8,7 +8,7 @@ function Title(props: any) {
     "modal-icon-position"
   );
   return (
-    <div>
+    <div className={"popup-title"}>
       <i className={classes} />
       <div>{props.children}</div>
     </div>

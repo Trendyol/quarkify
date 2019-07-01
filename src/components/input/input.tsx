@@ -1,4 +1,5 @@
 import React from "react";
+import IInput from "../../interfaces/input";
 import "../../styles/components/_input.scss";
 import classNamesDefault from "../../utils/class-names-default";
 
@@ -16,7 +17,7 @@ class Input extends React.PureComponent<IProps> {
   }
 }
 
-interface IProps {
+interface IProps extends IInput {
   variant?: string;
   error?: boolean;
 }
