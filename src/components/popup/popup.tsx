@@ -1,4 +1,5 @@
 import React from "react";
+import "../../styles/components/_popup.scss";
 import Actions from "./popup-actions";
 import Content from "./popup-content";
 import Title from "./popup-title";
@@ -8,8 +9,12 @@ function Popup(props: any) {
     return null;
   }
   return (
-    <div>
-      {props.children}
+    <div
+      className="popup-overlay"
+    >
+      <div className="popup-main">
+        {props.children}
+      </div>
     </div>
   );
 }

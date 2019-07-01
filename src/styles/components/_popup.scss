@@ -22,3 +22,22 @@
   box-shadow: 1px 3px 3px 0 rgba(0,0,0,.2), 1px 3px 15px 2px rgba(0,0,0,.2);
   border-radius: $border-radius;
 }
+
+.popup-content {
+  overflow-y: scroll;
+  max-height: 50vh;
+  -ms-overflow-style: none;
+  &::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+  }
+}
+
+.popup-x-icon {
+  position: absolute;
+  font-size: 35px;
+  margin-top: -30px;
+  right: 2%;
+  color: #333333;
+  z-index: 9999;
+}

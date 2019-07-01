@@ -1,7 +1,7 @@
 import React from "react";
 
 function Content(props: any) {
-  return <>{props.children}</>;
+  return <div className={"popup-content"}>{props.children}</div>;
 }
 
 export default Content;
