@@ -17,7 +17,7 @@ const PopupWrapper = () => {
     <>
       <Button onClick={handleChange}>Toggle Me</Button>
       <Popup show={show}>
-        <Popup.Title>
+        <Popup.Title iconLeft>
           My Title
         </Popup.Title>
         <Popup.Content>
