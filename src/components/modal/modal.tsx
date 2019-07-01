@@ -16,7 +16,7 @@ function Modal({ show, children }: IProps) {
 
 interface IProps {
   show: boolean;
-  children: ReactNode;
+  children?: ReactNode;
   slideIn?: string;
 }
 

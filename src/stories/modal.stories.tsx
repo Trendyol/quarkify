@@ -10,7 +10,7 @@ const ModalWrapper = () => {
   function handleChange() {
     setShow(!show);
   }
-  function closePopup() {
+  function closeModal() {
     setShow(false);
   }
   return (
@@ -22,7 +22,7 @@ const ModalWrapper = () => {
           <p>Content text</p>
         </Modal.Content>
         <Modal.Actions>
-          <Button fluid onClick={closePopup}>
+          <Button fluid onClick={closeModal}>
             Close
           </Button>
         </Modal.Actions>
