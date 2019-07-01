@@ -16,12 +16,12 @@ describe("modal specs", () => {
 
   it("should render modal component", () => {
     const wrapper = shallow(<Modal show={true} />);
-    expect(wrapper.exists(".modal-overlay")).toEqual(true);
+    expect(wrapper.exists(".modal-main")).toEqual(true);
   });
 
   it("should not render modal component", () => {
     const wrapper = shallow(<Modal show={false} />);
-    expect(wrapper.exists(".modal-overlay")).toEqual(false);
+    expect(wrapper.exists(".modal-main")).toEqual(false);
   });
 
   it("should render title sub component", () => {
