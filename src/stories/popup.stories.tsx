@@ -6,7 +6,7 @@ import Popup from "../components/popup";
 const stories = storiesOf("Popup", module);
 
 const PopupWrapper = () => {
-  const [show, setShow] = useState();
+  const [show, setShow] = useState(true);
   function handleChange() {
     setShow(!show);
   }
@@ -24,7 +24,7 @@ const PopupWrapper = () => {
           <p>Content text</p>
         </Popup.Content>
         <Popup.Actions>
-          <Button onClick={closePopup}>Close</Button>
+          <Button fluid onClick={closePopup}>Close</Button>
         </Popup.Actions>
       </Popup>
     </>
