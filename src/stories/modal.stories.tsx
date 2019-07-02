@@ -3,10 +3,10 @@ import React, { useState } from "react";
 import Button from "../components/button";
 import Input from "../components/input";
 import Modal from "../components/modal";
+import { animationTypes } from "../types/modal";
 
 const stories = storiesOf("Modal", module);
 
-type animationTypes = "slideInLeft" | "slideInRight";
 interface IProps {
   animation?: animationTypes;
 }
@@ -74,4 +74,6 @@ const AddressModalWrapper = ({ animation }: IProps) => {
 
 stories.add("Default", () => <ModalWrapper />);
 stories.add("SlideInLeft", () => <ModalWrapper animation="slideInLeft" />);
+stories.add("SlideInDown", () => <ModalWrapper animation="slideInDown" />);
+stories.add("SlideInUp", () => <ModalWrapper animation="slideInUp" />);
 stories.add("Address", () => <AddressModalWrapper />);

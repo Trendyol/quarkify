@@ -20,8 +20,7 @@
     overflow-y: scroll;
     max-height: 50vh;
     -ms-overflow-style: none;
-    padding-top: 2rem;
-    padding-bottom: 2rem;
+    padding: 1.25rem;
     &::-webkit-scrollbar {
       width: 0;
       height: 0;
@@ -49,7 +48,6 @@
     }
   }
 
-
   &.slideInLeft{
     animation-iteration-count: 1;
     animation-duration: .3s;
@@ -62,6 +60,18 @@
     animation-name: slideInRight;
   }
 
+  &.slideInUp{
+    animation-iteration-count: 1;
+    animation-duration: .3s;
+    animation-name: slideInUp;
+  }
+
+  &.slideInDown{
+    animation-iteration-count: 1;
+    animation-duration: .3s;
+    animation-name: slideInDown;
+  }
+
   @keyframes slideInRight {
     from {
       transform: translate(100%, -50%);
@@ -69,16 +79,6 @@
 
     to {
       transform: translate(-50%,-50%);
-    }
-  }
-
-  @keyframes slideOutRight {
-    from {
-      transform: translate(0, 0);
-    }
-
-    to {
-      transform: translate(-100%,0);
     }
   }
 
@@ -91,4 +91,42 @@
       transform: translate(-50%,-50%);
     }
   }
+
+  @keyframes slideInUp {
+    from {
+      transform: translate(-50%, -150%);
+    }
+
+    to {
+      transform: translate(-50%, -50%);
+    }
+  }
+
+  @keyframes slideInDown {
+    from {
+      transform: translate(-50%, 150%);
+    }
+
+    to {
+      transform: translate(-50%,-50%);
+    }
+  }
+}
+
+.modal-entered {
+  opacity: 1;
+  transform: scale(0.9);
+}
+.modal-entering{
+  opacity: 0;
+  transform: translateX(0);
+  transition: opacity 300ms, transform 300ms;
+}
+.modal-exited {
+  opacity: 0;
+}
+.modal-exiting {
+  opacity: 1;
+  transform: scale(0.9);
+  transition: opacity 300ms, transform 300ms;
 }
