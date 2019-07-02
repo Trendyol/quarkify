@@ -5,8 +5,8 @@ import Actions from "./modal-actions";
 import Content from "./modal-content";
 import Title from "./modal-title";
 
-function Modal({ show, children, animation = "slideInRight",
-                 iconPosition = "right", icon = "close", onClose, noIcon }: IProps) {
+const Modal = ({ show, children, animation = "slideInRight",
+                 iconPosition = "right", icon = "close", onClose, noIcon }: IProps) => {
   const modalClasses = classNames("modal-main", animation);
   const iconBarClasses = classNames(
     "icon-bar",
@@ -25,7 +25,7 @@ function Modal({ show, children, animation = "slideInRight",
       </div>
     </div>
   );
-}
+};
 
 interface IProps {
   show: boolean;
