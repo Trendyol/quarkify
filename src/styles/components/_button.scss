@@ -1,6 +1,6 @@
 @import '../variables';
 @import '../globals';
-@import '../mixins/_defaults.scss';
+@import '../mixins/color-scheme';
 @import '../mixins/_button.scss';
 @import '../mixins/_fluid.scss';
 
@@ -11,8 +11,14 @@ button {
   &.primary {
     @include primary;
   }
+  &.primary-outline {
+    @include primary-outline;
+  }
   &.secondary {
     @include secondary;
+  }
+  &.secondary-outline {
+    @include secondary-outline;
   }
   &.disabled {
     @include disabled;
