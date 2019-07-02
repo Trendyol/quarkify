@@ -6,9 +6,19 @@ const stories = storiesOf("Icon", module);
 
 stories.add("Icons", () => (
   <div>
-    <Icon name="search" size=""/>
-    <Icon name="spinner" size=""/>
-    <Icon name="shopping-cart" size=""/>
-    <Icon name="shopping-cart" disabled size=""/>
+    <Icon name="search"/>
+    <Icon name="search" disabled/>
+    <Icon name="search" size="small"/>
+    <Icon name="search" size="large"/>
+    <br/>
+    <Icon name="spinner"/>
+    <Icon name="shopping-cart"/>
+    <Icon name="like"/>
+    <Icon name="account"/>
+    <br/>
+    <Icon name="facebook"/>
+    <Icon name="twitter"/>
+    <Icon name="whatsapp"/>
+    <Icon name="checkmark-full"/>
   </div>
 ));

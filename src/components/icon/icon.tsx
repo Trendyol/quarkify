@@ -1,5 +1,6 @@
 import classNames from "classnames";
 import React from "react";
+import IIcon from "../../interfaces/icon";
 import "../../styles/components/_icon.scss";
 import classNamesDefault from "../../utils/class-names-default";
 
@@ -22,7 +23,7 @@ class Icon extends React.PureComponent<IProps> {
   }
 }
 
-interface IProps {
+interface IProps extends IIcon {
   name: string;
   size?: string;
   disabled?: boolean;

@@ -1,11 +1,9 @@
-import React from "react";
 import Enzyme, { mount, shallow } from "enzyme";
 import Adapter from "enzyme-adapter-react-16";
-import Icon from "../icon"
 import faker from "faker";
+import React from "react";
 import sinon from "sinon";
-import Popup from "../../popup";
-
+import Icon from "../icon";
 
 Enzyme.configure({ adapter: new Adapter() });
 
@@ -28,12 +26,11 @@ describe("icon specs", () => {
     expect(wrapper.exists(".large")).toEqual(true);
   });
 
-  it("should close popup when close icon is clicked", () => {
+  it("should call function when close icon is clicked", () => {
     const spy = sandbox.spy();
-    const wrapper = mount(<Popup onClose={spy} show={true} />);
-    wrapper.find(".icon-close").simulate("click");
+    const wrapper = shallow(<Icon onClick={spy} name="search" />);
+    wrapper.find(".icon-search").simulate("click");
     expect(spy.calledOnce).toEqual(true);
   });
-
 
 });
