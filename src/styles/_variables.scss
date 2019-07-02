@@ -10,6 +10,8 @@ $white: #f8f8f8;
 $white-two: #ffffff;
 $marigold: #ffc000;
 $very-light-pink:#e9e9e9;
+$background-grey: #fafafa;
+$border-grey: #e6e6e6;
 
 //Fonts
 $font-size-base: 1rem !default; // Assumes the browser default, typically `16px`
@@ -46,6 +48,9 @@ $button-font-size-large: $font-size-large !default;
 
 // Padding
 $-padding: 1rem !default;
+
+//Input
+$input-background-color: #ebebeb;
 
 //Input Default Padding
 $input-padding-y: .375rem !default;
