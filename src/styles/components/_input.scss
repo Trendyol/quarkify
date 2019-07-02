@@ -1,8 +1,8 @@
-@import '../variables';
-@import '../globals';
-@import '../mixins/color-scheme';
-@import '../mixins/_input.scss';
+@import '../_variables';
+@import '../_globals';
+@import '../mixins/_color-scheme';
 @import '../mixins/_fluid.scss';
+@import '../mixins/_size.scss';
 
 .input-wrapper{
   display: block;
@@ -19,7 +19,7 @@
     margin: -5px 0 5px 0;
   }
   input {
-    @include input-size($input-padding-y, $input-padding-x, $input-font-size, $line-height, $border-radius);
+    @include size($input-padding-y, $input-padding-x, $input-font-size, $line-height, $border-radius);
     background-color: $input-background-color;
     border: 1px solid $border-grey;
     &.primary {
@@ -50,11 +50,11 @@
 
     // Input Sizes
     &.large {
-      @include input-size($input-padding-y-large, $input-padding-x-large, $input-font-size-large, $line-height-large, $border-radius);
+      @include size($input-padding-y-large, $input-padding-x-large, $input-font-size-large, $line-height-large, $border-radius);
     }
 
     &.small {
-      @include input-size($input-padding-y-small, $input-padding-x-small, $input-font-size-small, $line-height-small, $border-radius);
+      @include size($input-padding-y-small, $input-padding-x-small, $input-font-size-small, $line-height-small, $border-radius);
     }
   }
 }
