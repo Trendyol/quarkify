@@ -61,4 +61,11 @@ describe("input specs", () => {
 
     expect(wrapper.find(".input-subtext")).toHaveLength(1);
   });
+
+  it("should accept additional classNames", () => {
+    const testClass = faker.random.word();
+    const wrapper = shallow(<Input className={testClass}/>);
+
+    expect(wrapper.find(`.${testClass}`)).toHaveLength(1);
+  });
 });
