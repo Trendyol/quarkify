@@ -63,9 +63,8 @@ describe("input specs", () => {
   });
 
   it("should accept additional classNames", () => {
-    const testClass = faker.random.word();
+    const testClass = faker.lorem.word();
     const wrapper = shallow(<Input className={testClass}/>);
-
     expect(wrapper.find(`.${testClass}`)).toHaveLength(1);
   });
 });

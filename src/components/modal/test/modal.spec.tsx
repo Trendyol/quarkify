@@ -33,40 +33,31 @@ describe("modal specs", () => {
         </Modal.Title>
       </Modal>,
     );
-    expect(wrapper.childAt(0).exists(".modal-title")).toEqual(true);
+    expect(wrapper.find(".modal-title")).toHaveLength(1);
   });
 
   it("should render content sub component", () => {
     const text = faker.random.word();
     const wrapper = mount(
       <Modal show={true}>
-        <Modal.Title>
-          <h1>{text}</h1>
-        </Modal.Title>
         <Modal.Content>
           <p>{text}</p>
         </Modal.Content>
       </Modal>,
     );
-    expect(wrapper.childAt(0).exists(".modal-content")).toEqual(true);
+    expect(wrapper.find(".modal-content")).toHaveLength(1);
   });
 
   it("should render actions sub component", () => {
     const text = faker.random.word();
     const wrapper = mount(
       <Modal show={true}>
-        <Modal.Title>
-          <h1>{text}</h1>
-        </Modal.Title>
-        <Modal.Content>
-          <p>{text}</p>
-        </Modal.Content>
         <Modal.Actions>
           <button>{text}</button>
         </Modal.Actions>
       </Modal>,
     );
-    expect(wrapper.childAt(0).exists(".modal-actions")).toEqual(true);
+    expect(wrapper.find(".modal-actions")).toHaveLength(1);
   });
 
   it("should have close icon button", () => {
@@ -78,7 +69,7 @@ describe("modal specs", () => {
         </Modal.Title>
       </Modal>,
     );
-    expect(wrapper.childAt(0).exists(".icon-close")).toEqual(true);
+    expect(wrapper.find(".icon-close")).toHaveLength(1);
   });
 
   it("should have back icon button", () => {
