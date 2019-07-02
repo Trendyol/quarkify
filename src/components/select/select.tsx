@@ -1,0 +1,41 @@
+import React from "react";
+import ISelect from "../../interfaces/select";
+import "../../styles/components/_select.scss";
+import { variantTypes } from "../../types/select";
+import classNamesDefault from "../../utils/class-names-default";
+
+class Select extends React.PureComponent<IProps> {
+  public render() {
+    const { items, variant, label, fluid, subtext, ...props } = this.props;
+    return (
+      <div className={"select-group"}>
+        <label>{this.props.label}</label>
+        <select
+          className={classNamesDefault({ fluid })}
+          {...props}
+        >
+          {this.props.items.map((item, index) => {
+            return <option
+              selected={item.selected}
+              key={index}
+              value={item.value}
+              className={classNamesDefault({ variant: item.variant })}
+            >
+              {item.name}
+            </option>;
+          })}
+        </select>
+      </div>
+    );
+  }
+}
+
+interface IProps extends ISelect {
+  variant?: variantTypes;
+  items: any[];
+  label?: string;
+  subtext?: string;
+  fluid?: boolean;
+}
+
+export default Select;
