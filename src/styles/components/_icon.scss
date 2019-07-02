@@ -1,0 +1,24 @@
+@import '../_variables';
+@import '../_globals';
+@import '../mixins/_color-scheme';
+@import '../mixins/_fluid.scss';
+@import '../mixins/_size.scss';
+
+i {
+  @include size($padding-y, $padding-x, $font-size, $line-height, $border-radius);
+  display: inline-block;
+
+  &.disabled {
+    @include disabled;
+  }
+
+  // Icon Sizes
+  &.large {
+    @include size($padding-y-large, $padding-x-large, $font-size-large, $line-height-large, $border-radius);
+  }
+
+  &.small {
+    @include size($padding-y-small, $padding-x-small, $font-size-small, $line-height-small, $border-radius);
+  }
+
+}

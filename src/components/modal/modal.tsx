@@ -2,6 +2,7 @@ import classNames from "classnames";
 import React, { ReactNode } from "react";
 import "../../styles/components/_modal.scss";
 import { animationTypes, IconPosition, IconTypes } from "../../types/modal";
+import Icon from "../icon";
 import Actions from "./modal-actions";
 import Content from "./modal-content";
 import Title from "./modal-title";
@@ -21,7 +22,7 @@ const Modal = ({ show, children, animation = "slideInRight",
     <div>
       <div className={modalClasses}>
         <div className={iconBarClasses}>
-          {!noIcon && <i onClick={onClose} className={icon === "back" ? "icon-back-button" : "icon-close"}/>}
+          {!noIcon && <Icon onClick={onClose} name={icon}/>}
         </div>
         {children}
       </div>

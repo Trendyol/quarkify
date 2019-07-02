@@ -15,8 +15,8 @@ $border-grey: #e6e6e6;
 
 //Fonts
 $font-size-base: 1rem !default; // Assumes the browser default, typically `16px`
-$font-size-large: $font-size-base * 1.25 !default;
-$font-size-small: $font-size-base * .875 !default;
+$font-size-large: $font-size-base * 1.5 !default;
+$font-size-small: $font-size-base * .750 !default;
 $bold:600;
 $regular:400;
 
@@ -39,12 +39,10 @@ $font-size: $font-size-base !default;
 //Button Small Padding
 $padding-y-small: .375rem !default;
 $padding-x-small: .75rem !default;
-$font-size-small: $font-size-small !default;
 
 //Button Large Padding
 $padding-y-large: .375rem !default;
 $padding-x-large: .75rem !default;
-$font-size-large: $font-size-large !default;
 
 // Padding
 $-padding: 1rem !default;
