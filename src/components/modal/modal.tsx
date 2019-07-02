@@ -1,6 +1,7 @@
 import classNames from "classnames";
 import React, { ReactNode } from "react";
 import "../../styles/components/_modal.scss";
+import { animationTypes, IconPosition, IconTypes } from "../../types/modal";
 import Actions from "./modal-actions";
 import Content from "./modal-content";
 import Title from "./modal-title";
@@ -36,10 +37,6 @@ interface IProps {
   noIcon?: boolean;
   onClose?(event: React.SyntheticEvent): void;
 }
-
-type IconTypes = "close" | "back";
-type IconPosition = "left" | "right";
-type animationTypes = "slideInLeft" | "slideInRight";
 
 Modal.Title = Title;
 Modal.Actions = Actions;
