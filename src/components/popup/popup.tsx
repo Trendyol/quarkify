@@ -3,6 +3,10 @@ import React, { ReactNode } from "react";
 import ReactDOM from "react-dom";
 import "../../styles/components/_popup.scss";
 
+const insideClick = (event: any) => {
+  event.stopPropagation();
+}
+
 function Popup({ show, children, onClose, iconLeft }: IProps) {
   // const { show, children, isModal } = props;
   const popupMainClasses = classNames("popup-main", "slideInUp");
@@ -15,8 +19,8 @@ function Popup({ show, children, onClose, iconLeft }: IProps) {
     return null;
   }
   return ReactDOM.createPortal(
-    <div className={"popup-overlay"}>
-      <div className={popupMainClasses}>
+    <div className={"popup-overlay"} onClick={onClose}>
+      <div className={popupMainClasses} onClick={insideClick}>
         <i className={popupIconClasses} onClick={onClose}/>
         {children}
       </div>
