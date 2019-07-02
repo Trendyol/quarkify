@@ -80,4 +80,10 @@ describe("modal specs", () => {
     );
     expect(wrapper.childAt(0).exists(".icon-close")).toEqual(true);
   });
+
+  it("should have back icon button", () => {
+    const wrapper = shallow(<Modal show={true} icon="back"/>);
+
+    expect(wrapper.find(".icon-back-button")).toHaveLength(1);
+  });
 });

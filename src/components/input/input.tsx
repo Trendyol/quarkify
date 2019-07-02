@@ -13,7 +13,7 @@ class Input extends React.PureComponent<IProps> {
     return (
       <div className="input-wrapper">
         {label && <label>{label}</label>}
-        {subtext && <span>{subtext}</span>}
+        {subtext && <span className="input-subtext">{subtext}</span>}
         <input className={classNamesDefault({ error, variant, fluid })} {...props} />
       </div>
     );
