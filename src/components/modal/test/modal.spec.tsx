@@ -73,9 +73,9 @@ describe("modal specs", () => {
   });
 
   it("should have back icon button", () => {
-    const wrapper = shallow(<Modal show={true} icon="back"/>);
+    const wrapper = mount(<Modal show={true} icon="back"/>);
 
-    expect(wrapper.find(".icon-back-button")).toHaveLength(1);
+    expect(wrapper.find(".icon-back")).toHaveLength(1);
   });
 
   it("should render the icon on left if the iconPosition prop is given left", () => {
