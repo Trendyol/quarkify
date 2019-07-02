@@ -1,44 +1,60 @@
-@import '../variables';
-@import '../globals';
-@import '../mixins/_defaults.scss';
-@import '../mixins/_input.scss';
+@import '../_variables';
+@import '../_globals';
+@import '../mixins/_color-scheme';
 @import '../mixins/_fluid.scss';
+@import '../mixins/_size.scss';
 
-input {
-  @include input-size($input-padding-y, $input-padding-x, $input-font-size, $line-height, $border-radius);
-  display: inline-block;
-  &.primary {
-    @include primary;
+.input-wrapper{
+  display: block;
+  text-align: left;
+  label{
+    display: inline-block;
+    font-weight: 500;
+    font-size: 13px;
+    padding: 5px 0;
   }
-  &.secondary {
-    @include secondary;
+  span{
+    display: inherit;
+    color: #ababab;
+    margin: -5px 0 5px 0;
   }
-  &.disabled {
-    @include disabled;
-  }
-  &.fluid{
-    @include fluid;
-  }
-  &.error{
-    border-color: red;
-    color:red;
-    cursor: not-allowed;
-  }
-  &.error::placeholder{
-    color:red;
-  }
-  &:focus{
-    outline: 0;
-    cursor: pointer;
-  }
+  input {
+    @include size($padding-y, $padding-x, $font-size, $line-height, $border-radius);
+    background-color: $input-background-color;
+    border: 1px solid $border-grey;
+    &.primary {
+      @include primary;
+    }
+    &.secondary {
+      @include secondary;
+    }
+    &.disabled {
+      @include disabled;
+    }
+    &.fluid{
+      @include fluid;
+    }
+    &.error{
+      border-color: red;
+      color:red;
+      cursor: not-allowed;
+    }
+    &.error::placeholder{
+      color:red;
+    }
+    &:focus{
+      outline: 0;
+      cursor: pointer;
+    }
 
 
-  // Input Sizes
-  &.large {
-    @include input-size($input-padding-y-large, $input-padding-x-large, $input-font-size-large, $line-height-large, $border-radius);
-  }
+    // Input Sizes
+    &.large {
+      @include size($padding-y-large, $padding-x-large, $font-size-large, $line-height-large, $border-radius);
+    }
 
-  &.small {
-    @include input-size($input-padding-y-small, $input-padding-x-small, $input-font-size-small, $line-height-small, $border-radius);
+    &.small {
+      @include size($padding-y-small, $padding-x-small, $font-size-small, $line-height-small, $border-radius);
+    }
   }
 }
