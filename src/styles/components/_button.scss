@@ -1,11 +1,11 @@
-@import '../variables';
-@import '../globals';
-@import '../mixins/color-scheme';
-@import '../mixins/_button.scss';
+@import '../_variables';
+@import '../_globals';
+@import '../mixins/_color-scheme';
+@import '../mixins/_size';
 @import '../mixins/_fluid.scss';
 
 button {
-  @include button-size($button-padding-y, $button-padding-x, $button-font-size, $line-height, $border-radius);
+  @include size($button-padding-y, $button-padding-x, $button-font-size, $line-height, $border-radius);
   cursor: pointer;
   display: inline-block;
   &.primary {
@@ -32,11 +32,11 @@ button {
 
   // Button Sizes
   &.large {
-    @include button-size($button-padding-y-large, $button-padding-x-large, $button-font-size-large, $line-height-large, $border-radius);
+    @include size($button-padding-y-large, $button-padding-x-large, $button-font-size-large, $line-height-large, $border-radius);
   }
 
   &.small {
-    @include button-size($button-padding-y-small, $button-padding-x-small, $button-font-size-small, $line-height-small, $border-radius);
+    @include size($button-padding-y-small, $button-padding-x-small, $button-font-size-small, $line-height-small, $border-radius);
   }
 
 }
