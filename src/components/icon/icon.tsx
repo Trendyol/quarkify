@@ -3,6 +3,7 @@ import React from "react";
 import IIcon from "../../interfaces/icon";
 import "../../styles/components/_icon.scss";
 import classNamesDefault from "../../utils/class-names-default";
+import { sizeTypes } from "../../types/icon";
 
 class Icon extends React.PureComponent<IProps> {
   private static defaultProps = {
@@ -25,7 +26,7 @@ class Icon extends React.PureComponent<IProps> {
 
 interface IProps extends IIcon {
   name: string;
-  size?: string;
+  size?: sizeTypes;
   disabled?: boolean;
 }
 
