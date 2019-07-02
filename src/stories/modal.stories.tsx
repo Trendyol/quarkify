@@ -1,13 +1,14 @@
 import { storiesOf } from "@storybook/react";
 import React, { useState } from "react";
 import Button from "../components/button";
-import Modal from "../components/modal";
 import Input from "../components/input";
+import Modal from "../components/modal";
 
 const stories = storiesOf("Modal", module);
 
+type animationTypes = "slideInLeft" | "slideInRight";
 interface IProps {
-  animation?: string;
+  animation?: animationTypes;
 }
 
 const ModalWrapper = ({ animation }: IProps) => {
