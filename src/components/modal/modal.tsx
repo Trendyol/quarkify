@@ -6,7 +6,6 @@ import Content from "./modal-content";
 import Title from "./modal-title";
 
 function Modal({ show, children }: IProps) {
-  // const { show, children, isModal } = props;
   const classes = classNames("modal-main", "slideInUp");
   if (!show) {
     return null;
