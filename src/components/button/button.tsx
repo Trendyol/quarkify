@@ -9,10 +9,11 @@ class Button extends React.PureComponent<IProps> {
   };
 
   public render() {
-    const { variant, size, fluid, ...props } = this.props;
+    const { variant, size, fluid, disabled, ...props } = this.props;
     return (
       <button
-        className={classNamesDefault({ variant, size, fluid })}
+        className={classNamesDefault({ variant, size, fluid, disabled })}
+        disabled={disabled}
         {...props}
       >
         {this.props.children}

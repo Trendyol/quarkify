@@ -10,6 +10,8 @@ $white: #f8f8f8;
 $white-two: #ffffff;
 $marigold: #ffc000;
 $very-light-pink:#e9e9e9;
+$background-grey: #fafafa;
+$border-grey: #e6e6e6;
 
 //Fonts
 $font-size-base: 1rem !default; // Assumes the browser default, typically `16px`
@@ -44,6 +46,12 @@ $button-padding-y-large: .375rem !default;
 $button-padding-x-large: .75rem !default;
 $button-font-size-large: $font-size-large !default;
 
+// Padding
+$-padding: 1rem !default;
+
+//Input
+$input-background-color: #ebebeb;
+
 //Input Default Padding
 $input-padding-y: .375rem !default;
 $input-padding-x: .75rem !default;
@@ -63,4 +71,12 @@ $input-font-size-large: $font-size-large !default;
 //Border Radius
 $border-radius : 3px;
 
+//Modal Padding
+$popup-padding: 1rem !default;
+
+//Modal
+$modal-z-index: 1022;
+$modal-padding: 1.25rem !default;
+
 $grid-breakpoints: ( xs: 0, sm: 576px, md: 768px, lg: 992px, xl: 1200px) !default;
+

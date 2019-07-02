@@ -22,8 +22,8 @@ describe("input specs", () => {
 
   it("renders a text input by default", () => {
     const wrapper = shallow(<Input />);
-
-    expect(wrapper.prop("type")).toBe("text");
+    const inputElement = wrapper.find("input");
+    expect(inputElement.prop("type")).toBe("text");
   });
 
   it("should call onChange function ", () => {
@@ -32,7 +32,7 @@ describe("input specs", () => {
     const wrapper = shallow(<Input onChange={spy} />);
     const event = { target: { value: text } };
 
-    wrapper.simulate("change", event);
+    wrapper.find("input").simulate("change", event);
 
     expect(spy.calledOnce).toBe(true);
   });
@@ -46,5 +46,25 @@ describe("input specs", () => {
     wrapper.simulate("change", event);
 
     expect(spy.calledOnce).toBe(false);
+  });
+
+  it("should render a label", () => {
+    const text = faker.random.word();
+    const wrapper = shallow(<Input label={text}/>);
+
+    expect(wrapper.find("label")).toHaveLength(1);
+  });
+
+  it("should render a subtext", () => {
+    const text = faker.random.word();
+    const wrapper = shallow(<Input subtext={text}/>);
+
+    expect(wrapper.find(".input-subtext")).toHaveLength(1);
+  });
+
+  it("should accept additional classNames", () => {
+    const testClass = faker.lorem.word();
+    const wrapper = shallow(<Input className={testClass}/>);
+    expect(wrapper.find(`.${testClass}`)).toHaveLength(1);
   });
 });

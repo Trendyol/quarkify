@@ -6,13 +6,16 @@ import classNamesDefault from "../../utils/class-names-default";
 class Input extends React.PureComponent<IProps> {
   private static defaultProps = {
     type: "text",
-    variant: "primary",
   };
 
   public render() {
-    const { error, variant, ...props } = this.props;
+    const { error, variant, label, fluid, subtext, ...props } = this.props;
     return (
-      <input className={classNamesDefault({ error, variant })} {...props} />
+      <div className="input-wrapper">
+        {label && <label>{label}</label>}
+        {subtext && <span className="input-subtext">{subtext}</span>}
+        <input className={classNamesDefault({ error, variant, fluid })} {...props} />
+      </div>
     );
   }
 }
@@ -20,6 +23,9 @@ class Input extends React.PureComponent<IProps> {
 interface IProps extends IInput {
   variant?: string;
   error?: boolean;
+  label?: string;
+  subtext?: string;
+  fluid?: boolean;
 }
 
 export default Input;
