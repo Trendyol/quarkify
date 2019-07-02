@@ -23,6 +23,17 @@ const ModalWrapper = ({ animation }: IProps) => {
       <Button onClick={handleChange}>Toggle Me</Button>
       <Modal show={show} animation={animation} onClose={closeModal}>
         <Modal.Title>My Title</Modal.Title>
+        <Modal.Content>
+          <p>Some content</p>
+          <p>Some content</p>
+          <p>Some content</p>
+          <p>Some content</p>
+          <p>Some content</p>
+          <p>Some content</p>
+          <p>Some content</p>
+          <p>Some content</p>
+          <p>Some content</p>
+        </Modal.Content>
         <Modal.Actions>
           <Button fluid onClick={closeModal}>
             Close
