@@ -13,6 +13,7 @@ const Modal = ({ show, children, animation = "slideInRight",
     "icon-bar",
     iconPosition === "left" && "modal-icon-left",
   );
+
   if (!show) {
     return null;
   }

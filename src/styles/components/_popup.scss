@@ -1,0 +1,46 @@
+@import '../variables';
+@import '../globals';
+
+.popup-main{
+  position:fixed;
+  background: white;
+  top:50%;
+  left:50%;
+  transform: translate(-50%,-50%);
+  display: block;
+  text-align: center;
+  padding: $popup-padding;
+  height: auto;
+  min-width: 50vw;
+  border-radius: 0;
+
+  .popup-content {
+    overflow-y: scroll;
+    max-height: 50vh;
+    -ms-overflow-style: none;
+    &::-webkit-scrollbar {
+      width: 0;
+      height: 0;
+    }
+  }
+
+  .popup-icon-position {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .popup-icon-left {
+    justify-content: flex-start;
+  }
+}
+
+.popup-overlay {
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1022;
+  background-color: rgba(0, 0, 0, .5);
+}
