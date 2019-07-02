@@ -1,7 +1,7 @@
 import React from "react";
 import IInput from "../../interfaces/input";
 import "../../styles/components/_input.scss";
-import { variantTypes } from '../../types/input';
+import { variantTypes } from "../../types/input";
 import classNamesDefault from "../../utils/class-names-default";
 
 class Input extends React.PureComponent<IProps> {
