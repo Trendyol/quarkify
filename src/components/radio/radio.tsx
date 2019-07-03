@@ -5,8 +5,6 @@ import { variantTypes } from "../../types/input";
 import classNamesDefault from "../../utils/class-names-default";
 
 class Radio extends React.PureComponent<IProps> {
-  private static defaultProps = {
-  };
 
   public render() {
     const { error, variant, label, fluid, type, ...props } = this.props;
