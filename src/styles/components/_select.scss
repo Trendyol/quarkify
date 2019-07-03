@@ -7,8 +7,25 @@
 .select {
   padding: .3rem;
   color: #212529;
-  border: 1px solid #999999;
   font-size: 16px;
-  border-radius: 5px;
+  background-color: $white-two;
+  -moz-appearance:none; /* Firefox */
+  -webkit-appearance:none; /* Safari and Chrome */
+  appearance:none;
+  border: 0;
+}
+
+.select-group {
+  border: 1px solid #999999;
+  width: fit-content;
+  display: inline-block;
+  margin: .3rem;
+}
+
+.select-group::after {
+  font-family: icomoon, sans-serif !important;
+  content: '\E904';
+  font-size: 16px;
+  border-left: 0;
   background-color: $white-two;
 }
