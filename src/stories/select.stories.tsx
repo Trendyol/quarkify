@@ -24,6 +24,6 @@ const items = [
 
 stories.add("Default", () => (
   <div>
-    <Select items={items} label={"Vehicles"}/>
+    <Select items={items}/>
   </div>
 ));

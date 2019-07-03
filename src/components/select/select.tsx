@@ -1,5 +1,5 @@
 import classNames from "classnames";
-import React from "react";
+import React, { useState } from "react";
 import ISelect from "../../interfaces/select";
 import "../../styles/components/_select.scss";
 import { variantTypes } from "../../types/select";
@@ -19,6 +19,7 @@ class Select extends React.PureComponent<IProps> {
               selected={item.selected}
               key={index}
               value={item.value}
+              disabled={item.disabled}
               className={classNamesDefault({ variant: item.variant })}
             >
               {item.name}
