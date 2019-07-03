@@ -1,9 +1,10 @@
 @import '../variables';
 @import '../globals';
+@import "../animations/_popup.scss";
 
 .popup-main{
   position:fixed;
-  background: white;
+  background: #e6e6e6;
   top:50%;
   left:50%;
   transform: translate(-50%,-50%);
@@ -12,7 +13,7 @@
   padding: $popup-padding;
   height: auto;
   min-width: 50vw;
-  border-radius: 0;
+  border-radius: $border-radius;
 
   .popup-content {
     overflow-y: scroll;
@@ -34,6 +35,9 @@
     justify-content: flex-start;
   }
 }
+
+//Animations
+@include popup-animation
 
 .popup-overlay {
   height: 100%;
