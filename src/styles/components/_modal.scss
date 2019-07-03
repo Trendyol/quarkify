@@ -1,5 +1,6 @@
 @import '../variables';
 @import '../globals';
+@import "../animations/_modal.scss";
 
 .modal-main{
   position:fixed;
@@ -20,8 +21,7 @@
     overflow-y: scroll;
     max-height: 50vh;
     -ms-overflow-style: none;
-    padding-top: 2rem;
-    padding-bottom: 2rem;
+    padding: 1.25rem;
     &::-webkit-scrollbar {
       width: 0;
       height: 0;
@@ -48,47 +48,7 @@
       cursor: pointer;
     }
   }
-
-
-  &.slideInLeft{
-    animation-iteration-count: 1;
-    animation-duration: .3s;
-    animation-name: slideInLeft;
-  }
-
-  &.slideInRight{
-    animation-iteration-count: 1;
-    animation-duration: .3s;
-    animation-name: slideInRight;
-  }
-
-  @keyframes slideInRight {
-    from {
-      transform: translate(100%, -50%);
-    }
-
-    to {
-      transform: translate(-50%,-50%);
-    }
-  }
-
-  @keyframes slideOutRight {
-    from {
-      transform: translate(0, 0);
-    }
-
-    to {
-      transform: translate(-100%,0);
-    }
-  }
-
-  @keyframes slideInLeft {
-    from {
-      transform: translate(-100%, -50%);
-    }
-
-    to {
-      transform: translate(-50%,-50%);
-    }
-  }
 }
+
+//Animations
+@include modal-animation;

@@ -1,0 +1,74 @@
+@mixin modal-animation($duration: 300ms) {
+  .slideInRight{
+    &.modal-enter {
+      transform: translate(100%, -50%);
+    }
+    &.modal-enter-active {
+      transform: translate(-50%,-50%);
+      transition: transform 300ms;
+    }
+    &.modal-exit {
+      transform: translate(-50%, -50%);
+      transition: transform 300ms;
+    }
+    &.modal-exit-active {
+      transform: translate(100%, -50%);
+    }
+  }
+
+  .slideInLeft{
+    &.modal-enter {
+      transform: translate(-150%, -50%);
+    }
+    &.modal-enter-active {
+      transform: translate(-50%,-50%);
+      transition: transform 300ms;
+    }
+    &.modal-exit {
+      transform: translate(-50%, -50%);
+      transition: transform 300ms;
+    }
+    &.modal-exit-active {
+      transform: translate(-150%, -50%);
+    }
+  }
+
+  .slideInDown {
+    &.modal-enter {
+      transform: translate(-50%, 150%);
+    }
+
+    &.modal-enter-active {
+      transform: translate(-50%, -50%);
+      transition: transform 300ms;
+    }
+
+    &.modal-exit {
+      transform: translate(-50%, -50%);
+      transition: transform 300ms;
+    }
+
+    &.modal-exit-active {
+      transform: translate(-50%, 150%);
+    }
+  }
+
+  .slideInUp{
+    &.modal-enter {
+      transform: translate(-50%, -150%);
+    }
+    &.modal-enter-active {
+      transform: translate(-50%,-50%);
+      transition: transform 300ms;
+    }
+    &.modal-exit {
+      transform: translate(-50%, -50%);
+      transition: transform 300ms;
+    }
+    &.modal-exit-active {
+      transform: translate(-50%, -150%);
+    }
+  }
+}
+
+

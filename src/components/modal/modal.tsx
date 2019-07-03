@@ -1,5 +1,6 @@
 import classNames from "classnames";
 import React, { ReactNode } from "react";
+import { CSSTransition } from "react-transition-group";
 import "../../styles/components/_modal.scss";
 import { animationTypes, IconPosition, IconTypes } from "../../types/modal";
 import Icon from "../icon";
@@ -7,26 +8,27 @@ import Actions from "./modal-actions";
 import Content from "./modal-content";
 import Title from "./modal-title";
 
-const Modal = ({ show, children, animation = "slideInRight",
-                 iconPosition = "right", icon = "close", onClose, noIcon }: IProps) => {
-  const modalClasses = classNames("modal-main", animation);
+const Modal = ({ show,
+                 children,
+                 animation = "slideInRight",
+                 iconPosition = "right",
+                 icon = "close",
+                 onClose,
+                 noIcon }: IProps) => {
+  const modalClasses = classNames("modal-main");
   const iconBarClasses = classNames(
     "icon-bar",
     iconPosition === "left" && "modal-icon-left",
   );
-
-  if (!show) {
-    return null;
-  }
   return(
-    <div>
-      <div className={modalClasses}>
-        <div className={iconBarClasses}>
-          {!noIcon && <Icon onClick={onClose} name={icon}/>}
-        </div>
-        {children}
-      </div>
-    </div>
+        <CSSTransition in={show} unmountOnExit timeout={300} classNames={`${animation} modal`}>
+          <div className={modalClasses}>
+            <div className={iconBarClasses}>
+              {!noIcon && <Icon onClick={onClose} name={icon}/>}
+            </div>
+            {children}
+          </div>
+        </CSSTransition>
   );
 };
 

@@ -7,11 +7,12 @@
 .input-wrapper{
   display: block;
   text-align: left;
+  padding: .25rem;
   label{
     display: inline-block;
     font-weight: 500;
     font-size: 13px;
-    padding: 5px 0;
+    padding: 0;
   }
   span{
     display: inherit;
