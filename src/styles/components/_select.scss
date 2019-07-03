@@ -4,28 +4,71 @@
 @import '../mixins/_fluid.scss';
 @import '../mixins/_size.scss';
 
-.select {
-  padding: .3rem;
-  color: #212529;
-  font-size: 16px;
-  background-color: $white-two;
-  -moz-appearance:none; /* Firefox */
-  -webkit-appearance:none; /* Safari and Chrome */
-  appearance:none;
-  border: 0;
-}
+.select-wrapper {
+  position: absolute;
+  right: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
 
-.select-group {
-  border: 1px solid #999999;
-  width: fit-content;
-  display: inline-block;
-  margin: .3rem;
-}
+  .select-group {
+    height: 34px;
+    border-radius: 3px;
+    background-color: #fff;
+    border: 1px solid #e6e6e6;
+    color: #666;
+    position: relative;
 
-.select-group::after {
-  font-family: icomoon, sans-serif !important;
-  content: '\E904';
-  font-size: 16px;
-  border-left: 0;
-  background-color: $white-two;
+    .select {
+      color: currentColor;
+      padding: 6px 22px 6px 22px;
+      font-size: 14px;
+      -webkit-appearance: none;
+      border: 0;
+      line-height: 23px;
+      background: 0 0;
+
+      // Input Sizes
+      &.large {
+        @include size($padding-y-large, $padding-x-large, $font-size-large, $line-height-large, $border-radius);
+      }
+
+      &.small {
+        @include size($padding-y-small, $padding-x-small, $font-size-small, $line-height-small, $border-radius);
+      }
+
+    }
+
+    .select:focus {
+      outline: 0;
+    }
+
+  }
+
+  .select-group::after {
+    content: "\E904";
+    font-family: icomoon!important;
+    position: absolute;
+    right: 5px;
+    display: flex;
+    height: 100%;
+    top: 0;
+    align-items: center;
+    pointer-events: none;
+  }
+
+  .select-group::before {
+    color: currentColor;
+    content: attr(count-text);
+    display: flex;
+    font-size: 14px;
+    left: 10px;
+    position: absolute;
+    z-index: 0;
+    pointer-events: none;
+    align-items: center;
+    height: 100%;
+    top: 0;
+  }
+
 }
