@@ -24,7 +24,7 @@ describe("popup specs", () => {
   });
 
   it("should not render popup component", () => {
-    const wrapper = shallow(<Popup onClose={closePopup} show={false} />);
+    const wrapper = mount(<Popup onClose={closePopup} show={false} />);
     expect(wrapper.exists(".popup-main")).toEqual(false);
   });
 
