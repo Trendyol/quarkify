@@ -78,14 +78,3 @@ stories.add("Reset", () => (
     </form>
   </div>
 ));
-
-stories.add("Radio", () => (
-  <div>
-    <Input type={"radio"} name={"gender"} value={"male"} checked />
-    Male
-    <Input type={"radio"} name={"gender"} value={"female"} />
-    Female
-    <Input type={"radio"} name={"gender"} value={"other"} />
-    Other
-  </div>
-));
