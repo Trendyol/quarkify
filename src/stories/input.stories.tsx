@@ -41,6 +41,7 @@ stories.add("Email", () => (
     <Input type={"email"} placeholder={"Placeholder value"} />
     <Input type={"email"} placeholder={"Placeholder value"} disabled />
     <Input type={"email"} placeholder={"Placeholder value"} required />
+    <Input type={"email"} placeholder={"Placeholder value"} required subtext="required" />
   </div>
 ));
 
@@ -50,6 +51,7 @@ stories.add("Password", () => (
     <Input type={"password"} placeholder={"Placeholder value"} />
     <Input type={"password"} placeholder={"Placeholder value"} disabled />
     <Input type={"password"} placeholder={"Placeholder value"} required />
+    <Input type={"password"} placeholder={"Placeholder value"} subtext="required" />
   </div>
 ));
 
@@ -85,12 +87,5 @@ stories.add("Radio", () => (
     Female
     <Input type={"radio"} name={"gender"} value={"other"} />
     Other
-  </div>
-));
-
-stories.add("Checkbox", () => (
-  <div>
-    <Input type={"checkbox"} name={"vehicle1"} value={"Bike"} />I have a bike
-    <Input type={"checkbox"} name={"vehicle2"} value={"Car"} />I have a car
   </div>
 ));

@@ -3,33 +3,27 @@ import Adapter from "enzyme-adapter-react-16";
 import faker from "faker";
 import React from "react";
 import sinon from "sinon";
-import Input from "../input";
+import Radio from "../radio";
 
 Enzyme.configure({ adapter: new Adapter() });
 
-describe("input specs", () => {
+describe("radio specs", () => {
   const sandbox = sinon.createSandbox();
 
   afterEach(() => {
     sandbox.verifyAndRestore();
   });
 
-  it("should render input component", () => {
-    const wrapper = shallow(<Input />);
+  it("should render radio component", () => {
+    const wrapper = shallow(<Radio />);
 
     expect(wrapper).toHaveLength(1);
-  });
-
-  it("renders a text input by default", () => {
-    const wrapper = shallow(<Input />);
-    const inputElement = wrapper.find("input");
-    expect(inputElement.prop("type")).toBe("text");
   });
 
   it("should call onChange function ", () => {
     const spy = sandbox.spy();
     const text = faker.random.word();
-    const wrapper = shallow(<Input onChange={spy} />);
+    const wrapper = shallow(<Radio onChange={spy} />);
     const event = { target: { value: text } };
 
     wrapper.find("input").simulate("change", event);
@@ -40,7 +34,7 @@ describe("input specs", () => {
   it("should not call callback function when changed and input is disabled", () => {
     const spy = sandbox.spy();
     const text = faker.random.word();
-    const wrapper = shallow(<Input disabled />);
+    const wrapper = shallow(<Radio disabled />);
     const event = { target: { value: text } };
 
     wrapper.simulate("change", event);
@@ -48,28 +42,22 @@ describe("input specs", () => {
     expect(spy.calledOnce).toBe(false);
   });
 
-  it("should render a subtext", () => {
+  it("should render a label", () => {
     const text = faker.random.word();
-    const wrapper = shallow(<Input subtext={text}/>);
+    const wrapper = shallow(<Radio label={text}/>);
 
-    expect(wrapper.find(".input-subtext")).toHaveLength(1);
+    expect(wrapper.find("label")).toHaveLength(1);
   });
 
   it("should accept additional classNames", () => {
     const testClass = faker.lorem.word();
-    const wrapper = shallow(<Input className={testClass}/>);
+    const wrapper = shallow(<Radio className={testClass}/>);
     expect(wrapper.find(`.${testClass}`)).toHaveLength(1);
   });
 
-  it("should convert checkbox type prop to text type prop", () => {
-    const wrapper = shallow(<Input type="checkbox"/>);
+  it("should convert text type prop to radio type prop", () => {
+    const wrapper = shallow(<Radio type="text"/>);
     const inputElement = wrapper.find("input");
-    expect(inputElement.prop("type")).toBe("text");
-  });
-
-  it("should convert radio type prop to text type prop", () => {
-    const wrapper = shallow(<Input type="radio"/>);
-    const inputElement = wrapper.find("input");
-    expect(inputElement.prop("type")).toBe("text");
+    expect(inputElement.prop("type")).toBe("radio");
   });
 });

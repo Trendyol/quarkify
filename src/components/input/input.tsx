@@ -1,7 +1,7 @@
 import React from "react";
 import IInput from "../../interfaces/input";
 import "../../styles/components/_input.scss";
-import { variantTypes } from '../../types/input';
+import { variantTypes } from "../../types/input";
 import classNamesDefault from "../../utils/class-names-default";
 
 class Input extends React.PureComponent<IProps> {
@@ -10,22 +10,23 @@ class Input extends React.PureComponent<IProps> {
   };
 
   public render() {
-    const { error, variant, label, fluid, subtext, ...props } = this.props;
+    let newType = this.props.type;
+    const { error, variant, fluid, subtext, type, ...props } = this.props;
+    if (type === "checkbox" || type === "radio") {
+      newType = "text";
+    }
     return (
       <div className="input-wrapper">
-        {label && <label>{label}</label>}
         {subtext && <span className="input-subtext">{subtext}</span>}
-        <input className={classNamesDefault({ error, variant, fluid })} {...props} />
+        <input type={newType} className={classNamesDefault({ error, variant, fluid })} {...props} />
       </div>
     );
   }
 }
 
-
 interface IProps extends IInput {
   variant?: variantTypes;
   error?: boolean;
-  label?: string;
   subtext?: string;
   fluid?: boolean;
 }

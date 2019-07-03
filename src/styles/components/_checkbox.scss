@@ -1,0 +1,46 @@
+@import '../_variables';
+@import '../_globals';
+@import '../mixins/_color-scheme';
+@import '../mixins/_fluid.scss';
+@import '../mixins/_size.scss';
+
+.checkbox-wrapper{
+  display: block;
+  text-align: left;
+  label{
+    display: inline-block;
+    font-weight: 500;
+    font-size: 13px;
+    padding: 5px 0;
+  }
+  span{
+    display: inherit;
+    color: #ababab;
+    margin: -5px 0 5px 0;
+  }
+
+  input[type=checkbox] {
+    font-family: icomoon !important;
+    -webkit-appearance: none;
+    background: $white-two;
+    border: 0;
+    padding: 0;
+    overflow: visible;
+
+    &.large {
+      @include size($padding-y-large, $padding-x-large, $font-size-large, $line-height-large, $border-radius);
+    }
+
+    &.small {
+      @include size($padding-y-small, $padding-x-small, $font-size-small, $line-height-small, $border-radius);
+    }
+  }
+  input[type=checkbox]:after {
+    color: $primary;
+    content: "\E96B";
+  }
+  input[type=checkbox]:checked:after {
+    border: 0;
+    content: "\E97E";
+  }
+}

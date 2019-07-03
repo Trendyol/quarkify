@@ -47,8 +47,7 @@
       outline: 0;
       cursor: pointer;
     }
-
-
+    
     // Input Sizes
     &.large {
       @include size($padding-y-large, $padding-x-large, $font-size-large, $line-height-large, $border-radius);
@@ -58,4 +57,5 @@
       @include size($padding-y-small, $padding-x-small, $font-size-small, $line-height-small, $border-radius);
     }
   }
+
 }
