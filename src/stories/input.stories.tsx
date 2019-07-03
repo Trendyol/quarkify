@@ -12,20 +12,9 @@ const InputWrapper = () => {
   return (
     <div>
       <Input type={"text"} value={value} onChange={handleChange} />
-      <Input
-        type={"text"}
-        placeholder={"Placeholder value"}
-        value={value}
-        onChange={handleChange}
-      />
+      <Input type={"text"} placeholder={"Placeholder value"} value={value} onChange={handleChange}/>
       <Input type={"text"} placeholder={"Placeholder value"} disabled />
-      <Input
-        type={"text"}
-        placeholder={"Required"}
-        required
-        value={value}
-        onChange={handleChange}
-      />
+      <Input type={"text"} placeholder={"Required"} required value={value} onChange={handleChange}/>
       <p>Value: {value}</p>
     </div>
   );
@@ -71,8 +60,8 @@ stories.add("Submit", () => (
 stories.add("Reset", () => (
   <div>
     <form>
-      <Input type={"text"} name={"firstname"} defaultValue={"Mickey"} />
-      <Input type={"text"} name={"secondname"} defaultValue={"Mouse"} />
+      <Input type={"text"} name={"firstName"} defaultValue={"Mickey"} />
+      <Input type={"text"} name={"secondName"} defaultValue={"Mouse"} />
       <Input type="submit" value="Submit" />
       <Input type="reset" />
     </form>
