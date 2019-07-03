@@ -14,16 +14,10 @@ describe("radio specs", () => {
     sandbox.verifyAndRestore();
   });
 
-  it("should render input component", () => {
+  it("should render radio component", () => {
     const wrapper = shallow(<Radio />);
 
     expect(wrapper).toHaveLength(1);
-  });
-
-  it("renders a text input by default", () => {
-    const wrapper = shallow(<Radio />);
-    const inputElement = wrapper.find("input");
-    expect(inputElement.prop("type")).toBe("text");
   });
 
   it("should call onChange function ", () => {

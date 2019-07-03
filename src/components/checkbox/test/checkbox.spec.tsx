@@ -14,16 +14,10 @@ describe("checkbox specs", () => {
     sandbox.verifyAndRestore();
   });
 
-  it("should render input component", () => {
+  it("should render checkbox component", () => {
     const wrapper = shallow(<CheckBox />);
 
     expect(wrapper).toHaveLength(1);
-  });
-
-  it("renders a text input by default", () => {
-    const wrapper = shallow(<CheckBox />);
-    const inputElement = wrapper.find("input");
-    expect(inputElement.prop("type")).toBe("text");
   });
 
   it("should call onChange function ", () => {

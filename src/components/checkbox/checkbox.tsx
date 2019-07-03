@@ -10,10 +10,10 @@ class CheckBox extends React.PureComponent<IProps> {
   };
 
   public render() {
-    const { error, variant, label, fluid, ...props } = this.props;
+    const { error, variant, label, fluid, type, ...props } = this.props;
     return (
       <div className="checkbox-wrapper">
-        <input className={classNamesDefault({ error, variant, fluid })} {...props} />
+        <input type="checkbox" className={classNamesDefault({ error, variant, fluid })} {...props} />
         {label && <label>{label}</label>}
       </div>
     );
