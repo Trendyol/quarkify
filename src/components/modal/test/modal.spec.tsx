@@ -15,12 +15,12 @@ describe("modal specs", () => {
   });
 
   it("should render modal component", () => {
-    const wrapper = shallow(<Modal show={true} />);
+    const wrapper = mount(<Modal show={true} />);
     expect(wrapper.exists(".modal-main")).toEqual(true);
   });
 
   it("should not render modal component", () => {
-    const wrapper = shallow(<Modal show={false} />);
+    const wrapper = mount(<Modal show={false} />);
     expect(wrapper.exists(".modal-main")).toEqual(false);
   });
 
