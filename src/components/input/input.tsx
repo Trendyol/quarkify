@@ -21,7 +21,6 @@ class Input extends React.PureComponent<IProps> {
   }
 }
 
-
 interface IProps extends IInput {
   variant?: variantTypes;
   error?: boolean;

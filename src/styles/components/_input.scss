@@ -58,4 +58,61 @@
       @include size($padding-y-small, $padding-x-small, $font-size-small, $line-height-small, $border-radius);
     }
   }
+
+  input[type=radio], input[type=checkbox]{
+    padding: 0;
+    overflow: visible;
+  }
+
+  input[type=radio]{
+    font-family: icomoon !important;
+    position: relative;
+    width: 0;
+    height: 0;
+    -webkit-appearance: none;
+    background: $white-two;
+    border: 0;
+  }
+  input[type=radio]:checked:after{
+    content: "\E93D";
+  }
+  input[type=radio]:after{
+    color: $primary;
+    content: "\E93C";
+    position: absolute;
+    top: -14px;
+  }
+
+  input[type=checkbox] {
+    position: relative;
+    cursor: pointer;
+  }
+  input[type=checkbox]:before {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    top: 0;
+    left: 0;
+    border: 1px solid $primary;
+    border-radius: 3px;
+    background-color: white;
+  }
+  input[type=checkbox]:checked:after {
+    content: "";
+    display: block;
+    width: 5px;
+    height: 10px;
+    border: 1px solid $primary;
+    border-width: 0 1px 1px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+    position: absolute;
+    top: 2px;
+    left: 6px;
+  }
+
+
 }

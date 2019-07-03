@@ -90,7 +90,7 @@ stories.add("Radio", () => (
 
 stories.add("Checkbox", () => (
   <div>
-    <Input type={"checkbox"} name={"vehicle1"} value={"Bike"} />I have a bike
-    <Input type={"checkbox"} name={"vehicle2"} value={"Car"} />I have a car
+    <Input type={"checkbox"} name={"vehicle1"} value={"Bike"} label={"I have a bike"}/>
+    <Input type={"checkbox"} name={"vehicle2"} value={"Car"} label={"I have a car"}/>
   </div>
 ));
