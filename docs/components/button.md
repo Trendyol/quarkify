@@ -1,4 +1,5 @@
 # Buttons
+<<<<<<< HEAD
 Custom button styles in numerous elements can be found here. Use any of the available button style types to quickly create a styled button. 
 
 ## Variant
