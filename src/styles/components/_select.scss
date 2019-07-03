@@ -3,3 +3,16 @@
 @import '../mixins/_color-scheme';
 @import '../mixins/_fluid.scss';
 @import '../mixins/_size.scss';
+
+.select-group {
+  position: relative;
+}
+
+.select {
+  padding: .3rem;
+  color: #212529;
+  border: 1px solid #999999;
+  font-size: 16px;
+  border-radius: 5px;
+  background-color: $white-two;
+}

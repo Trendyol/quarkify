@@ -1,3 +1,4 @@
+import classNames from "classnames";
 import React from "react";
 import ISelect from "../../interfaces/select";
 import "../../styles/components/_select.scss";
@@ -6,12 +7,11 @@ import classNamesDefault from "../../utils/class-names-default";
 
 class Select extends React.PureComponent<IProps> {
   public render() {
-    const { items, variant, label, fluid, subtext, ...props } = this.props;
+    const { items, variant, fluid, subtext, ...props } = this.props;
     return (
       <div className={"select-group"}>
-        <label>{this.props.label}</label>
         <select
-          className={classNamesDefault({ fluid })}
+          className={classNames("select")}
           {...props}
         >
           {this.props.items.map((item, index) => {
@@ -33,7 +33,6 @@ class Select extends React.PureComponent<IProps> {
 interface IProps extends ISelect {
   variant?: variantTypes;
   items: any[];
-  label?: string;
   subtext?: string;
   fluid?: boolean;
 }
