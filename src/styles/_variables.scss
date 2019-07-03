@@ -50,7 +50,6 @@ $-padding: 1rem !default;
 //Input
 $input-background-color: #ebebeb;
 
-
 //Border Radius
 $border-radius : 3px;
 
@@ -59,7 +58,7 @@ $popup-padding: 1rem !default;
 
 //Modal
 $modal-z-index: 1022;
-$modal-padding: 1.25rem !default;
-
+$modal-content-padding: 12px !default;
+$modal-icon-size: 16px !default;
 $grid-breakpoints: ( xs: 0, sm: 576px, md: 768px, lg: 992px, xl: 1200px) !default;
 
