@@ -162,5 +162,5 @@ Distributed under the MIT License. See `LICENSE` for more information.
 [contributors-shield]: https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat
 [contributors-url]: https://github.com/Trendyol/quarkify/issues
 [license-shield]: https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square
-[license-url]: https://github.com/Trendyol/quarkify/blob/readme/LICENSE
+[license-url]: https://github.com/Trendyol/quarkify/blob/dev/LICENSE
 [home-screenshot]: https://raw.githubusercontent.com/Trendyol/quarkify/dev/screenshot.png
