@@ -16,10 +16,10 @@ class Input extends React.PureComponent<IProps> {
       newType = "text";
     }
     return (
-      <div className="input-wrapper">
+      <div className={`input-wrapper ${fluid ? "fluid" : ""}`}>
         {label && <label>{label}</label>}
         {subtext && <span className="input-subtext">{subtext}</span>}
-        <input type={newType} className={classNamesDefault({ error, variant, fluid })} {...props} />
+        <input type={newType} className={classNamesDefault({ error, variant })} {...props} />
       </div>
     );
   }
