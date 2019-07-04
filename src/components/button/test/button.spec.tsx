@@ -65,7 +65,6 @@ describe("button specs", () => {
 
   it("should have icon component when given icon prop", () => {
     const wrapper = mount(<Button onClick={() => {}} icon="heart" />);
-    console.log(wrapper.debug());
     expect(wrapper.exists(".icon-heart")).toEqual(true);
   });
 });
