@@ -15,7 +15,8 @@ class Select extends React.PureComponent<IProps> {
               className="select"
               {...props}
             >
-              {this.props.items.map((item, index) => {
+              {
+                this.props.items.map((item, index) => {
                 return <option
                   selected={item.selected}
                   key={index}
@@ -25,7 +26,8 @@ class Select extends React.PureComponent<IProps> {
                 >
                   {item.name}
                 </option>;
-              })}
+                })
+              }
             </select>
           </div>
         </div>

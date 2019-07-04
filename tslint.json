@@ -5,6 +5,7 @@
     "jsx-wrap-multiline": false,
     "quotemark": [true, "double", "jsx-double"],
     "jsx-boolean-value": false,
-    "no-implicit-dependencies": [true, "dev"]
+    "no-implicit-dependencies": [true, "dev"],
+    "jsx-no-multiline-js": false
   }
 }
