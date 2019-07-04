@@ -5,13 +5,14 @@
 @import '../mixins/_size.scss';
 
 .checkbox-wrapper{
-  display: block;
-  text-align: left;
+  display: inline-flex;
+  align-items: center;
   label{
     display: inline-block;
     font-weight: 500;
-    font-size: 13px;
     padding: 5px 0;
+    font-size: 13px;
+    margin: 0;
   }
   span{
     display: inherit;
@@ -24,7 +25,7 @@
     -webkit-appearance: none;
     background: $white-two;
     border: 0;
-    padding: 0;
+    padding: 0 5px 0 0;
     overflow: visible;
 
     &.large {
