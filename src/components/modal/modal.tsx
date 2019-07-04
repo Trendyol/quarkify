@@ -6,15 +6,16 @@ import Actions from "./modal-actions";
 import Content from "./modal-content";
 import Header from "./modal-header";
 
-const Modal = ({ show,
-                 children,
-                 animation = "slideInRight"}: IProps) => {
-  return(
-        <CSSTransition in={show} unmountOnExit timeout={300} classNames={`${animation} modal`}>
-          <div className="modal-main">
-            {children}
-          </div>
-        </CSSTransition>
+const Modal = ({ show, children, animation = "slideInRight" }: IProps) => {
+  return (
+    <CSSTransition
+      in={show}
+      unmountOnExit
+      timeout={300}
+      classNames={`${animation} modal`}
+    >
+      <div className="modal-main">{children}</div>
+    </CSSTransition>
   );
 };
 

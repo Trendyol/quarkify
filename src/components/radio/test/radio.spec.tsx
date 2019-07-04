@@ -44,19 +44,19 @@ describe("radio specs", () => {
 
   it("should render a label", () => {
     const text = faker.random.word();
-    const wrapper = shallow(<Radio label={text}/>);
+    const wrapper = shallow(<Radio label={text} />);
 
     expect(wrapper.find("label")).toHaveLength(1);
   });
 
   it("should accept additional classNames", () => {
     const testClass = faker.lorem.word();
-    const wrapper = shallow(<Radio className={testClass}/>);
+    const wrapper = shallow(<Radio className={testClass} />);
     expect(wrapper.find(`.${testClass}`)).toHaveLength(1);
   });
 
   it("should convert text type prop to radio type prop", () => {
-    const wrapper = shallow(<Radio type="text"/>);
+    const wrapper = shallow(<Radio type="text" />);
     const inputElement = wrapper.find("input");
     expect(inputElement.prop("type")).toBe("radio");
   });

@@ -5,7 +5,11 @@ import Popup from "../components/popup";
 
 const stories = storiesOf("Popup", module);
 
-const PopupWrapper = ({closeOnOverlayClick}: {closeOnOverlayClick?: boolean}) => {
+const PopupWrapper = ({
+  closeOnOverlayClick,
+}: {
+  closeOnOverlayClick?: boolean;
+}) => {
   const [show, setShow] = useState(false);
   function handleChange() {
     setShow(!show);
@@ -16,7 +20,11 @@ const PopupWrapper = ({closeOnOverlayClick}: {closeOnOverlayClick?: boolean}) =>
   return (
     <>
       <Button onClick={handleChange}>Toggle Me</Button>
-      <Popup show={show} onClose={closePopup} closeOnOverlayClick={closeOnOverlayClick}>
+      <Popup
+        show={show}
+        onClose={closePopup}
+        closeOnOverlayClick={closeOnOverlayClick}
+      >
         <p>Popup content</p>
       </Popup>
     </>
@@ -24,4 +32,6 @@ const PopupWrapper = ({closeOnOverlayClick}: {closeOnOverlayClick?: boolean}) =>
 };
 
 stories.add("Default", () => <PopupWrapper />);
-stories.add("CloseOnOverlayClick disabled", () => <PopupWrapper closeOnOverlayClick={false}/>);
+stories.add("CloseOnOverlayClick disabled", () => (
+  <PopupWrapper closeOnOverlayClick={false} />
+));

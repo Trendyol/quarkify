@@ -50,31 +50,31 @@ describe("input specs", () => {
 
   it("should render a subtext", () => {
     const text = faker.random.word();
-    const wrapper = shallow(<Input subtext={text}/>);
+    const wrapper = shallow(<Input subtext={text} />);
 
     expect(wrapper.find(".input-subtext")).toHaveLength(1);
   });
 
   it("should accept additional classNames", () => {
     const testClass = faker.lorem.word();
-    const wrapper = shallow(<Input className={testClass}/>);
+    const wrapper = shallow(<Input className={testClass} />);
     expect(wrapper.find(`.${testClass}`)).toHaveLength(1);
   });
 
   it("should convert checkbox type prop to text type prop", () => {
-    const wrapper = shallow(<Input type="checkbox"/>);
+    const wrapper = shallow(<Input type="checkbox" />);
     const inputElement = wrapper.find("input");
     expect(inputElement.prop("type")).toBe("text");
   });
 
   it("should convert radio type prop to text type prop", () => {
-    const wrapper = shallow(<Input type="radio"/>);
+    const wrapper = shallow(<Input type="radio" />);
     const inputElement = wrapper.find("input");
     expect(inputElement.prop("type")).toBe("text");
   });
 
   it("should have className fluid when given fluid prop", () => {
-    const wrapper = shallow(<Input fluid/>);
+    const wrapper = shallow(<Input fluid />);
     const inputWrapper = wrapper.find(".input-wrapper");
     expect(inputWrapper.hasClass("fluid")).toBe(true);
   });

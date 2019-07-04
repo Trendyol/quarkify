@@ -11,7 +11,15 @@ class Input extends React.PureComponent<IProps> {
 
   public render() {
     let newType = this.props.type;
-    const { error, variant, fluid, subtext, type, label, ...props } = this.props;
+    const {
+      error,
+      variant,
+      fluid,
+      subtext,
+      type,
+      label,
+      ...props
+    } = this.props;
     if (type === "checkbox" || type === "radio") {
       newType = "text";
     }
@@ -19,7 +27,11 @@ class Input extends React.PureComponent<IProps> {
       <div className={`input-wrapper ${fluid ? "fluid" : ""}`}>
         {label && <label>{label}</label>}
         {subtext && <span className="input-subtext">{subtext}</span>}
-        <input type={newType} className={classNamesDefault({ error, variant })} {...props} />
+        <input
+          type={newType}
+          className={classNamesDefault({ error, variant })}
+          {...props}
+        />
       </div>
     );
   }

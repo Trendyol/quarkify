@@ -24,12 +24,12 @@ const items = [
 
 stories.add("Default", () => (
   <div>
-    <Select items={items}/>
+    <Select items={items} />
   </div>
 ));
 
 stories.add("Fluid", () => (
   <div>
-    <Select fluid items={items}/>
+    <Select fluid items={items} />
   </div>
 ));
