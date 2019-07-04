@@ -52,6 +52,10 @@ const AddressModalWrapper = ({ animation }: IProps) => {
         <Modal.Content>
           <Input fluid label="E-posta" subtext="Siparis bilgileriniz bu adrese gonderilecektir"/>
           <Input fluid label="Adres Basligi"/>
+          <div style={{display: "flex"}}>
+            <Input style={{width: "100"}} fluid label="Ad"/>
+            <Input style={{width: "100"}} fluid label="Soyad"/>
+          </div>
         </Modal.Content>
         <Modal.Actions>
           <Button fluid disabled onClick={closeModal}>
