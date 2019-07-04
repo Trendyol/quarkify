@@ -121,7 +121,7 @@ yarn start
 To preview the live demo and see usages of the components please
 refer to our [demo](#storybook-url)
 
-For more examples, please refer to the [Documentation](#docsify-url)_
+For more examples, please refer to the [documentation](#docsify-url)
 
 
 <!-- CONTRIBUTING -->
