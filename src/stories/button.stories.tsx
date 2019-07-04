@@ -8,8 +8,22 @@ const action = () => alert("click");
 
 stories.add("Variants", () => (
   <div>
-    <Button onClick={action}>Primary</Button>
+    <Button onClick={action}>
+      Primary
+    </Button>
+    <br/>
+    <br/>
+    <Button variant="primary-outline" onClick={action}>
+      Primary
+    </Button>
+    <br/>
+    <br/>
     <Button variant="secondary" onClick={action}>
+      Secondary
+    </Button>
+    <br/>
+    <br/>
+    <Button variant="secondary-outline" onClick={action}>
       Secondary
     </Button>
   </div>
@@ -20,9 +34,13 @@ stories.add("Sizes", () => (
     <Button variant="primary" size="small" onClick={action}>
       Small
     </Button>
+    <br/>
+    <br/>
     <Button variant="primary" onClick={action}>
       Default
     </Button>
+    <br/>
+    <br/>
     <Button variant="primary" size="large" onClick={action}>
       Large
     </Button>

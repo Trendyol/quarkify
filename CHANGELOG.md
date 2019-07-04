@@ -4,13 +4,20 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
+## [0.4.3] - 2019-07-03
+### Changed
+- `input` component is now cannot be type radio and checkbox
+### Added
+- `radio` component and `radio` tests added
+- `checkbox` component and `checkbox` tests added
+
 ## [0.3.7] - 2019-07-01
 ### Changed
-- `button` tests are now using sandbox spy.
-- `input` tests are now using sandbox spy.
-- `input` tests are now using shallow instead of mount.
+- `button` tests are now using sandbox spy
+- `input` tests are now using sandbox spy
+- `input` tests are now using shallow instead of mount
 ### Added
-- `popup` component and `popup tests added
+- `popup` component and `popup` tests added
 - `show` prop added to `popup` component
 - `children` prop added to `popup` component
 - `isModal` prop added to `popup` component

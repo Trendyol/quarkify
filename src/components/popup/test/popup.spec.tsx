@@ -24,7 +24,7 @@ describe("popup specs", () => {
   });
 
   it("should not render popup component", () => {
-    const wrapper = shallow(<Popup onClose={closePopup} show={false} />);
+    const wrapper = mount(<Popup onClose={closePopup} show={false} />);
     expect(wrapper.exists(".popup-main")).toEqual(false);
   });
 
@@ -35,8 +35,30 @@ describe("popup specs", () => {
 
   it("should close popup when close icon is clicked", () => {
     const spy = sandbox.spy();
-    const wrapper = mount(<Popup onClose={spy} show={true} />);
+    const wrapper = shallow(<Popup onClose={spy} show={true} />);
     wrapper.find(".icon-close").simulate("click");
     expect(spy.calledOnce).toEqual(true);
+  });
+
+  it("should call onClose when overlay is clicked", () => {
+    const onClose = sandbox.spy();
+    const wrapper = shallow(<Popup onClose={onClose} show={true} />);
+    wrapper.find(".popup-overlay").simulate("click");
+    expect(onClose.calledOnce).toEqual(true);
+  });
+
+  it("should not call onClose when overlay is clicked and closeOnOverlayClick is false", () => {
+    const onClose = sandbox.spy();
+    const wrapper = shallow(<Popup onClose={onClose} show={true} closeOnOverlayClick={false}/>);
+    wrapper.find(".popup-overlay").simulate("click");
+    expect(onClose.calledOnce).toEqual(false);
+  });
+
+  it("should not call onClose when popup is clicked", () => {
+    const onClose = sandbox.spy();
+    const wrapper = shallow(<Popup onClose={onClose} show={true} closeOnOverlayClick={false}/>);
+    const event = {stopPropagation: () => null};
+    wrapper.find(".popup-main").simulate("click", event);
+    expect(onClose.calledOnce).toEqual(false);
   });
 });

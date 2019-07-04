@@ -7,11 +7,12 @@
 .input-wrapper{
   display: block;
   text-align: left;
+  padding: .25rem;
   label{
     display: inline-block;
     font-weight: 500;
     font-size: 13px;
-    padding: 5px 0;
+    padding: 0;
   }
   span{
     display: inherit;
@@ -46,8 +47,7 @@
       outline: 0;
       cursor: pointer;
     }
-
-
+    
     // Input Sizes
     &.large {
       @include size($padding-y-large, $padding-x-large, $font-size-large, $line-height-large, $border-radius);
@@ -57,4 +57,5 @@
       @include size($padding-y-small, $padding-x-small, $font-size-small, $line-height-small, $border-radius);
     }
   }
+
 }

@@ -1,0 +1,29 @@
+@mixin popup-animation($duration: 300ms) {
+  .zoomIn {
+
+    &.popup-enter {
+      .popup-main{
+        transform: translate(-50%,-50%) scale(0.5);
+      }
+    }
+
+    &.popup-enter-active {
+      .popup-main{
+        transform: translate(-50%,-50%) scale(1);
+        transition: transform 100ms;
+      }
+    }
+
+    &.popup-exit {
+      .popup-main{
+        transition: transform 100ms;
+      }
+    }
+
+    &.popup-exit-active {
+      .popup-main{
+        transform: translate(-50%,-50%) scale(0.5);
+      }
+    }
+  }
+}

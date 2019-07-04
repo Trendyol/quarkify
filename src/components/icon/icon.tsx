@@ -2,8 +2,8 @@ import classNames from "classnames";
 import React from "react";
 import IIcon from "../../interfaces/icon";
 import "../../styles/components/_icon.scss";
-import classNamesDefault from "../../utils/class-names-default";
 import { sizeTypes } from "../../types/icon";
+import classNamesDefault from "../../utils/class-names-default";
 
 class Icon extends React.PureComponent<IProps> {
   private static defaultProps = {
