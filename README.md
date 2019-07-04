@@ -163,4 +163,4 @@ Distributed under the MIT License. See `LICENSE` for more information.
 [contributors-url]: https://github.com/Trendyol/quarkify/issues
 [license-shield]: https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square
 [license-url]: https://github.com/Trendyol/quarkify/blob/readme/LICENSE
-[home-screenshot]: https://raw.githubusercontent.com/Trendyol/quarkify/readme/screenshot.png
+[home-screenshot]: https://raw.githubusercontent.com/Trendyol/quarkify/dev/screenshot.png
