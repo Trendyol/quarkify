@@ -36,6 +36,10 @@ button {
     border-radius: 22px;
   }
 
+  &:focus{
+    outline: 0;
+  }
+
   //Icon
   i{
     padding-left: 0;
