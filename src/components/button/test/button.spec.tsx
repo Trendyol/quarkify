@@ -56,4 +56,16 @@ describe("button specs", () => {
 
     expect(wrapper.exists(".fluid")).toEqual(true);
   });
+
+  it("should have className round when given round prop", () => {
+    const wrapper = shallow(<Button onClick={() => {}} round />);
+
+    expect(wrapper.exists(".round")).toEqual(true);
+  });
+
+  it("should have icon component when given icon prop", () => {
+    const wrapper = mount(<Button onClick={() => {}} icon="heart" />);
+    console.log(wrapper.debug());
+    expect(wrapper.exists(".icon-heart")).toEqual(true);
+  });
 });
