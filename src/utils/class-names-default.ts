@@ -8,6 +8,7 @@ const classNamesDefault = (props: any) => {
         props.size && `${props.size}`,
         props.fluid && "fluid",
         props.error && "error",
+        props.round && "round",
     );
 };
 

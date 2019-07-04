@@ -4,6 +4,9 @@
   background-color: $primary;
   color: $white-two;
   border: 1px solid $primary;
+  i:before{
+    color: $white-two;
+  }
 }
 
 @mixin primary-outline {
@@ -22,6 +25,18 @@
   background-color: $white-two;
   color: $dark-grey;
   border: 1px solid $light-grey;
+}
+
+@mixin success {
+  background-color: $green;
+  color: $white-two;
+  border: 1px solid $green;
+}
+
+@mixin success-outline {
+  background-color: $white-two;
+  color: $green;
+  border: 1px solid $green;
 }
 
 @mixin disabled {
