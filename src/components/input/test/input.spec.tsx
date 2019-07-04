@@ -4,7 +4,6 @@ import faker from "faker";
 import React from "react";
 import sinon from "sinon";
 import Input from "../input";
-import Button from "../../button";
 
 Enzyme.configure({ adapter: new Adapter() });
 
