@@ -18,7 +18,6 @@ class CheckBox extends React.PureComponent<IProps> {
 }
 
 interface IProps extends IInput {
-  variant?: variantTypes;
   error?: boolean;
   label?: string;
   fluid?: boolean;
