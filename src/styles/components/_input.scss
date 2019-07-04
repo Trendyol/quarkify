@@ -8,6 +8,11 @@
   display: block;
   text-align: left;
   padding: .25rem;
+
+  &.fluid{
+    @include fluid;
+  }
+
   label{
     display: inline-block;
     font-weight: 500;
@@ -23,6 +28,7 @@
     @include size($padding-y, $padding-x, $font-size, $line-height, $border-radius);
     background-color: $input-background-color;
     border: 1px solid $border-grey;
+    width: inherit;
     &.primary {
       @include primary;
     }
@@ -31,9 +37,6 @@
     }
     &.disabled {
       @include disabled;
-    }
-    &.fluid{
-      @include fluid;
     }
     &.error{
       border-color: red;
@@ -47,7 +50,7 @@
       outline: 0;
       cursor: pointer;
     }
-    
+
     // Input Sizes
     &.large {
       @include size($padding-y-large, $padding-x-large, $font-size-large, $line-height-large, $border-radius);

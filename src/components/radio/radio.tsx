@@ -1,16 +1,15 @@
 import React from "react";
 import IInput from "../../interfaces/input";
 import "../../styles/components/_radio.scss";
-import { variantTypes } from "../../types/input";
 import classNamesDefault from "../../utils/class-names-default";
 
 class Radio extends React.PureComponent<IProps> {
 
   public render() {
-    const { error, variant, label, fluid, type, ...props } = this.props;
+    const { error, label, type, ...props } = this.props;
     return (
       <div className="radio-wrapper">
-        <input type="radio" className={classNamesDefault({ error, variant, fluid })} {...props} />
+        <input type="radio" className={classNamesDefault({ error })} {...props} />
         {label && <label>{label}</label>}
       </div>
     );
@@ -20,7 +19,6 @@ class Radio extends React.PureComponent<IProps> {
 interface IProps extends IInput {
   error?: boolean;
   label?: string;
-  fluid?: boolean;
 }
 
 export default Radio;

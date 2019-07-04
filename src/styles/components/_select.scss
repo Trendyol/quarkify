@@ -6,13 +6,16 @@
 
 .select-wrapper {
   position: absolute;
-  right: 0;
-  width: 100%;
   display: flex;
   justify-content: space-between;
 
+  &.fluid{
+    @include fluid;
+  }
+
   .select-group {
     height: 34px;
+    width: inherit;
     border-radius: 3px;
     background-color: #fff;
     border: 1px solid #e6e6e6;
@@ -20,6 +23,7 @@
     position: relative;
 
     .select {
+      width: inherit;
       color: currentColor;
       padding: 6px 22px 6px 22px;
       font-size: 14px;
@@ -28,7 +32,7 @@
       line-height: 23px;
       background: 0 0;
 
-      // Input Sizes
+      // Select Sizes
       &.large {
         @include size($padding-y-large, $padding-x-large, $font-size-large, $line-height-large, $border-radius);
       }

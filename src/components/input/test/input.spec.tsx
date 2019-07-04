@@ -4,6 +4,7 @@ import faker from "faker";
 import React from "react";
 import sinon from "sinon";
 import Input from "../input";
+import Button from "../../button";
 
 Enzyme.configure({ adapter: new Adapter() });
 
@@ -71,5 +72,11 @@ describe("input specs", () => {
     const wrapper = shallow(<Input type="radio"/>);
     const inputElement = wrapper.find("input");
     expect(inputElement.prop("type")).toBe("text");
+  });
+
+  it("should have className fluid when given fluid prop", () => {
+    const wrapper = shallow(<Input fluid/>);
+    const inputWrapper = wrapper.find(".input-wrapper");
+    expect(inputWrapper.hasClass("fluid")).toBe(true);
   });
 });

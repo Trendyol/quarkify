@@ -1,5 +1,4 @@
-import classNames from "classnames";
-import React, { useState } from "react";
+import React from "react";
 import ISelect from "../../interfaces/select";
 import "../../styles/components/_select.scss";
 import { variantTypes } from "../../types/select";
@@ -9,10 +8,10 @@ class Select extends React.PureComponent<IProps> {
   public render() {
     const { items, variant, fluid, subtext, ...props } = this.props;
     return (
-      <div className={"select-wrapper"}>
+      <div className={`select-wrapper ${fluid ? "fluid" : ""}`}>
         <div className={"select-group"}>
           <select
-            className={classNames("select")}
+            className="select"
             {...props}
           >
             {this.props.items.map((item, index) => {

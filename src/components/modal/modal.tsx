@@ -1,4 +1,3 @@
-import classNames from "classnames";
 import React, { ReactNode } from "react";
 import { CSSTransition } from "react-transition-group";
 import "../../styles/components/_modal.scss";

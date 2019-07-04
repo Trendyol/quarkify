@@ -3,6 +3,7 @@ import Adapter from "enzyme-adapter-react-16";
 import React from "react";
 import sinon from "sinon";
 import Select from "../../select";
+import Input from "../../input";
 
 Enzyme.configure({ adapter: new Adapter() });
 
@@ -61,5 +62,11 @@ describe("select specs", () => {
   it("should find disabled item as Bike", () => {
     const wrapper = shallow(<Select items={items}/>);
     expect(wrapper.render().find("select [disabled]").text()).toEqual("Bike");
+  });
+
+  it("should have className fluid when given fluid prop", () => {
+    const wrapper = shallow(<Select items={items} fluid/>);
+    const selectWrapper = wrapper.find(".select-wrapper");
+    expect(selectWrapper.hasClass("fluid")).toBe(true);
   });
 });
