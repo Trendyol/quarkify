@@ -11,7 +11,7 @@ Here is the simple usage of the popup component:
 </Popup>
  ```
  
-As it can be seen, Popup component is shown or hidden by the prop it takes show. If show prop is true, popup will be shown. Otherwise it will not be rendered.
+Popup component is shown or hidden by the prop it takes show. If show prop is true, popup will be shown. Otherwise it will not be rendered.
 
 ## onClose
 onClose property of Popup component is called whenever popup's show property goes from true to false. In other words, whenever popup component has been closed, this function gets triggered.

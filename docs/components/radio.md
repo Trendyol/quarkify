@@ -24,7 +24,7 @@ It is also possible to add label next to the radio by giving label property
 ```
 
 #### Additional content
-And of course you can use any other HTML radio properties:
+You can use any other HTML radio properties:
 ```
 <Radio id="1" disabled name={"vehicle1"} value={"Bike"} label={"I have a bike"}/>
 ```

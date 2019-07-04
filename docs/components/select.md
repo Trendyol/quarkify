@@ -1,5 +1,5 @@
 # Select
-Select components are one of the most used elements in the web world. Here are the some examples of usage of the select component:
+Here are the some examples of usage of the select component:
 
 ```
 const items = [

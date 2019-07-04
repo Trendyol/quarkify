@@ -14,8 +14,8 @@ Here is the simple usage of the modal component:
  
  ```
 <Button onClick={handleChange}>Toggle Me</Button>
-<Modal show={show} animation={animation} onClose={closeModal}>
- <Modal.Title>My Title</Modal.Title>
+<Modal show={show} animation={animation}>
+ <Modal.Title onClose={closeModal}>My Title</Modal.Title>
  <Modal.Content>
    <p>Some content</p>
  </Modal.Content>
@@ -35,6 +35,8 @@ As it can be seen, Modal component is shown or hidden by the prop it takes show.
  
  - slideInLeft
  - slideInRight
+ - slideInUp
+ - slideInDown
  
 ## Sub components
  
@@ -42,7 +44,7 @@ Title, Content and Actions sub components are only suggested for style issues. I
  
 <b>Bad Example:</b> 
  ```
- <Modal show={show} animation={animation} onClose={closeModal}>
-  <Modal.Title>My Title</Modal.Title>
+ <Modal show={show} animation={animation}>
+  <Modal.Title onClose={closeModal}>My Title</Modal.Title>
  </Modal>
  ```
