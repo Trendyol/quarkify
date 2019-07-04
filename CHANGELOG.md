@@ -4,6 +4,13 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
+## [0.4.6] - 2019-07-04
+### Changed
+`README.md` updated
+`docsify` updated
+### Added
+`label` prop to `input` component
+
 ## [0.4.3] - 2019-07-03
 ### Changed
 - `input` component is now cannot be type radio and checkbox
