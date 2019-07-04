@@ -6,14 +6,16 @@ const stories = storiesOf("Input", module);
 
 const InputWrapper = () => {
   const [value, setValue] = useState();
+
   function handleChange(e: any) {
     setValue(e.target.value);
   }
+
   return (
     <div>
-      <Input type={"text"} value={value} onChange={handleChange} />
+      <Input type={"text"} value={value} onChange={handleChange}/>
       <Input type={"text"} placeholder={"Placeholder value"} value={value} onChange={handleChange}/>
-      <Input type={"text"} placeholder={"Placeholder value"} disabled />
+      <Input type={"text"} placeholder={"Placeholder value"} disabled/>
       <Input type={"text"} placeholder={"Required"} required value={value} onChange={handleChange}/>
       <p>Value: {value}</p>
     </div>
@@ -21,33 +23,46 @@ const InputWrapper = () => {
 };
 
 stories.add("Text", () => {
-  return <InputWrapper />;
+  return <InputWrapper/>;
 });
+
+stories.add("Fluid", () => (
+  <div>
+    <Input
+      fluid
+      type={"text"}
+      value="this is a fluid input
+    this is a fluid input
+    this is a fluid input
+    this is a fluid input"
+    />
+  </div>
+));
 
 stories.add("Email", () => (
   <div>
-    <Input type={"email"} />
-    <Input type={"email"} placeholder={"Placeholder value"} />
-    <Input type={"email"} placeholder={"Placeholder value"} disabled />
-    <Input type={"email"} placeholder={"Placeholder value"} required />
-    <Input type={"email"} placeholder={"Placeholder value"} required subtext="required" />
+    <Input type={"email"}/>
+    <Input type={"email"} placeholder={"Placeholder value"}/>
+    <Input type={"email"} placeholder={"Placeholder value"} disabled/>
+    <Input type={"email"} placeholder={"Placeholder value"} required/>
+    <Input type={"email"} placeholder={"Placeholder value"} required subtext="required"/>
   </div>
 ));
 
 stories.add("Password", () => (
   <div>
-    <Input type={"password"} />
-    <Input type={"password"} placeholder={"Placeholder value"} />
-    <Input type={"password"} placeholder={"Placeholder value"} disabled />
-    <Input type={"password"} placeholder={"Placeholder value"} required />
-    <Input type={"password"} placeholder={"Placeholder value"} subtext="required" />
+    <Input type={"password"}/>
+    <Input type={"password"} placeholder={"Placeholder value"}/>
+    <Input type={"password"} placeholder={"Placeholder value"} disabled/>
+    <Input type={"password"} placeholder={"Placeholder value"} required/>
+    <Input type={"password"} placeholder={"Placeholder value"} subtext="required"/>
   </div>
 ));
 
 stories.add("Submit", () => (
   <div>
-    <Input type={"submit"} value={"Send"} />
-    <Input type={"submit"} value={"Send"} />
+    <Input type={"submit"} value={"Send"}/>
+    <Input type={"submit"} value={"Send"}/>
     <Input
       type={"submit"}
       placeholder={"Placeholder value"}
@@ -60,10 +75,10 @@ stories.add("Submit", () => (
 stories.add("Reset", () => (
   <div>
     <form>
-      <Input type={"text"} name={"firstName"} defaultValue={"Mickey"} />
-      <Input type={"text"} name={"secondName"} defaultValue={"Mouse"} />
-      <Input type="submit" value="Submit" />
-      <Input type="reset" />
+      <Input type={"text"} name={"firstName"} defaultValue={"Mickey"}/>
+      <Input type={"text"} name={"secondName"} defaultValue={"Mouse"}/>
+      <Input type="submit" value="Submit"/>
+      <Input type="reset"/>
     </form>
   </div>
 ));
