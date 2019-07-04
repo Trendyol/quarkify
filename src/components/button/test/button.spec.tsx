@@ -1,11 +1,15 @@
-import React from "react";
 import Enzyme, { mount, shallow } from "enzyme";
 import Adapter from "enzyme-adapter-react-16";
-import Button from "../button";
 import faker from "faker";
+import React from "react";
 import sinon from "sinon";
+import Button from "../button";
 
 Enzyme.configure({ adapter: new Adapter() });
+
+const onClick = () => {
+  alert("test");
+};
 
 describe("button specs", () => {
   const sandbox = sinon.createSandbox();
@@ -16,7 +20,7 @@ describe("button specs", () => {
 
   it("should render button component", () => {
     const text = faker.random.word();
-    const wrapper = shallow(<Button onClick={() => {}}>{text}</Button>);
+    const wrapper = shallow(<Button onClick={onClick}>{text}</Button>);
 
     expect(wrapper.text()).toEqual(text);
   });
@@ -40,31 +44,31 @@ describe("button specs", () => {
   });
 
   it("should be rendered with given primary variant prop", () => {
-    const wrapper = shallow(<Button onClick={() => {}} variant="primary" />);
+    const wrapper = shallow(<Button onClick={onClick} variant="primary" />);
 
     expect(wrapper.exists(".primary")).toEqual(true);
   });
 
   it("should be rendered with given large size prop", () => {
-    const wrapper = shallow(<Button onClick={() => {}} size="large" />);
+    const wrapper = shallow(<Button onClick={onClick} size="large" />);
 
     expect(wrapper.exists(".large")).toEqual(true);
   });
 
   it("should have className fluid when given fluid prop", () => {
-    const wrapper = shallow(<Button onClick={() => {}} fluid />);
+    const wrapper = shallow(<Button onClick={onClick} fluid />);
 
     expect(wrapper.exists(".fluid")).toEqual(true);
   });
 
   it("should have className round when given round prop", () => {
-    const wrapper = shallow(<Button onClick={() => {}} round />);
+    const wrapper = shallow(<Button onClick={onClick} round />);
 
     expect(wrapper.exists(".round")).toEqual(true);
   });
 
   it("should have icon component when given icon prop", () => {
-    const wrapper = mount(<Button onClick={() => {}} icon="heart" />);
+    const wrapper = mount(<Button onClick={onClick} icon="heart" />);
     expect(wrapper.exists(".icon-heart")).toEqual(true);
   });
 });
