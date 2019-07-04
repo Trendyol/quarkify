@@ -11,14 +11,23 @@ class Button extends React.PureComponent<IProps> {
   };
 
   public render() {
-    const { variant, size, fluid, disabled, icon, round, children, ...props } = this.props;
+    const {
+      variant,
+      size,
+      fluid,
+      disabled,
+      icon,
+      round,
+      children,
+      ...props
+    } = this.props;
     return (
       <button
         className={classNamesDefault({ variant, size, fluid, disabled, round })}
         disabled={disabled}
         {...props}
       >
-        {icon && <Icon name={icon}/>}
+        {icon && <Icon name={icon} />}
         {children && <span>{children}</span>}
       </button>
     );

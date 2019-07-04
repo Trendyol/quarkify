@@ -27,7 +27,7 @@ describe("modal specs", () => {
   it("should render header sub component", () => {
     const wrapper = mount(
       <Modal show={true}>
-        <Modal.Header/>
+        <Modal.Header />
       </Modal>,
     );
     expect(wrapper.find(".modal-header")).toHaveLength(1);
@@ -36,7 +36,7 @@ describe("modal specs", () => {
   it("should render content sub component", () => {
     const wrapper = mount(
       <Modal show={true}>
-        <Modal.Content/>
+        <Modal.Content />
       </Modal>,
     );
     expect(wrapper.find(".modal-content")).toHaveLength(1);
@@ -57,7 +57,7 @@ describe("modal specs", () => {
   it("should have close icon button by default", () => {
     const wrapper = mount(
       <Modal show={true}>
-        <Modal.Header/>
+        <Modal.Header />
       </Modal>,
     );
     expect(wrapper.find(".icon-close")).toHaveLength(1);
@@ -66,7 +66,7 @@ describe("modal specs", () => {
   it("should not have icon button if noIcon prop is passed", () => {
     const wrapper = mount(
       <Modal show={true}>
-        <Modal.Header noIcon/>
+        <Modal.Header noIcon />
       </Modal>,
     );
     expect(wrapper.find(".icon-close")).toHaveLength(0);
@@ -76,7 +76,7 @@ describe("modal specs", () => {
     const onClose = sandbox.spy();
     const wrapper = mount(
       <Modal show={true}>
-        <Modal.Header onClose={onClose}/>
+        <Modal.Header onClose={onClose} />
       </Modal>,
     );
     wrapper.find("i").simulate("click");

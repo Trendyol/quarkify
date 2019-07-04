@@ -8,15 +8,13 @@ const action = () => alert("Clicked");
 
 stories.add("Variants", () => (
   <div>
-    <Button onClick={action}>
-      Primary
-    </Button>
+    <Button onClick={action}>Primary</Button>
     &nbsp;
     <Button variant="primary-outline" onClick={action}>
       Primary
     </Button>
-    <br/>
-    <br/>
+    <br />
+    <br />
     <Button variant="secondary" onClick={action}>
       Secondary
     </Button>
@@ -24,8 +22,8 @@ stories.add("Variants", () => (
     <Button variant="secondary-outline" onClick={action}>
       Secondary
     </Button>
-    <br/>
-    <br/>
+    <br />
+    <br />
     <Button variant="success" onClick={action}>
       Success
     </Button>
@@ -41,13 +39,13 @@ stories.add("Sizes", () => (
     <Button variant="primary" size="small" onClick={action}>
       Small
     </Button>
-    <br/>
-    <br/>
+    <br />
+    <br />
     <Button variant="primary" onClick={action}>
       Default
     </Button>
-    <br/>
-    <br/>
+    <br />
+    <br />
     <Button variant="primary" size="large" onClick={action}>
       Large
     </Button>
@@ -78,6 +76,6 @@ stories.add("Button with Icon", () => (
       Sepette %20 indirim
     </Button>
     &nbsp;
-    <Button variant="secondary-outline" icon="heart" onClick={action}/>
+    <Button variant="secondary-outline" icon="heart" onClick={action} />
   </div>
 ));

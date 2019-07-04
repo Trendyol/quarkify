@@ -1,12 +1,17 @@
-import React, {FunctionComponent} from "react";
+import React, { FunctionComponent } from "react";
 import { IconTypes } from "../../types/modal";
 import Icon from "../icon";
 
-const Header: FunctionComponent<IProps> = ({children, icon = "close", noIcon = false, onClose}) => {
+const Header: FunctionComponent<IProps> = ({
+  children,
+  icon = "close",
+  noIcon = false,
+  onClose,
+}) => {
   return (
     <div className="modal-header">
       <h1 className="modal-title">{children}</h1>
-      {!noIcon && <Icon name={icon} onClick={onClose}/>}
+      {!noIcon && <Icon name={icon} onClick={onClose} />}
     </div>
   );
 };
