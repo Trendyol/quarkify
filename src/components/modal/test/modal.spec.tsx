@@ -82,5 +82,4 @@ describe("modal specs", () => {
     wrapper.find("i").simulate("click");
     expect(onClose.calledOnce).toEqual(true);
   });
-
 });
