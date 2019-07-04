@@ -1,6 +1,6 @@
 {
   "name": "quarkify",
-  "version": "0.1.0",
+  "version": "0.4.3",
   "private": true,
   "dependencies": {
     "@types/jest": "24.0.15",
