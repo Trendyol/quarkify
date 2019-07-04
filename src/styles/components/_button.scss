@@ -20,15 +20,30 @@ button {
   &.secondary-outline {
     @include secondary-outline;
   }
+  &.success {
+    @include success;
+  }
+  &.success-outline {
+    @include success-outline;
+  }
   &.disabled {
     @include disabled;
   }
   &.fluid{
     @include fluid;
   }
-  &:focus{
-    outline: 0;
+  &.round {
+    border-radius: 22px;
   }
+
+  //Icon
+  i{
+    padding-left: 0;
+  }
+  i:only-child{
+    padding-right: 0;
+  }
+
 
   // Button Sizes
   &.large {
