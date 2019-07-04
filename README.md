@@ -1,44 +1,167 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+[![Build Status][build-shield]][build-url]
+[![contributions welcome][contributors-shield]][contributors-url]
+[![MIT License][license-shield]][license-url]
 
-In the project directory, you can run:
 
-### `npm start`
+<!-- PROJECT LOGO -->
+<br />
+<p align="center">
+  <a href="https://github.com/Trendyol/quarkify">
+    <img src="logo.jpeg" alt="Logo" width="80" height="80">
+  </a>
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+  <h3 align="center">Quarkify</h3>
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+  <p align="center">
+    An awesome lightweight React UI Component library
+    <br />
+    <a href="#docsify"><strong>Explore the docs »</strong></a>
+    <br />
+    <br />
+    <a href="#storybook">View Demo</a>
+    ·
+    <a href="https://github.com/Trendyol/quarkify/issues">Report Bug</a>
+    ·
+    <a href="https://github.com/Trendyol/quarkify/issues">Request Feature</a>
+  </p>
+</p>
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
+<!-- TABLE OF CONTENTS -->
+## Table of Contents
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
+* [About the Project](#about-the-project)
+  * [Built With](#built-with)
+* [Getting Started](#getting-started)
+  * [Installation](#installation)
+* [Usage](#usage)
+* [Contributing](#contributing)
+* [License](#license)   
+* [Contact](#contact)
+* [Acknowledgements](#acknowledgements)
 
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
+<!-- ABOUT THE PROJECT -->
+## About The Project
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+[![Product Name Screen Shot][home-screenshot]](https://example.com)
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+There are many great UI libraries for react available but almost all of them are
+highly customizable and full of boilerplate code, so we decided to create our own
+lightweight React Component library and you should give it a try.
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+Here's why:
+* Your time will be spent doing actual work instead of creating simple components.
+* You will not worry about consistency across your components.
+* Each component is implemented with accessibility in mind. :smile:
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+You may also suggest changes by forking this repo and creating a pull request or opening an issue with the tag.
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### Built With
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+* [React](https://reactjs.org/)
+* [Create-React-App](https://github.com/facebook/create-react-app)
+* [SASS](https://sass-lang.com/)
+* [Jest](https://jestjs.io/)
+* [Enzyme](https://airbnb.io/enzyme/)
+* [Classnames](https://github.com/JedWatson/classnames)
+* [Typescript](https://www.typescriptlang.org/)
+
+
+
+<!-- GETTING STARTED -->
+## Getting Started
+
+To get a local copy up and running follow these simple example steps.
+
+
+### Installation
+* To add quarkify library to your project
+1. Simply run one of the commands below in your project directory.
+
+```sh
+npm install quarkify@latest --save
+```
+or
+```sh
+yarn add quarkify 
+```
+
+
+* To install storybook locally
+1. Clone the repo
+```sh
+git clone https://github.com/Trendyol/quarkify.git
+```
+2. Install NPM packages
+```sh
+npm install
+```
+   Or alternatively Yarn
+```sh
+yarn install
+```
+3. Run tests
+```sh
+npm run test
+yarn run test
+```
+4. Run storybook
+```sh
+npm start
+yarn start
+```
+
+<!-- USAGE EXAMPLES -->
+## Usage
+
+To preview the live demo and see usages of the components please
+refer to our [demo](#storybook-url)
+
+For more examples, please refer to the [Documentation](#docsify-url)_
+
+
+<!-- CONTRIBUTING -->
+## Contributing
+
+Any contributions you make are **greatly appreciated**.
+
+1. Fork the Project
+2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the Branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+Please don't forget to check our commit message styles as we want to have
+consistency across our commit logs.
+
+
+<!-- LICENSE -->
+## License
+
+Distributed under the MIT License. See `LICENSE` for more information.
+
+
+<!-- ACKNOWLEDGEMENTS -->
+## Acknowledgements
+* [Img Shields](https://shields.io)
+* [Choose an Open Source License](https://choosealicense.com)
+* [Readme Template](https://github.com/othneildrew/Best-README-Template)
+
+
+
+
+
+<!-- MARKDOWN LINKS & IMAGES -->
+<!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
+[build-shield]: https://img.shields.io/badge/build-passing-brightgreen.svg?style=flat-square
+[build-url]: https://github.com/Trendyol/quarkify/pulse
+[contributors-shield]: https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat
+[contributors-url]: https://github.com/Trendyol/quarkify/issues
+[license-shield]: https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square
+[license-url]: https://github.com/Trendyol/quarkify/blob/readme/LICENSE
+[home-screenshot]: https://raw.githubusercontent.com/Trendyol/quarkify/readme/screenshot.png
