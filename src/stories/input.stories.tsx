@@ -67,3 +67,11 @@ stories.add("Reset", () => (
     </form>
   </div>
 ));
+
+stories.add("Size", () => (
+  <div>
+    <Input variant={"primary"} size={"small"} value={"Small"}/>
+    <Input variant={"primary"} value={"Normal"}/>
+    <Input variant={"primary"} size={"large"} value={"Large"}/>
+  </div>
+));

@@ -20,7 +20,11 @@
     margin: -5px 0 5px 0;
   }
   input {
-    @include size($padding-y, $padding-x, $font-size, $line-height, $border-radius);
+    height: calc(1.5em + .75rem + 2px);
+    padding: $padding-y-small $padding-x-small;
+    font-size: 1rem;
+    line-height: $line-height;
+    border-radius: .25rem;
     background-color: $input-background-color;
     border: 1px solid $border-grey;
     &.primary {
@@ -47,14 +51,20 @@
       outline: 0;
       cursor: pointer;
     }
-    
+
     // Input Sizes
     &.large {
-      @include size($padding-y-large, $padding-x-large, $font-size-large, $line-height-large, $border-radius);
+      height: calc(1.5em + 1rem + 2px);
+      padding: .5rem 1rem;
+      font-size: 1.25rem;
+      border-radius: .3rem;
     }
 
     &.small {
-      @include size($padding-y-small, $padding-x-small, $font-size-small, $line-height-small, $border-radius);
+      height: calc(1.5em + .5rem + 2px);
+      padding: .25rem .5rem;
+      font-size: .875rem;
+      border-radius: .2rem;
     }
   }
 
