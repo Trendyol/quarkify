@@ -1,14 +1,5 @@
 # Checkbox
 
-## Variant
-You can change the variant prop to give some predefined styles to the checkbox component. For now, there are only 2 type of variants which are:
-- primary
-- secondary
-```
-<CheckBox variant="primary" name={"vehicle1"} value={"Bike"} label={"I have a bike"}/>
-<CheckBox variant="secondary" name={"vehicle1"} value={"Bike"} label={"I have a bike"}/>
-``` 
-
 ## Fluid
 Adding fluid prop to checkbox element makes the component spread into the div's width.
 
