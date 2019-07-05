@@ -6,7 +6,7 @@ import Actions from "./modal-actions";
 import Content from "./modal-content";
 import Header from "./modal-header";
 
-const Modal = ({ show, children, animation = "slideInRight" }: IProps) => {
+const Modal = ({ show, children, animation = "slideInRight" }: IModalProps) => {
   return (
     <CSSTransition
       in={show}
@@ -19,7 +19,7 @@ const Modal = ({ show, children, animation = "slideInRight" }: IProps) => {
   );
 };
 
-interface IProps {
+interface IModalProps {
   show: boolean;
   animation?: animationTypes;
   children?: ReactNode;
