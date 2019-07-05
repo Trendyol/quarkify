@@ -8,10 +8,6 @@ button {
   @include size($padding-y, $padding-x, $font-size, $line-height, $border-radius);
   cursor: pointer;
   display: inline-block;
-  &:active{
-    opacity: 0.80;
-    transition: opacity 300ms;
-  }
   &.primary {
     @include primary;
   }
@@ -39,9 +35,13 @@ button {
   &.round {
     border-radius: 22px;
   }
-
+  &:active{
+    opacity: 0.80;
+    transition: opacity 300ms;
+  }
   &:focus{
-    outline: none
+    outline: none !important;
+    box-shadow: 2px 2px 2px $dark-grey;
   }
 
   //Icon
