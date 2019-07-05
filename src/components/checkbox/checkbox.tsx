@@ -9,11 +9,14 @@ class CheckBox extends React.PureComponent<IProps> {
     return (
       <div className="checkbox-wrapper">
         <input
+          id={`checkbox-${this.props.value}`}
           type="checkbox"
           className={classNamesDefault({ error })}
           {...props}
         />
-        {label && <label>{label}</label>}
+        {label && (
+          <label htmlFor={`checkbox-${this.props.value}`}>{label}</label>
+        )}
       </div>
     );
   }
@@ -22,6 +25,7 @@ class CheckBox extends React.PureComponent<IProps> {
 interface IProps extends IInput {
   error?: boolean;
   label?: string;
+  value: string;
 }
 
 export default CheckBox;

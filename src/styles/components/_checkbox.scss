@@ -7,18 +7,6 @@
 .checkbox-wrapper{
   display: inline-flex;
   align-items: center;
-  label{
-    display: inline-block;
-    font-weight: 500;
-    padding: 5px 0;
-    font-size: 13px;
-    margin: 0;
-  }
-  span{
-    display: inherit;
-    color: #ababab;
-    margin: -5px 0 5px 0;
-  }
 
   input[type=checkbox] {
     font-family: icomoon !important;
@@ -36,6 +24,9 @@
       @include size($padding-y-small, $padding-x-small, $font-size-small, $line-height-small, $border-radius);
     }
   }
+  input[type=checkbox]:focus{
+    outline: none;
+  }
   input[type=checkbox]:after {
     color: $primary;
     content: "\E96B";
@@ -43,5 +34,11 @@
   input[type=checkbox]:checked:after {
     border: 0;
     content: "\E97E";
+  }
+
+  label{
+    font-weight: 500;
+    font-size: $font-size-base;
+    margin: 0;
   }
 }
