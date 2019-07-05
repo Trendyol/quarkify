@@ -20,12 +20,27 @@ const InputWrapper = () => {
         value={value}
         onChange={handleChange}
       />
-      <Input type={"text"} placeholder={"Placeholder value"} disabled />
+      <Input type={"text"} placeholder={"Disabled"} disabled />
+      <Input type={"text"} placeholder={"Error"} error />
       <Input
         type={"text"}
         placeholder={"Required"}
         required
         value={value}
+        onChange={handleChange}
+      />
+      <Input
+        type={"text"}
+        variant="primary"
+        value={value}
+        placeholder={"Primary"}
+        onChange={handleChange}
+      />
+      <Input
+        type={"text"}
+        variant="secondary"
+        value={value}
+        placeholder={"Secondary"}
         onChange={handleChange}
       />
       <p>Value: {value}</p>

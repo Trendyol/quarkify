@@ -36,10 +36,16 @@
       margin-left: auto;
       padding-left: $modal-icon-size;
       height: 100%;
+      line-height: $font-size-base;
     }
 
     i{
       padding: 0;
+    }
+    &.has-left-icon{
+      .modal-title{
+        padding-left: 0;
+      }
     }
   }
 

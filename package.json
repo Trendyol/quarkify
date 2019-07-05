@@ -12,12 +12,13 @@
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-scripts": "3.0.1",
-    "react-transition-group": "^4.2.0",
-    "typescript": "3.5.2"
+    "react-transition-group": "^4.2.0"
   },
   "scripts": {
     "start": "start-storybook -p 9009 -s public",
-    "build": "react-scripts build",
+    "build": "npm run build:fast",
+    "build:fast": "rm -rf ./dist && npm run build:tsc && cp -r ./src/styles ./dist",
+    "build:tsc": "tsc -p tsconfig.tsc.json",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "build-storybook": "build-storybook -s public",
@@ -68,14 +69,21 @@
     "@types/faker": "^4.1.5",
     "@types/sinon": "^7.0.13",
     "@types/storybook__react": "^4.0.2",
+    "css-loader": "^1.0.1",
     "enzyme": "^3.10.0",
     "enzyme-adapter-react-16": "^1.14.0",
+    "extract-text-webpack-plugin": "^3.0.2",
     "faker": "^4.1.0",
     "husky": "^3.0.0",
     "node-sass": "^4.12.0",
     "prettier": "^1.18.2",
+    "sass-loader": "^7.1.0",
     "sinon": "^7.3.2",
+    "source-map-loader": "^0.2.4",
+    "ts-loader": "^6.0.4",
     "tslint": "^5.18.0",
-    "tslint-react": "^4.0.0"
+    "tslint-react": "^4.0.0",
+    "typescript": "^3.5.2",
+    "webpack-cli": "^3.3.5"
   }
 }

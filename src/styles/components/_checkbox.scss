@@ -25,7 +25,7 @@
     }
   }
   input[type=checkbox]:focus{
-    outline: none;
+    outline: none !important;
   }
   input[type=checkbox]:after {
     color: $primary;

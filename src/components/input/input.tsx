@@ -18,6 +18,7 @@ class Input extends React.PureComponent<IProps> {
       subtext,
       type,
       label,
+      disabled,
       ...props
     } = this.props;
     if (type === "checkbox" || type === "radio") {
@@ -28,8 +29,9 @@ class Input extends React.PureComponent<IProps> {
         {label && <label>{label}</label>}
         {subtext && <span className="input-subtext">{subtext}</span>}
         <input
+          disabled={disabled}
           type={newType}
-          className={classNamesDefault({ error, variant })}
+          className={classNamesDefault({ error, variant, disabled })}
           {...props}
         />
       </div>
@@ -39,6 +41,7 @@ class Input extends React.PureComponent<IProps> {
 
 interface IProps extends IInput {
   variant?: variantTypes;
+  disabled?: boolean;
   error?: boolean;
   label?: string;
   subtext?: string;

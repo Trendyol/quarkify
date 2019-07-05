@@ -82,4 +82,24 @@ describe("modal specs", () => {
     wrapper.find("i").simulate("click");
     expect(onClose.calledOnce).toEqual(true);
   });
+
+  it("should have a left icon if leftIcon prop is given", () => {
+    const wrapper = mount(
+      <Modal show={true}>
+        <Modal.Header leftIcon="back-button"/>
+      </Modal>,
+    );
+    expect(wrapper.find("i.icon-back-button")).toHaveLength(1);
+  });
+
+  it("should call the left icon onClick callback if the leftIconOnClick prop is given", () => {
+    const leftOnClose = sandbox.spy();
+    const wrapper = mount(
+      <Modal show={true}>
+        <Modal.Header leftIcon="back-button" leftIconOnClick={leftOnClose}/>
+      </Modal>,
+    );
+    wrapper.find("i.icon-back-button").simulate("click");
+    expect(leftOnClose.calledOnce).toBe(true);
+  });
 });
