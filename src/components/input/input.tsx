@@ -29,6 +29,7 @@ class Input extends React.PureComponent<IProps> {
         {label && <label>{label}</label>}
         {subtext && <span className="input-subtext">{subtext}</span>}
         <input
+          disabled={disabled}
           type={newType}
           className={classNamesDefault({ error, variant, disabled })}
           {...props}
