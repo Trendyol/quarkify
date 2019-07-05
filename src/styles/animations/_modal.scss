@@ -1,72 +1,66 @@
 @mixin modal-animation($duration: 300ms) {
   .slideInRight{
+    transition: left $duration;
+
     &.modal-enter {
-      transform: translate(100%, -50%);
+      left: 100vw;
     }
     &.modal-enter-active {
-      transform: translate(-50%,-50%);
-      transition: transform $duration;
+      left: 0;
     }
     &.modal-exit {
-      transform: translate(-50%, -50%);
-      transition: transform $duration;
+      left: 0;
     }
     &.modal-exit-active {
-      transform: translate(100%, -50%);
+      left: 100vw;
     }
   }
 
   .slideInLeft{
+    transition: left $duration;
     &.modal-enter {
-      transform: translate(-150%, -50%);
+      left: -100vw;
     }
     &.modal-enter-active {
-      transform: translate(-50%,-50%);
-      transition: transform $duration
+      left: 0;
     }
     &.modal-exit {
-      transform: translate(-50%, -50%);
-      transition: transform $duration
+      left: 0;
     }
     &.modal-exit-active {
-      transform: translate(-150%, -50%);
+      left: -100vw;
     }
   }
 
   .slideInDown {
+    transition: top $duration;
     &.modal-enter {
-      transform: translate(-50%, 150%);
+      top: 100vh;
     }
-
     &.modal-enter-active {
-      transform: translate(-50%, -50%);
-      transition: transform $duration
+      top: 0;
     }
-
     &.modal-exit {
-      transform: translate(-50%, -50%);
-      transition: transform $duration
+      top: 0;
     }
-
     &.modal-exit-active {
-      transform: translate(-50%, 150%);
+      top: 100vh;
     }
   }
 
   .slideInUp{
+    transition: top $duration;
     &.modal-enter {
-      transform: translate(-50%, -150%);
+      top: -100vh;
     }
     &.modal-enter-active {
-      transform: translate(-50%,-50%);
-      transition: transform $duration
+      top: 0;
     }
     &.modal-exit {
-      transform: translate(-50%, -50%);
-      transition: transform $duration
+      top: 0;
     }
     &.modal-exit-active {
-      transform: translate(-50%, -150%);
+      top: -100vh;
     }
   }
 }
