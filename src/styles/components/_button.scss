@@ -41,7 +41,6 @@ button {
   }
   &:focus{
     outline: none !important;
-    box-shadow: 2px 2px 2px $dark-grey;
   }
 
   //Icon
@@ -51,7 +50,6 @@ button {
   i:only-child{
     padding-right: 0;
   }
-
 
   // Button Sizes
   &.large {

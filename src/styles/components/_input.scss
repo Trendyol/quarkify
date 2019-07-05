@@ -47,7 +47,7 @@
       color:red;
     }
     &:focus{
-      outline: 0;
+      outline: none !important;
       cursor: pointer;
     }
 
