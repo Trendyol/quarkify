@@ -16,7 +16,7 @@
   },
   "scripts": {
     "start": "start-storybook -p 9009 -s public",
-    "build": "tsc && cp -r ./src/styles ./dist",
+    "build": "npm run coverage && tsc && cp -r ./src/styles ./dist",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "build-storybook": "build-storybook -s public",
