@@ -4,7 +4,7 @@ import "../../styles/components/_select.scss";
 import { variantTypes } from "../../types/select";
 import classNamesDefault from "../../utils/class-names-default";
 
-class Select extends React.PureComponent<IProps, {}> {
+class Select extends React.PureComponent<IProps> {
   public render() {
     const {
       items,
