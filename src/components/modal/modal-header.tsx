@@ -2,7 +2,7 @@ import React, { FunctionComponent } from "react";
 import { IconTypes } from "../../types/modal";
 import Icon from "../icon";
 
-const Header: FunctionComponent<IProps> = ({
+const Header: FunctionComponent<IHeaderProps> = ({
   children,
   icon = "close",
   noIcon = false,
@@ -18,7 +18,7 @@ const Header: FunctionComponent<IProps> = ({
   );
 };
 
-interface IProps {
+export interface IHeaderProps {
   icon?: IconTypes;
   noIcon?: boolean;
   onClose?(event: React.SyntheticEvent): void;
