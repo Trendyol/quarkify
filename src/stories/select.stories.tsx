@@ -5,26 +5,26 @@ import Select from "../components/select";
 const stories = storiesOf("Select", module);
 const items = [
   {
+    id: 1,
     name: "Car",
-    value: 1,
     variant: "primary",
   },
   {
+    id: 2,
     name: "Bike",
-    value: 2,
     variant: "primary",
   },
   {
+    id: 3,
     name: "Plane",
     selected: true,
-    value: 3,
     variant: "secondary",
   },
 ];
 
 stories.add("Default", () => (
   <div>
-    <Select items={items} />
+    <Select items={items} value={"id"} />
   </div>
 ));
 
