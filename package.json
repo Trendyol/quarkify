@@ -16,7 +16,9 @@
   },
   "scripts": {
     "start": "start-storybook -p 9009 -s public",
-    "build": "npm run coverage && tsc && cp -r ./src/styles ./dist",
+    "build": "npm run build:fast",
+    "build:fast": "rm -rf ./dist && npm run build:tsc && cp -r ./src/styles ./dist",
+    "build:tsc": "tsc -p tsconfig.tsc.json",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "build-storybook": "build-storybook -s public",
@@ -82,7 +84,6 @@
     "tslint": "^5.18.0",
     "tslint-react": "^4.0.0",
     "typescript": "^3.5.2",
-    "webpack": "^4.35.2",
     "webpack-cli": "^3.3.5"
   }
 }
