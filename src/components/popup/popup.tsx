@@ -1,5 +1,5 @@
 import classNames from "classnames";
-import React, { ReactNode } from "react";
+import React, { ReactNode, useEffect } from "react";
 import ReactDOM from "react-dom";
 import { CSSTransition } from "react-transition-group";
 import "../../styles/components/_popup.scss";
@@ -20,6 +20,15 @@ const Popup = ({
     "popup-icon-position",
   );
 
+  useEffect(() => {
+    if (show) {
+      document.body.classList.add("disable-scroll");
+    }
+    return () => {
+      document.body.classList.remove("disable-scroll");
+    };
+  }, [show]);
+
   const popupBodyClick = (event: React.SyntheticEvent) => {
     event.stopPropagation();
   };
@@ -34,7 +43,7 @@ const Popup = ({
     <CSSTransition
       in={show}
       unmountOnExit
-      timeout={100}
+      timeout={150}
       classNames="zoomIn popup"
     >
       <div className="popup-overlay" onClick={overlayClick}>
