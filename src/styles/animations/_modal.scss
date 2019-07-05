@@ -5,11 +5,11 @@
     }
     &.modal-enter-active {
       transform: translate(-50%,-50%);
-      transition: transform 300ms;
+      transition: transform $duration;
     }
     &.modal-exit {
       transform: translate(-50%, -50%);
-      transition: transform 300ms;
+      transition: transform $duration;
     }
     &.modal-exit-active {
       transform: translate(100%, -50%);
@@ -22,11 +22,11 @@
     }
     &.modal-enter-active {
       transform: translate(-50%,-50%);
-      transition: transform 300ms;
+      transition: transform $duration
     }
     &.modal-exit {
       transform: translate(-50%, -50%);
-      transition: transform 300ms;
+      transition: transform $duration
     }
     &.modal-exit-active {
       transform: translate(-150%, -50%);
@@ -40,12 +40,12 @@
 
     &.modal-enter-active {
       transform: translate(-50%, -50%);
-      transition: transform 300ms;
+      transition: transform $duration
     }
 
     &.modal-exit {
       transform: translate(-50%, -50%);
-      transition: transform 300ms;
+      transition: transform $duration
     }
 
     &.modal-exit-active {
@@ -59,11 +59,11 @@
     }
     &.modal-enter-active {
       transform: translate(-50%,-50%);
-      transition: transform 300ms;
+      transition: transform $duration
     }
     &.modal-exit {
       transform: translate(-50%, -50%);
-      transition: transform 300ms;
+      transition: transform $duration
     }
     &.modal-exit-active {
       transform: translate(-50%, -150%);
