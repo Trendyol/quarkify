@@ -1,6 +1,5 @@
 import Enzyme, { mount, shallow } from "enzyme";
 import Adapter from "enzyme-adapter-react-16";
-import faker from "faker";
 import React from "react";
 import sinon from "sinon";
 import Popup from "../index";
@@ -63,5 +62,13 @@ describe("popup specs", () => {
     const event = { stopPropagation: () => null };
     wrapper.find(".popup-main").simulate("click", event);
     expect(onClose.calledOnce).toEqual(false);
+  });
+
+  it("should add disable-scroll class when popup is shown", () => {
+    const onClose = sandbox.spy();
+    const wrapper = mount(
+      <Popup onClose={onClose} show={true}/>,
+    );
+    expect(document.body.className).toBe("disable-scroll");
   });
 });
