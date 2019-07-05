@@ -26,6 +26,26 @@ const items = [
   },
 ];
 
+const customItems = [
+  {
+    id: 1,
+    variant: "primary",
+    vehicle: "Car",
+  },
+  {
+    disabled: true,
+    id: 2,
+    variant: "primary",
+    vehicle: "Bike",
+  },
+  {
+    id: 3,
+    selected: true,
+    variant: "secondary",
+    vehicle: "Plane",
+  },
+];
+
 describe("select specs", () => {
   const sandbox = sinon.createSandbox();
 
@@ -87,5 +107,21 @@ describe("select specs", () => {
     const wrapper = shallow(<Select items={items} fluid />);
     const selectWrapper = wrapper.find(".select-wrapper");
     expect(selectWrapper.hasClass("fluid")).toBe(true);
+  });
+
+  it("should set values and names properly", () => {
+    const wrapper = shallow(<Select items={customItems} value={"id"} name={"vehicle"} fluid />);
+    expect(
+      wrapper
+        .render()
+        .find("select [selected]")
+        .val(),
+    ).toEqual("3");
+    expect(
+      wrapper
+        .render()
+        .find("select [selected]")
+        .text(),
+    ).toEqual("Plane");
   });
 });
