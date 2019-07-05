@@ -17,7 +17,12 @@
     "sourceMap": true,
     "noImplicitAny": true
   },
-  "exclude": ["*/**/node_modules", "*/**/test", "!node_modules/@types", "!node_modules/@jest"],
+  "exclude": [
+    "*/**/node_modules",
+    "*/**/test",
+    "!node_modules/@types",
+    "!node_modules/@jest"
+  ],
   "include": ["./src"],
   "emitDecoratorMetadata": true,
   "experimentalDecorators": true
