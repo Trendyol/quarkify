@@ -1,4 +1,4 @@
-@mixin popup-animation($duration: 300ms) {
+@mixin popup-animation($duration: 100ms) {
   .zoomIn {
 
     &.popup-enter {
@@ -10,13 +10,13 @@
     &.popup-enter-active {
       .popup-main{
         transform: translate(-50%,-50%) scale(1);
-        transition: transform 100ms;
+        transition: transform $duration;
       }
     }
 
     &.popup-exit {
       .popup-main{
-        transition: transform 100ms;
+        transition: transform $duration;
       }
     }
 
