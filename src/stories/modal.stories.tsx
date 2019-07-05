@@ -25,7 +25,8 @@ const ModalWrapper = ({ animation }: IProps) => {
       <Button onClick={handleChange}>Toggle Me</Button>
       <Modal show={show} animation={animation}>
         <Modal.Header onClose={closeModal}>
-          Cok y cok g cok cok cok cok cok cok cok cok cok cok cok cok cok cok cok uzun title
+          Cok y cok g cok cok cok cok cok cok cok cok cok cok cok cok cok cok
+          cok uzun title
         </Modal.Header>
         <Modal.Content>
           <p>{faker.lorem.words(1000)}</p>
