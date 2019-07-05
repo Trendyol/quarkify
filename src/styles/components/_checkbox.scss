@@ -25,7 +25,9 @@
     }
   }
   input[type=checkbox]:focus{
-    outline: none;
+    outline: none !important;
+    opacity: 0.6;
+
   }
   input[type=checkbox]:after {
     color: $primary;

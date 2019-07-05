@@ -30,7 +30,7 @@ class Input extends React.PureComponent<IProps> {
         {subtext && <span className="input-subtext">{subtext}</span>}
         <input
           type={newType}
-          className={classNamesDefault({ error, variant, disabled})}
+          className={classNamesDefault({ error, variant, disabled })}
           {...props}
         />
       </div>

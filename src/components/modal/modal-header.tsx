@@ -11,7 +11,9 @@ const Header: FunctionComponent<IProps> = ({
   return (
     <div className="modal-header">
       <h1 className="modal-title">{children}</h1>
-      {!noIcon && <Icon name={icon} onClick={onClose} />}
+      {!noIcon && (
+        <Icon role="button" aria-label="Close" name={icon} onClick={onClose} />
+      )}
     </div>
   );
 };

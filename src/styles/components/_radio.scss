@@ -25,7 +25,9 @@
   }
 
   input[type=radio]:focus{
-    outline: none;
+    outline: none !important;
+    opacity: 0.6;
+
   }
 
   input[type=radio]:checked:after{
