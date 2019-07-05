@@ -12,12 +12,12 @@ class Icon extends React.PureComponent<IProps> {
 
   public render() {
     const { name, size, disabled, ...props } = this.props;
-    const iconClass = classNames(classNamesDefault({ name, size, disabled }), `icon-${name}`);
+    const iconClass = classNames(
+      classNamesDefault({ name, size, disabled }),
+      `icon-${name}`,
+    );
     return (
-      <i
-        className={iconClass}
-        {...props}
-      >
+      <i className={iconClass} {...props}>
         {this.props.children}
       </i>
     );

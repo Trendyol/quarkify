@@ -8,8 +8,7 @@ import Popup from "../index";
 Enzyme.configure({ adapter: new Adapter() });
 
 // tslint:disable-next-line:no-empty
-const closePopup = () => {
-};
+const closePopup = () => {};
 
 describe("popup specs", () => {
   const sandbox = sinon.createSandbox();
@@ -49,15 +48,19 @@ describe("popup specs", () => {
 
   it("should not call onClose when overlay is clicked and closeOnOverlayClick is false", () => {
     const onClose = sandbox.spy();
-    const wrapper = shallow(<Popup onClose={onClose} show={true} closeOnOverlayClick={false}/>);
+    const wrapper = shallow(
+      <Popup onClose={onClose} show={true} closeOnOverlayClick={false} />,
+    );
     wrapper.find(".popup-overlay").simulate("click");
     expect(onClose.calledOnce).toEqual(false);
   });
 
   it("should not call onClose when popup is clicked", () => {
     const onClose = sandbox.spy();
-    const wrapper = shallow(<Popup onClose={onClose} show={true} closeOnOverlayClick={false}/>);
-    const event = {stopPropagation: () => null};
+    const wrapper = shallow(
+      <Popup onClose={onClose} show={true} closeOnOverlayClick={false} />,
+    );
+    const event = { stopPropagation: () => null };
     wrapper.find(".popup-main").simulate("click", event);
     expect(onClose.calledOnce).toEqual(false);
   });

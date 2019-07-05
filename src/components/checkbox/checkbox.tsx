@@ -4,13 +4,19 @@ import "../../styles/components/_checkbox.scss";
 import classNamesDefault from "../../utils/class-names-default";
 
 class CheckBox extends React.PureComponent<IProps> {
-
   public render() {
     const { error, label, type, ...props } = this.props;
     return (
       <div className="checkbox-wrapper">
-        <input type="checkbox" className={classNamesDefault({ error })} {...props} />
-        {label && <label>{label}</label>}
+        <input
+          id={`checkbox-${this.props.value}`}
+          type="checkbox"
+          className={classNamesDefault({ error })}
+          {...props}
+        />
+        {label && (
+          <label htmlFor={`checkbox-${this.props.value}`}>{label}</label>
+        )}
       </div>
     );
   }
@@ -19,6 +25,7 @@ class CheckBox extends React.PureComponent<IProps> {
 interface IProps extends IInput {
   error?: boolean;
   label?: string;
+  value: string;
 }
 
 export default CheckBox;

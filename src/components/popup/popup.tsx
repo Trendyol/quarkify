@@ -5,7 +5,14 @@ import { CSSTransition } from "react-transition-group";
 import "../../styles/components/_popup.scss";
 import Icon from "../icon";
 
-const Popup = ({ show, children, onClose, iconLeft, noIcon = false, closeOnOverlayClick = true }: IProps) => {
+const Popup = ({
+  show,
+  children,
+  onClose,
+  iconLeft,
+  noIcon = false,
+  closeOnOverlayClick = true,
+}: IProps) => {
   const popupMainClasses = classNames("popup-main");
   const popupIconClasses = classNames(
     iconLeft && "popup-icon-left",
@@ -24,14 +31,21 @@ const Popup = ({ show, children, onClose, iconLeft, noIcon = false, closeOnOverl
   };
 
   return ReactDOM.createPortal(
-      <CSSTransition in={show} unmountOnExit timeout={100} classNames="zoomIn popup">
-        <div className="popup-overlay" onClick={overlayClick}>
-          <div className={popupMainClasses} onClick={popupBodyClick}>
-            {!noIcon && <Icon className={popupIconClasses} onClick={onClose} name="close"/>}
-            {children}
-          </div>
+    <CSSTransition
+      in={show}
+      unmountOnExit
+      timeout={100}
+      classNames="zoomIn popup"
+    >
+      <div className="popup-overlay" onClick={overlayClick}>
+        <div className={popupMainClasses} onClick={popupBodyClick}>
+          {!noIcon && (
+            <Icon className={popupIconClasses} onClick={onClose} name="close" />
+          )}
+          {children}
         </div>
-      </CSSTransition>,
+      </div>
+    </CSSTransition>,
     document.body,
   );
 };

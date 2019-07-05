@@ -1,6 +1,6 @@
 import React from "react";
 
-const Actions = ({children}: {children: any}) => {
+const Actions = ({ children }: { children: any }) => {
   return <div className="modal-actions">{children}</div>;
 };
 

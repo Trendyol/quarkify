@@ -16,7 +16,7 @@ describe("icon specs", () => {
 
   it("should render icon component", () => {
     const text = faker.lorem.word();
-    const wrapper = shallow(<Icon name={text}/>);
+    const wrapper = shallow(<Icon name={text} />);
     expect(wrapper.find(".icon-" + text)).toHaveLength(1);
   });
 
@@ -32,5 +32,4 @@ describe("icon specs", () => {
     wrapper.find(".icon-search").simulate("click");
     expect(spy.calledOnce).toEqual(true);
   });
-
 });
