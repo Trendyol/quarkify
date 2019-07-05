@@ -18,14 +18,14 @@
     padding: 1rem 1rem 0 1rem;
     border-bottom: 1px solid $very-light-pink;
     width: 100%;
-    height: 50px;
+    height: $modal-header-height;
     display: flex;
     position: fixed;
     background-color: inherit;
 
     .modal-title{
-      font-size: 15px;
-      font-weight: 500;
+      font-size: $font-size-base;
+      font-weight: $bold;
       width: 90%;
       text-overflow: ellipsis;
       white-space: nowrap;
