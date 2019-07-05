@@ -8,7 +8,7 @@ import Header from "./modal-header";
 
 const Modal = ({ show,
                  children,
-                 animation = "slideInRight"}: IProps) => {
+                 animation = "slideInRight"}: IModalProps) => {
   return(
         <CSSTransition in={show} unmountOnExit timeout={300} classNames={`${animation} modal`}>
           <div className="modal-main">
@@ -18,7 +18,7 @@ const Modal = ({ show,
   );
 };
 
-interface IProps {
+interface IModalProps {
   show: boolean;
   animation?: animationTypes;
   children?: ReactNode;
