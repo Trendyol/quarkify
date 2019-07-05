@@ -6,9 +6,18 @@ import classNamesDefault from "../../utils/class-names-default";
 
 class Select extends React.PureComponent<IProps, {}> {
   public render() {
-    const { items, variant, fluid, subtext, name, value, ...props } = this.props;
+    const {
+      items,
+      variant,
+      fluid,
+      subtext,
+      name,
+      value,
+      ...props
+    } = this.props;
     const nameKey = this.props.name === undefined ? "name" : this.props.name;
-    const valueKey = this.props.value === undefined ? "value" : this.props.value;
+    const valueKey =
+      this.props.value === undefined ? "value" : this.props.value;
     return (
       <div style={{ position: "relative" }}>
         <div className={`select-wrapper ${fluid ? "fluid" : ""}`}>

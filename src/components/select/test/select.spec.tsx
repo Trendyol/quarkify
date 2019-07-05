@@ -110,7 +110,9 @@ describe("select specs", () => {
   });
 
   it("should set values and names properly", () => {
-    const wrapper = shallow(<Select items={customItems} value={"id"} name={"vehicle"} fluid />);
+    const wrapper = shallow(
+      <Select items={customItems} value={"id"} name={"vehicle"} fluid />,
+    );
     expect(
       wrapper
         .render()
