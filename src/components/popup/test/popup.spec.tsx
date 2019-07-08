@@ -76,4 +76,11 @@ describe("popup specs", () => {
     wrapper.unmount();
     expect(document.body.classList.contains("disable-scroll")).toBe(false);
   });
+
+  it("should show icon on left when leftIcon prop is passed", () => {
+    const onClose = sandbox.spy();
+    const wrapper = shallow(<Popup onClose={onClose} show={true} iconLeft />);
+
+    expect(wrapper.find(".popup-icon-left")).toHaveLength(1);
+  });
 });
