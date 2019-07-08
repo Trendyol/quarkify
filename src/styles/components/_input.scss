@@ -2,22 +2,19 @@
 @import '../_globals';
 @import '../mixins/_color-scheme';
 @import '../mixins/_fluid.scss';
-@import '../mixins/_size.scss';
 
 .input-wrapper{
   display: block;
   text-align: left;
-  padding: .25rem;
-
-  &.fluid{
-    @include fluid;
-  }
 
   label{
-    display: inline-block;
-    font-weight: 500;
-    font-size: 13px;
+    display: block;
+    font-weight: $bold;
+    font-size: $font-size-paragraph;
+    line-height: $line-height-paragraph;
     padding: 0;
+    color: $black;
+    margin-bottom: 7px;
   }
   span{
     display: inherit;
@@ -25,39 +22,28 @@
     margin: -5px 0 5px 0;
   }
   input {
-    @include size($padding-y, $padding-x, $font-size, $line-height, $border-radius);
-    background-color: $input-background-color;
-    border: 1px solid $border-grey;
+    background-color: $border-gray-two;
+    border: 1px solid $border-gray;
     width: inherit;
-    &.primary {
-      @include primary;
-    }
-    &.secondary {
-      @include secondary;
-    }
+    border-radius: $border-radius;
+    height: $input_height;
+    padding: 10px;
+    color: $dark-gray;
+
     &.disabled {
       @include disabled;
     }
     &.error{
-      border-color: red;
-      color:red;
+      border-color: $border-error;
+      background-color: $border-error;
       cursor: not-allowed;
-    }
-    &.error::placeholder{
-      color:red;
     }
     &:focus{
       outline: none !important;
-      cursor: pointer;
+      background-color: $background-gray-two;
     }
-
-    // Input Sizes
-    &.large {
-      @include size($padding-y-large, $padding-x-large, $font-size-large, $line-height-large, $border-radius);
-    }
-
-    &.small {
-      @include size($padding-y-small, $padding-x-small, $font-size-small, $line-height-small, $border-radius);
+    &.fluid{
+      @include fluid;
     }
   }
 

@@ -2,7 +2,6 @@
 @import '../_globals';
 @import '../mixins/_color-scheme';
 @import '../mixins/_fluid.scss';
-@import '../mixins/_size.scss';
 
 .select-wrapper {
   position: absolute;
@@ -31,16 +30,6 @@
       border: 0;
       line-height: 23px;
       background: 0 0;
-
-      // Select Sizes
-      &.large {
-        @include size($padding-y-large, $padding-x-large, $font-size-large, $line-height-large, $border-radius);
-      }
-
-      &.small {
-        @include size($padding-y-small, $padding-x-small, $font-size-small, $line-height-small, $border-radius);
-      }
-
     }
 
     .select:focus {

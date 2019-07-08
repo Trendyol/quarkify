@@ -14,7 +14,9 @@ stories.add("Variants", () => (
       Secondary
     </Button>
     &nbsp;
-    <Button variant="gray" onClick={action}>Gray</Button>
+    <Button variant="gray" onClick={action}>
+      Gray
+    </Button>
   </div>
 ));
 

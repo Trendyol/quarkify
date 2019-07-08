@@ -11,7 +11,11 @@ $white-two: #ffffff;
 $marigold: #ffc000;
 $very-light-pink:#e9e9e9;
 $background-gray: #fafafa;
+$background-gray-two: #f8f8f8;
 $border-gray: #e6e6e6;
+$border-gray-two: #ebebeb;
+$border-error: #fff1f1;
+
 
 //Fonts
 $font-family: "Source Sans Pro", sans-serif;
@@ -45,6 +49,10 @@ $space-medium:10px;
 $space-large:15px;
 $space-xlarge:20px;
 
+//Padding
+$padding-y: .375rem !default;
+$padding-x: .75rem !default;
+
 //Line Height
 $line-height: 1.5 !default;
 $line-height-small: 1.5 !default;
@@ -55,11 +63,12 @@ $button-font-size: 100%;
 $button-height: 44px;
 $button-round: 22px;
 
+//Input
+$input-font-size: 100%;
+$input-height: 40px;
+
 // Padding
 $-padding: 1rem !default;
-
-//Input
-$input-background-color: #ebebeb;
 
 //Border Radius
 $border-radius : 3px;

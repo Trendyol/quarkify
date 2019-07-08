@@ -1,4 +1,1 @@
-export type variantTypes =
-  | "primary"
-  | "secondary"
-  | "gray";
+export type variantTypes = "primary" | "secondary" | "gray";

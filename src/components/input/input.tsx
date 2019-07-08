@@ -1,7 +1,6 @@
 import React from "react";
 import IInput from "../../interfaces/input";
 import "../../styles/components/_input.scss";
-import { variantTypes } from "../../types/input";
 import classNamesDefault from "../../utils/class-names-default";
 
 class Input extends React.PureComponent<IProps> {
@@ -13,7 +12,6 @@ class Input extends React.PureComponent<IProps> {
     let newType = this.props.type;
     const {
       error,
-      variant,
       fluid,
       subtext,
       type,
@@ -31,7 +29,7 @@ class Input extends React.PureComponent<IProps> {
         <input
           disabled={disabled}
           type={newType}
-          className={classNamesDefault({ error, variant, disabled })}
+          className={classNamesDefault({ error, disabled })}
           {...props}
         />
       </div>
@@ -40,7 +38,6 @@ class Input extends React.PureComponent<IProps> {
 }
 
 interface IProps extends IInput {
-  variant?: variantTypes;
   disabled?: boolean;
   error?: boolean;
   label?: string;
