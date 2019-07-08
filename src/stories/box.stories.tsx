@@ -5,7 +5,7 @@ import Box from "../components/box";
 const stories = storiesOf("Box", module);
 
 stories.add("Box", () => (
-  <div style={{backgroundColor: "#f5f5f5", height: "100vh"}}>
+  <div style={{ backgroundColor: "#f5f5f5", height: "100vh" }}>
     <Box>
       <span>Box</span>
     </Box>
