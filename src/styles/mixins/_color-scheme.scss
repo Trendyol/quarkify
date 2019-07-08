@@ -9,38 +9,21 @@
   }
 }
 
-@mixin primary-outline {
+@mixin secondary {
   background-color: $white-two;
   color: $primary;
   border: 1px solid $primary;
 }
 
-@mixin secondary {
-  background-color: $light-grey;
-  color: $white-two;
-  border: 1px solid $light-grey;
-}
-
-@mixin secondary-outline {
+@mixin gray {
   background-color: $white-two;
-  color: $dark-grey;
-  border: 1px solid $light-grey;
+  color: $light-gray;
+  border: 1px solid $light-gray;
 }
 
-@mixin success {
-  background-color: $green;
-  color: $white-two;
-  border: 1px solid $green;
-}
-
-@mixin success-outline {
-  background-color: $white-two;
-  color: $green;
-  border: 1px solid $green;
-}
 
 @mixin disabled {
-  background-color: $dark-grey-two;
+  background-color: $dark-gray-two;
   opacity: 0.9;
   color: $white-two;
   cursor: not-allowed;
