@@ -49,12 +49,6 @@ describe("button specs", () => {
     expect(wrapper.exists(".primary")).toEqual(true);
   });
 
-  it("should be rendered with given large size prop", () => {
-    const wrapper = shallow(<Button onClick={onClick} size="large" />);
-
-    expect(wrapper.exists(".large")).toEqual(true);
-  });
-
   it("should have className fluid when given fluid prop", () => {
     const wrapper = shallow(<Button onClick={onClick} fluid />);
 
