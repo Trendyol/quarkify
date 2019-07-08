@@ -86,7 +86,7 @@ describe("modal specs", () => {
   it("should have a left icon if leftIcon prop is given", () => {
     const wrapper = mount(
       <Modal show={true}>
-        <Modal.Header leftIcon="back-button"/>
+        <Modal.Header leftIcon="back-button" />
       </Modal>,
     );
     expect(wrapper.find("i.icon-back-button")).toHaveLength(1);
@@ -96,7 +96,7 @@ describe("modal specs", () => {
     const leftOnClose = sandbox.spy();
     const wrapper = mount(
       <Modal show={true}>
-        <Modal.Header leftIcon="back-button" leftIconOnClick={leftOnClose}/>
+        <Modal.Header leftIcon="back-button" leftIconOnClick={leftOnClose} />
       </Modal>,
     );
     wrapper.find("i.icon-back-button").simulate("click");

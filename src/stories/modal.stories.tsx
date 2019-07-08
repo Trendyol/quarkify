@@ -25,7 +25,11 @@ const ModalWrapper = ({ animation, leftIcon }: IProps) => {
     <>
       <Button onClick={handleChange}>Toggle Me</Button>
       <Modal show={show} animation={animation}>
-        <Modal.Header onClose={closeModal} leftIcon={leftIcon} leftIconOnClick={closeModal}>
+        <Modal.Header
+          onClose={closeModal}
+          leftIcon={leftIcon}
+          leftIconOnClick={closeModal}
+        >
           Cok y cok g cok cok cok cok cok cok cok cok cok cok cok cok cok cok
           cok uzun title
         </Modal.Header>
@@ -81,5 +85,7 @@ stories.add("Default", () => <ModalWrapper />);
 stories.add("SlideInLeft", () => <ModalWrapper animation="slideInLeft" />);
 stories.add("SlideInDown", () => <ModalWrapper animation="slideInDown" />);
 stories.add("SlideInUp", () => <ModalWrapper animation="slideInUp" />);
-stories.add("Left Icon", () => <ModalWrapper leftIcon="back-button" animation="slideInUp" />);
+stories.add("Left Icon", () => (
+  <ModalWrapper leftIcon="back-button" animation="slideInUp" />
+));
 stories.add("Address", () => <AddressModalWrapper />);

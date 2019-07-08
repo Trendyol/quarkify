@@ -10,10 +10,7 @@ const Header: FunctionComponent<IHeaderProps> = ({
   leftIconOnClick,
   onClose,
 }) => {
-  const classNames = [
-    "modal-header",
-    leftIcon && "has-left-icon",
-  ];
+  const classNames = ["modal-header", leftIcon && "has-left-icon"];
   return (
     <div className={classNames.join(" ")}>
       {leftIcon && <Icon name={leftIcon} onClick={leftIconOnClick} />}

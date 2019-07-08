@@ -66,9 +66,21 @@ describe("popup specs", () => {
 
   it("should add disable-scroll class when popup is shown", () => {
     const onClose = sandbox.spy();
-    const wrapper = mount(
-      <Popup onClose={onClose} show={true}/>,
-    );
-    expect(document.body.className).toBe("disable-scroll");
+    const wrapper = mount(<Popup onClose={onClose} show={true} />);
+    expect(document.body.classList.contains("disable-scroll")).toBe(true);
+  });
+
+  it("should remove disable-scroll class when popup is unmounted", () => {
+    const onClose = sandbox.spy();
+    const wrapper = mount(<Popup onClose={onClose} show={true} />);
+    wrapper.unmount();
+    expect(document.body.classList.contains("disable-scroll")).toBe(false);
+  });
+
+  it("should show icon on left when leftIcon prop is passed", () => {
+    const onClose = sandbox.spy();
+    const wrapper = shallow(<Popup onClose={onClose} show={true} iconLeft />);
+
+    expect(wrapper.find(".popup-icon-left")).toHaveLength(1);
   });
 });
