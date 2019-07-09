@@ -52,6 +52,12 @@ stories.add("Text", () => {
   return <InputWrapper />;
 });
 
+stories.add("Text with Label", () => (
+  <div>
+    <Input type={"text"} label={"Text with label"} />
+  </div>
+));
+
 stories.add("Fluid", () => (
   <div>
     <Input

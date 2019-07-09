@@ -1,7 +1,6 @@
 @import '../_variables';
 @import '../_globals';
 @import '../mixins/_color-scheme';
-@import '../mixins/_size.scss';
 
 .radio-wrapper{
   display: inline-flex;
@@ -14,14 +13,6 @@
     border: 0;
     padding: 0 5px 0 0;
     overflow: visible;
-
-    &.large {
-      @include size($padding-y-large, $padding-x-large, $font-size-large, $line-height-large, $border-radius);
-    }
-
-    &.small {
-      @include size($padding-y-small, $padding-x-small, $font-size-small, $line-height-small, $border-radius);
-    }
   }
 
   input[type=radio]:focus{

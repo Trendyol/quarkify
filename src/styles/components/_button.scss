@@ -1,30 +1,44 @@
 @import '../_variables';
 @import '../_globals';
 @import '../mixins/_color-scheme';
-@import '../mixins/_size';
 @import '../mixins/_fluid.scss';
 
 button {
-  @include size($padding-y, $padding-x, $font-size, $line-height, $border-radius);
   cursor: pointer;
   display: inline-block;
+  padding-right: 20px;
+  padding-left: 20px;
+  font-weight: $bold;
+  height: $button-height;
+  font-family: $font-family;
+  font-size: $button-font-size;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: center;
+  border-radius: $border-radius;
+
   &.primary {
     @include primary;
-  }
-  &.primary-outline {
-    @include primary-outline;
+    &:active{
+      opacity: 0.80;
+      transition: opacity 300ms;
+    }
   }
   &.secondary {
     @include secondary;
+    &:active{
+      background-color: $primary;
+      color: $white-two;
+    }
   }
-  &.secondary-outline {
-    @include secondary-outline;
-  }
-  &.success {
-    @include success;
-  }
-  &.success-outline {
-    @include success-outline;
+  &.gray {
+    @include gray;
+    &:active{
+      color: $primary;
+      border: 1px solid $primary;
+    }
   }
   &.disabled {
     @include disabled;
@@ -33,12 +47,9 @@ button {
     @include fluid;
   }
   &.round {
-    border-radius: 22px;
+    border-radius: $button-round;
   }
-  &:active{
-    opacity: 0.80;
-    transition: opacity 300ms;
-  }
+
   &:focus{
     outline: none !important;
   }
@@ -49,15 +60,6 @@ button {
   }
   i:only-child{
     padding-right: 0;
-  }
-
-  // Button Sizes
-  &.large {
-    @include size($padding-y-large, $padding-x-large, $font-size-large, $line-height-large, $border-radius);
-  }
-
-  &.small {
-    @include size($padding-y-small, $padding-x-small, $font-size-small, $line-height-small, $border-radius);
   }
 
 }

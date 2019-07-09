@@ -1,22 +1,46 @@
 // Colors
 $primary: #f27a1a;
 $black: #333333;
-$dark-grey: #666666;
-$light-grey: #999999;
-$dark-grey-two: #d2d2d2;
-$red: #b30808;
+$dark-gray: #666666;
+$light-gray: #999999;
+$dark-gray-two: #d2d2d2;
+$red: #b30000;
 $green: #0bc15c;
 $white: #f8f8f8;
 $white-two: #ffffff;
 $marigold: #ffc000;
 $very-light-pink:#e9e9e9;
-$background-grey: #fafafa;
-$border-grey: #e6e6e6;
+$background-gray: #fafafa;
+$background-gray-two: #f8f8f8;
+$border-gray: #e6e6e6;
+$border-gray-two: #ebebeb;
+$border-error: #fff1f1;
+$checkbox-border-passive: #d6d6d6;
+
 
 //Fonts
+$font-family: "Source Sans Pro", sans-serif;
+
 $font-size-base: 1rem !default; // Assumes the browser default, typically `16px`
 $font-size-large: $font-size-base * 1.5 !default;
 $font-size-small: $font-size-base * .750 !default;
+
+$font-size-header-1: 32px;
+$line-height-header-1: 40px;
+
+$font-size-header-2: 24px;
+$line-height-header-2: 30px;
+
+$font-size-header-3: 18px;
+$line-height-header-3: 24px;
+
+$font-size-paragraph: 14px;
+$line-height-paragraph: 18px;
+
+$font-size-small-paragraph: 12px;
+$line-height-small-paragraph: 16px;
+
+
 $bold:600;
 $regular:400;
 
@@ -26,29 +50,31 @@ $space-medium:10px;
 $space-large:15px;
 $space-xlarge:20px;
 
+//Padding
+$padding-y: .375rem !default;
+$padding-x: .75rem !default;
+
 //Line Height
 $line-height: 1.5 !default;
 $line-height-small: 1.5 !default;
 $line-height-large: 1.5 !default;
 
-//Button Default Padding
-$padding-y: .375rem !default;
-$padding-x: .75rem !default;
-$font-size: $font-size-base !default;
+//Button
+$button-font-size: 100%;
+$button-height: 44px;
+$button-round: 22px;
 
-//Button Small Padding
-$padding-y-small: .375rem !default;
-$padding-x-small: .75rem !default;
+//Input
+$input-font-size: 100%;
+$input-height: 40px;
 
-//Button Large Padding
-$padding-y-large: .375rem !default;
-$padding-x-large: .75rem !default;
+//Select
+$select-height: 42px;
+$select-line-height: 18px;
+$select-padding: 9px 22px 9px 18px;
 
 // Padding
 $-padding: 1rem !default;
-
-//Input
-$input-background-color: #ebebeb;
 
 //Border Radius
 $border-radius : 3px;
