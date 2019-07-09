@@ -2,7 +2,7 @@
 
 # quarkify <small>0.1.0</small>
 
-> A magical ui library generator.
+> An awesome lightweight React UI Component library.
 
 - Simple and lightweight
 - No statically built html files
