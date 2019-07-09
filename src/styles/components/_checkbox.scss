@@ -4,54 +4,74 @@
 @import '../mixins/_fluid.scss';
 
 .checkbox-wrapper{
-  display: inline-flex;
-  align-items: center;
+  user-select: none;
+  font-family: icomoon !important;
+
+  input[type=checkbox] + label {
+    display: inline-flex;
+    align-items: center;
+    margin: $checkbox-margin;
+    cursor: pointer;
+    padding: $checkbox-padding;
+  }
 
   input[type=checkbox] {
-    @include primary;
+    display: none;
+  }
+
+  input[type=checkbox] + label:before {
     font-family: icomoon !important;
-    -webkit-appearance: none;
-    background: $white-two;
-    border: 0;
-    padding: 0 5px 0 0;
-    overflow: visible;
-    &.primary{
-      @include primary;
-    }
-    &.secondary{
-      @include secondary;
-    }
-  }
-  input[type=checkbox]:focus{
-    outline: none !important;
-  }
-  input[type=checkbox]:after {
+    content: "\e933";
+    border: $checkbox-border-width solid $checkbox-border-passive;
     border-radius: $border-radius;
-    color: $checkbox-border-passive;
-    content: "\E96B";
-  }
-  input[type=checkbox]:checked:after {
-    content: "\E97E";
-    color: $primary;
-    transition: color 300ms;
+    display: inline-block;
+    color: transparent;
+    line-height: 1rem;
+    transition: .2s ;
+    margin-right: 5px;
   }
 
-  label{
-    font-weight: 500;
-    font-size: $font-size-base;
-    margin: 0;
+  input[type=checkbox] + label:active:before {
+    transform: scale(0);
   }
 
-  &.error{
-    color: $red;
-    input[type=checkbox]:after {
-      color: $red;
-      content: "\E96B";
+  input[type=checkbox]:checked + label:before {
+    background-color: $primary;
+    border-color: $primary;
+    color: $white-two;
+  }
+
+  input[type=checkbox]:disabled + label{
+    color: $light-gray;
+  }
+
+  input[type=checkbox]:checked:disabled + label{
+    color: $light-gray;
+  }
+
+  input[type=checkbox]:disabled + label:before {
+    transform: scale(1);
+    border-color: $light-gray;
+  }
+
+  input[type=checkbox]:checked:disabled + label:before {
+    transform: scale(1);
+    background-color: $light-gray;
+    border-color: $light-gray;
+  }
+
+  &.error {
+    input[type=checkbox] + label:before {
+      border-color: $red;
     }
-    input[type=checkbox]:checked:after {
-      content: "\E97E";
+    input[type=checkbox]:checked + label:before {
+      background-color: $white-two;
+      border-color: $red;
       color: $red;
-      transition: color 300ms;
+    }
+    input[type=checkbox] + label {
+      color: $red;
     }
   }
+
 }
