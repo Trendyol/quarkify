@@ -23,6 +23,7 @@
     "eject": "react-scripts eject",
     "build-storybook": "build-storybook -s public",
     "coverage": "npm test -- --coverage --watchAll=false",
+    "coverage:ci": "CI=true npm test -- --coverage --watchAll=false",
     "lint": "tslint -c tslint.json 'src/**/*.tsx'",
     "pretty": "prettier -c .prettierrc --write \"./**/*.{ts,tsx,json}\""
   },
@@ -42,8 +43,8 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "npm run pretty && npm run lint && npm run coverage",
-      "pre-push": "npm run pretty && npm run lint && npm run coverage"
+      "pre-commit": "npm run pretty && npm run lint && npm run coverage:ci",
+      "pre-push": "npm run pretty && npm run lint && npm run coverage:ci"
     }
   },
   "eslintConfig": {
