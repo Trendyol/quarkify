@@ -1,4 +1,5 @@
 import classNames from "classnames";
+import { type } from "os";
 import React, { ReactNode } from "react";
 import ReactDOM from "react-dom";
 import { CSSTransition } from "react-transition-group";
@@ -7,7 +8,7 @@ import Icon from "../icon";
 
 class Popup extends React.Component<IProps> {
   public componentDidMount(): void {
-    if (this.props.show) {
+    if (this.props.show && typeof window !== "undefined") {
       document.body.classList.add("disable-scroll");
     }
   }
@@ -20,9 +21,9 @@ class Popup extends React.Component<IProps> {
     if (nextProps.show !== this.props.show && this.props.onChange) {
       this.props.onChange();
     }
-    if (nextProps.show) {
+    if (nextProps.show && typeof window !== "undefined") {
       document.body.classList.add("disable-scroll");
-    } else {
+    } else if (typeof window !== "undefined") {
       document.body.classList.remove("disable-scroll");
     }
     return true;
@@ -49,6 +50,10 @@ class Popup extends React.Component<IProps> {
         onClose();
       }
     };
+
+    if (typeof window === "undefined") {
+      return null;
+    }
 
     return ReactDOM.createPortal(
       <CSSTransition
