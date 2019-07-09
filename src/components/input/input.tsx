@@ -24,7 +24,7 @@ class Input extends React.PureComponent<IProps> {
     }
     return (
       <div className={`input-wrapper ${fluid ? "fluid" : ""}`}>
-        {label && <label>{label}</label>}
+        {label && <label className={`${disabled ? "disabled" : ""}`}>{label}</label>}
         {subtext && <span className="input-subtext">{subtext}</span>}
         <input
           disabled={disabled}

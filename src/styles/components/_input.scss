@@ -15,6 +15,9 @@
     padding: 0;
     color: $black;
     margin-bottom: 7px;
+    &.disabled{
+      color: $light-gray;
+    }
   }
   span{
     display: inherit;
