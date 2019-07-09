@@ -62,7 +62,7 @@ describe("checkbox specs", () => {
   });
 
   it("should have error className when error prop is passed", () => {
-    const wrapper = shallow(<CheckBox error type="text" />);
+    const wrapper = shallow(<CheckBox error />);
 
     expect(wrapper.hasClass("error")).toBe(true);
   });
