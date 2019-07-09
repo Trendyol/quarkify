@@ -22,7 +22,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "build-storybook": "build-storybook -s public",
-    "coverage": "npm test -- --coverage --watchAll=false",
+    "coverage": "npm test -- --coverage --watchAll=false --bail",
     "coverage:ci": "CI=true npm test -- --coverage --watchAll=false",
     "lint": "tslint -c tslint.json 'src/**/*.tsx'",
     "pretty": "prettier -c .prettierrc --write \"./**/*.{ts,tsx,json}\""
@@ -43,8 +43,8 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "npm run lint && npm run coverage:ci",
-      "pre-push": "npm run lint && npm run coverage:ci"
+      "pre-commit": "lint-staged",
+      "pre-push": "npm run pretty && npm run lint && npm run coverage:ci"
     }
   },
   "eslintConfig": {
@@ -76,6 +76,7 @@
     "extract-text-webpack-plugin": "^3.0.2",
     "faker": "^4.1.0",
     "husky": "^3.0.0",
+    "lint-staged": "^9.1.0",
     "node-sass": "^4.12.0",
     "prettier": "^1.18.2",
     "sass-loader": "^7.1.0",
@@ -86,5 +87,13 @@
     "tslint-react": "^4.0.0",
     "typescript": "^3.5.2",
     "webpack-cli": "^3.3.5"
+  },
+  "lint-staged": {
+    "*.{ts,tsx}": [
+      "npm run pretty",
+      "npm run lint",
+      "npm run coverage",
+      "git add"
+    ]
   }
 }
