@@ -15,6 +15,7 @@ $background-gray-two: #f8f8f8;
 $border-gray: #e6e6e6;
 $border-gray-two: #ebebeb;
 $border-error: #fff1f1;
+$checkbox-border-passive: #d6d6d6;
 
 
 //Fonts
@@ -66,6 +67,11 @@ $button-round: 22px;
 //Input
 $input-font-size: 100%;
 $input-height: 40px;
+
+//Select
+$select-height: 42px;
+$select-line-height: 18px;
+$select-padding: 9px 22px 9px 18px;
 
 // Padding
 $-padding: 1rem !default;

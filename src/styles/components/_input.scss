@@ -21,6 +21,12 @@
     color: #ababab;
     margin: -5px 0 5px 0;
   }
+  &.fluid{
+    @include fluid;
+    input {
+      width: 100%;
+    }
+  }
   input {
     background-color: $border-gray-two;
     border: 1px solid $border-gray;
@@ -42,9 +48,5 @@
       outline: none !important;
       background-color: $background-gray-two;
     }
-    &.fluid{
-      @include fluid;
-    }
   }
-
 }

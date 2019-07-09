@@ -4,32 +4,30 @@
 @import '../mixins/_fluid.scss';
 
 .select-wrapper {
-  position: absolute;
   display: flex;
-  justify-content: space-between;
 
   &.fluid{
     @include fluid;
   }
 
   .select-group {
-    height: 34px;
+    height: $select-height;
     width: inherit;
-    border-radius: 3px;
-    background-color: #fff;
-    border: 1px solid #e6e6e6;
-    color: #666;
+    border-radius: $border-radius;
+    background-color: $white-two;
+    border: 1px solid $border-gray-two;
+    color: $dark-gray;
     position: relative;
 
     .select {
       width: inherit;
       color: currentColor;
-      padding: 6px 22px 6px 22px;
-      font-size: 14px;
+      padding: $select-padding;
+      font-size: $font-size-paragraph;
       -webkit-appearance: none;
       border: 0;
-      line-height: 23px;
-      background: 0 0;
+      line-height: $select-line-height;
+      background: 0;
     }
 
     .select:focus {
@@ -50,18 +48,8 @@
     pointer-events: none;
   }
 
-  .select-group::before {
-    color: currentColor;
-    content: attr(count-text);
-    display: flex;
-    font-size: 14px;
-    left: 10px;
-    position: absolute;
-    z-index: 0;
-    pointer-events: none;
-    align-items: center;
-    height: 100%;
-    top: 0;
+  .select-group:active{
+    border: 1px solid $light-gray;
   }
 
 }

@@ -8,23 +8,32 @@
   align-items: center;
 
   input[type=checkbox] {
+    @include primary;
     font-family: icomoon !important;
     -webkit-appearance: none;
     background: $white-two;
     border: 0;
     padding: 0 5px 0 0;
     overflow: visible;
+    &.primary{
+      @include primary;
+    }
+    &.secondary{
+      @include secondary;
+    }
   }
   input[type=checkbox]:focus{
     outline: none !important;
   }
   input[type=checkbox]:after {
-    color: $primary;
+    border-radius: $border-radius;
+    color: $checkbox-border-passive;
     content: "\E96B";
   }
   input[type=checkbox]:checked:after {
-    border: 0;
     content: "\E97E";
+    color: $primary;
+    transition: color 300ms;
   }
 
   label{
