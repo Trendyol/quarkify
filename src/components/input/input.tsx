@@ -35,7 +35,9 @@ class Input extends React.PureComponent<IProps> {
           className={classNamesDefault({ error, disabled })}
           {...props}
         />
-        {(error && errorMessage) && <span className="input-error">{errorMessage}</span>}
+        {error && errorMessage && (
+          <span className="input-error">{errorMessage}</span>
+        )}
       </div>
     );
   }

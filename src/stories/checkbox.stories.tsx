@@ -18,13 +18,13 @@ stories.add("Default", () => (
       value={"Plane"}
       label={"I have a plane"}
     />
-    <br/>
-    <br/>
-      <CheckBox
-        disabled
-        name={"vehicle4"}
-        value={"Boat"}
-        label={"I have a boat"}
-      />
+    <br />
+    <br />
+    <CheckBox
+      disabled
+      name={"vehicle4"}
+      value={"Boat"}
+      label={"I have a boat"}
+    />
   </div>
 ));

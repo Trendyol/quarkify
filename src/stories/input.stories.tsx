@@ -61,7 +61,13 @@ stories.add("Text with Label", () => (
 
 stories.add("Error", () => (
   <div>
-    <Input type={"text"} label={"Text with label"} subtext={"Hello mymy"} error errorMessage={"Hata ve Uyarı Mesajı!"} />
+    <Input
+      type={"text"}
+      label={"Text with label"}
+      subtext={"Hello mymy"}
+      error
+      errorMessage={"Hata ve Uyarı Mesajı!"}
+    />
   </div>
 ));
 
