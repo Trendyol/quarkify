@@ -60,4 +60,10 @@ describe("checkbox specs", () => {
     const inputElement = wrapper.find("input");
     expect(inputElement.prop("type")).toBe("checkbox");
   });
+
+  it("should have error className when error prop is passed", () => {
+    const wrapper = shallow(<CheckBox error type="text" />);
+
+    expect(wrapper.hasClass("error")).toBe(true);
+  });
 });
