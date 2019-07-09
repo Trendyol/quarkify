@@ -33,4 +33,17 @@
     font-size: $font-size-base;
     margin: 0;
   }
+
+  &.error{
+    color: $red;
+    input[type=radio]:after {
+      color: $red;
+      content: "\E93C";
+    }
+    input[type=radio]:checked:after {
+      content: "\E93D";
+      color: $red;
+      transition: color 300ms;
+    }
+  }
 }

@@ -7,7 +7,7 @@ class Radio extends React.PureComponent<IProps> {
   public render() {
     const { error, label, type, ...props } = this.props;
     return (
-      <div className="radio-wrapper">
+      <div className={error ? `error radio-wrapper` : `radio-wrapper`}>
         <input
           id={`radio-${this.props.value}`}
           type="radio"

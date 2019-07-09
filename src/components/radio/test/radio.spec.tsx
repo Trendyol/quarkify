@@ -60,4 +60,10 @@ describe("radio specs", () => {
     const inputElement = wrapper.find("input");
     expect(inputElement.prop("type")).toBe("radio");
   });
+
+  it("should have error className when error prop is passed", () => {
+    const wrapper = shallow(<Radio error />);
+
+    expect(wrapper.hasClass("error")).toBe(true);
+  });
 });
