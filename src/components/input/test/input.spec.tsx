@@ -62,7 +62,6 @@ describe("input specs", () => {
     expect(wrapper.find(".input-error")).toHaveLength(1);
   });
 
-
   it("should accept additional classNames", () => {
     const testClass = faker.lorem.word();
     const wrapper = shallow(<Input className={testClass} />);

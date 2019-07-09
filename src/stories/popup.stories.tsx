@@ -26,24 +26,25 @@ const PopupWrapper = ({
         onClose={closePopup}
         closeOnOverlayClick={closeOnOverlayClick}
       />
-      <p>Popup content</p>
-      <p>Popup content</p>
-      <p>Popup content</p>
-      <p>Popup content</p>
-      <p>Popup content</p>
-      <p>Popup content</p>
-      <p>Popup content</p>
-      <p>Popup content</p>
-      <p>Popup content</p>
-      <p>Popup content</p>
-      <p>Popup content</p>
-      <p>Popup content</p>
-      <p>Popup content</p>
-      <p>Popup content</p>
-      <p>Popup content</p>
-      <p>Popup content</p>
-      <p>Popup content</p>
-      <p>Popup content</p>
+      <p>Content</p>
+      <p>Content</p>
+      <p>Content</p>
+      <p>Content</p>
+      <p>Content</p>
+      <p>Content</p>
+      <p>Content</p>
+      <p>Content</p>
+      <p>Content</p>
+      <p>Content</p>
+      <p>Content</p>
+      <p>Content</p>
+      <p>Content</p>
+      <p>Content</p>
+      <p>Content</p>
+      <p>Content</p>
+      <p>Content</p>
+      <p>Content</p>
+      <p>Content</p>
     </>
   );
 };
