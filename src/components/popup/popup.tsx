@@ -5,7 +5,7 @@ import { CSSTransition } from "react-transition-group";
 import "../../styles/components/_popup.scss";
 import Icon from "../icon";
 
-class Popup extends React.Component<IProps> {
+class Popup extends React.PureComponent<IProps> {
   public componentDidMount(): void {
     if (this.props.show) {
       document.body.classList.add("disable-scroll");
