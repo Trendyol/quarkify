@@ -80,10 +80,7 @@ const PopupBasketWrapper = ({
             marginTop: "60px",
           }}
         >
-          <Button
-            variant="secondary"
-            style={{ flex: 1, margin: "0 5px" }}
-          >
+          <Button variant="secondary" style={{ flex: 1, margin: "0 5px" }}>
             Alisverise Devam Et
           </Button>
           <Button variant="primary" style={{ flex: 1, margin: "0 5px" }}>

@@ -12,6 +12,7 @@ class Input extends React.PureComponent<IProps> {
     let newType = this.props.type;
     const {
       error,
+      errorMessage,
       fluid,
       subtext,
       type,
@@ -24,7 +25,9 @@ class Input extends React.PureComponent<IProps> {
     }
     return (
       <div className={`input-wrapper ${fluid ? "fluid" : ""}`}>
-        {label && <label className={`${disabled ? "disabled" : ""}`}>{label}</label>}
+        {label && (
+          <label className={`${disabled ? "disabled" : ""}`}>{label}</label>
+        )}
         {subtext && <span className="input-subtext">{subtext}</span>}
         <input
           disabled={disabled}
@@ -32,6 +35,7 @@ class Input extends React.PureComponent<IProps> {
           className={classNamesDefault({ error, disabled })}
           {...props}
         />
+        {(error && errorMessage) && <span className="input-error">{errorMessage}</span>}
       </div>
     );
   }
@@ -40,6 +44,7 @@ class Input extends React.PureComponent<IProps> {
 interface IProps extends IInput {
   disabled?: boolean;
   error?: boolean;
+  errorMessage?: string;
   label?: string;
   subtext?: string;
   fluid?: boolean;

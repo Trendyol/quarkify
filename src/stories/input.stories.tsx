@@ -53,9 +53,15 @@ stories.add("Text", () => {
 stories.add("Text with Label", () => (
   <div>
     <Input type={"text"} label={"Text with label"} />
-    <br/>
-    <br/>
+    <br />
+    <br />
     <Input type={"text"} label={"Text with label"} disabled />
+  </div>
+));
+
+stories.add("Error", () => (
+  <div>
+    <Input type={"text"} label={"Text with label"} subtext={"Hello mymy"} error errorMessage={"Hata ve Uyarı Mesajı!"} />
   </div>
 ));
 
