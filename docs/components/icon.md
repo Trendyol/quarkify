@@ -32,7 +32,7 @@ By default, the size of the Icon component is set to normal.
 ```
 
 #### Additional content
-You can use some other props aswell such as:
+You can use some other props as well such as:
 ```
 <Icon name="account" disabled/>
 <Icon name="account" className="someClassName"/>

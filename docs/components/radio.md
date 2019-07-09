@@ -1,17 +1,17 @@
 # Radio
 
-## Fluid
-Adding fluid prop to radio element makes the component spread into the div's width.
-
-```
-<Radio fluid name={"vehicle1"} value={"Bike"} label={"I have a bike"}/>
-```
-
 ## Label
 It is also possible to add label next to the radio by giving label property
 
 ```
 <Radio fluid name={"vehicle1"} value={"Bike"} label={"I have a bike"}/>
+```
+
+## Error
+Adding error prop to radio element changes the component's style to indicate an error has happened.
+
+```
+<Radio error name={"vehicle1"} value={"Bike"} label={"I have a bike"}/>
 ```
 
 #### Additional content
