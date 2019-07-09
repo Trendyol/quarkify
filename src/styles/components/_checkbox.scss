@@ -41,4 +41,17 @@
     font-size: $font-size-base;
     margin: 0;
   }
+
+  &.error{
+    color: $red;
+    input[type=checkbox]:after {
+      color: $red;
+      content: "\E96B";
+    }
+    input[type=checkbox]:checked:after {
+      content: "\E97E";
+      color: $red;
+      transition: color 300ms;
+    }
+  }
 }
