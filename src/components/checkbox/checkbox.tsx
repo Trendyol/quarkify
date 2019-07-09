@@ -8,11 +8,11 @@ class CheckBox extends React.PureComponent<IProps> {
   public render() {
     const { variant, error, label, type, ...props } = this.props;
     return (
-      <div className="checkbox-wrapper">
+      <div className={error ? `error checkbox-wrapper` : `checkbox-wrapper`}>
         <input
           id={`checkbox-${this.props.value}`}
           type="checkbox"
-          className={classNamesDefault({ variant, error })}
+          className={classNamesDefault({ variant })}
           {...props}
         />
         {label && (

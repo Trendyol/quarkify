@@ -10,5 +10,8 @@ stories.add("Default", () => (
     <br />
     <br />
     <CheckBox name={"vehicle2"} value={"Car"} label={"I have a car"} />
+    <br/>
+    <br/>
+    <CheckBox error name={"vehicle3"} value={"Plane"} label={"I have a plane"} />
   </div>
 ));
