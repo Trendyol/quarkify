@@ -55,6 +55,14 @@ describe("input specs", () => {
     expect(wrapper.find(".input-subtext")).toHaveLength(1);
   });
 
+  it("should render an error subtext", () => {
+    const text = faker.random.word();
+    const wrapper = shallow(<Input error errorMessage={text} />);
+
+    expect(wrapper.find(".input-error")).toHaveLength(1);
+  });
+
+
   it("should accept additional classNames", () => {
     const testClass = faker.lorem.word();
     const wrapper = shallow(<Input className={testClass} />);
