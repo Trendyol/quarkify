@@ -31,14 +31,12 @@ const InputWrapper = () => {
       />
       <Input
         type={"text"}
-        variant="primary"
         value={value}
         placeholder={"Primary"}
         onChange={handleChange}
       />
       <Input
         type={"text"}
-        variant="secondary"
         value={value}
         placeholder={"Secondary"}
         onChange={handleChange}

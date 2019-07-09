@@ -81,7 +81,7 @@ const PopupBasketWrapper = ({
           }}
         >
           <Button
-            variant="secondary-outline"
+            variant="secondary"
             style={{ flex: 1, margin: "0 5px" }}
           >
             Alisverise Devam Et
