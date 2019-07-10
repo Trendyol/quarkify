@@ -4,12 +4,29 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
+## [0.4.11] - 2019-10-04
+### Added
+- `lint-staged` package to fix indentation errors before
+  each commit
+### Changed
+- `popup` component is no longer using react hooks
+- all component's style changed based on the styling guide
+### Removed
+- `prettier` removed to fix conflicts with tslint configuration
+
+
+## [0.4.7] - 2019-09-04
+### Added
+- `husky` package added to configure precommit and prepush
+  
+
+
 ## [0.4.6] - 2019-07-04
 ### Changed
-`README.md` updated
-`docsify` updated
+- `README.md` updated
+- `docsify` updated
 ### Added
-`label` prop to `input` component
+- `label` prop to `input` component
 
 ## [0.4.3] - 2019-07-03
 ### Changed
