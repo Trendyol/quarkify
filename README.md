@@ -1,7 +1,4 @@
 
-[![Build Status][build-shield]][build-url]
-[![contributions welcome][contributors-shield]][contributors-url]
-[![MIT License][license-shield]][license-url]
 
 
 <!-- PROJECT LOGO -->
@@ -27,6 +24,9 @@
   </p>
 </p>
 
+[![Build Status][build-shield]][build-url]
+[![contributions welcome][contributors-shield]][contributors-url]
+[![MIT License][license-shield]][license-url]
 
 
 <!-- TABLE OF CONTENTS -->
