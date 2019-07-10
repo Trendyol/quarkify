@@ -1,0 +1,56 @@
+@import '../variables';
+@import '../globals';
+@import "../animations/_popup.scss";
+
+.popup-main{
+  position:fixed;
+  background-color: $white-two;
+  top:50%;
+  left:50%;
+  transform: translate(-50%,-50%);
+  display: block;
+  text-align: center;
+  padding: $popup-padding;
+  height: fit-content;
+  width: 100%;
+  max-width: 90vw;
+  max-height: 90vh;
+  border-radius: $border-radius;
+
+  .popup-content {
+    overflow-y: scroll;
+    max-height: 50vh;
+    -ms-overflow-style: none;
+    &::-webkit-scrollbar {
+      width: 0;
+      height: 0;
+    }
+  }
+
+  .popup-icon-position {
+    margin-left: auto;
+    width: fit-content;
+    display: flex;
+  }
+
+  .popup-icon-left {
+    justify-content: flex-start;
+  }
+}
+
+//Animations
+@include popup-animation
+
+.popup-overlay {
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1022;
+  background-color: rgba(0, 0, 0, .5);
+}
+
+.disable-scroll{
+  overflow: hidden;
+}

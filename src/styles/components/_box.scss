@@ -1,0 +1,27 @@
+@import "../_variables";
+
+.box{
+  background-color: $white-two;
+  border: 1px solid $border-gray;
+  padding: 1rem;
+
+  &.spaced{
+    margin: $box-margin;
+  }
+
+  &.left-aligned{
+    text-align: left;
+  }
+
+  &.right-aligned{
+    text-align: right;
+  }
+
+  &.center-aligned{
+    text-align: center;
+  }
+
+  &.justify-aligned{
+    text-align: justify;
+  }
+}

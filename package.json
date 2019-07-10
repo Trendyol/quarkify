@@ -1,22 +1,51 @@
 {
   "name": "quarkify",
-  "version": "0.1.0",
+  "version": "0.4.3",
   "private": true,
   "dependencies": {
     "@types/jest": "24.0.15",
     "@types/node": "12.0.10",
     "@types/react": "16.8.22",
     "@types/react-dom": "16.8.4",
+    "@types/react-transition-group": "^2.9.2",
+    "classnames": "^2.2.6",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-scripts": "3.0.1",
-    "typescript": "3.5.2"
+    "react-transition-group": "^4.2.0"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
+    "start": "start-storybook -p 9009 -s public",
+    "build": "npm run build:fast",
+    "build:fast": "rm -rf ./dist && npm run build:tsc && cp -r ./src/styles ./dist",
+    "build:tsc": "tsc -p tsconfig.tsc.json",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "test:ci": "react-scripts test --silent --runInBand --watchAll=false",
+    "eject": "react-scripts eject",
+    "build-storybook": "build-storybook -s public",
+    "coverage": "npm test -- --coverage --silent --watchAll=false --bail",
+    "coverage:ci": "CI=true npm test -- --coverage --silent --watchAll=false",
+    "lint": "tslint -c tslint.json 'src/**/*.tsx' --fix"
+  },
+  "jest": {
+    "collectCoverageFrom": [
+      "src/**/*.{ts,tsx}",
+      "!src/**/*.stories.tsx"
+    ],
+    "coverageThreshold": {
+      "global": {
+        "branches": 90,
+        "functions": 90,
+        "lines": 90,
+        "statements": 90
+      }
+    }
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged && npm run coverage:ci",
+      "pre-push": "lint-staged && npm run coverage:ci"
+    }
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -31,6 +60,37 @@
       "last 1 chrome version",
       "last 1 firefox version",
       "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "@storybook/addon-viewport": "^5.1.9",
+    "@storybook/react": "latest",
+    "@types/classnames": "^2.2.8",
+    "@types/enzyme-adapter-react-16": "^1.0.5",
+    "@types/faker": "^4.1.5",
+    "@types/sinon": "^7.0.13",
+    "@types/storybook__react": "^4.0.2",
+    "css-loader": "^1.0.1",
+    "enzyme": "^3.10.0",
+    "enzyme-adapter-react-16": "^1.14.0",
+    "extract-text-webpack-plugin": "^3.0.2",
+    "faker": "^4.1.0",
+    "husky": "^3.0.0",
+    "lint-staged": "^9.1.0",
+    "node-sass": "^4.12.0",
+    "sass-loader": "^7.1.0",
+    "sinon": "^7.3.2",
+    "source-map-loader": "^0.2.4",
+    "ts-loader": "^6.0.4",
+    "tslint": "^5.18.0",
+    "tslint-react": "^4.0.0",
+    "typescript": "^3.5.2",
+    "webpack-cli": "^3.3.5"
+  },
+  "lint-staged": {
+    "*.{ts,tsx}": [
+      "npm run lint",
+      "git add"
     ]
   }
 }

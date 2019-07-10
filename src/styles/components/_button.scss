@@ -1,0 +1,66 @@
+@import '../_variables';
+@import '../_globals';
+@import '../mixins/_color-scheme';
+@import '../mixins/_fluid.scss';
+
+button {
+  cursor: pointer;
+  display: inline-block;
+  padding-right: 20px;
+  padding-left: 20px;
+  font-weight: $bold;
+  height: $button-height;
+  font-family: $font-family;
+  font-size: $button-font-size;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: center;
+  border-radius: $border-radius;
+
+  &.primary {
+    @include primary;
+    &:active{
+      opacity: 0.80;
+      transition: opacity 300ms;
+    }
+  }
+  &.secondary {
+    @include secondary;
+    &:active{
+      background-color: $primary;
+      color: $white-two;
+    }
+  }
+  &.gray {
+    @include gray;
+    &:active{
+      color: $primary;
+      border: 1px solid $primary;
+    }
+  }
+  &.disabled {
+    @include disabled;
+  }
+  &.fluid{
+    @include fluid;
+  }
+  &.round {
+    border-radius: $button-round;
+  }
+
+  &:focus{
+    outline: none !important;
+  }
+
+  //Icon
+  i{
+    padding-left: 0;
+  }
+  i:only-child{
+    padding-right: 0;
+  }
+
+}
+

@@ -1,0 +1,49 @@
+@import '../_variables';
+@import '../_globals';
+@import '../mixins/_color-scheme';
+
+.radio-wrapper{
+  display: inline-flex;
+  align-items: center;
+
+  input[type=radio]{
+    font-family: icomoon !important;
+    -webkit-appearance: none;
+    background: $white-two;
+    border: 0;
+    padding: 0 5px 0 0;
+    overflow: visible;
+  }
+
+  input[type=radio]:focus{
+    outline: none !important;
+
+  }
+
+  input[type=radio]:checked:after{
+    content: "\E93D";
+  }
+  input[type=radio]:after{
+    color: $primary;
+    content: "\E93C";
+  }
+
+  label{
+    font-weight: 500;
+    font-size: $font-size-base;
+    margin: 0;
+  }
+
+  &.error{
+    color: $red;
+    input[type=radio]:after {
+      color: $red;
+      content: "\E93C";
+    }
+    input[type=radio]:checked:after {
+      content: "\E93D";
+      color: $red;
+      transition: color 300ms;
+    }
+  }
+}

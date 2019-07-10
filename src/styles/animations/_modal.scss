@@ -1,0 +1,68 @@
+@mixin modal-animation($duration: 300ms) {
+  .slideInRight{
+    transition: left $duration;
+
+    &.modal-enter {
+      left: 100vw;
+    }
+    &.modal-enter-active {
+      left: 0;
+    }
+    &.modal-exit {
+      left: 0;
+    }
+    &.modal-exit-active {
+      left: 100vw;
+    }
+  }
+
+  .slideInLeft{
+    transition: left $duration;
+    &.modal-enter {
+      left: -100vw;
+    }
+    &.modal-enter-active {
+      left: 0;
+    }
+    &.modal-exit {
+      left: 0;
+    }
+    &.modal-exit-active {
+      left: -100vw;
+    }
+  }
+
+  .slideInDown {
+    transition: top $duration;
+    &.modal-enter {
+      top: 100vh;
+    }
+    &.modal-enter-active {
+      top: 0;
+    }
+    &.modal-exit {
+      top: 0;
+    }
+    &.modal-exit-active {
+      top: 100vh;
+    }
+  }
+
+  .slideInUp{
+    transition: top $duration;
+    &.modal-enter {
+      top: -100vh;
+    }
+    &.modal-enter-active {
+      top: 0;
+    }
+    &.modal-exit {
+      top: 0;
+    }
+    &.modal-exit-active {
+      top: -100vh;
+    }
+  }
+}
+
+

@@ -1,0 +1,60 @@
+@import '../_variables';
+@import '../_globals';
+@import '../mixins/_color-scheme';
+@import '../mixins/_fluid.scss';
+
+.input-wrapper{
+  display: block;
+  text-align: left;
+
+  label{
+    display: block;
+    font-weight: $bold;
+    font-size: $font-size-paragraph;
+    line-height: $line-height-paragraph;
+    padding: 0;
+    color: $black;
+    margin-bottom: 10px;
+    &.disabled{
+      color: $light-gray;
+    }
+  }
+  .input-error{
+    color: $red;
+    font-weight: $bold;
+    margin-top: 5px;
+  }
+  span{
+    display: inherit;
+    color: #ababab;
+    margin: -5px 0 5px 0;
+    font-size: $font-size-small-paragraph;
+  }
+  &.fluid{
+    @include fluid;
+    input {
+      width: 100%;
+    }
+  }
+  input {
+    background-color: $border-gray-two;
+    border: 1px solid $border-gray;
+    width: inherit;
+    border-radius: $border-radius;
+    height: $input_height;
+    padding: 10px;
+    color: $dark-gray;
+
+    &.disabled {
+      @include disabled;
+    }
+    &.error{
+      border-color: $red;
+      background-color: $border-error;
+    }
+    &:focus{
+      outline: none !important;
+      background-color: $background-gray-two;
+    }
+  }
+}
