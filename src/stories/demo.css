@@ -465,3 +465,52 @@ article {
     width: 100%;
     margin-top: 30px;
 }
+
+.comment-header {
+    width: 100%;
+    display: flex;
+}
+
+.comment-header__star {
+    width: 30%;
+}
+
+.comment-header__options {
+    position: absolute;
+    right: 5%;
+}
+
+.comments {
+    margin-top: 50px;
+}
+
+.comment-body {
+    padding: 6px 12px;
+}
+.comment-body__text {
+    font-size: 14px;
+    line-height: 18px;
+    color: #666;
+}
+.comment-body__author {
+    font-weight: 600;
+    margin-top: 10px;
+    font-size: 14px;
+    line-height: 18px;
+    color: #999;
+}
+
+.trusted-user {
+    font-size: 12px;
+    line-height: 16px;
+    color: #0bc15c;
+    font-weight: 600;
+    margin-left: 10px;
+}
+
+.comment-body__date {
+    margin-top: 10px;
+    font-size: 14px;
+    line-height: 18px;
+    color: #999;
+}
