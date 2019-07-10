@@ -4,7 +4,11 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
-## [0.4.11] - 2019-10-04
+## [1.0.0] - 2019-07-10
+### Added
+- npm package published
+
+## [0.4.11] - 2019-07-10
 ### Added
 - `lint-staged` package to fix indentation errors before
   each commit
@@ -15,7 +19,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - `prettier` removed to fix conflicts with tslint configuration
 
 
-## [0.4.7] - 2019-09-04
+## [0.4.7] - 2019-07-09
 ### Added
 - `husky` package added to configure precommit and prepush
   
