@@ -102,4 +102,28 @@ describe("modal specs", () => {
     wrapper.find("i.icon-back-button").simulate("click");
     expect(leftOnClose.calledOnce).toBe(true);
   });
+
+  it("should add disable-scroll class when modal is shown", () => {
+    const wrapper = mount(<Modal show={false} />);
+    wrapper.setProps({ show: true });
+
+    expect(document.body.classList.contains("disable-scroll")).toBe(true);
+  });
+
+  it("should remove disable-scroll class when modal is hidden", () => {
+    const wrapper = mount(<Modal show={true} />);
+    wrapper.setProps({ show: false });
+
+    expect(document.body.classList.contains("disable-scroll")).toBe(false);
+  });
+
+  it("should call onChange when show prop is changed", () => {
+    const onChange = sandbox.spy();
+    const wrapper = mount(
+      <Modal onChange={onChange} show={false} />,
+    );
+    wrapper.setProps({ show: true });
+
+    expect(onChange.calledOnce).toBe(true);
+  });
 });
