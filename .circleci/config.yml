@@ -37,8 +37,12 @@ jobs:
             - CHANGELOG.md
             - LICENSE
             - package.json
+            - package-lock.json
             - .npmignore
             - dist
+            - coverage
+            - logo.png
+            - screenshot.png
   deploy:
     <<: *defaults
     steps:
