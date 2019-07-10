@@ -19,7 +19,7 @@
     <a href="#docsify"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="#storybook">View Demo</a>
+    <a href="https://trendyol.github.io/quarkify">View Demo</a>
     ·
     <a href="https://github.com/Trendyol/quarkify/issues">Report Bug</a>
     ·
@@ -119,7 +119,7 @@ yarn start
 ## Usage
 
 To preview the live demo and see usages of the components please
-refer to our [demo](#storybook-url)
+refer to our [demo](https://trendyol.github.io/quarkify)
 
 For more examples, please refer to the [documentation](#docsify-url)
 
