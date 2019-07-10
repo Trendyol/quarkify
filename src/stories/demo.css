@@ -200,6 +200,141 @@ article {
     font-weight: 700;
 }
 
+.product-info__size {
+    display: flex;
+}
+
+.product-info__size-name {
+    width: 50%;
+    font-size: 14px;
+    font-weight: 700;
+    color: #333;
+    margin-right: 1vw;
+}
+
+.product-info__size-name__table {
+    position: absolute;
+    right: 10%;
+}
+
+.product-info__size-select {
+    width: 95%;
+}
+
+.description__header__title {
+    font-size: 14px;
+    color: #333;
+    font-weight: 700;
+}
+
+.description__body ul li {
+    position: relative;
+    padding-left: 10px;
+    margin-bottom: 8px;
+    line-height: 17px;
+    color: #666;
+}
+
+.description__body ul li:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 6px;
+    display: inline-block;
+    background-color: #f27a1a;
+    width: 5px;
+    height: 5px;
+    border-radius: 100%;
+    vertical-align: middle;
+}
+
+.description__body ul li {
+    position: relative;
+    padding-left: 10px;
+    margin-bottom: 8px;
+    line-height: 17px;
+    color: #666;
+}
+
+.product-info__information {
+    margin-top: 2rem;
+}
+
+.description__body ul {
+    list-style: none;
+    padding: 0;
+}
+
+.product-info__promotion {
+    margin-top: 2rem;
+}
+
+.product-info__promotion-body {
+    width: 100%;
+}
+
+.product-info__promotion-item {
+    width: 100%;
+}
+.product-info__promotion-item__label {
+    font-weight: 700;
+}
+
+.product-info__promotion-item__label-name {
+    line-height: 18px;
+    color: #333;
+}
+
+.more-buttons__item {
+    width: 100%;
+}
+
+.more-buttons {
+    display: block;
+    width: 100%;
+    height: 50px;
+    background-color: #fff;
+    border-top: 1px solid #e9e9e9;
+    border-bottom: 1px solid #e9e9e9;
+    font-size: 14px;
+    line-height: 50px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+.redirection-box__logo {
+    width: 10px;
+    height: 0;
+    border-top: 5px solid transparent;
+    border-bottom: 5px solid transparent;
+    margin-top: 20px;
+    margin-left: 20px;
+    border-left: 8px solid #f27a1a;
+}
+
+.redirection-box__text {
+    width: 75%;
+}
+
+.icon-arrow-right:before {
+    content: "\e902";
+}
+
+.similar-products__items {
+    width: 200%;
+}
+
+.similar-products__items-item {
+    height: calc(55vw);
+    width: 20%!important;
+    margin-right: 10px;
+    display: -webkit-inline-flex;
+}
+
+.similar-products__items-item__img {
+    width: 100%;
+}
+
 .modal-main .modal-content.basket-content{
     border: none;
     background-color: transparent;
