@@ -2,8 +2,11 @@ import { storiesOf } from "@storybook/react";
 import React, { useState } from "react";
 import Box from "../components/box";
 import Button from "../components/button";
+import CheckBox from "../components/checkbox";
 import Icon from "../components/icon";
+import Input from "../components/input";
 import Modal from "../components/modal";
+import Popup from "../components/popup";
 import Select from "../components/select";
 import "./demo.css";
 
@@ -28,6 +31,7 @@ const items = [
 
 const BasketStory = () => {
   const [show, setShow] = useState(false);
+  const [popup, setShowPopup] = useState(false);
   const basketItems = [
     {
       id: 1,
@@ -45,7 +49,12 @@ const BasketStory = () => {
   const closeModal = () => {
     setShow(false);
   };
-
+  const closePopup = () => {
+    setShowPopup(false);
+  };
+  const showPopup = () => {
+    setShowPopup(true);
+  };
   const showModal = () => {
     setShow(true);
   };
@@ -191,7 +200,21 @@ const BasketStory = () => {
           </div>
         </div>
         <div className={"product-reviews__footer"}>
-          <Button fluid variant={"primary"}>Ürünü Değerlendir</Button>
+          <Button onClick={showPopup} fluid variant={"primary"}>Ürünü Değerlendir</Button>
+          <Popup
+            show={popup}
+            onClose={closePopup}
+          >
+            <h2>Ürünü Değerlendir</h2>
+            {/* tslint:disable-next-line:max-line-length */}
+            <div style={{ display: "flex", justifyContent: "space-between", width: "60%", textAlign: "center", margin: "auto" }}>
+              <CheckBox style={{ width: "30%" }} value={"kotu"} label={"Kötü"}/>
+              <CheckBox style={{ width: "30%" }} value={"orta"} label={"Orta"}/>
+              <CheckBox style={{ width: "30%" }} value={"iyi"} label={"İyi"}/>
+            </div>
+            <Input style={{ marginTop: "30px" }} size={5} placeholder={"Lütfen Yorumunuzu Yazın..."} fluid/>
+            <Button style={{ marginTop: "30px" }} onClick={closePopup} variant={"primary"} fluid>Gönder</Button>
+          </Popup>
         </div>
       </div>
         <div className={"comments"}>
