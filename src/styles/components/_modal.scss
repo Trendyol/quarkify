@@ -3,10 +3,8 @@
 @import "../animations/_modal.scss";
 
 .modal-main{
-  position:absolute;
+  position:fixed;
   background-color: $white;
-  top: 0;
-  left: 0;
   display: block;
   text-align: center;
   height: 100vh;
@@ -22,6 +20,7 @@
     display: flex;
     position: fixed;
     background-color: $white-two;
+    z-index: $modal-z-index;
 
     .modal-title{
       font-size: $font-size-base;
