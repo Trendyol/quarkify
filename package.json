@@ -24,8 +24,7 @@
     "build-storybook": "build-storybook -s public",
     "coverage": "npm test -- --coverage --watchAll=false --bail",
     "coverage:ci": "CI=true npm test -- --coverage --watchAll=false",
-    "lint": "tslint -c tslint.json 'src/**/*.tsx'",
-    "pretty": "prettier -c .prettierrc --write \"./**/*.{ts,tsx,json}\""
+    "lint": "tslint -c tslint.json 'src/**/*.tsx' --fix"
   },
   "jest": {
     "collectCoverageFrom": [
@@ -44,7 +43,7 @@
   "husky": {
     "hooks": {
       "pre-commit": "lint-staged",
-      "pre-push": "npm run pretty && npm run lint && npm run coverage:ci"
+      "pre-push": "lint-staged"
     }
   },
   "eslintConfig": {
@@ -78,7 +77,6 @@
     "husky": "^3.0.0",
     "lint-staged": "^9.1.0",
     "node-sass": "^4.12.0",
-    "prettier": "^1.18.2",
     "sass-loader": "^7.1.0",
     "sinon": "^7.3.2",
     "source-map-loader": "^0.2.4",
@@ -90,7 +88,6 @@
   },
   "lint-staged": {
     "*.{ts,tsx}": [
-      "npm run pretty",
       "npm run lint",
       "npm run coverage",
       "git add"
