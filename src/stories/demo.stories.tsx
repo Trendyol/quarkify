@@ -1,8 +1,11 @@
 import { storiesOf } from "@storybook/react";
-import React from "react";
-import "./demo.css";
+import React, { useState } from "react";
+import Box from "../components/box";
 import Button from "../components/button";
 import Icon from "../components/icon";
+import Modal from "../components/modal";
+import Select from "../components/select";
+import "./demo.css";
 
 const stories = storiesOf("Demo", module);
 
@@ -65,3 +68,65 @@ stories.add("First Page", () => (
     {/*</div>*/}
   </div>
 ));
+
+const BasketStory = () => {
+  const [show, setShow] = useState(true);
+  const items = [
+    {
+      id: 1,
+      name: "Adet: 1",
+    },
+    {
+      id: 2,
+      name: "Adet: 2",
+    },
+    {
+      id: 3,
+      name: "Adet: 3",
+    },
+  ];
+  const closeModal = () => {
+    setShow(false);
+  };
+
+  const showModal = () => {
+    setShow(true);
+  };
+
+  return(
+    <Modal show={show}>
+      <Modal.Header onClose={closeModal} leftIcon="back-button" leftIconOnClick={closeModal} noIcon>
+        Sepetim (1 Urun)
+      </Modal.Header>
+      <Modal.Content className="basket-content">
+        <Box>
+          <div className="box-content">
+            <img
+              alt="gallery image"
+              src="https://img-trendyol.mncdn.com//Assets/ProductImages/oa/67/4720220/2/8681825033965_1_org_zoom.jpg"
+              style={{borderRadius: "3px", width: "100px", position: "relative"}}
+              data-index="0"
+            />
+            <div className="product-details">
+              <div className="basket-card-header">
+                <h1 className="basket-card__brand">TRENDYOLMİLLA</h1>
+                <Icon name="close"/>
+              </div>
+              <h2 className="basket-card__product-name">Lacivert Baskılı Basic Örme T-shirt TWOSS19TC0012</h2>
+              <h2 className="basket-card__product-name">Beden: S</h2>
+              <div className="product-details-bottom">
+                <Select items={items}/>
+                <div className="basket-card__sale-price">
+                  149,97 TL
+                </div>
+              </div>
+            </div>
+          </div>
+        </Box>
+      </Modal.Content>
+
+    </Modal>
+  );
+};
+
+stories.add("Basket", () => <BasketStory />);

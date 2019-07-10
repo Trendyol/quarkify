@@ -21,7 +21,7 @@
     height: $modal-header-height;
     display: flex;
     position: fixed;
-    background-color: inherit;
+    background-color: $white-two;
 
     .modal-title{
       font-size: $font-size-base;
