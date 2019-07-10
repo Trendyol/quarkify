@@ -66,7 +66,7 @@ const BasketStory = () => {
           className="gallery__image"
           alt="gallery image"
           src="https://img-trendyol.mncdn.com//Assets/ProductImages/oa/67/4720220/2/8681825033965_1_org_zoom.jpg"
-          style={{float: "left", width: "458px", position: "relative"}}
+          style={{float: "left", width: "100%", position: "relative"}}
           data-index="0"
         />
       </div>
@@ -230,7 +230,7 @@ const BasketStory = () => {
               </div>
               <div className={"comment-body"}>
                 <div className={"comment-body__text"}>
-                  Çok kaliteli bir ürün bedenide gayet güzel geldi rengi de göründüğü gibi rahatlıkla alabilirsiniz
+                  Çok kaliteli bir ürün bedeni de gayet güzel geldi rengi de göründüğü gibi rahatlıkla alabilirsiniz
                 </div>
                 <div className={"comment-body__author"}>
                   Berkin inan <span className={"trusted-user"}>Ürünü Satın Aldı<Icon name={"checkmark-full"}/></span>
