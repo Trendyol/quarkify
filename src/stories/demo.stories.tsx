@@ -61,7 +61,7 @@ const BasketStory = () => {
           data-index="0"
         />
       </div>
-      <div className={"product-info"}>
+      <div className={"product-info"} style={{ marginBottom: "70px" }}>
         <div className={"product-info__container"}>
           <h1 className="product-info__brand">TRENDYOLMİLLA</h1>
           <h2 className="product_info__product_name">Lacivert Baskılı Basic Örme T-shirt TWOSS19TC0012</h2>
@@ -194,6 +194,77 @@ const BasketStory = () => {
           <Button fluid variant={"primary"}>Ürünü Değerlendir</Button>
         </div>
       </div>
+        <div className={"comments"}>
+          <Box>
+            <div className={"comment"}>
+              <div className={"comment-header"}>
+                <div className={"comment-header__star"}>
+                  <Icon name={"star"} style={{ color: "#ffc000" }}/>
+                </div>
+                <div className={"comment-header__options"}>
+                  <Icon name={"more-vertical"}/>
+                </div>
+              </div>
+              <div className={"comment-body"}>
+                <div className={"comment-body__text"}>
+                  Çok kaliteli bir ürün bedenide gayet güzel geldi rengide göründüğü gibi rahatlıkla alabilirsiniz
+                </div>
+                <div className={"comment-body__author"}>
+                  Berkin inan <span className={"trusted-user"}>Ürünü Satın Aldı<Icon name={"checkmark-full"}/></span>
+                </div>
+                <div className={"comment-body__date"}>
+                  08 Temmuz 2019 | 13:29
+                </div>
+              </div>
+            </div>
+          </Box>
+          <Box>
+            <div className={"comment"}>
+              <div className={"comment-header"}>
+                <div className={"comment-header__star"}>
+                  <Icon name={"star"} style={{ color: "#ffc000" }}/>
+                </div>
+                <div className={"comment-header__options"}>
+                  <Icon name={"more-vertical"}/>
+                </div>
+              </div>
+              <div className={"comment-body"}>
+                <div className={"comment-body__text"}>
+                  Yorumum üstte dursun diye 5 yıldız verdim yoksa beş para etmez
+                </div>
+                <div className={"comment-body__author"}>
+                  Ant Kaynak <span className={"trusted-user"}>Ürünü Satın Aldı<Icon name={"checkmark-full"}/></span>
+                </div>
+                <div className={"comment-body__date"}>
+                  12 Ocak 2019 | 23:09
+                </div>
+              </div>
+            </div>
+          </Box>
+          <Box>
+            <div className={"comment"}>
+              <div className={"comment-header"}>
+                <div className={"comment-header__star"}>
+                  <Icon name={"star"} style={{ color: "#ffc000" }}/>
+                </div>
+                <div className={"comment-header__options"}>
+                  <Icon name={"more-vertical"}/>
+                </div>
+              </div>
+              <div className={"comment-body"}>
+                <div className={"comment-body__text"}>
+                  Ürün görselde ki gibi degil rengi bira daha koyu
+                </div>
+                <div className={"comment-body__author"}>
+                  Yavuz Koca <span className={"trusted-user"}>Ürünü Satın Aldı<Icon name={"checkmark-full"}/></span>
+                </div>
+                <div className={"comment-body__date"}>
+                  18 mayıs 2018 | 17:31
+                </div>
+              </div>
+            </div>
+          </Box>
+        </div>
     </div>
 
       <div className={"price"}>
