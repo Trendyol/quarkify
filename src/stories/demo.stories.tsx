@@ -207,7 +207,7 @@ const BasketStory = () => {
               </div>
               <div className={"comment-body"}>
                 <div className={"comment-body__text"}>
-                  Çok kaliteli bir ürün bedenide gayet güzel geldi rengide göründüğü gibi rahatlıkla alabilirsiniz
+                  Çok kaliteli bir ürün bedenide gayet güzel geldi rengi de göründüğü gibi rahatlıkla alabilirsiniz
                 </div>
                 <div className={"comment-body__author"}>
                   Berkin inan <span className={"trusted-user"}>Ürünü Satın Aldı<Icon name={"checkmark-full"}/></span>
@@ -280,9 +280,81 @@ const BasketStory = () => {
       </div>
       <Modal show={show}>
         <Modal.Header onClose={closeModal} leftIcon="back-button" leftIconOnClick={closeModal} noIcon>
-          Sepetim (1 Urun)
+          Sepetim (4 Urun)
         </Modal.Header>
         <Modal.Content className="basket-content">
+          <Box>
+            <div className="box-content">
+              <img
+                alt="gallery image"
+                src="https://img-trendyol.mncdn.com//Assets/ProductImages/oa/67/5959626/2/8682164080030_1_org_zoom.jpg"
+                style={{borderRadius: "3px", width: "100px", position: "relative"}}
+                data-index="0"
+              />
+              <div className="product-details">
+                <div className="basket-card-header">
+                  <h1 className="basket-card__brand">TRENDYOLMİLLA</h1>
+                  <Icon name="close"/>
+                </div>
+                <h2 className="basket-card__product-name">Mom Jeans</h2>
+                <h2 className="basket-card__product-name">Beden: S</h2>
+                <div className="product-details-bottom">
+                  <Select items={basketItems}/>
+                  <div className="basket-card__sale-price">
+                    68,99 TL
+                  </div>
+                </div>
+              </div>
+            </div>
+          </Box>
+          <Box>
+            <div className="box-content">
+              <img
+                alt="gallery image"
+                src="https://img-trendyol.mncdn.com//Assets/ProductImages/oa/67/6570246/2/8682164248607_1_org_zoom.jpg"
+                style={{borderRadius: "3px", width: "100px", position: "relative"}}
+                data-index="0"
+              />
+              <div className="product-details">
+                <div className="basket-card-header">
+                  <h1 className="basket-card__brand">TRENDYOLMİLLA</h1>
+                  <Icon name="close"/>
+                </div>
+                <h2 className="basket-card__product-name">Mavi Yikamali</h2>
+                <h2 className="basket-card__product-name">Beden: S</h2>
+                <div className="product-details-bottom">
+                  <Select items={basketItems}/>
+                  <div className="basket-card__sale-price">
+                    119,97 TL
+                  </div>
+                </div>
+              </div>
+            </div>
+          </Box>
+          <Box>
+            <div className="box-content">
+              <img
+                alt="gallery image"
+                src="https://img-trendyol.mncdn.com//Assets/ProductImages/oa/67/6019075/2/8681825243685_6_org_zoom.jpg"
+                style={{borderRadius: "3px", width: "100px", position: "relative"}}
+                data-index="0"
+              />
+              <div className="product-details">
+                <div className="basket-card-header">
+                  <h1 className="basket-card__brand">TRENDYOLMİLLA</h1>
+                  <Icon name="close"/>
+                </div>
+                <h2 className="basket-card__product-name">Ekru Volan Detayli Elbise</h2>
+                <h2 className="basket-card__product-name">Beden: S</h2>
+                <div className="product-details-bottom">
+                  <Select items={basketItems}/>
+                  <div className="basket-card__sale-price">
+                    149,97 TL
+                  </div>
+                </div>
+              </div>
+            </div>
+          </Box>
           <Box>
             <div className="box-content">
               <img
@@ -301,12 +373,13 @@ const BasketStory = () => {
                 <div className="product-details-bottom">
                   <Select items={basketItems}/>
                   <div className="basket-card__sale-price">
-                    149,97 TL
+                    99,99 TL
                   </div>
                 </div>
               </div>
             </div>
           </Box>
+
         </Modal.Content>
       </Modal>
     </div>

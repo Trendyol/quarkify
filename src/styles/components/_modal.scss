@@ -5,6 +5,8 @@
 .modal-main{
   position:fixed;
   background-color: $white;
+  top: 0;
+  left: 0;
   display: block;
   text-align: center;
   height: 100vh;
@@ -47,7 +49,6 @@
       }
     }
   }
-
 
     .modal-content {
       background-color: $white-two;

@@ -342,6 +342,7 @@ article {
 
 .box{
     border-radius: 3px;
+    margin-bottom: 10px;
 }
 
 .box .box-content{
@@ -370,6 +371,7 @@ article {
     display: flex;
     flex-direction: column;
     overflow: hidden;
+    width: 100%;
 }
 
 .product-details-bottom{

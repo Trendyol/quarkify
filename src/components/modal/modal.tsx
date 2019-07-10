@@ -35,16 +35,14 @@ class Modal extends React.Component<IModalProps> {
 
   public render() {
     const { show, children, animation = "slideInRight" } = this.props;
-    return (
-      <CSSTransition
-        in={show}
-        unmountOnExit
-        timeout={300}
-        classNames={`${animation} modal`}
-      >
-        <div className="modal-main">{children}</div>
-      </CSSTransition>
-    );
+    return <CSSTransition
+      in={show}
+      unmountOnExit
+      timeout={300}
+      classNames={`${animation} modal`}
+    >
+      <div className="modal-main">{children}</div>
+    </CSSTransition>;
   }
 }
 
