@@ -136,6 +136,40 @@ stories.add("First Page", () => (
           </div>
         </Box>
       </div>
+      <div className={"product-reviews"}>
+        <div className={"product-reviews__header"}>
+          <div className={"product-reviews__header-title"}>
+            Ürün Değerlendirmeleri
+          </div>
+          <div className={"product-reviews__header-comments-count"}>
+            Tüm Yorumlar (7) <Icon name={"forward-button"}/>
+          </div>
+        </div>
+        <div className={"product-reviews__body"}>
+          <div className={"product-reviews__body-img"}>
+            {/* tslint:disable-next-line:max-line-length */}
+            <img src="https://img-trendyol.mncdn.com/mnresize/400/-/Assets/ProductImages/oa/76/5930871/1/8698669560489_1_org.jpg"/>
+          </div>
+          <div className={"product-reviews__body-info"}>
+            <h5 className={"product-reviews__body-info__title"}>Avva</h5>
+            <div className={"product-reviews__body-info__subtitle"}>Erkek Taş Basic Pantolon - A91B3556</div>
+            <div className={"product-info__footer-wrapper__stars"} style={{ marginTop: "50px"}}>
+              <div className={"product-info__footer-wrapper__stars-name"}>
+                5.0
+              </div>
+              <div className={"product-info__footer-wrapper__stars-icon"}>
+                <Icon name={"star"} style={{ color: "#ffc000" }}/>
+              </div>
+            </div>
+            <div className={"product-info__footer-wrapper-reviews"}>
+              11 Değerlendirme 7 Yorum
+            </div>
+          </div>
+        </div>
+        <div className={"product-reviews__footer"}>
+          <Button fluid variant={"primary"}>Ürünü Değerlendir</Button>
+        </div>
+      </div>
     </div>
 
     {/*<div className={"price"}>*/}

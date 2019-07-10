@@ -292,7 +292,6 @@ article {
 .more-buttons {
     display: block;
     width: 100%;
-    height: 50px;
     background-color: #fff;
     border-top: 1px solid #e9e9e9;
     border-bottom: 1px solid #e9e9e9;
@@ -398,4 +397,71 @@ article {
     text-overflow: ellipsis;
     width: 90%;
     display: block;
+}
+
+.product-reviews__header {
+    display: flex;
+    padding: 10px;
+}
+
+.product-reviews__header-title {
+    width: 50%;
+    font-size: 14px;
+    line-height: 18px;
+    color: #333;
+    padding-left: 15px;
+    font-weight: 600;
+}
+
+.product-reviews__header-comments-count {
+    position: absolute;
+    right: 10%;
+    color: #f27a1a;
+}
+
+.product-reviews {
+    margin-top: 50px;
+}
+
+.product-reviews__body {
+    margin-top: 20px;
+    display: flex;
+}
+
+.product-reviews__body-img {
+    width: 30%;
+}
+
+.product-reviews__body-img img {
+    width: 100%;
+}
+
+.product-reviews__body-info {
+    padding: 10px;
+}
+
+.product-reviews__body-info__subtitle {
+    font-size: 12px;
+    line-height: 16px;
+    color: #666;
+    margin-bottom: 5px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.product-reviews__body-info__title {
+    font-size: 14px;
+    line-height: 18px;
+    color: #333;
+    font-weight: 600;
+    margin-bottom: 5px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.product-reviews__footer {
+    width: 100%;
+    margin-top: 30px;
 }
