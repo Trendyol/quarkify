@@ -1,5 +1,4 @@
 import classNames from "classnames";
-import { type } from "os";
 import React, { ReactNode } from "react";
 import ReactDOM from "react-dom";
 import { CSSTransition } from "react-transition-group";
