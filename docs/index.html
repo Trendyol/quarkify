@@ -1,17 +1,99 @@
-<!doctype html><html><head><meta charset="utf-8"><title>Storybook</title><meta name="viewport" content="width=device-width,initial-scale=1"><style>html, body {
-    overflow: hidden;
-    height: 100%;
-    width: 100%;
-    margin: 0;
-    padding: 0;
-  }</style><script>/* globals window */
-  /* eslint-disable no-underscore-dangle */
-  try {
-    if (window.parent !== window) {
-      window.__REACT_DEVTOOLS_GLOBAL_HOOK__ = window.parent.__REACT_DEVTOOLS_GLOBAL_HOOK__;
-      window.__VUE_DEVTOOLS_GLOBAL_HOOK__ = window.parent.__VUE_DEVTOOLS_GLOBAL_HOOK__;
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>quarkify</title>
+  <link rel="icon" href="_media/favicon.ico">
+  <meta name="google-site-verification" content="6t0LoIeFksrjF4c9sqUEsVXiQNxLp2hgoqo0KryT-sE" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <meta name="keywords" content="doc,docs,documentation,gitbook,creator,generator,github,jekyll,github-pages">
+  <meta name="description" content="A magical documentation generator.">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <link rel="stylesheet" href="//unpkg.com/docsify/lib/themes/vue.css" title="vue">
+  <link rel="stylesheet" href="//unpkg.com/docsify/lib/themes/dark.css" title="dark" disabled>
+  <link rel="stylesheet" href="//unpkg.com/docsify/lib/themes/buble.css" title="buble" disabled>
+  <link rel="stylesheet" href="//unpkg.com/docsify/lib/themes/pure.css" title="pure" disabled>
+  <script src="//unpkg.com/docsify-plugin-codefund/index.js"></script>
+  <style>
+    nav.app-nav li ul {
+      min-width: 100px;
     }
-  } catch (e) {
-    // eslint-disable-next-line no-console
-    console.warn('unable to connect to parent frame for connecting dev tools');
-  }</script></head><body><div id="root"></div><script src="runtime~main.8e75d9f0539d72521d27.bundle.js"></script><script src="vendors~main.58fb74375774fd72cb04.bundle.js"></script><script src="main.745a4773cbe344bd113d.bundle.js"></script></body></html>
+  </style>
+</head>
+
+<body>
+<div id="app">Loading ...</div>
+<script>
+  window.$docsify = {
+    alias: {
+      '.*?/awesome': 'https://raw.githubusercontent.com/docsifyjs/awesome-docsify/master/README.md',
+      '.*?/changelog': 'https://raw.githubusercontent.com/docsifyjs/docsify/master/CHANGELOG.md',
+      '/.*/_navbar.md': '/_navbar.md',
+    },
+    auto2top: true,
+    coverpage: true,
+    executeScript: true,
+    loadSidebar: true,
+    loadNavbar: true,
+    mergeNavbar: true,
+    maxLevel: 4,
+    subMaxLevel: 2,
+    ga: 'UA-106147152-1',
+    matomo: {
+      host: '//matomo.thunderwave.de',
+      id: 6
+    },
+    name: 'quarkify',
+    search: {
+      noData: {
+        '/de-de/': 'Keine Ergebnisse!',
+        '/zh-cn/': '没有结果!',
+        '/': 'No results!'
+      },
+      paths: 'auto',
+      placeholder: {
+        '/de-de/': 'Suche',
+        '/zh-cn/': '搜索',
+        '/': 'Search'
+      }
+    },
+    formatUpdated: '{MM}/{DD} {HH}:{mm}',
+    plugins: [
+      function (hook, vm) {
+        hook.beforeEach(function (html) {
+          if (/githubusercontent\.com/.test(vm.route.file)) {
+            url = vm.route.file
+                    .replace('raw.githubusercontent.com', 'github.com')
+                    .replace(/\/master/, '/blob/master')
+          } else {
+            url = 'https://github.com/Trendyol/quarkify/blob/master/docs/' + vm.route.file
+          }
+          var editHtml = '[:memo: Edit Document](' + url + ')\n'
+          return editHtml
+                  + html
+                  + '\n\n----\n\n'
+                  + '<a href="https://docsify.js.org" target="_blank" style="color: inherit; font-weight: normal; text-decoration: none;">Powered by docsify</a>'
+        })
+      },
+      DocsifyCodefund.create('fae1f9a4-870c-4c25-b8e0-c80464f7a95c')
+    ]
+  }
+</script>
+<script src="//unpkg.com/docsify/lib/docsify.min.js"></script>
+<script src="//unpkg.com/docsify/lib/plugins/search.min.js"></script>
+<script src="//unpkg.com/docsify/lib/plugins/ga.min.js"></script>
+<script src="//unpkg.com/docsify/lib/plugins/matomo.min.js"></script>
+<script src="//unpkg.com/prismjs/components/prism-bash.min.js"></script>
+<script src="//unpkg.com/prismjs/components/prism-markdown.min.js"></script>
+<script src="//unpkg.com/prismjs/components/prism-nginx.min.js"></script>
+
+<script>
+  ((window.gitter = {}).chat = {}).options = {
+    room: 'docsifyjs/Lobby'
+  };
+</script>
+<script src="https://sidecar.gitter.im/dist/sidecar.v1.js" async defer></script>
+</body>
+
+</html>

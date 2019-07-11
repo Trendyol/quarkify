@@ -1,6 +1,6 @@
 {
   "name": "quarkify",
-  "version": "1.0.2",
+  "version": "1.0.4",
   "license": "MIT",
   "description": "An awesome lightweight React UI Component library",
   "repository": "https://github.com/Trendyol/quarkify",
@@ -24,7 +24,7 @@
     "test": "react-scripts test",
     "test:ci": "react-scripts test --silent --runInBand --watchAll=false",
     "eject": "react-scripts eject",
-    "build-storybook": "build-storybook -c .storybook -o docs -s public",
+    "build-storybook": "build-storybook -c .storybook -o story -s public",
     "coverage": "npm test -- --coverage --silent --watchAll=false --bail",
     "coverage:ci": "CI=true npm test -- --coverage --silent --watchAll=false",
     "lint": "tslint -c tslint.json 'src/**/*.tsx' --fix"
