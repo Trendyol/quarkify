@@ -1292,7 +1292,8 @@ template {
     border-radius: 3px;
     height: 40px;
     padding: 10px;
-    color: #666666; }
+    color: #666666;
+    -webkit-appearance: none; }
     .input-wrapper input.disabled {
       background-color: #d2d2d2;
       opacity: 0.9;
