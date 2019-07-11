@@ -9,7 +9,7 @@ button {
   padding-right: 20px;
   padding-left: 20px;
   font-weight: $bold;
-  height: $button-height;
+  //height: $button-height;
   font-family: $font-family;
   font-size: $button-font-size;
   font-style: normal;
@@ -48,6 +48,12 @@ button {
   }
   &.round {
     border-radius: $button-round;
+  }
+  &.circular{
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    padding: 0;
   }
 
   &:focus{

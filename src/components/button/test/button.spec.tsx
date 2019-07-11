@@ -65,4 +65,9 @@ describe("button specs", () => {
     const wrapper = mount(<Button onClick={onClick} icon="heart" />);
     expect(wrapper.exists(".icon-heart")).toEqual(true);
   });
+
+  it("should have className circular when given circular prop", () => {
+    const wrapper = shallow(<Button circular />);
+    expect(wrapper.exists(".circular")).toEqual(true);
+  });
 });

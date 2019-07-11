@@ -55,3 +55,7 @@ stories.add("Button with Icon", () => (
     <Button variant="secondary" icon="heart" onClick={actionLog} />
   </div>
 ));
+
+stories.add("Circular", () => (
+  <Button variant="primary" circular icon="heart" onClick={actionLog}/>
+));
