@@ -47,8 +47,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "lint-staged && npm run coverage:ci",
-      "pre-push": "lint-staged && npm run coverage:ci"
+      "pre-commit": "lint-staged && npm run coverage:ci"
     }
   },
   "eslintConfig": {
