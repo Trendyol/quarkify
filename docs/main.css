@@ -2022,8 +2022,16 @@ template {
   z-index: 1022;
   background-color: rgba(0, 0, 0, 0.5); }
 
-.disable-scroll {
-  overflow: hidden; }
+body.disable-scroll {
+  position: fixed;
+  overflow: hidden;
+  height: 100%;
+  width: 100%; }
+
+html.disable-scroll {
+  overflow: hidden;
+  height: 100%;
+  width: 100%; }
 
 /*!
  * Bootstrap Reboot v4.3.1 (https://getbootstrap.com/)
@@ -3137,19 +3145,19 @@ template {
   display: inline-flex;
   align-items: center; }
   .radio-wrapper input[type=radio] {
-    font-family: icomoon !important;
-    -webkit-appearance: none;
-    background: #ffffff;
-    border: 0;
-    padding: 0 5px 0 0;
-    overflow: visible; }
+    opacity: 0;
+    position: absolute; }
   .radio-wrapper input[type=radio]:focus {
     outline: none !important; }
-  .radio-wrapper input[type=radio]:checked:after {
+  .radio-wrapper input[type=radio]:checked + label::before {
     content: "\E93D"; }
-  .radio-wrapper input[type=radio]:after {
+  .radio-wrapper input[type=radio] + label::before {
+    padding-right: 3px;
     color: #f27a1a;
-    content: "\E93C"; }
+    font-family: icomoon !important;
+    content: "\E93C";
+    line-height: 21px;
+    vertical-align: text-top; }
   .radio-wrapper label {
     font-weight: 500;
     font-size: 1rem;

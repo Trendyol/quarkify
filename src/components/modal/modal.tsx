@@ -27,8 +27,10 @@ class Modal extends React.Component<IModalProps> {
     }
     if (nextProps.show && typeof window !== "undefined") {
       document.body.classList.add("disable-scroll");
+      document.documentElement.classList.add("disable-scroll");
     } else if (typeof window !== "undefined") {
       document.body.classList.remove("disable-scroll");
+      document.documentElement.classList.remove("disable-scroll");
     }
     return true;
   }
