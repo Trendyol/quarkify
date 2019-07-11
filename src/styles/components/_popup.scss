@@ -51,6 +51,15 @@
   background-color: rgba(0, 0, 0, .5);
 }
 
-.disable-scroll{
+body.disable-scroll{
+  position: fixed;
   overflow: hidden;
+  height: 100%;
+  width: 100%;
+}
+
+html.disable-scroll{
+  overflow: hidden;
+  height: 100%;
+  width: 100%;
 }

@@ -66,7 +66,7 @@ const BasketStory = () => {
           className="gallery__image"
           alt="gallery image"
           src="https://img-trendyol.mncdn.com//Assets/ProductImages/oa/67/4720220/2/8681825033965_1_org_zoom.jpg"
-          style={{float: "left", width: "100%", position: "relative"}}
+          style={{float: "left", width: "100%", position: "relative", height: "100%"}}
           data-index="0"
         />
       </div>
