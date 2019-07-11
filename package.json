@@ -32,7 +32,9 @@
   "jest": {
     "collectCoverageFrom": [
       "src/**/*.{ts,tsx}",
-      "!src/**/*.stories.tsx"
+      "!src/**/*.stories.tsx",
+      "!src/types/*",
+      "!src/interfaces/*"
     ],
     "coverageThreshold": {
       "global": {
