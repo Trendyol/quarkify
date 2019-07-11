@@ -23,7 +23,7 @@ jobs:
           paths:
             - node_modules
           key: dependencies-{{ checksum "package.json" }}
-      - run: npm run test
+      - run: npm run coverage
       - store_artifacts:
           path: coverage
       - codecov/upload:
