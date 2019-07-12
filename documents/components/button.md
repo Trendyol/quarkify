@@ -20,6 +20,20 @@ Adding fluid prop to button element makes the component spread into the div's wi
 <Button variant='secondary' fluid>Secondary</Button>
 ```
 
+## Round
+Adding round prop to button creates a button with rounded borders
+
+```
+<Button round>Secondary</Button>
+```
+
+## Circular
+Adding circular prop to button creates a circular button
+
+```
+<Button circular>Secondary</Button>
+```
+
 #### Additional content
 You can use any other HTML button element's props.
 ```

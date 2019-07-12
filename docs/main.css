@@ -311,7 +311,6 @@ button {
   padding-right: 20px;
   padding-left: 20px;
   font-weight: 600;
-  height: 44px;
   font-family: "Source Sans Pro", sans-serif;
   font-size: 100%;
   font-style: normal;
@@ -354,6 +353,11 @@ button {
     width: 100%; }
   button.round {
     border-radius: 22px; }
+  button.circular {
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    padding: 0; }
   button:focus {
     outline: none !important; }
   button i {
