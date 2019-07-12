@@ -85,4 +85,18 @@ describe("input specs", () => {
     const inputWrapper = wrapper.find(".input-wrapper");
     expect(inputWrapper.hasClass("fluid")).toBe(true);
   });
+
+  it("should render a label when given label prop", () => {
+    const labelText = faker.random.word();
+    const wrapper = shallow(<Input label={labelText} />);
+    const labelWrapper = wrapper.find("label");
+    expect(labelWrapper.text()).toBe(labelText);
+  });
+
+  it("should render a disabled label when given label and disabled prop", () => {
+    const labelText = faker.random.word();
+    const wrapper = shallow(<Input label={labelText} disabled/>);
+    const labelWrapper = wrapper.find("label");
+    expect(labelWrapper.hasClass("disabled")).toBe(true);
+  });
 });
