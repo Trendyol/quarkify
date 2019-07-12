@@ -1,4 +1,4 @@
-import Enzyme, { shallow } from "enzyme";
+import Enzyme, { mount, shallow } from "enzyme";
 import Adapter from "enzyme-adapter-react-16";
 import faker from "faker";
 import React from "react";
@@ -93,10 +93,10 @@ describe("input specs", () => {
     expect(labelWrapper.text()).toBe(labelText);
   });
 
-  it("should render a disabled label when given label and disabled prop", () => {
-    const labelText = faker.random.word();
-    const wrapper = shallow(<Input label={labelText} disabled/>);
-    const labelWrapper = wrapper.find("label");
-    expect(labelWrapper.hasClass("disabled")).toBe(true);
+  it("should accept additional classNames", () => {
+    const fakeClass = faker.lorem.word();
+    const wrapper = shallow(<Input className={fakeClass}/>);
+
+    expect(wrapper.hasClass(fakeClass)).toBe(true);
   });
 });

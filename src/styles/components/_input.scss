@@ -15,9 +15,6 @@
     padding: 0;
     color: $black;
     margin-bottom: 10px;
-    &.disabled{
-      color: $light-gray;
-    }
   }
   .input-error{
     color: $red;
@@ -45,17 +42,25 @@
     padding: 10px;
     color: $dark-gray;
     -webkit-appearance: none;
+  }
+  input:focus{
+    outline: none !important;
+    background-color: $background-gray-two;
+  }
 
-    &.disabled {
+  &.disabled {
+    input{
       @include disabled;
     }
-    &.error{
+    label{
+      color: $light-gray;
+    }
+  }
+
+  &.error{
+    input{
       border-color: $red;
       background-color: $border-error;
-    }
-    &:focus{
-      outline: none !important;
-      background-color: $background-gray-two;
     }
   }
 }
