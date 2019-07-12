@@ -7,12 +7,11 @@ coverage/
 .storybook/
 src/stories/
 docs/
-story/
+documents/
 .prettierrc
 CHANGELOG.md
-logo.jpeg
 README.md
-screenshot.png
+images/
 tslint.json
 dist/stories
 public/
