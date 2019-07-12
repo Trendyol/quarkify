@@ -138,6 +138,7 @@ function App() {
 ```
 
 This will render Button component with primary variant:
+
 [![Button Component][button]](#)
 
 As you can see, to import components into your project, you need to specify the path as 
