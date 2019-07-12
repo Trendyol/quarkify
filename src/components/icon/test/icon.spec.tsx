@@ -1,4 +1,4 @@
-import Enzyme, { mount, shallow } from "enzyme";
+import Enzyme, { shallow } from "enzyme";
 import Adapter from "enzyme-adapter-react-16";
 import faker from "faker";
 import React from "react";
@@ -31,5 +31,12 @@ describe("icon specs", () => {
     const wrapper = shallow(<Icon onClick={spy} name="search" />);
     wrapper.find(".icon-search").simulate("click");
     expect(spy.calledOnce).toEqual(true);
+  });
+
+  it("should accept additional classNames", () => {
+    const fakeClass = faker.lorem.word();
+    const wrapper = shallow(<Icon name="search" className={fakeClass}/>);
+
+    expect(wrapper.hasClass(fakeClass)).toBe(true);
   });
 });
