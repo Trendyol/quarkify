@@ -5,7 +5,7 @@
 <br />
 <p align="center">
   <a href="https://github.com/Trendyol/quarkify">
-    <img src="logo.png" alt="Logo" width="200" height="200">
+    <img src="images/logo.png" alt="Logo" width="200" height="200">
   </a>
 
   <h3 align="center">Quarkify</h3>
@@ -46,10 +46,10 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-<p float="left">
-    <img src="images/home1.png" width="430" height="500"/>
-    <img src="images/home2.png" width="430" height="500"/>
-    <img src="images/home3.png" width="430" height="500"/>
+<p>
+    <img src="images/home1.png" width="280" height="324"/>
+    <img src="images/home2.png" width="280" height="324"/>
+    <img src="images/home3.png" width="280" height="324"/>
 </p>
 
 There are many great UI libraries for react available but almost all of them are
