@@ -1,3 +1,4 @@
+import classNames from "classnames";
 import React, { ReactNode } from "react";
 import { CSSTransition } from "react-transition-group";
 import "../../styles/components/_modal.scss";
@@ -36,14 +37,18 @@ class Modal extends React.Component<IModalProps> {
   }
 
   public render() {
-    const { show, children, animation = "slideInRight" } = this.props;
+    const { show, children, animation = "slideInRight", className } = this.props;
+    const modalClasses = classNames(
+      "modal-main",
+      className,
+    );
     return <CSSTransition
       in={show}
       unmountOnExit
       timeout={300}
       classNames={`${animation} modal`}
     >
-      <div className="modal-main">{children}</div>
+      <div className={modalClasses}>{children}</div>
     </CSSTransition>;
   }
 }
@@ -53,6 +58,7 @@ interface IModalProps {
   animation?: animationTypes;
   children?: ReactNode;
   onChange?: () => void;
+  className?: string;
 }
 
 export default Modal;

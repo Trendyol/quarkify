@@ -7,11 +7,13 @@ const Box: FunctionComponent<IBoxProps> = ({
   children,
   spaced = false,
   textAlign = "left",
+  className,
 }) => {
   const boxClasses = classNames(
     "box",
     spaced && "spaced",
     `${textAlign}-aligned`,
+    className,
   );
   return <div className={boxClasses}>{children}</div>;
 };
@@ -19,6 +21,7 @@ const Box: FunctionComponent<IBoxProps> = ({
 interface IBoxProps {
   spaced?: boolean;
   textAlign?: textAlignTypes;
+  className?: string;
 }
 
 export default Box;
