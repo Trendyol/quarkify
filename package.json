@@ -1,6 +1,6 @@
 {
   "name": "quarkify",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "license": "MIT",
   "description": "An awesome lightweight React UI Component library",
   "repository": "https://github.com/Trendyol/quarkify",
@@ -14,7 +14,8 @@
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-scripts": "3.0.1",
-    "react-transition-group": "^4.2.0"
+    "react-transition-group": "^4.2.0",
+    "node-sass": "^4.12.0"
   },
   "scripts": {
     "start": "start-storybook -p 9009 -s public",
@@ -80,7 +81,6 @@
     "faker": "^4.1.0",
     "husky": "^3.0.0",
     "lint-staged": "^9.1.0",
-    "node-sass": "^4.12.0",
     "sinon": "^7.3.2",
     "source-map-loader": "^0.2.4",
     "ts-loader": "^6.0.4",
