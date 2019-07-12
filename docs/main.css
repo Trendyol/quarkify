@@ -1274,8 +1274,6 @@ template {
     padding: 0;
     color: #333333;
     margin-bottom: 10px; }
-    .input-wrapper label.disabled {
-      color: #999999; }
   .input-wrapper .input-error {
     color: #b30000;
     font-weight: 600;
@@ -1298,18 +1296,20 @@ template {
     padding: 10px;
     color: #666666;
     -webkit-appearance: none; }
-    .input-wrapper input.disabled {
-      background-color: #d2d2d2;
-      opacity: 0.9;
-      color: #ffffff;
-      cursor: not-allowed;
-      border: 0; }
-    .input-wrapper input.error {
-      border-color: #b30000;
-      background-color: #fff1f1; }
-    .input-wrapper input:focus {
-      outline: none !important;
-      background-color: #f8f8f8; }
+  .input-wrapper input:focus {
+    outline: none !important;
+    background-color: #f8f8f8; }
+  .input-wrapper.disabled input {
+    background-color: #d2d2d2;
+    opacity: 0.9;
+    color: #ffffff;
+    cursor: not-allowed;
+    border: 0; }
+  .input-wrapper.disabled label {
+    color: #999999; }
+  .input-wrapper.error input {
+    border-color: #b30000;
+    background-color: #fff1f1; }
 
 /*!
  * Bootstrap Reboot v4.3.1 (https://getbootstrap.com/)
@@ -2869,6 +2869,98 @@ article {
     color: #999;
 }
 
+.loader {
+  display: inline-block;
+  position: relative;
+  width: 64px;
+  height: 64px; }
+  .loader div {
+    -webkit-animation: loader 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+            animation: loader 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+    -webkit-transform-origin: 32px 32px;
+            transform-origin: 32px 32px; }
+  .loader div:after {
+    content: " ";
+    display: block;
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #f27a1a;
+    margin: -3px 0 0 -3px; }
+  .loader div:nth-child(1) {
+    -webkit-animation-delay: calc(-0.036s);
+            animation-delay: calc(-0.036s); }
+  .loader div:nth-child(2) {
+    -webkit-animation-delay: calc(-0.072s);
+            animation-delay: calc(-0.072s); }
+  .loader div:nth-child(3) {
+    -webkit-animation-delay: calc(-0.108s);
+            animation-delay: calc(-0.108s); }
+  .loader div:nth-child(4) {
+    -webkit-animation-delay: calc(-0.144s);
+            animation-delay: calc(-0.144s); }
+  .loader div:nth-child(5) {
+    -webkit-animation-delay: calc(-0.18s);
+            animation-delay: calc(-0.18s); }
+  .loader div:nth-child(6) {
+    -webkit-animation-delay: calc(-0.216s);
+            animation-delay: calc(-0.216s); }
+  .loader div:nth-child(7) {
+    -webkit-animation-delay: calc(-0.252s);
+            animation-delay: calc(-0.252s); }
+  .loader div:nth-child(8) {
+    -webkit-animation-delay: calc(-0.288s);
+            animation-delay: calc(-0.288s); }
+
+.loader div:nth-child(1):after {
+  top: 50px;
+  left: 50px; }
+
+.loader div:nth-child(2):after {
+  top: 54px;
+  left: 45px; }
+
+.loader div:nth-child(3):after {
+  top: 57px;
+  left: 39px; }
+
+.loader div:nth-child(4):after {
+  top: 58px;
+  left: 32px; }
+
+.loader div:nth-child(5):after {
+  top: 57px;
+  left: 25px; }
+
+.loader div:nth-child(6):after {
+  top: 54px;
+  left: 19px; }
+
+.loader div:nth-child(7):after {
+  top: 50px;
+  left: 14px; }
+
+.loader div:nth-child(8):after {
+  top: 45px;
+  left: 10px; }
+
+@-webkit-keyframes loader {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg); }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg); } }
+
+@keyframes loader {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg); }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg); } }
+
 /*!
  * Bootstrap Reboot v4.3.1 (https://getbootstrap.com/)
  * Copyright 2011-2019 The Bootstrap Authors
@@ -3153,29 +3245,35 @@ template {
     position: absolute; }
   .radio-wrapper input[type=radio]:focus {
     outline: none !important; }
-  .radio-wrapper input[type=radio]:checked + label::before {
-    content: "\E93D"; }
   .radio-wrapper input[type=radio] + label::before {
     padding-right: 3px;
     color: #f27a1a;
     font-family: icomoon !important;
     content: "\E93C";
     line-height: 21px;
-    vertical-align: text-top; }
+    display: inline-block;
+    vertical-align: text-top;
+    -webkit-transition: 0.1s;
+    transition: 0.1s; }
+  .radio-wrapper input[type=radio]:active + label::before {
+    -webkit-transform: scale(0.2);
+            transform: scale(0.2); }
+  .radio-wrapper input[type=radio]:checked + label::before {
+    content: "\E93D";
+    -webkit-transform: scale(1);
+            transform: scale(1); }
   .radio-wrapper label {
     font-weight: 500;
     font-size: 1rem;
     margin: 0; }
   .radio-wrapper.error {
     color: #b30000; }
-    .radio-wrapper.error input[type=radio]:after {
+    .radio-wrapper.error input[type=radio] + label::before {
       color: #b30000;
       content: "\E93C"; }
-    .radio-wrapper.error input[type=radio]:checked:after {
+    .radio-wrapper.error input[type=radio]:checked + label::before {
       content: "\E93D";
-      color: #b30000;
-      -webkit-transition: color 300ms;
-      transition: color 300ms; }
+      color: #b30000; }
 
 
 /*# sourceMappingURL=main.css.map*/
