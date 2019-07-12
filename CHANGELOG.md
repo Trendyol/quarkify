@@ -4,19 +4,23 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
-## [1.0.6] - 2019-07-12
+## [1.0.8] - 2019-07-12
+### Added
+- `className` prop to all components
+- `coverage` shield to readme
+
 ### Changed
 - Changed node-sass from dev-dependencies to dependencies 
 
 ## [1.0.5] - 2019-07-11
 ### Added
-- Added circular prop to button 
+- `circular` prop to `button` component
 
 ## [1.0.4] - 2019-07-10
-### Changed
-- storybook folder name changed to story from docs
 ### Added
 - docsify document has been added
+### Changed
+- storybook folder name changed to story from docs
 
 ## [1.0.2] - 2019-07-11
 ### Changed
