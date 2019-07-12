@@ -1,3 +1,4 @@
+import classNames from "classnames";
 import React from "react";
 import IButton from "../../interfaces/button";
 import "../../styles/components/_button.scss";
@@ -17,12 +18,14 @@ class Button extends React.PureComponent<IProps> {
       disabled,
       icon,
       round,
+      circular,
       children,
       ...props
     } = this.props;
+    const buttonClasses = classNames(classNamesDefault({ variant, fluid, disabled, round }), circular && "circular");
     return (
       <button
-        className={classNamesDefault({ variant, fluid, disabled, round })}
+        className={buttonClasses}
         disabled={disabled}
         {...props}
       >
@@ -39,6 +42,7 @@ interface IProps extends IButton {
   disabled?: boolean;
   icon?: string;
   round?: boolean;
+  circular?: boolean;
 }
 
 export default Button;
