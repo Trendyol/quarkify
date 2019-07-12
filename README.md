@@ -25,6 +25,7 @@
 </p>
 
 [![Build Status][build-shield]][build-url]
+[![codecov][codecov-shield]][codecov-url]
 [![contributions welcome][contributors-shield]][contributors-url]
 [![MIT License][license-shield]][license-url]
 
@@ -233,6 +234,8 @@ Distributed under the MIT License. See `LICENSE` for more information.
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
 [build-shield]: https://img.shields.io/badge/build-passing-brightgreen.svg?style=flat-square
 [build-url]: https://github.com/Trendyol/quarkify/pulse
+[codecov-shield]: https://codecov.io/gh/Trendyol/quarkify/branch/master/graph/badge.svg
+[codecov-url]: https://codecov.io/gh/Trendyol/quarkify
 [contributors-shield]: https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat
 [contributors-url]: https://github.com/Trendyol/quarkify/issues
 [license-shield]: https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square
