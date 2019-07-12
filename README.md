@@ -46,7 +46,9 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-[![Product Name Screen Shot][home-screenshot]](https://example.com)
+<img src="images/home1.png" width="430" height="500"/>
+<img src="images/home2.png" width="430" height="500"/>
+<img src="images/home3.png" width="430" height="500"/>
 
 There are many great UI libraries for react available but almost all of them are
 highly customizable and full of boilerplate code, so we decided to create our own
@@ -231,7 +233,6 @@ Distributed under the MIT License. See `LICENSE` for more information.
 [contributors-shield]: https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat
 [contributors-url]: https://github.com/Trendyol/quarkify/issues
 [license-shield]: https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square
-[license-url]: https://github.com/Trendyol/quarkify/blob/dev/LICENSE
-[home-screenshot]: https://raw.githubusercontent.com/Trendyol/quarkify/dev/screenshot.png
-[button]: button.png
-[modal]: modal.png
+[license-url]: LICENSE
+[button]: images/button.png
+[modal]: images/modal.png
