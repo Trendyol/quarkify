@@ -63,11 +63,19 @@ describe("button specs", () => {
 
   it("should have icon component when given icon prop", () => {
     const wrapper = mount(<Button onClick={onClick} icon="heart" />);
-    expect(wrapper.exists(".icon-heart")).toEqual(true);
+    expect(wrapper.exists(".icon-heart")).toBe(true);
   });
 
   it("should have className circular when given circular prop", () => {
     const wrapper = shallow(<Button circular />);
-    expect(wrapper.exists(".circular")).toEqual(true);
+
+    expect(wrapper.exists(".circular")).toBe(true);
+  });
+
+  it("should accept additional classNames", () => {
+    const fakeClass = faker.lorem.word();
+    const wrapper = shallow(<Button className={fakeClass}/>);
+
+    expect(wrapper.hasClass(fakeClass)).toBe(true);
   });
 });
