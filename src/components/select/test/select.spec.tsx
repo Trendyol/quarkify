@@ -1,5 +1,6 @@
-import Enzyme, { shallow } from "enzyme";
+import Enzyme, { mount, shallow } from "enzyme";
 import Adapter from "enzyme-adapter-react-16";
+import faker from "faker";
 import React from "react";
 import sinon from "sinon";
 import Select from "../../select";
@@ -125,5 +126,12 @@ describe("select specs", () => {
         .find("select [selected]")
         .text(),
     ).toEqual("Plane");
+  });
+
+  it("should accept additional classNames", () => {
+    const fakeClass = faker.lorem.word();
+    const wrapper = mount(<Select className={fakeClass} items={customItems} />);
+
+    expect(wrapper.hasClass(fakeClass)).toBe(true);
   });
 });
