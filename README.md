@@ -5,7 +5,7 @@
 <br />
 <p align="center">
   <a href="https://github.com/Trendyol/quarkify">
-    <img src="logo.png" alt="Logo" width="200" height="200">
+    <img src="images/logo.png" alt="Logo" width="200" height="200">
   </a>
 
   <h3 align="center">Quarkify</h3>
