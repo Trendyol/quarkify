@@ -1,3 +1,4 @@
+import classNames from "classnames";
 import React from "react";
 import IInput from "../../interfaces/input";
 import "../../styles/components/_input.scss";
@@ -18,21 +19,25 @@ class Input extends React.PureComponent<IProps> {
       type,
       label,
       disabled,
+      className,
       ...props
     } = this.props;
     if (type === "checkbox" || type === "radio") {
       newType = "text";
     }
+    const inputClasses = classNames(
+      "input-wrapper",
+      classNamesDefault({ error, disabled, fluid }),
+      className);
     return (
-      <div className={`input-wrapper ${fluid ? "fluid" : ""}`}>
+      <div className={inputClasses}>
         {label && (
-          <label className={`${disabled ? "disabled" : ""}`}>{label}</label>
+          <label>{label}</label>
         )}
         {subtext && <span className="input-subtext">{subtext}</span>}
         <input
           disabled={disabled}
           type={newType}
-          className={classNamesDefault({ error, disabled })}
           {...props}
         />
         {error && errorMessage && (
@@ -50,6 +55,7 @@ interface IProps extends IInput {
   label?: string;
   subtext?: string;
   fluid?: boolean;
+  className?: string;
 }
 
 export default Input;

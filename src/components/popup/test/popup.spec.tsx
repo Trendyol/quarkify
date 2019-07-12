@@ -1,5 +1,6 @@
 import Enzyme, { mount, shallow } from "enzyme";
 import Adapter from "enzyme-adapter-react-16";
+import faker from "faker";
 import React from "react";
 import sinon from "sinon";
 import Popup from "../index";
@@ -96,5 +97,13 @@ describe("popup specs", () => {
     const wrapper = shallow(<Popup onClose={onClose} show={true} iconLeft />);
 
     expect(wrapper.find(".popup-icon-left")).toHaveLength(1);
+  });
+
+  it("should accept additional classNames", () => {
+    const fakeClass = faker.lorem.word();
+    const onClose = sandbox.spy();
+    const wrapper = mount(<Popup show={false} onClose={onClose} className={fakeClass}/>);
+
+    expect(wrapper.hasClass(fakeClass)).toBe(true);
   });
 });

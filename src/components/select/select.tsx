@@ -1,3 +1,4 @@
+import classNames from "classnames";
 import React from "react";
 import ISelect from "../../interfaces/select";
 import "../../styles/components/_select.scss";
@@ -13,14 +14,20 @@ class Select extends React.PureComponent<IProps> {
       subtext,
       name,
       value,
+      className,
       ...props
     } = this.props;
     const nameKey = this.props.name === undefined ? "name" : this.props.name;
     const valueKey =
       this.props.value === undefined ? "value" : this.props.value;
+    const selectClasses = classNames(
+      "select-wrapper",
+      classNamesDefault({fluid}),
+      className,
+    );
     return (
       <div style={{ position: "relative" }}>
-        <div className={`select-wrapper ${fluid ? "fluid" : ""}`}>
+        <div className={selectClasses}>
           <div className={"select-group"}>
             <select className="select" {...props}>
               {this.props.items.map((item, index) => {
@@ -51,6 +58,7 @@ interface IProps extends ISelect {
   fluid?: boolean;
   value?: string;
   name?: string;
+  className?: string;
 }
 
 export default Select;

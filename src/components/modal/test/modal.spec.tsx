@@ -34,9 +34,12 @@ describe("modal specs", () => {
   });
 
   it("should render content sub component", () => {
+    const text = faker.random.word();
     const wrapper = mount(
       <Modal show={true}>
-        <Modal.Content />
+        <Modal.Content>
+          {text}
+        </Modal.Content>
       </Modal>,
     );
     expect(wrapper.find(".modal-content")).toHaveLength(1);
@@ -125,5 +128,12 @@ describe("modal specs", () => {
     wrapper.setProps({ show: true });
 
     expect(onChange.calledOnce).toBe(true);
+  });
+
+  it("should accept additional classNames", () => {
+    const fakeClass = faker.lorem.word();
+    const wrapper = mount(<Modal show={false} className={fakeClass}/>);
+
+    expect(wrapper.hasClass(fakeClass)).toBe(true);
   });
 });

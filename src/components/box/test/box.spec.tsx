@@ -50,4 +50,11 @@ describe("Box specs", () => {
 
     expect(wrapper.hasClass("justify-aligned")).toBe(true);
   });
+
+  it("should accept additional classNames", () => {
+    const fakeClass = faker.lorem.word();
+    const wrapper = shallow(<Box className={fakeClass}/>);
+
+    expect(wrapper.hasClass(fakeClass)).toBe(true);
+  });
 });

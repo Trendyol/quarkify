@@ -11,10 +11,11 @@ class Icon extends React.PureComponent<IProps> {
   };
 
   public render() {
-    const { name, size, disabled, ...props } = this.props;
+    const { name, size, disabled, className, ...props } = this.props;
     const iconClass = classNames(
       classNamesDefault({ name, size, disabled }),
       `icon-${name}`,
+      className,
     );
     return (
       <i className={iconClass} {...props}>
@@ -28,6 +29,7 @@ interface IProps extends IIcon {
   name: string;
   size?: sizeTypes;
   disabled?: boolean;
+  className?: string;
 }
 
 export default Icon;

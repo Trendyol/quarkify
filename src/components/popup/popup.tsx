@@ -38,8 +38,12 @@ class Popup extends React.Component<IProps> {
       iconLeft,
       noIcon = false,
       closeOnOverlayClick = true,
+      className,
     } = this.props;
-
+    const popupClasses = classNames(
+      "popup-overlay",
+      className,
+    );
     const popupIconClasses = classNames(
       iconLeft && "popup-icon-left",
       "icon-close",
@@ -63,7 +67,7 @@ class Popup extends React.Component<IProps> {
         timeout={150}
         classNames="zoomIn popup"
       >
-        <div className="popup-overlay" onClick={overlayClick}>
+        <div className={popupClasses} onClick={overlayClick}>
           <div className="popup-main" onClick={this.popupBodyClick}>
             {!noIcon && (
               <Icon
@@ -94,6 +98,7 @@ interface IProps {
   iconLeft?: boolean;
   noIcon?: boolean;
   closeOnOverlayClick?: boolean;
+  className?: string;
 }
 
 export default Popup;

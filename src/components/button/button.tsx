@@ -20,9 +20,13 @@ class Button extends React.PureComponent<IProps> {
       round,
       circular,
       children,
+      className,
       ...props
     } = this.props;
-    const buttonClasses = classNames(classNamesDefault({ variant, fluid, disabled, round }), circular && "circular");
+    const buttonClasses = classNames(
+      classNamesDefault({ variant, fluid, disabled, round }),
+      circular && "circular",
+      className);
     return (
       <button
         className={buttonClasses}
@@ -43,6 +47,7 @@ interface IProps extends IButton {
   icon?: string;
   round?: boolean;
   circular?: boolean;
+  className?: string;
 }
 
 export default Button;

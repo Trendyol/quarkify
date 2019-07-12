@@ -5,7 +5,7 @@
 <br />
 <p align="center">
   <a href="https://github.com/Trendyol/quarkify">
-    <img src="logo.png" alt="Logo" width="200" height="200">
+    <img src="images/logo.png" alt="Logo" width="200" height="200">
   </a>
 
   <h3 align="center">Quarkify</h3>
@@ -25,6 +25,7 @@
 </p>
 
 [![Build Status][build-shield]][build-url]
+[![codecov][codecov-shield]][codecov-url]
 [![contributions welcome][contributors-shield]][contributors-url]
 [![MIT License][license-shield]][license-url]
 
@@ -46,7 +47,11 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-[![Product Name Screen Shot][home-screenshot]](https://example.com)
+<p>
+    <img src="images/home1.png" width="280" height="324"/>
+    <img src="images/home2.png" width="280" height="324"/>
+    <img src="images/home3.png" width="280" height="324"/>
+</p>
 
 There are many great UI libraries for react available but almost all of them are
 highly customizable and full of boilerplate code, so we decided to create our own
@@ -121,6 +126,76 @@ yarn start
 To preview the live demo and see usages of the components please
 refer to our [demo](https://trendyol.github.io/quarkify)
 
+### Examples
+
+We have several examples on the [website](#docsify-url). Here is the first one to get you started:
+
+```js
+import Button from "quarkify/dist/components/button"
+
+function App() {
+  return (
+    <div className="App">
+      <Button variant={"primary"} >Hello World</Button>
+    </div>
+  );
+}
+```
+
+This will render Button component with primary variant:
+
+[![Button Component][button]](#)
+
+As you can see, to import components into your project, you need to specify the path as 
+```
+"quarkify/dist/components/{component-name}"
+```
+
+Furthermore, to use `Modal` component:
+```js
+import Button from "quarkify/dist/components/button"
+import Modal from "quarkify/dist/components/modal";
+
+let show = false;
+
+function handleChange() {
+  show = !show
+}
+
+function closeModal() {
+  show = false
+}
+
+function App() {
+  return (
+    <div className="App">
+      <Button onClick={handleChange}>Toggle Me</Button>
+      <Modal show={show} animation={"slideInUp"}>
+        <Modal.Header
+          onClose={closeModal}
+          leftIcon={"back-button"}
+          leftIconOnClick={closeModal}
+        >
+          Some Title
+        </Modal.Header>
+        <Modal.Content>
+          <p>Some content</p>
+        </Modal.Content>
+        <Modal.Actions>
+          <Button onClick={closeModal} fluid>
+            Ok
+          </Button>
+        </Modal.Actions>
+      </Modal>
+    </div>
+  );
+}
+```
+
+When button is toggled, it will render the modal as it is seen below:
+
+[![Modal Component][modal]](#)
+
 For more examples, please refer to the [documentation](#docsify-url)
 
 
@@ -159,8 +234,11 @@ Distributed under the MIT License. See `LICENSE` for more information.
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
 [build-shield]: https://img.shields.io/badge/build-passing-brightgreen.svg?style=flat-square
 [build-url]: https://github.com/Trendyol/quarkify/pulse
+[codecov-shield]: https://codecov.io/gh/Trendyol/quarkify/branch/master/graph/badge.svg
+[codecov-url]: https://codecov.io/gh/Trendyol/quarkify
 [contributors-shield]: https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat
 [contributors-url]: https://github.com/Trendyol/quarkify/issues
 [license-shield]: https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square
-[license-url]: https://github.com/Trendyol/quarkify/blob/dev/LICENSE
-[home-screenshot]: https://raw.githubusercontent.com/Trendyol/quarkify/dev/screenshot.png
+[license-url]: LICENSE
+[button]: images/button.png
+[modal]: images/modal.png
