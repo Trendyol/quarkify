@@ -46,9 +46,11 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-<img src="images/home1.png" width="430" height="500"/>
-<img src="images/home2.png" width="430" height="500"/>
-<img src="images/home3.png" width="430" height="500"/>
+<p float="left">
+    <img src="images/home1.png" width="430" height="500"/>
+    <img src="images/home2.png" width="430" height="500"/>
+    <img src="images/home3.png" width="430" height="500"/>
+</p>
 
 There are many great UI libraries for react available but almost all of them are
 highly customizable and full of boilerplate code, so we decided to create our own
