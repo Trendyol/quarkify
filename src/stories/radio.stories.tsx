@@ -13,7 +13,7 @@ stories.add("Default", () => (
       <Radio name={"gender"} value={"male"} label={"Male"} />
       <br />
       <br />
-      <Radio name={"gender"} value={"other"} label={"Other"} />
+      <Radio name={"gender"} value={"other"} label={"Other"} checked/>
       <br />
       <br />
       <Radio name={"gender"} value={"error"} label={"Error"} error />
