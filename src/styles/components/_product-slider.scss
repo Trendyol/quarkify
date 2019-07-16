@@ -1,0 +1,13 @@
+@import "../variables";
+
+.product-slider-wrapper{
+  .product-slider{
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: scroll;
+
+    .item + .item {
+      margin-left: 10px;
+    }
+  }
+}
