@@ -10,7 +10,7 @@ describe("product-slider specs", () => {
   it("should render product slider correctly", () => {
     const wrapper = shallow(<ProductSlider/>);
 
-    expect(wrapper.find(".product-slider")).toHaveLength(1);
+    expect(wrapper.find(".q-product-slider")).toHaveLength(1);
   });
 
   it("should give every child a item className", () => {
@@ -21,6 +21,6 @@ describe("product-slider specs", () => {
       </ProductSlider>,
     );
 
-    expect(wrapper.find(".item")).toHaveLength(numberOfChildren);
+    expect(wrapper.find(".q-item")).toHaveLength(numberOfChildren);
   });
 });

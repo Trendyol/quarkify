@@ -3,10 +3,10 @@ import "../../styles/components/_product-slider.scss";
 
 const ProductSlider: FunctionComponent<IProductSliderProps> = ({children}) => {
   return(
-    <div className="product-slider-wrapper">
-      <div className="product-slider">
+    <div className="q-product-slider-wrapper">
+      <div className="q-product-slider">
         {React.Children.map(children, (child) => (
-          <div className="item">
+          <div className="q-item">
             {child}
           </div>
         ))}
