@@ -1,19 +1,30 @@
-import React, { FunctionComponent } from "react";
+import React, { PureComponent } from "react";
 import "../../styles/components/_loader.scss";
 
-const Loader: FunctionComponent<ILoaderProps> = ({ active }) => {
-  if (!active) {
-    return null;
+class Loader extends PureComponent<ILoaderProps> {
+
+  public render() {
+    const {active} = this.props;
+
+    if (!active) {
+      return null;
+    }
+
+    return(
+      <div className="q-loader">
+        {this.renderLoadingAnimation()}
+      </div>
+    );
   }
 
-  return (
-    <div className="q-loader">
+  private renderLoadingAnimation = () => (
+    <div className="q-loading-animation">
       {Array.from({length : 8}, (_, i) => (
-        <div className={"q-loader-div"} key={i}/>
+        <div className="q-loader-item" key={i}/>
       ))}
     </div>
-  );
-};
+  )
+}
 
 interface ILoaderProps {
   active: boolean;
