@@ -27,14 +27,15 @@ class Button extends React.PureComponent<IProps> {
       classNamesDefault({ variant, fluid, disabled, round }),
       circular && "q-circular",
       className, "q-button");
+    const paddingRight = children ? ".75rem" : "0";
     return (
       <button
         className={buttonClasses}
         disabled={disabled}
         {...props}
       >
-        {icon && <Icon name={icon} />}
-        {children && <span>{children}</span>}
+        {icon && <Icon name={icon} style={{ paddingRight }}/>}
+        {children}
       </button>
     );
   }
