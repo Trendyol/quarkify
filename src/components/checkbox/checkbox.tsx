@@ -5,14 +5,20 @@ import "../../styles/components/_checkbox.scss";
 
 class CheckBox extends React.PureComponent<IProps> {
   public render() {
-    const { error, label, type, className, ...props } = this.props;
+    const { checked, error, label, type, className, ...props } = this.props;
     const checkBoxClasses = classNames(
       "q-checkbox-wrapper",
       error && "q-error",
       className);
     return (
       <div className={checkBoxClasses}>
-        <input className={"q-input"} id={`checkbox-${this.props.value}`} type="checkbox" {...props} />
+        <input
+          className={"q-input"}
+          id={`checkbox-${this.props.value}`}
+          type="checkbox"
+          {...props}
+          defaultChecked={checked}
+        />
         {label && (
           <label className={"q-label"} htmlFor={`checkbox-${this.props.value}`}>{label}</label>
         )}
