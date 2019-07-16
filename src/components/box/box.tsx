@@ -10,9 +10,9 @@ const Box: FunctionComponent<IBoxProps> = ({
   className,
 }) => {
   const boxClasses = classNames(
-    "box",
-    spaced && "spaced",
-    `${textAlign}-aligned`,
+    "q-box",
+    spaced && "q-spaced",
+    `q-${textAlign}-aligned`,
     className,
   );
   return <div className={boxClasses}>{children}</div>;

@@ -7,9 +7,9 @@ const Loader: FunctionComponent<ILoaderProps> = ({ active }) => {
   }
 
   return (
-    <div className="loader">
+    <div className="q-loader">
       {Array.from({length : 8}, (_, i) => (
-        <div key={i}/>
+        <div className={"q-loader-div"} key={i}/>
       ))}
     </div>
   );

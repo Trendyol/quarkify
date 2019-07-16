@@ -10,11 +10,11 @@ const Header: FunctionComponent<IHeaderProps> = ({
   leftIconOnClick,
   onClose,
 }) => {
-  const classNames = ["modal-header", leftIcon && "has-left-icon"];
+  const classNames = ["q-modal-header", leftIcon && "q-has-left-icon"];
   return (
     <div className={classNames.join(" ")}>
-      {leftIcon && <Icon name={leftIcon} onClick={leftIconOnClick} />}
-      <h1 className="modal-title">{children}</h1>
+      {leftIcon && <Icon className={"q-i"} name={leftIcon} onClick={leftIconOnClick} />}
+      <h1 className="q-modal-title">{children}</h1>
       {!noIcon && (
         <Icon role="button" aria-label={icon} name={icon} onClick={onClose} />
       )}

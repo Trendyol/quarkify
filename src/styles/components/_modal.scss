@@ -2,7 +2,7 @@
 @import '../globals';
 @import "../animations/_modal.scss";
 
-.modal-main{
+.q-modal-main{
   position:fixed;
   background-color: $white;
   top: 0;
@@ -14,7 +14,7 @@
   z-index: $modal-z-index;
   overflow-y: scroll;
 
-  .modal-header{
+  .q-modal-header{
     padding: 1rem 1rem 0 1rem;
     border-bottom: 1px solid $very-light-pink;
     width: 100%;
@@ -24,7 +24,7 @@
     background-color: $white-two;
     z-index: $modal-z-index;
 
-    .modal-title{
+    .q-modal-title{
       font-size: $font-size-base;
       font-weight: $bold;
       width: 90%;
@@ -40,17 +40,17 @@
       line-height: $font-size-base;
     }
 
-    i{
+    .q-i{
       padding: 0;
     }
-    &.has-left-icon{
-      .modal-title{
+    &.q-has-left-icon{
+      .q-modal-title{
         padding-left: 0;
       }
     }
   }
 
-    .modal-content {
+    .q-modal-content {
       background-color: $white-two;
       overflow-y: scroll;
 
@@ -64,7 +64,7 @@
       }
     }
 
-    .modal-actions{
+    .q-modal-actions{
       margin: 15px;
     }
 

@@ -3,7 +3,7 @@
 @import '../mixins/_color-scheme';
 @import '../mixins/_fluid.scss';
 
-button {
+.q-button {
   cursor: pointer;
   display: inline-block;
   padding-right: 20px;
@@ -19,37 +19,37 @@ button {
   text-align: center;
   border-radius: $border-radius;
 
-  &.primary {
+  &.q-primary {
     @include primary;
     &:active{
       opacity: 0.80;
       transition: opacity 300ms;
     }
   }
-  &.secondary {
+  &.q-secondary {
     @include secondary;
     &:active{
       background-color: $primary;
       color: $white-two;
     }
   }
-  &.gray {
+  &.q-gray {
     @include gray;
     &:active{
       color: $primary;
       border: 1px solid $primary;
     }
   }
-  &.disabled {
+  &.q-disabled {
     @include disabled;
   }
-  &.fluid{
+  &.q-fluid{
     @include fluid;
   }
-  &.round {
+  &.q-round {
     border-radius: $button-round;
   }
-  &.circular{
+  &.q-circular{
     border-radius: 50%;
     width: 30px;
     height: 30px;
@@ -61,10 +61,10 @@ button {
   }
 
   //Icon
-  i{
+  .q-i{
     padding-left: 0;
   }
-  i:only-child{
+  .q-i:only-child{
     padding-right: 0;
   }
 

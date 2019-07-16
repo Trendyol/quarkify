@@ -8,7 +8,7 @@ Enzyme.configure({ adapter: new Adapter() });
 describe("loader specs", () => {
   it("should render correctly if active prop is true", () => {
     const wrapper = shallow(<Loader active={true}/>);
-    expect(wrapper.find(".loader")).toHaveLength(1);
+    expect(wrapper.find(".q-loader")).toHaveLength(1);
   });
 
   it("should not render if active prop is false", () => {

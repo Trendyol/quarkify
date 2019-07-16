@@ -19,12 +19,12 @@ describe("popup specs", () => {
 
   it("should render popup component", () => {
     const wrapper = shallow(<Popup onClose={closePopup} show={true} />);
-    expect(wrapper.exists(".popup-main")).toEqual(true);
+    expect(wrapper.exists(".q-popup-main")).toEqual(true);
   });
 
   it("should not render popup component", () => {
     const wrapper = mount(<Popup onClose={closePopup} show={false} />);
-    expect(wrapper.exists(".popup-main")).toEqual(false);
+    expect(wrapper.exists(".q-popup-main")).toEqual(false);
   });
 
   it("should render close icon", () => {
@@ -42,7 +42,7 @@ describe("popup specs", () => {
   it("should call onClose when overlay is clicked", () => {
     const onClose = sandbox.spy();
     const wrapper = shallow(<Popup onClose={onClose} show={true} />);
-    wrapper.find(".popup-overlay").simulate("click");
+    wrapper.find(".q-popup-overlay").simulate("click");
     expect(onClose.calledOnce).toEqual(true);
   });
 
@@ -51,7 +51,7 @@ describe("popup specs", () => {
     const wrapper = shallow(
       <Popup onClose={onClose} show={true} closeOnOverlayClick={false} />,
     );
-    wrapper.find(".popup-overlay").simulate("click");
+    wrapper.find(".q-popup-overlay").simulate("click");
     expect(onClose.calledOnce).toEqual(false);
   });
 
@@ -61,7 +61,7 @@ describe("popup specs", () => {
       <Popup onClose={onClose} show={true} closeOnOverlayClick={false} />,
     );
     const event = { stopPropagation: () => null };
-    wrapper.find(".popup-main").simulate("click", event);
+    wrapper.find(".q-popup-main").simulate("click", event);
     expect(onClose.calledOnce).toEqual(false);
   });
 
@@ -70,7 +70,7 @@ describe("popup specs", () => {
     const wrapper = mount(<Popup onClose={onClose} show={false} />);
     wrapper.setProps({ show: true });
 
-    expect(document.body.classList.contains("disable-scroll")).toBe(true);
+    expect(document.body.classList.contains("q-disable-scroll")).toBe(true);
   });
 
   it("should remove disable-scroll class when popup is hidden", () => {
@@ -78,7 +78,7 @@ describe("popup specs", () => {
     const wrapper = mount(<Popup onClose={onClose} show={true} />);
     wrapper.setProps({ show: false });
 
-    expect(document.body.classList.contains("disable-scroll")).toBe(false);
+    expect(document.body.classList.contains("q-disable-scroll")).toBe(false);
   });
 
   it("should call onChange when show prop is changed", () => {
@@ -96,7 +96,7 @@ describe("popup specs", () => {
     const onClose = sandbox.spy();
     const wrapper = shallow(<Popup onClose={onClose} show={true} iconLeft />);
 
-    expect(wrapper.find(".popup-icon-left")).toHaveLength(1);
+    expect(wrapper.find(".q-popup-icon-left")).toHaveLength(1);
   });
 
   it("should accept additional classNames", () => {

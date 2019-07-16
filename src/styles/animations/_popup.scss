@@ -1,27 +1,27 @@
 @mixin popup-animation($duration: 150ms) {
-  .zoomIn {
+  .q-zoomIn {
 
-    &.popup-enter {
-      .popup-main{
+    &.q-popup-enter {
+      .q-popup-main{
         transform: translate(-50%,-50%) scale(0);
       }
     }
 
-    &.popup-enter-active {
-      .popup-main{
+    &.q-popup-enter-active {
+      .q-popup-main{
         transform: translate(-50%,-50%) scale(1);
         transition: transform $duration;
       }
     }
 
-    &.popup-exit {
-      .popup-main{
+    &.q-popup-exit {
+      .q-popup-main{
         transition: transform $duration;
       }
     }
 
-    &.popup-exit-active {
-      .popup-main{
+    &.q-popup-exit-active {
+      .q-popup-main{
         transform: translate(-50%,-50%) scale(0);
       }
     }

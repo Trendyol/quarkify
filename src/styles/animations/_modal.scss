@@ -1,65 +1,65 @@
 @mixin modal-animation($duration: 300ms) {
-  .slideInRight{
+  .q-slideInRight{
     transition: transform $duration;
 
-    &.modal-enter {
+    &.q-modal-enter {
       transform: translateX(100vw);
     }
-    &.modal-enter-active {
+    &.q-modal-enter-active {
       transform: translateX(0);
     }
-    &.modal-exit {
+    &.q-modal-exit {
       transform: translateX(0);
     }
-    &.modal-exit-active {
+    &.q-modal-exit-active {
       transform: translateX(100vw);
     }
   }
 
-  .slideInLeft{
+  .q-slideInLeft{
     transition: transform $duration;
-    &.modal-enter {
+    &.q-modal-enter {
       transform: translateX(-100vw);
     }
-    &.modal-enter-active {
+    &.q-modal-enter-active {
       transform: translateX(0);
     }
-    &.modal-exit {
+    &.q-modal-exit {
       transform: translateX(0);
     }
-    &.modal-exit-active {
+    &.q-modal-exit-active {
       transform: translateX(-100vw);
     }
   }
 
-  .slideInDown {
+  .q-slideInDown {
     transition: transform $duration;
-    &.modal-enter {
+    &.q-modal-enter {
       transform: translateY(100vh);
     }
-    &.modal-enter-active {
+    &.q-modal-enter-active {
       transform: translateY(0);
     }
-    &.modal-exit {
+    &.q-modal-exit {
       transform: translateY(0);
     }
-    &.modal-exit-active {
+    &.q-modal-exit-active {
       transform: translateY(100vh);
     }
   }
 
-  .slideInUp{
+  .q-slideInUp{
     transition: transform $duration;
-    &.modal-enter {
+    &.q-modal-enter {
       transform: translateY(-100vh);
     }
-    &.modal-enter-active {
+    &.q-modal-enter-active {
       transform: translateY(0);
     }
-    &.modal-exit {
+    &.q-modal-exit {
       transform: translateY(0);
     }
-    &.modal-exit-active {
+    &.q-modal-exit-active {
       transform: translateY(-100vh);
     }
   }
