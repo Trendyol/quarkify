@@ -1,6 +1,6 @@
 {
   "name": "quarkify",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "license": "MIT",
   "description": "An awesome lightweight React UI Component library",
   "repository": "https://github.com/Trendyol/quarkify",
@@ -19,16 +19,18 @@
   },
   "scripts": {
     "start": "start-storybook -p 9009 -s public",
-    "build": "npm run build:fast",
-    "build:fast": "rm -rf ./dist && npm run build:tsc && cp -r ./src/styles ./dist",
-    "build:tsc": "tsc -p tsconfig.tsc.json",
+    "build": "npm run rm:dist && npm run build:tsc && cp -r ./src/styles .",
+    "build:tsc": "tsc -p tsconfig.tsc.json --outDir .",
+    "build:tsc:dev": "tsc -p tsconfig.tsc.json --outDir ./dist",
+    "build:dev": "npm run rm:dist && npm run build:tsc:dev && cp -r ./src/styles ./dist",
     "test": "react-scripts test",
     "test:ci": "react-scripts test --silent --runInBand --watchAll=false",
     "eject": "react-scripts eject",
     "build-storybook": "build-storybook -c .storybook -o docs -s public",
     "coverage": "npm test -- --coverage --silent --watchAll=false --bail",
     "coverage:ci": "CI=true npm test -- --coverage --silent --watchAll=false",
-    "lint": "tslint -c tslint.json 'src/**/*.tsx' --fix"
+    "lint": "tslint -c tslint.json 'src/**/*.tsx' --fix",
+    "rm:dist": "rm -rf ./dist"
   },
   "jest": {
     "collectCoverageFrom": [
