@@ -25,8 +25,8 @@ class Button extends React.PureComponent<IProps> {
     } = this.props;
     const buttonClasses = classNames(
       classNamesDefault({ variant, fluid, disabled, round }),
-      circular && "circular",
-      className);
+      circular && "q-circular",
+      className, "q-button");
     return (
       <button
         className={buttonClasses}

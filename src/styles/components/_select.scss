@@ -3,14 +3,14 @@
 @import '../mixins/_color-scheme';
 @import '../mixins/_fluid.scss';
 
-.select-wrapper {
+.q-select-wrapper {
   display: flex;
 
-  &.fluid{
+  &.q-fluid{
     @include fluid;
   }
 
-  .select-group {
+  .q-select-group {
     height: $select-height;
     width: inherit;
     border-radius: $border-radius;
@@ -19,7 +19,7 @@
     color: $dark-gray;
     position: relative;
 
-    .select {
+    .q-select {
       width: inherit;
       color: currentColor;
       padding: $select-padding;
@@ -30,13 +30,13 @@
       background: 0;
     }
 
-    .select:focus {
+    .q-select:focus {
       outline: none !important;
     }
 
   }
 
-  .select-group::after {
+  .q-select-group::after {
     content: "\E904";
     font-family: icomoon!important;
     position: absolute;
@@ -48,7 +48,7 @@
     pointer-events: none;
   }
 
-  .select-group:active{
+  .q-select-group:active{
     border: 1px solid $light-gray;
   }
 

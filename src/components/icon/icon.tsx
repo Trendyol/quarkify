@@ -15,6 +15,7 @@ class Icon extends React.PureComponent<IProps> {
     const iconClass = classNames(
       classNamesDefault({ name, size, disabled }),
       `icon-${name}`,
+      "q-i",
       className,
     );
     return (

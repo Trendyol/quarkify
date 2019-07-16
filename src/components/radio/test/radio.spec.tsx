@@ -64,6 +64,6 @@ describe("radio specs", () => {
   it("should have error className when error prop is passed", () => {
     const wrapper = shallow(<Radio value={"test"}  error />);
 
-    expect(wrapper.hasClass("error")).toBe(true);
+    expect(wrapper.hasClass("q-error")).toBe(true);
   });
 });
