@@ -3,22 +3,22 @@
 @import '../mixins/_color-scheme';
 @import '../mixins/_fluid.scss';
 
-i {
+.q-i {
   padding: $padding-y $padding-x;
   display: inline-block;
   border-radius: $border-radius;
   line-height: $line-height;
 
-  &.disabled {
+  &.q-disabled {
     @include disabled;
   }
 
   // Icon Sizes
-  &.large {
+  &.q-large {
     font-size: $font-size-large;
   }
 
-  &.small {
+  &.q-small {
     font-size: $font-size-small;
   }
 

@@ -21,15 +21,15 @@ class Select extends React.PureComponent<IProps> {
     const valueKey =
       this.props.value === undefined ? "value" : this.props.value;
     const selectClasses = classNames(
-      "select-wrapper",
+      "q-select-wrapper",
       classNamesDefault({fluid}),
       className,
     );
     return (
       <div style={{ position: "relative" }}>
         <div className={selectClasses}>
-          <div className={"select-group"}>
-            <select className="select" {...props}>
+          <div className={"q-select-group"}>
+            <select className="q-select" {...props}>
               {this.props.items.map((item, index) => {
                 return (
                   <option
