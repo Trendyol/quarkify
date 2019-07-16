@@ -57,7 +57,7 @@
   }
 
 
-  &.error{
+  &.q-error{
     color: $red;
 
     .q-switch-slider{
@@ -70,7 +70,7 @@
 
   }
 
-  &.disabled{
+  &.q-disabled{
     color: $dark-gray;
 
     .q-switch-slider{

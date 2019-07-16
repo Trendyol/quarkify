@@ -15,6 +15,12 @@
     outline: none !important;
   }
 
+  .q-label{
+    font-weight: 500;
+    font-size: $font-size-base;
+    margin: 0;
+  }
+
   .q-input[type=radio] + .q-label::before{
     padding-right: 3px;
     color: $primary;
@@ -36,10 +42,23 @@
     transform: scale(1);
   }
 
-  .q-label{
-    font-weight: 500;
-    font-size: $font-size-base;
-    margin: 0;
+  .q-input[type=radio]:disabled + .q-label{
+    color: $light-gray;
+  }
+
+  .q-input[type=radio]:checked:disabled + .q-label{
+    color: $light-gray;
+  }
+
+  .q-input[type=radio]:disabled + .q-label::before {
+    transform: scale(1);
+    color: $light-gray;
+  }
+
+  .q-input[type=radio]:checked:disabled + .q-label::before {
+    transform: scale(1);
+    background-color: $light-gray;
+    border-color: $light-gray;
   }
 
   &.q-error{
