@@ -13,6 +13,8 @@ You can change the variant prop to give some predefined styles to the button com
 <Button variant='gray'>Gray</Button>
 ``` 
 
+![](../images/button.png)
+
 ## Fluid
 Adding fluid prop to button element makes the component spread into the div's width.
 

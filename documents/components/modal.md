@@ -27,6 +27,8 @@ Here is the simple usage of the modal component:
 </Modal>
  ```
  
+ ![](../images/modal.png)
+ 
 As it can be seen, Modal component is shown or hidden by the prop it takes show. If show prop is true, modal will be shown. Otherwise it will not be rendered.
  
 ## Animation
