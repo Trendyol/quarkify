@@ -16,16 +16,16 @@
     color: $black;
     margin-bottom: 10px;
   }
-  .q-input-error{
-    color: $red;
-    font-weight: $bold;
-    margin-top: 5px;
-  }
   .q-span{
     display: inherit;
     color: #ababab;
     margin: -5px 0 5px 0;
     font-size: $font-size-small-paragraph;
+  }
+  .q-input-error{
+    color: $red;
+    font-weight: $bold;
+    margin-top: 5px;
   }
   &.q-fluid{
     @include fluid;
