@@ -1,13 +1,12 @@
 @import "../variables";
 
-.q-product-slider-wrapper{
-  .q-product-slider{
-    display: flex;
-    flex-wrap: nowrap;
-    overflow-x: scroll;
+.q-product-slider{
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: scroll;
 
-    .q-item + .q-item {
-      margin-left: 10px;
-    }
+  .q-item + .q-item {
+    margin-left: 10px;
   }
 }
+
