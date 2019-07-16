@@ -66,11 +66,4 @@ describe("radio specs", () => {
 
     expect(wrapper.hasClass("error")).toBe(true);
   });
-
-  it("should accept additional classNames", () => {
-    const fakeClass = faker.lorem.word();
-    const wrapper = shallow(<Radio value={"test"} className={fakeClass}/>);
-
-    expect(wrapper.hasClass(fakeClass)).toBe(true);
-  });
 });
