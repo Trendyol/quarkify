@@ -18,11 +18,11 @@ class Modal extends React.Component<IModalProps> {
     }
   }
 
-  public shouldComponentUpdate(
+  public componentWillUpdate(
     nextProps: Readonly<IModalProps>,
     nextState: Readonly<{}>,
     nextContext: any,
-  ): boolean {
+  ) {
     if (nextProps.show !== this.props.show && this.props.onChange) {
       this.props.onChange();
     }
@@ -33,7 +33,6 @@ class Modal extends React.Component<IModalProps> {
       document.body.classList.remove("disable-scroll");
       document.documentElement.classList.remove("disable-scroll");
     }
-    return true;
   }
 
   public render() {
