@@ -1,66 +1,66 @@
 @mixin modal-animation($duration: 300ms) {
   .slideInRight{
-    transition: left $duration;
+    transition: transform $duration;
 
     &.modal-enter {
-      left: 100vw;
+      transform: translateX(100vw);
     }
     &.modal-enter-active {
-      left: 0;
+      transform: translateX(0);
     }
     &.modal-exit {
-      left: 0;
+      transform: translateX(0);
     }
     &.modal-exit-active {
-      left: 100vw;
+      transform: translateX(100vw);
     }
   }
 
   .slideInLeft{
-    transition: left $duration;
+    transition: transform $duration;
     &.modal-enter {
-      left: -100vw;
+      transform: translateX(-100vw);
     }
     &.modal-enter-active {
-      left: 0;
+      transform: translateX(0);
     }
     &.modal-exit {
-      left: 0;
+      transform: translateX(0);
     }
     &.modal-exit-active {
-      left: -100vw;
+      transform: translateX(-100vw);
     }
   }
 
   .slideInDown {
-    transition: top $duration;
+    transition: transform $duration;
     &.modal-enter {
-      top: 100vh;
+      transform: translateY(100vh);
     }
     &.modal-enter-active {
-      top: 0;
+      transform: translateY(0);
     }
     &.modal-exit {
-      top: 0;
+      transform: translateY(0);
     }
     &.modal-exit-active {
-      top: 100vh;
+      transform: translateY(100vh);
     }
   }
 
   .slideInUp{
-    transition: top $duration;
+    transition: transform $duration;
     &.modal-enter {
-      top: -100vh;
+      transform: translateY(-100vh);
     }
     &.modal-enter-active {
-      top: 0;
+      transform: translateY(0);
     }
     &.modal-exit {
-      top: 0;
+      transform: translateY(0);
     }
     &.modal-exit-active {
-      top: -100vh;
+      transform: translateY(-100vh);
     }
   }
 }
