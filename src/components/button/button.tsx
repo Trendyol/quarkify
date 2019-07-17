@@ -18,6 +18,7 @@ class Button extends PureComponent<IButtonProps> {
       disabled,
       icon,
       round,
+      ripple,
       circular,
       children,
       className,
@@ -26,6 +27,7 @@ class Button extends PureComponent<IButtonProps> {
     const buttonClasses = classNames(
       classNamesDefault({ variant, fluid, disabled, round }),
       circular && "q-circular",
+      ripple && "q-ripple",
       className, "q-button");
     const paddingRight = children ? ".75rem" : "0";
     return (
@@ -47,6 +49,7 @@ interface IButtonProps extends IButton {
   disabled?: boolean;
   icon?: string;
   round?: boolean;
+  ripple?: boolean;
   circular?: boolean;
   className?: string;
 }
