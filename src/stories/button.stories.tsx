@@ -63,5 +63,6 @@ stories.add("Circular", () => (
 stories.add("Ripple", () => (
   <>
     <Button variant="primary" ripple>Ripple</Button>
+    <Button variant="secondary" ripple>Ripple</Button>
   </>
 ));
