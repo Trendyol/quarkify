@@ -13,28 +13,45 @@ You can change the variant prop to give some predefined styles to the button com
 <Button variant='gray'>Gray</Button>
 ``` 
 
-![](../images/button.png)
+<iframe src="https://codesandbox.io/embed/elated-heisenberg-8k8f4?fontsize=14" title="elated-heisenberg-8k8f4" allow="geolocation; microphone; camera; midi; vr; accelerometer; gyroscope; payment; ambient-light-sensor; encrypted-media" style="width:100%; height:300px; border:0; border-radius: 4px; overflow:hidden;" sandbox="allow-modals allow-forms allow-popups allow-scripts allow-same-origin"></iframe>
 
 ## Fluid
 Adding fluid prop to button element makes the component spread into the div's width.
 
 ```
-<Button variant='secondary' fluid>Secondary</Button>
+<Button fluid>Fluid</Button>
 ```
+
+<iframe src="https://codesandbox.io/embed/eager-murdock-c1kmy?fontsize=14" title="eager-murdock-c1kmy" allow="geolocation; microphone; camera; midi; vr; accelerometer; gyroscope; payment; ambient-light-sensor; encrypted-media" style="width:100%; height:300px; border:0; border-radius: 4px; overflow:hidden;" sandbox="allow-modals allow-forms allow-popups allow-scripts allow-same-origin"></iframe>
 
 ## Round
 Adding round prop to button creates a button with rounded borders
 
 ```
-<Button round>Secondary</Button>
+<Button round>Round</Button>
 ```
+
+<iframe src="https://codesandbox.io/embed/bold-fog-l1pyr?fontsize=14" title="bold-fog-l1pyr" allow="geolocation; microphone; camera; midi; vr; accelerometer; gyroscope; payment; ambient-light-sensor; encrypted-media" style="width:100%; height:300px; border:0; border-radius: 4px; overflow:hidden;" sandbox="allow-modals allow-forms allow-popups allow-scripts allow-same-origin"></iframe>
 
 ## Circular
 Adding circular prop to button creates a circular button
 
 ```
-<Button circular>Secondary</Button>
+<Button circular>A</Button>
+<Button circular icon="heart"></Button>
 ```
+
+<iframe src="https://codesandbox.io/embed/nice-neumann-hp88k?fontsize=14" title="nice-neumann-hp88k" allow="geolocation; microphone; camera; midi; vr; accelerometer; gyroscope; payment; ambient-light-sensor; encrypted-media" style="width:100%; height:300px; border:0; border-radius: 4px; overflow:hidden;" sandbox="allow-modals allow-forms allow-popups allow-scripts allow-same-origin"></iframe>
+
+## Icon
+Adding icon prop to button creates a button with an icon
+
+```
+<Button icon="heart" />
+<Button variant="secondary" icon="heart">Heart</Button>
+```
+
+<iframe src="https://codesandbox.io/embed/lingering-wave-sfo2b?fontsize=14" title="lingering-wave-sfo2b" allow="geolocation; microphone; camera; midi; vr; accelerometer; gyroscope; payment; ambient-light-sensor; encrypted-media" style="width:100%; height:300px; border:0; border-radius: 4px; overflow:hidden;" sandbox="allow-modals allow-forms allow-popups allow-scripts allow-same-origin"></iframe>
 
 #### Additional content
 You can use any other HTML button element's props.
@@ -42,3 +59,5 @@ You can use any other HTML button element's props.
 <Button disabled>Disabled</Button>
 <Button onClick="alert('hey')">Click Event</Button>
 ```
+
+<iframe src="https://codesandbox.io/embed/zealous-booth-2mkcf?fontsize=14" title="zealous-booth-2mkcf" allow="geolocation; microphone; camera; midi; vr; accelerometer; gyroscope; payment; ambient-light-sensor; encrypted-media" style="width:100%; height:300px; border:0; border-radius: 4px; overflow:hidden;" sandbox="allow-modals allow-forms allow-popups allow-scripts allow-same-origin"></iframe>
