@@ -24,12 +24,24 @@ const items = [
 
 stories.add("Default", () => (
   <div>
-    <Select items={items} value={"id"} />
+    <Select items={items} value={"id"} leftIcon={"close"} rightIcon={"filter"}/>
+  </div>
+));
+
+stories.add("Icon", () => (
+  <div>
+    <Select items={items} value={"id"} leftIcon={"close"}/>
+    <br/>
+    <br/>
+    <Select items={items} value={"id"} rightIcon={"filter"}/>
+    <br/>
+    <br/>
+    <Select items={items} value={"id"} leftIcon={"filter"} rightIcon={"close"}/>
   </div>
 ));
 
 stories.add("Fluid", () => (
   <div>
-    <Select fluid items={items} />
+    <Select fluid items={items} rightIcon={"close"} />
   </div>
 ));

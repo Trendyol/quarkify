@@ -4,6 +4,7 @@ import ISelect from "../../interfaces/select";
 import "../../styles/components/_select.scss";
 import { variantTypes } from "../../types/select";
 import classNamesDefault from "../../utils/class-names-default";
+import Icon from "../icon";
 
 class Select extends PureComponent<IProps> {
   public render() {
@@ -14,6 +15,8 @@ class Select extends PureComponent<IProps> {
       subtext,
       name,
       value,
+      leftIcon,
+      rightIcon,
       className,
       ...props
     } = this.props;
@@ -29,6 +32,7 @@ class Select extends PureComponent<IProps> {
       <div style={{ position: "relative" }}>
         <div className={selectClasses}>
           <div className={"q-select-group"}>
+            {leftIcon && <Icon className={"q-select-icon-left"} name={leftIcon} />}
             <select className="q-select" {...props}>
               {this.props.items.map((item, index) => {
                 return (
@@ -44,6 +48,7 @@ class Select extends PureComponent<IProps> {
                 );
               })}
             </select>
+            {rightIcon && <Icon className={"q-select-icon-right"} name={rightIcon} />}
           </div>
         </div>
       </div>
@@ -58,6 +63,8 @@ interface IProps extends ISelect {
   fluid?: boolean;
   value?: string;
   name?: string;
+  rightIcon?: string;
+  leftIcon?: string;
   className?: string;
 }
 

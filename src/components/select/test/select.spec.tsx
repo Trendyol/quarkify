@@ -3,6 +3,7 @@ import Adapter from "enzyme-adapter-react-16";
 import faker from "faker";
 import React from "react";
 import sinon from "sinon";
+import Modal from "../../modal";
 import Select from "../../select";
 
 Enzyme.configure({ adapter: new Adapter() });
@@ -126,6 +127,18 @@ describe("select specs", () => {
         .find("select [selected]")
         .text(),
     ).toEqual("Plane");
+  });
+
+  it("should have a left icon if leftIcon prop is given", () => {
+    const wrapper = mount(<Select items={customItems} leftIcon={"close"} />);
+
+    expect(wrapper.find(".q-select-group").find(".q-select-icon-left")).toHaveLength(2);
+  });
+
+  it("should have a right icon if leftIcon prop is given", () => {
+    const wrapper = mount(<Select items={customItems} rightIcon={"close"} />);
+
+    expect(wrapper.find(".q-select-group").find(".q-select-icon-right")).toHaveLength(2);
   });
 
   it("should accept additional classNames", () => {
