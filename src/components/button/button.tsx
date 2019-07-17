@@ -6,7 +6,7 @@ import { variantTypes } from "../../types/button";
 import classNamesDefault from "../../utils/class-names-default";
 import Icon from "../icon";
 
-class Button extends React.PureComponent<IProps> {
+class Button extends React.PureComponent<IButtonProps> {
   private static defaultProps = {
     variant: "primary",
   };
@@ -40,7 +40,7 @@ class Button extends React.PureComponent<IProps> {
   }
 }
 
-interface IProps extends IButton {
+interface IButtonProps extends IButton {
   variant?: variantTypes;
   fluid?: boolean;
   disabled?: boolean;
