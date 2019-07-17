@@ -57,29 +57,29 @@ describe("modal specs", () => {
     expect(wrapper.find(".q-modal-actions")).toHaveLength(1);
   });
 
-  it("should have close icon button by default", () => {
+  it("should have no icon by default", () => {
     const wrapper = mount(
       <Modal show={true}>
         <Modal.Header />
       </Modal>,
     );
+    expect(wrapper.find(".q-modal-header").children()).toHaveLength(1);
+  });
+
+  it("should have a right icon if rightIcon prop is given", () => {
+    const wrapper = mount(
+      <Modal show={true}>
+        <Modal.Header rightIcon={"close"} />
+      </Modal>,
+    );
     expect(wrapper.find(".icon-close")).toHaveLength(1);
   });
 
-  it("should not have icon button if noIcon prop is passed", () => {
-    const wrapper = mount(
-      <Modal show={true}>
-        <Modal.Header noIcon />
-      </Modal>,
-    );
-    expect(wrapper.find(".icon-close")).toHaveLength(0);
-  });
-
-  it("should call onClose when icon is clicked", () => {
+  it("should call the right icon onClick callback if the rightIconOnClick prop is given", () => {
     const onClose = sandbox.spy();
     const wrapper = mount(
       <Modal show={true}>
-        <Modal.Header onClose={onClose} />
+        <Modal.Header rightIcon={"close"} rightIconOnClick={onClose} />
       </Modal>,
     );
     wrapper.find("i").simulate("click");

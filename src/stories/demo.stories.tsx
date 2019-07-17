@@ -302,7 +302,7 @@ const BasketStory = () => {
         </div>
       </div>
       <Modal show={show}>
-        <Modal.Header onClose={closeModal} leftIcon="back-button" leftIconOnClick={closeModal} noIcon>
+        <Modal.Header rightIconOnClick={closeModal} leftIcon="back-button" leftIconOnClick={closeModal} noIcon>
           Sepetim (4 Urun)
         </Modal.Header>
         <Modal.Content className="basket-content">
