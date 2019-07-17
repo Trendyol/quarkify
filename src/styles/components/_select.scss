@@ -12,6 +12,11 @@
   .q-select-group {
     height: $select-height;
     width: inherit;
+    text-align: center;
+    align-content: center;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
     border-radius: $border-radius;
     background-color: $white-two;
     border: 1px solid $border-gray-two;
@@ -24,6 +29,8 @@
       padding: $select-padding;
       font-size: $font-size-paragraph;
       -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
       border: 0;
       line-height: $select-line-height;
       background: 0;
@@ -33,18 +40,24 @@
       outline: none !important;
     }
 
-  }
+    .q-select-icon-left{
+      color: $primary;
+      position: absolute;
+      top: 8px;
+      left: -8px;
+      font-size: $font-size-small-paragraph;
+      pointer-events: none
+    }
 
-  .q-select-group::after {
-    content: "\E904";
-    font-family: icomoon!important;
-    position: absolute;
-    right: 5px;
-    display: flex;
-    height: 100%;
-    top: 0;
-    align-items: center;
-    pointer-events: none;
+    .q-select-icon-right{
+      color: $primary;
+      position: absolute;
+      top: 8px;
+      right: -8px;
+      font-size: $font-size-small-paragraph;
+      pointer-events: none
+    }
+
   }
 
   .q-select-group:active{
