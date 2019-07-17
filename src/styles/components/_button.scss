@@ -54,6 +54,16 @@
     height: 30px;
     padding: 0;
   }
+  &.q-ripple{
+    transition: background 0.5s;
+  }
+  &.q-ripple:hover{
+    background: $primary radial-gradient(circle, transparent 1%, $primary 1%) center / 15000%;
+  }
+  &.q-ripple:active{
+    background-color: rgba(242, 122, 82, 0.8);
+    background-size: 100%;
+  }
 
   &:focus{
     outline: none !important;
