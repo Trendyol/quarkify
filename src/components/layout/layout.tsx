@@ -1,9 +1,9 @@
 import classNames from "classnames";
-import React, { ReactNode } from "react";
+import React, { PureComponent, ReactNode } from "react";
 import "../../styles/components/_layout.scss";
 import classNamesDefault from "../../utils/class-names-default";
 
-class Layout extends React.PureComponent<ILayoutProps> {
+class Layout extends PureComponent<ILayoutProps> {
 
   public render() {
     const {

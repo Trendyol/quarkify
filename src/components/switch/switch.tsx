@@ -1,11 +1,11 @@
 import classNames from "classnames";
-import React from "react";
+import React, { PureComponent } from "react";
 import IInput from "../../interfaces/input";
 import "../../styles/components/_switch.scss";
 import { switchTypes, variantTypes } from "../../types/switch";
 import classNamesDefault from "../../utils/class-names-default";
 
-class Switch extends React.PureComponent<IProps> {
+class Switch extends PureComponent<IProps> {
   private static defaultProps = {
     type: "checkbox",
   };

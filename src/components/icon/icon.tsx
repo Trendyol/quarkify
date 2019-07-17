@@ -1,11 +1,11 @@
 import classNames from "classnames";
-import React from "react";
+import React, { PureComponent } from "react";
 import IIcon from "../../interfaces/icon";
 import "../../styles/components/_icon.scss";
 import { sizeTypes } from "../../types/icon";
 import classNamesDefault from "../../utils/class-names-default";
 
-class Icon extends React.PureComponent<IProps> {
+class Icon extends PureComponent<IProps> {
   private static defaultProps = {
     disabled: false,
   };

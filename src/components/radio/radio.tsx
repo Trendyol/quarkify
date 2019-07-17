@@ -1,10 +1,10 @@
 import classNames from "classnames";
-import React from "react";
+import React, { PureComponent } from "react";
 import IInput from "../../interfaces/input";
 import "../../styles/components/_radio.scss";
 import classNamesDefault from "../../utils/class-names-default";
 
-class Radio extends React.PureComponent<IProps> {
+class Radio extends PureComponent<IProps> {
   public render() {
     const { checked, error, label, type, className, ...props } = this.props;
     const radioClasses = classNames(

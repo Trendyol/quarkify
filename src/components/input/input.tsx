@@ -1,10 +1,10 @@
 import classNames from "classnames";
-import React from "react";
+import React, { PureComponent } from "react";
 import IInput from "../../interfaces/input";
 import "../../styles/components/_input.scss";
 import classNamesDefault from "../../utils/class-names-default";
 
-class Input extends React.PureComponent<IProps> {
+class Input extends PureComponent<IProps> {
   private static defaultProps = {
     type: "text",
   };

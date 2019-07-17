@@ -1,9 +1,9 @@
 import classNames from "classnames";
-import React from "react";
+import React, { PureComponent } from "react";
 import "../../styles/components/_box.scss";
 import { textAlignTypes } from "../../types/box";
 
-class Box extends React.PureComponent<IBoxProps> {
+class Box extends PureComponent<IBoxProps> {
   private static defaultProps = {
     textAlign: "left",
   };

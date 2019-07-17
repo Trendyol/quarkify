@@ -1,10 +1,10 @@
 import classNames from "classnames";
-import React from "react";
+import React, { PureComponent } from "react";
 import IInput from "../../interfaces/input";
 import "../../styles/components/_checkbox.scss";
 import classNamesDefault from "../../utils/class-names-default";
 
-class CheckBox extends React.PureComponent<IProps> {
+class CheckBox extends PureComponent<IProps> {
   public render() {
     const { checked, error, label, type, className, ...props } = this.props;
     const checkBoxClasses = classNames(
