@@ -11,7 +11,6 @@ class Select extends PureComponent<IProps> {
       items,
       variant,
       fluid,
-      subtext,
       name,
       value,
       className,
@@ -54,7 +53,6 @@ class Select extends PureComponent<IProps> {
 interface IProps extends ISelect {
   variant?: variantTypes;
   items: any[];
-  subtext?: string;
   fluid?: boolean;
   value?: string;
   name?: string;

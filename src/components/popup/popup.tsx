@@ -92,7 +92,6 @@ class Popup extends React.Component<IProps> {
 interface IProps {
   show: boolean;
   children?: ReactNode;
-  slideIn?: string;
   onClose: () => void;
   onChange?: () => void;
   iconLeft?: boolean;
