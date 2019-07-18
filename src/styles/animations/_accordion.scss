@@ -1,17 +1,20 @@
-@mixin accordion-animation($duration: 400ms) {
+@mixin accordion-animation($duration: 300ms) {
   .q-slideInDown {
-    transition: transform $duration;
     &.q-accordion-enter {
-      transform: translateY(-40%);
+      max-height: 0;
     }
     &.q-accordion-enter-active {
-      transform: translateY(0);
+      max-height: 100vh;
+      transition: max-height $duration, transform $duration;
     }
     &.q-accordion-exit {
-      transform: translateY(0);
+      max-height: 100vh;
     }
     &.q-accordion-exit-active {
-      transform: translateY(-40%);
+      max-height: 0;
+      transition: max-height $duration;
+    }
+    &.q-accordion-exit-done{
     }
   }
 }

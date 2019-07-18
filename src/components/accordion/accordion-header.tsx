@@ -1,32 +1,28 @@
-import React, { FunctionComponent } from "react";
-import { IconTypes } from "../../types/accordion";
+import React, { PureComponent } from "react";
 import Icon from "../icon";
 
-const Header: FunctionComponent<IHeaderProps> = ({
-  children,
-  icon = "forward-button", noIcon = false,
-  leftIcon,
-  onClose,
-  toggleContent,
-}) => {
-  const classNames = ["q-accordion-header", leftIcon && "q-has-left-icon"];
-  return (
-    <div className={classNames.join(" ")} onClick={toggleContent}>
-      <div className="q-accordion-title">{children}</div>
-      {!noIcon && (
-        <Icon role="button" aria-label={icon} name={icon} onClick={onClose} />
-      )}
-    </div>
-  );
-};
+class Header extends PureComponent<IHeaderProps> {
+  public render() {
+    const { children, icon = "forward-button", handleClick, expanded } = this.props;
+    return(
+      <div className="q-accordion-header" onClick={handleClick}>
+        <div className="q-accordion-title">{children}</div>
+        <Icon
+          className={expanded ? "expanded" : ""}
+          role="button"
+          aria-label={icon}
+          name={icon}
+          onClick={handleClick}
+        />
+      </div >
+    );
+  }
+}
 
 export interface IHeaderProps {
   icon?: string;
-  noIcon?: boolean;
-  leftIcon?: IconTypes;
-  toggleContent: () => void;
-  leftIconOnClick?(event: React.SyntheticEvent): void;
-  onClose?(event: React.SyntheticEvent): void;
+  expanded?: boolean;
+  handleClick?: () => void;
 }
 
 export default Header;

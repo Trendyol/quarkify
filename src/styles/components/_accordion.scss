@@ -24,24 +24,23 @@
       height: 100%;
     }
 
-    .q-i{
-      padding: 0;
-      line-height: unset;
-    }
-    &.q-has-left-icon{
-      .q-modal-title{
-        padding-left: 0;
+    .q-i {
+      padding-right: 10px;
+      line-height: 1rem;
+      transition: transform 300ms;
+
+      &.expanded {
+        transform: rotate(90deg);
       }
     }
   }
 
   .q-accordion-content {
-    padding: $-padding + $padding-y;
+    background-color: $dark-gray-two;
     border-bottom: 1px solid $very-light-pink;
     overflow: hidden;
-    z-index: -1;
-    position: inherit;
-    width: 100%;
+    will-change: max-height;
+    padding: 0 1rem;
   }
 }
 

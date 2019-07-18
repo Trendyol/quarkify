@@ -1,20 +1,20 @@
-import React, { FunctionComponent } from "react";
+import React from "react";
 import { CSSTransition } from "react-transition-group";
 import "../../styles/components/_accordion.scss";
 import { animationTypes } from "../../types/modal";
 
-class Content extends React.Component<IAccordionContentProps> {
+class Content extends React.PureComponent<IAccordionContentProps> {
 
   public render() {
-    const { show, children } = this.props;
+    const { expanded, children } = this.props;
     return (
       <CSSTransition
-        in={show}
+        in={expanded}
         unmountOnExit
         timeout={300}
-        classNames={`q-slideInDown q-accordion`}
+        classNames="q-slideInDown q-accordion"
       >
-        <div className={"q-accordion-content"}>{children}</div>
+        <div className="q-accordion-content">{children}</div>
       </CSSTransition>
     );
   }
@@ -24,7 +24,7 @@ interface IAccordionContentProps {
   animation?: animationTypes;
   onChange?: () => void;
   className?: string;
-  show: boolean;
+  expanded?: boolean;
 }
 
 export default Content;
