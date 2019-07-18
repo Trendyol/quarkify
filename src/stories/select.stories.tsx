@@ -33,10 +33,10 @@ stories.add("Icon", () => (
     <Select items={items} value={"id"} leftIcon={"close"}/>
     <br/>
     <br/>
-    <Select items={items} value={"id"} rightIcon={"filter"}/>
+    <Select items={items} value={"id"} rightIcon={"filter"} rightIconColor={"primary"}/>
     <br/>
     <br/>
-    <Select items={items} value={"id"} leftIcon={"filter"} rightIcon={"close"}/>
+    <Select items={items} value={"id"} leftIcon={"filter"} leftIconColor={"primary"} rightIcon={"close"}/>
   </div>
 ));
 
