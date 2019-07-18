@@ -8,6 +8,14 @@
   border-radius: $border-radius;
   line-height: $line-height;
 
+  &.q-primary {
+    color: $primary;
+  }
+
+  &.q-gray {
+    color: $light-gray;
+  }
+
   &.q-disabled {
     @include disabled;
   }
