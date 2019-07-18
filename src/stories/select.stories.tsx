@@ -24,7 +24,7 @@ const items = [
 
 stories.add("Default", () => (
   <div>
-    <Select items={items} value={"id"} leftIcon={"close"} rightIcon={"filter"}/>
+    <Select items={items} value={"id"}/>
   </div>
 ));
 
