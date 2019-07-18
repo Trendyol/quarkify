@@ -3,7 +3,7 @@ import Icon from "../icon";
 
 class Header extends PureComponent<IHeaderProps> {
   public render() {
-    const { children, icon = "forward-button", handleClick, expanded } = this.props;
+    const { children, icon = "chevron-down", handleClick, expanded } = this.props;
     return(
       <div className="q-accordion-header" onClick={handleClick}>
         <div className="q-accordion-title">{children}</div>

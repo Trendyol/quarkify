@@ -30,7 +30,7 @@
       transition: transform 300ms;
 
       &.expanded {
-        transform: rotate(90deg);
+        transform: rotate(180deg);
       }
     }
   }

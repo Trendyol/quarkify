@@ -108,4 +108,14 @@ describe("accordion specs", () => {
 
     expect(wrapper.state("expanded")).toBe(oldExpandedState);
   });
+
+  it("should accept additional classNames", () => {
+    const fakeClass = faker.lorem.word();
+    const wrapper = mount(
+      <Accordion className={fakeClass}>
+        <Accordion.Header/>
+        <Accordion.Content/>
+      </Accordion>);
+    expect(wrapper.hasClass(fakeClass)).toBe(true);
+  });
 });
