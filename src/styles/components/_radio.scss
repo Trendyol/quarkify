@@ -21,11 +21,11 @@
   }
 
   .q-input[type=radio] + .q-label::before{
-    padding-right: 3px;
+    padding-right: 5px;
     color: $primary;
     font-family: icomoon !important;
     content: "\E93C";
-    line-height: 21px;
+    line-height: $radio-line-height;
     display:inline-block;
     vertical-align: text-top;
 
