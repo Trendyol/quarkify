@@ -36,6 +36,26 @@ By default, the size of the Icon component is set to normal.
 
 <iframe src="https://codesandbox.io/embed/delicate-wildflower-lk1i0?fontsize=14" title="delicate-wildflower-lk1i0" allow="geolocation; microphone; camera; midi; vr; accelerometer; gyroscope; payment; ambient-light-sensor; encrypted-media" style="width:100%; height:300px; border:0; border-radius: 4px; overflow:hidden;" sandbox="allow-modals allow-forms allow-popups allow-scripts allow-same-origin"></iframe>
 
+## Variant
+It is possible to use most used icon color schemas which are:
+
+- primary (orange theme)
+- gray
+
+```
+<Icon name="search" variant="primary"/>
+<Icon name="search" variant="gray"/>
+```
+
+## Color
+To change the color of the icon, you can give color prop to the Icon component which takes css styles:
+
+By default, the color of the Icon component is set to gray.
+
+```
+<Icon name="search" color={"rgba(0,0,0,1)"} style={{backgroundColor: "red"}}/>
+```
+
 #### Additional content
 You can use some other props as well such as:
 ```
