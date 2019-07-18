@@ -1,66 +1,69 @@
 @mixin modal-animation($duration: 300ms) {
   .q-slideInRight{
-    transition: transform $duration;
-
     &.q-modal-enter {
       transform: translateX(100vw);
     }
     &.q-modal-enter-active {
       transform: translateX(0);
+      transition: transform $duration;
     }
     &.q-modal-exit {
       transform: translateX(0);
     }
     &.q-modal-exit-active {
       transform: translateX(100vw);
+      transition: transform $duration;
     }
   }
 
   .q-slideInLeft{
-    transition: transform $duration;
     &.q-modal-enter {
       transform: translateX(-100vw);
     }
     &.q-modal-enter-active {
       transform: translateX(0);
+      transition: transform $duration;
     }
     &.q-modal-exit {
       transform: translateX(0);
     }
     &.q-modal-exit-active {
       transform: translateX(-100vw);
+      transition: transform $duration;
     }
   }
 
   .q-slideInDown {
-    transition: transform $duration;
     &.q-modal-enter {
       transform: translateY(100vh);
     }
     &.q-modal-enter-active {
       transform: translateY(0);
+      transition: transform $duration;
     }
     &.q-modal-exit {
       transform: translateY(0);
     }
     &.q-modal-exit-active {
       transform: translateY(100vh);
+      transition: transform $duration;
     }
   }
 
   .q-slideInUp{
-    transition: transform $duration;
     &.q-modal-enter {
       transform: translateY(-100vh);
     }
     &.q-modal-enter-active {
       transform: translateY(0);
+      transition: transform $duration;
     }
     &.q-modal-exit {
       transform: translateY(0);
     }
     &.q-modal-exit-active {
       transform: translateY(-100vh);
+      transition: transform $duration;
     }
   }
 }
