@@ -95,4 +95,17 @@ describe("accordion specs", () => {
 
     expect(onChangeSpy.calledOnce).toBe(true);
   });
+
+  it("should not change expanded state if expanded prop is not given and component receives another prop", () => {
+    const wrapper = mount(
+      <Accordion>
+        <Accordion.Header/>
+        <Accordion.Content/>
+      </Accordion>);
+    const oldExpandedState = wrapper.state("expanded");
+
+    wrapper.setProps({className: faker.lorem.word()});
+
+    expect(wrapper.state("expanded")).toBe(oldExpandedState);
+  });
 });
