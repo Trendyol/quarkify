@@ -2,7 +2,6 @@ import Enzyme, { mount, shallow } from "enzyme";
 import Adapter from "enzyme-adapter-react-16";
 import faker from "faker";
 import React from "react";
-import Popup from "../../popup";
 import ProductSlider from "../index";
 
 Enzyme.configure({ adapter: new Adapter() });
