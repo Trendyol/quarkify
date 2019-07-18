@@ -6,9 +6,6 @@ import { sizeTypes, variantTypes } from "../../types/icon";
 import classNamesDefault from "../../utils/class-names-default";
 
 class Icon extends PureComponent<IProps> {
-  private static defaultProps = {
-    disabled: false,
-  };
 
   public render() {
     const { name, color, size, disabled, className, style, variant, ...props } = this.props;

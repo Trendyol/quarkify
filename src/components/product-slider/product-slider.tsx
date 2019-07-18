@@ -1,10 +1,16 @@
+import classNames from "classnames";
 import React, { PureComponent } from "react";
 import "../../styles/components/_product-slider.scss";
 
 class ProductSlider extends PureComponent<IProductSliderProps> {
   public render() {
+    const { className } = this.props;
+    const productSliderClasses = classNames(
+      "q-product-slider",
+      className,
+    );
     return(
-      <div className="q-product-slider">
+      <div className={productSliderClasses}>
         {React.Children.map(this.props.children, (child) => (
           <div className="q-item">
             {child}
@@ -17,6 +23,7 @@ class ProductSlider extends PureComponent<IProductSliderProps> {
 
 interface IProductSliderProps {
   children?: any;
+  className?: string;
 }
 
 export default ProductSlider;

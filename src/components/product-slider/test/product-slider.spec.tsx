@@ -1,4 +1,4 @@
-import Enzyme, { shallow } from "enzyme";
+import Enzyme, { mount, shallow } from "enzyme";
 import Adapter from "enzyme-adapter-react-16";
 import faker from "faker";
 import React from "react";
@@ -22,5 +22,16 @@ describe("product-slider specs", () => {
     );
 
     expect(wrapper.find(".q-item")).toHaveLength(numberOfChildren);
+  });
+
+  it("should accept additional classNames", () => {
+    const fakeClass = faker.lorem.word();
+    const numberOfChildren = faker.random.number(10);
+    const wrapper = mount(
+      <ProductSlider className={fakeClass}>
+      {Array.from({length: numberOfChildren}, (_, key) => (<div key={key}/>))}
+      </ProductSlider>);
+
+    expect(wrapper.hasClass(fakeClass)).toBe(true);
   });
 });
