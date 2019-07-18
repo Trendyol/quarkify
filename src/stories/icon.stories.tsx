@@ -6,7 +6,7 @@ const stories = storiesOf("Icon", module);
 
 stories.add("Icons", () => (
   <div>
-    <Icon name="search" />
+    <Icon name="search" color={"rgba(0,0,0,1)"} style={{backgroundColor: "red"}}/>
     <Icon name="search" disabled />
     <Icon name="search" size="small" />
     <Icon name="search" size="large" />
@@ -18,7 +18,7 @@ stories.add("Icons", () => (
     <br />
     <Icon name="facebook" />
     <Icon name="twitter" />
-    <Icon name="whatsapp" />
-    <Icon name="checkmark-full" />
+    <Icon name="whatsapp" variant={"gray"}/>
+    <Icon name="checkmark-full" variant={"primary"}/>
   </div>
 ));
