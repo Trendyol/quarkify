@@ -30,6 +30,10 @@
     margin-right: 5px;
   }
 
+  .q-input[type=checkbox]:checked + .q-label{
+    font-weight: $bold;
+  }
+
   .q-input[type=checkbox] + .q-label:active:before {
     transform: scale(0);
   }
