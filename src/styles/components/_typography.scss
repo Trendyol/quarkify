@@ -1,0 +1,91 @@
+@import '../_globals';
+@import '../mixins/_color-scheme';
+
+.q-typography{
+  margin: 0;
+  font-family: "Source Sans Pro", "Helvetica", "Arial", sans-serif;
+
+  &.q-bold{
+    font-weight: bolder !important;
+  }
+
+  &.q-ellipsis{
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+
+  &.q-underline{
+    text-decoration: underline;
+  }
+
+  &.q-h1{
+    font-size: 6rem;
+    font-weight: 300;
+    line-height: 1;
+    letter-spacing: -0.01562em;
+  }
+
+  &.q-h2{
+    font-size: 3.75rem;
+    font-weight: 300;
+    line-height: 1;
+    letter-spacing: -0.00833em;
+  }
+
+  &.q-h3{
+    font-size: 3rem;
+    font-weight: 400;
+    line-height: 1.04;
+    letter-spacing: 0em;
+  }
+
+  &.q-h4{
+    font-size: 2.125rem;
+    font-weight: 400;
+    line-height: 1.17;
+    letter-spacing: 0.00735em;
+  }
+
+  &.q-h5{
+    font-size: 1.5rem;
+    font-weight: 400;
+    line-height: 1.33;
+    letter-spacing: 0em;
+  }
+
+  &.q-h6{
+    font-size: 1.25rem;
+    font-weight: 500;
+    line-height: 1.6;
+    letter-spacing: 0.0075em;
+  }
+
+  &.q-subtitle1{
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.75;
+    letter-spacing: 0.00938em;
+  }
+
+  &.q-subtitle2{
+    font-size: 0.875rem;
+    font-weight: 500;
+    line-height: 1.57;
+    letter-spacing: 0.00714em;
+  }
+
+  &.q-body1{
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    letter-spacing: 0.00938em;
+  }
+
+  &.q-body2{
+    font-size: 0.875rem;
+    font-weight: 400;
+    line-height: 1.43;
+    letter-spacing: 0.01071em;
+  }
+}
