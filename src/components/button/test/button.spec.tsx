@@ -22,7 +22,7 @@ describe("button specs", () => {
     const text = faker.random.word();
     const wrapper = shallow(<Button onClick={onClick}>{text}</Button>);
 
-    expect(wrapper.text()).toEqual(text);
+    expect(wrapper.find("button")).toHaveLength(1);
   });
 
   it("should call callback function when clicked", () => {
@@ -77,5 +77,11 @@ describe("button specs", () => {
     const wrapper = shallow(<Button className={fakeClass}/>);
 
     expect(wrapper.hasClass(fakeClass)).toBe(true);
+  });
+
+  it("should render Loader component when loading prop is passed", () => {
+    const wrapper = mount(<Button loading={true}/>);
+
+    expect(wrapper.find(".q-loader")).toHaveLength(1);
   });
 });
