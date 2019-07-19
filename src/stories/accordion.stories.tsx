@@ -21,6 +21,19 @@ const AccordionWrapper = () => {
           <Button>Button</Button>
         </Accordion.Content>
       </Accordion>
+      <Accordion>
+        <Accordion.Header>
+          Accordion 2
+        </Accordion.Header>
+        <Accordion.Content>
+          <div>Some content</div>
+          <div>Some content</div>
+          <div>Some content</div>
+          <div>Some content</div>
+          <div>Some content</div>
+          <Button>Button</Button>
+        </Accordion.Content>
+      </Accordion>
       <h1>Text</h1>
     </>
   );
