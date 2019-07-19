@@ -4,6 +4,26 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
+## [1.5.17] - 2019-07-12
+### Added
+- Added `accordion` component
+- Added `riddle` prop to button component
+- Added `list` component
+- Added `color` prop to icon component
+- Added `variant` prop to icon component
+- Added `loader` component
+- Added `switch` component
+- Added `layout` component
+
+### Changed
+- Fixed `radio` component line height and padding styles
+- `ripple` effect in `button` component set to true by default
+- `q-` prefix added to style class names
+- `button` component height is set to 44px
+
+### Removed
+- Removed unnecessary props from `select` component
+- Subtext prop removed from `select` component
 
 ## [1.0.8] - 2019-07-12
 ### Added
