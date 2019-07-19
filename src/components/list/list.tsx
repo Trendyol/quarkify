@@ -4,6 +4,7 @@ import "../../styles/components/_list.scss";
 import ListItem from "./listItem";
 
 class List extends PureComponent<IListProps> {
+  public static Item = ListItem;
 
   public render() {
     const {

@@ -4,7 +4,6 @@ import faker from "faker";
 import React from "react";
 import sinon from "sinon";
 import List from "../list";
-import ListItem from "../listItem";
 
 Enzyme.configure({ adapter: new Adapter() });
 
@@ -22,21 +21,22 @@ describe("list specs", () => {
   });
 
   it("should render list item component", () => {
-    const wrapper = shallow(<ListItem/>);
+    const wrapper = shallow(<List.Item/>);
 
     expect(wrapper.find(".q-list-item")).toHaveLength(1);
   });
 
   it("should render list item component with no dots", () => {
     const text = faker.random.word();
-    const wrapper = shallow(<List noDot><ListItem>{text}</ListItem></List>);
+    const wrapper = shallow(<List noDot><List.Item>{text}</List.Item></List>);
 
     expect(wrapper.find(".q-no-dot")).toHaveLength(1);
   });
 
   it("should render item component with icon", () => {
-    const wrapper = mount(<ListItem icon={"search"}/>);
+    const wrapper = mount(<List.Item icon={"search"}/>);
 
     expect(wrapper.exists(".icon-search")).toEqual(true);
   });
+
 });
