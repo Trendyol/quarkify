@@ -1,7 +1,6 @@
 import { storiesOf } from "@storybook/react";
-import React from "react";
+import React, {useState} from "react";
 import Button from "../components/button";
-import Loader from "../components/loader";
 
 const stories = storiesOf("Button", module);
 
