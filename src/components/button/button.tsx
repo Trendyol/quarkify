@@ -7,18 +7,15 @@ import classNamesDefault from "../../utils/class-names-default";
 import Icon from "../icon";
 
 class Button extends PureComponent<IButtonProps> {
-  private static defaultProps = {
-    variant: "primary",
-  };
 
   public render() {
     const {
-      variant,
+      variant = "primary",
       fluid,
       disabled,
       icon,
       round,
-      ripple,
+      ripple = true,
       circular,
       children,
       className,
