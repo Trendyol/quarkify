@@ -5,8 +5,8 @@
   user-select: none;
   position: relative;
   display: flex;
-  width: 42px;
-  height: 26px;
+  width: $switch-width;
+  height: $switch-height;
   margin: 0;
 
   .q-input{
@@ -17,6 +17,7 @@
 
   .q-label{
     margin-left: 46px;
+    margin-top: 2px;
   }
 
   .q-switch-slider{
