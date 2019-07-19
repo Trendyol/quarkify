@@ -7,17 +7,15 @@ import classNamesDefault from "../../utils/class-names-default";
 import Icon from "../icon";
 
 class Button extends PureComponent<IButtonProps> {
-  private static defaultProps = {
-    variant: "primary",
-  };
 
   public render() {
     const {
-      variant,
+      variant = "primary",
       fluid,
       disabled,
       icon,
       round,
+      ripple = true,
       circular,
       children,
       className,
@@ -26,6 +24,7 @@ class Button extends PureComponent<IButtonProps> {
     const buttonClasses = classNames(
       classNamesDefault({ variant, fluid, disabled, round }),
       circular && "q-circular",
+      ripple && "q-ripple",
       className, "q-button");
     return (
       <button
@@ -46,6 +45,7 @@ interface IButtonProps extends IButton {
   disabled?: boolean;
   icon?: string;
   round?: boolean;
+  ripple?: boolean;
   circular?: boolean;
   className?: string;
 }

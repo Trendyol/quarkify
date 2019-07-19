@@ -19,6 +19,16 @@
   border-radius: $border-radius;
 
   &.q-primary {
+    &.q-ripple{
+      transition: background 0.5s;
+    }
+    &.q-ripple:hover{
+      background: $primary radial-gradient(circle, transparent 1%, $primary 1%) center / 15000%;
+    }
+    &.q-ripple:active{
+      background-color: rgba($primary, 0.8);
+      background-size: 100%;
+    }
     @include primary;
     &:active{
       opacity: 0.80;
