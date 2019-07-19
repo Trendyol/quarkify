@@ -4040,7 +4040,7 @@ template {
     color: #f27a1a;
     font-family: icomoon !important;
     content: "\E93C";
-    line-height: 22px;
+    line-height: 18px;
     display: inline-block;
     vertical-align: text-top;
     -webkit-transition: 0.1s;
@@ -4364,7 +4364,8 @@ template {
     width: 0;
     height: 0; }
   .q-switch-wrapper .q-label {
-    margin-left: 46px; }
+    margin-left: 46px;
+    margin-top: 2px; }
   .q-switch-wrapper .q-switch-slider {
     position: absolute;
     cursor: pointer;
