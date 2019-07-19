@@ -4,15 +4,11 @@ import "../../styles/components/_box.scss";
 import { textAlignTypes } from "../../types/box";
 
 class Box extends PureComponent<IBoxProps> {
-  private static defaultProps = {
-    textAlign: "left",
-  };
-
   public render() {
     const {
       children,
       spaced,
-      textAlign,
+      textAlign = "left",
       className,
     } = this.props;
     const boxClasses = classNames(

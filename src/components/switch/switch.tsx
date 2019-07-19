@@ -6,11 +6,8 @@ import { switchTypes, variantTypes } from "../../types/switch";
 import classNamesDefault from "../../utils/class-names-default";
 
 class Switch extends PureComponent<IProps> {
-  private static defaultProps = {
-    type: "checkbox",
-  };
   public render() {
-    const { error, disabled, checked, label, type, className, ...props } = this.props;
+    const { error, disabled, checked, label, type = "checkbox", className, ...props } = this.props;
     const switchClasses = classNames(
       "q-switch-wrapper",
       classNamesDefault({error, disabled}),
