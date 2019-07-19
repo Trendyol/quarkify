@@ -5,6 +5,7 @@
 .q-button {
   cursor: pointer;
   display: inline-block;
+  position: relative;
   padding-right: 20px;
   padding-left: 20px;
   font-weight: 400;
@@ -17,6 +18,7 @@
   letter-spacing: normal;
   text-align: center;
   border-radius: $border-radius;
+  transition: all 200ms;
 
   &.q-primary {
     &.q-ripple{
@@ -31,8 +33,7 @@
     }
     @include primary;
     &:active{
-      opacity: 0.80;
-      transition: opacity 300ms;
+      opacity: 0.8;
     }
   }
   &.q-secondary {
@@ -75,6 +76,27 @@
   }
   .q-i:only-child{
     padding-right: 0;
+  }
+
+  //Loader
+  &.loading{
+    .q-loader{
+      background-color: transparent;
+    }
+    //Hide button contents
+    .q-loader + span {
+      opacity: 0;
+    }
+
+    &.q-primary:active {
+      opacity: 1;
+    }
+    &.q-secondary:active {
+      @include secondary;
+    }
+    &.q-gray:active {
+      @include gray;
+    }
   }
 
 }

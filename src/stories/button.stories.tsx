@@ -1,12 +1,28 @@
 import { storiesOf } from "@storybook/react";
 import React from "react";
 import Button from "../components/button";
+import Loader from "../components/loader";
 
 const stories = storiesOf("Button", module);
 
 const action = () => alert("Clicked");
 // tslint:disable-next-line:no-console
 const actionLog = () => console.log("Clicked");
+
+const LoadingWrapper = () => {
+  const [loading, setLoading] = useState(false);
+  const handleClick = () => {
+    setLoading(true);
+    setTimeout(() => setLoading(false), 1000);
+  };
+  return (
+    <>
+      <Button variant="primary" loading={loading} onClick={handleClick}>Add to Basket</Button>
+      <Button variant="secondary" loading={loading} onClick={handleClick}>Add to Basket</Button>
+      <Button variant="gray" loading={loading} onClick={handleClick}>Add to Basket</Button>
+    </>
+  );
+};
 
 stories.add("Variants", () => (
   <div>
@@ -66,3 +82,5 @@ stories.add("Ripple", () => (
     <Button variant="secondary" ripple>Ripple</Button>
   </>
 ));
+
+stories.add("Loading", () => (<LoadingWrapper/>));
