@@ -1,6 +1,36 @@
 @import "../variables";
 
 .q-list {
+
   list-style: none;
   padding: $-padding;
+
+  .q-list-item {
+    word-wrap: break-word;
+    position: relative;
+    padding-left: $padding-x;
+    margin-bottom: .5rem;
+    line-height: $item-line-height;
+    color: $dark-gray;
+  }
+
+  .q-list-item::before{
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 7px;
+    background-color: $primary;
+    width: 5px;
+    height: 5px;
+    border-radius: 100%;
+
+  }
+
+  &.q-no-dot{
+    .q-list-item::before {
+      display: none;
+    }
+  }
+
 }
+
