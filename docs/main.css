@@ -353,7 +353,7 @@ template {
   padding: 0.375rem 0.75rem;
   display: inline-block;
   border-radius: 3px;
-  line-height: 1.5; }
+  line-height: 1; }
   .q-i.q-primary {
     color: #f27a1a; }
   .q-i.q-gray {
