@@ -46,19 +46,19 @@ describe("button specs", () => {
   it("should be rendered with given primary variant prop", () => {
     const wrapper = shallow(<Button onClick={onClick} variant="primary" />);
 
-    expect(wrapper.exists(".primary")).toEqual(true);
+    expect(wrapper.exists(".q-primary")).toEqual(true);
   });
 
   it("should have className fluid when given fluid prop", () => {
     const wrapper = shallow(<Button onClick={onClick} fluid />);
 
-    expect(wrapper.exists(".fluid")).toEqual(true);
+    expect(wrapper.exists(".q-fluid")).toEqual(true);
   });
 
   it("should have className round when given round prop", () => {
     const wrapper = shallow(<Button onClick={onClick} round />);
 
-    expect(wrapper.exists(".round")).toEqual(true);
+    expect(wrapper.exists(".q-round")).toEqual(true);
   });
 
   it("should have icon component when given icon prop", () => {
@@ -69,7 +69,13 @@ describe("button specs", () => {
   it("should have className circular when given circular prop", () => {
     const wrapper = shallow(<Button circular />);
 
-    expect(wrapper.exists(".circular")).toBe(true);
+    expect(wrapper.exists(".q-circular")).toBe(true);
+  });
+
+  it("should have className ripple when given ripple prop", () => {
+    const wrapper = shallow(<Button ripple />);
+
+    expect(wrapper.exists(".q-ripple")).toBe(true);
   });
 
   it("should accept additional classNames", () => {

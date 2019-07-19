@@ -14,39 +14,38 @@ class Modal extends React.Component<IModalProps> {
 
   public componentDidMount(): void {
     if (this.props.show && typeof window !== "undefined") {
-      document.body.classList.add("disable-scroll");
+      document.body.classList.add("q-disable-scroll");
     }
   }
 
-  public shouldComponentUpdate(
+  public componentWillUpdate(
     nextProps: Readonly<IModalProps>,
     nextState: Readonly<{}>,
     nextContext: any,
-  ): boolean {
+  ) {
     if (nextProps.show !== this.props.show && this.props.onChange) {
       this.props.onChange();
     }
     if (nextProps.show && typeof window !== "undefined") {
-      document.body.classList.add("disable-scroll");
-      document.documentElement.classList.add("disable-scroll");
+      document.body.classList.add("q-disable-scroll");
+      document.documentElement.classList.add("q-disable-scroll");
     } else if (typeof window !== "undefined") {
-      document.body.classList.remove("disable-scroll");
-      document.documentElement.classList.remove("disable-scroll");
+      document.body.classList.remove("q-disable-scroll");
+      document.documentElement.classList.remove("q-disable-scroll");
     }
-    return true;
   }
 
   public render() {
     const { show, children, animation = "slideInRight", className } = this.props;
     const modalClasses = classNames(
-      "modal-main",
+      "q-modal-main",
       className,
     );
     return <CSSTransition
       in={show}
       unmountOnExit
       timeout={300}
-      classNames={`${animation} modal`}
+      classNames={`q-${animation} q-modal`}
     >
       <div className={modalClasses}>{children}</div>
     </CSSTransition>;

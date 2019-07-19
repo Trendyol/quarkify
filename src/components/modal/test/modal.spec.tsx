@@ -16,12 +16,12 @@ describe("modal specs", () => {
 
   it("should render modal component", () => {
     const wrapper = mount(<Modal show={true} />);
-    expect(wrapper.exists(".modal-main")).toEqual(true);
+    expect(wrapper.exists(".q-modal-main")).toEqual(true);
   });
 
   it("should not render modal component", () => {
     const wrapper = mount(<Modal show={false} />);
-    expect(wrapper.exists(".modal-main")).toEqual(false);
+    expect(wrapper.exists(".q-modal-main")).toEqual(false);
   });
 
   it("should render header sub component", () => {
@@ -30,7 +30,7 @@ describe("modal specs", () => {
         <Modal.Header />
       </Modal>,
     );
-    expect(wrapper.find(".modal-header")).toHaveLength(1);
+    expect(wrapper.find(".q-modal-header")).toHaveLength(1);
   });
 
   it("should render content sub component", () => {
@@ -42,7 +42,7 @@ describe("modal specs", () => {
         </Modal.Content>
       </Modal>,
     );
-    expect(wrapper.find(".modal-content")).toHaveLength(1);
+    expect(wrapper.find(".q-modal-content")).toHaveLength(1);
   });
 
   it("should render actions sub component", () => {
@@ -54,32 +54,32 @@ describe("modal specs", () => {
         </Modal.Actions>
       </Modal>,
     );
-    expect(wrapper.find(".modal-actions")).toHaveLength(1);
+    expect(wrapper.find(".q-modal-actions")).toHaveLength(1);
   });
 
-  it("should have close icon button by default", () => {
+  it("should have no icon by default", () => {
     const wrapper = mount(
       <Modal show={true}>
         <Modal.Header />
       </Modal>,
     );
+    expect(wrapper.find(".q-modal-header").children()).toHaveLength(1);
+  });
+
+  it("should have a right icon if rightIcon prop is given", () => {
+    const wrapper = mount(
+      <Modal show={true}>
+        <Modal.Header rightIcon={"close"} />
+      </Modal>,
+    );
     expect(wrapper.find(".icon-close")).toHaveLength(1);
   });
 
-  it("should not have icon button if noIcon prop is passed", () => {
-    const wrapper = mount(
-      <Modal show={true}>
-        <Modal.Header noIcon />
-      </Modal>,
-    );
-    expect(wrapper.find(".icon-close")).toHaveLength(0);
-  });
-
-  it("should call onClose when icon is clicked", () => {
+  it("should call the right icon onClick callback if the rightIconOnClick prop is given", () => {
     const onClose = sandbox.spy();
     const wrapper = mount(
       <Modal show={true}>
-        <Modal.Header onClose={onClose} />
+        <Modal.Header rightIcon={"close"} rightIconOnClick={onClose} />
       </Modal>,
     );
     wrapper.find("i").simulate("click");
@@ -92,7 +92,7 @@ describe("modal specs", () => {
         <Modal.Header leftIcon="back-button" />
       </Modal>,
     );
-    expect(wrapper.find("i.icon-back-button")).toHaveLength(1);
+    expect(wrapper.find(".q-i.icon-back-button")).toHaveLength(1);
   });
 
   it("should call the left icon onClick callback if the leftIconOnClick prop is given", () => {
@@ -102,7 +102,7 @@ describe("modal specs", () => {
         <Modal.Header leftIcon="back-button" leftIconOnClick={leftOnClose} />
       </Modal>,
     );
-    wrapper.find("i.icon-back-button").simulate("click");
+    wrapper.find(".q-i.icon-back-button").simulate("click");
     expect(leftOnClose.calledOnce).toBe(true);
   });
 
@@ -110,14 +110,14 @@ describe("modal specs", () => {
     const wrapper = mount(<Modal show={false} />);
     wrapper.setProps({ show: true });
 
-    expect(document.body.classList.contains("disable-scroll")).toBe(true);
+    expect(document.body.classList.contains("q-disable-scroll")).toBe(true);
   });
 
   it("should remove disable-scroll class when modal is hidden", () => {
     const wrapper = mount(<Modal show={true} />);
     wrapper.setProps({ show: false });
 
-    expect(document.body.classList.contains("disable-scroll")).toBe(false);
+    expect(document.body.classList.contains("q-disable-scroll")).toBe(false);
   });
 
   it("should call onChange when show prop is changed", () => {

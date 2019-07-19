@@ -52,14 +52,14 @@ describe("input specs", () => {
     const text = faker.random.word();
     const wrapper = shallow(<Input subtext={text} />);
 
-    expect(wrapper.find(".input-subtext")).toHaveLength(1);
+    expect(wrapper.find(".q-input-subtext")).toHaveLength(1);
   });
 
   it("should render an error subtext", () => {
     const text = faker.random.word();
     const wrapper = shallow(<Input error errorMessage={text} />);
 
-    expect(wrapper.find(".input-error")).toHaveLength(1);
+    expect(wrapper.find(".q-input-error")).toHaveLength(1);
   });
 
   it("should accept additional classNames", () => {
@@ -82,8 +82,8 @@ describe("input specs", () => {
 
   it("should have className fluid when given fluid prop", () => {
     const wrapper = shallow(<Input fluid />);
-    const inputWrapper = wrapper.find(".input-wrapper");
-    expect(inputWrapper.hasClass("fluid")).toBe(true);
+    const inputWrapper = wrapper.find(".q-input-wrapper");
+    expect(inputWrapper.hasClass("q-fluid")).toBe(true);
   });
 
   it("should render a label when given label prop", () => {

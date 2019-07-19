@@ -1,13 +1,12 @@
-@import '../_variables';
 @import '../_globals';
 @import '../mixins/_color-scheme';
 @import '../mixins/_fluid.scss';
 
-.input-wrapper{
+.q-input-wrapper{
   display: block;
   text-align: left;
 
-  label{
+  .q-label{
     display: block;
     font-weight: $bold;
     font-size: $font-size-paragraph;
@@ -16,24 +15,24 @@
     color: $black;
     margin-bottom: 10px;
   }
-  .input-error{
-    color: $red;
-    font-weight: $bold;
-    margin-top: 5px;
-  }
-  span{
+  .q-span{
     display: inherit;
     color: #ababab;
     margin: -5px 0 5px 0;
     font-size: $font-size-small-paragraph;
   }
-  &.fluid{
+  .q-input-error{
+    color: $red;
+    font-weight: $bold;
+    margin-top: 5px;
+  }
+  &.q-fluid{
     @include fluid;
-    input {
+    .q-input {
       width: 100%;
     }
   }
-  input {
+  .q-input {
     background-color: $border-gray-two;
     border: 1px solid $border-gray;
     width: inherit;
@@ -43,22 +42,22 @@
     color: $dark-gray;
     -webkit-appearance: none;
   }
-  input:focus{
+  .q-input:focus{
     outline: none !important;
     background-color: $background-gray-two;
   }
 
-  &.disabled {
-    input{
+  &.q-disabled {
+    .q-input{
       @include disabled;
     }
-    label{
+    .q-label{
       color: $light-gray;
     }
   }
 
-  &.error{
-    input{
+  &.q-error{
+    .q-input{
       border-color: $red;
       background-color: $border-error;
     }

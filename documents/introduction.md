@@ -1,5 +1,6 @@
 # Introduction
 Learn how to include Quarkify in your project
+Don't forget to check out our [landing page!](https://github.com/Trendyol/quarkify/blob/master/README.md)
 
 ## Installation
 * To add quarkify library to your project

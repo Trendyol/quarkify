@@ -1,19 +1,24 @@
 import classNames from "classnames";
-import React from "react";
+import React, { PureComponent } from "react";
 import ISelect from "../../interfaces/select";
 import "../../styles/components/_select.scss";
+import { variantTypes as iconVariantTypes } from "../../types/icon";
 import { variantTypes } from "../../types/select";
 import classNamesDefault from "../../utils/class-names-default";
+import Icon from "../icon";
 
-class Select extends React.PureComponent<IProps> {
+class Select extends PureComponent<IProps> {
   public render() {
     const {
       items,
       variant,
       fluid,
-      subtext,
       name,
       value,
+      leftIcon,
+      rightIcon,
+      rightIconColor,
+      leftIconColor,
       className,
       ...props
     } = this.props;
@@ -21,15 +26,16 @@ class Select extends React.PureComponent<IProps> {
     const valueKey =
       this.props.value === undefined ? "value" : this.props.value;
     const selectClasses = classNames(
-      "select-wrapper",
+      "q-select-wrapper",
       classNamesDefault({fluid}),
       className,
     );
     return (
       <div style={{ position: "relative" }}>
         <div className={selectClasses}>
-          <div className={"select-group"}>
-            <select className="select" {...props}>
+          <div className={"q-select-group"}>
+            {leftIcon && <Icon className={"q-select-icon-left"} name={leftIcon} variant={leftIconColor}/>}
+            <select className="q-select" {...props}>
               {this.props.items.map((item, index) => {
                 return (
                   <option
@@ -44,6 +50,7 @@ class Select extends React.PureComponent<IProps> {
                 );
               })}
             </select>
+            {rightIcon && <Icon className={"q-select-icon-right"} name={rightIcon} variant={rightIconColor} />}
           </div>
         </div>
       </div>
@@ -54,11 +61,14 @@ class Select extends React.PureComponent<IProps> {
 interface IProps extends ISelect {
   variant?: variantTypes;
   items: any[];
-  subtext?: string;
   fluid?: boolean;
   value?: string;
   name?: string;
+  rightIcon?: string;
+  leftIcon?: string;
   className?: string;
+  rightIconColor?: iconVariantTypes;
+  leftIconColor?: iconVariantTypes;
 }
 
 export default Select;

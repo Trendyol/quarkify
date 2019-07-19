@@ -8,7 +8,7 @@ import Icon from "../icon";
 class Popup extends React.Component<IProps> {
   public componentDidMount(): void {
     if (this.props.show && typeof window !== "undefined") {
-      document.body.classList.add("disable-scroll");
+      document.body.classList.add("q-disable-scroll");
     }
   }
 
@@ -21,11 +21,11 @@ class Popup extends React.Component<IProps> {
       this.props.onChange();
     }
     if (nextProps.show && typeof window !== "undefined") {
-      document.body.classList.add("disable-scroll");
-      document.documentElement.classList.add("disable-scroll");
+      document.body.classList.add("q-disable-scroll");
+      document.documentElement.classList.add("q-disable-scroll");
     } else if (typeof window !== "undefined") {
-      document.body.classList.remove("disable-scroll");
-      document.documentElement.classList.remove("disable-scroll");
+      document.body.classList.remove("q-disable-scroll");
+      document.documentElement.classList.remove("q-disable-scroll");
     }
     return true;
   }
@@ -41,13 +41,13 @@ class Popup extends React.Component<IProps> {
       className,
     } = this.props;
     const popupClasses = classNames(
-      "popup-overlay",
+      "q-popup-overlay",
       className,
     );
     const popupIconClasses = classNames(
-      iconLeft && "popup-icon-left",
+      iconLeft && "q-popup-icon-left",
       "icon-close",
-      "popup-icon-position",
+      "q-popup-icon-position",
     );
 
     const overlayClick = () => {
@@ -65,10 +65,10 @@ class Popup extends React.Component<IProps> {
         in={show}
         unmountOnExit
         timeout={150}
-        classNames="zoomIn popup"
+        classNames="q-zoomIn q-popup"
       >
         <div className={popupClasses} onClick={overlayClick}>
-          <div className="popup-main" onClick={this.popupBodyClick}>
+          <div className="q-popup-main" onClick={this.popupBodyClick}>
             {!noIcon && (
               <Icon
                 className={popupIconClasses}
@@ -92,7 +92,6 @@ class Popup extends React.Component<IProps> {
 interface IProps {
   show: boolean;
   children?: ReactNode;
-  slideIn?: string;
   onClose: () => void;
   onChange?: () => void;
   iconLeft?: boolean;

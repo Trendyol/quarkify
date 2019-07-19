@@ -1,27 +1,29 @@
 @import "../_variables";
 
-.box{
+.q-box{
   background-color: $white-two;
   border: 1px solid $border-gray;
+  border-radius: $border-radius;
   padding: 1rem;
+  position: relative;
 
-  &.spaced{
+  &.q-spaced{
     margin: $box-margin;
   }
 
-  &.left-aligned{
+  &.q-left-aligned{
     text-align: left;
   }
 
-  &.right-aligned{
+  &.q-right-aligned{
     text-align: right;
   }
 
-  &.center-aligned{
+  &.q-center-aligned{
     text-align: center;
   }
 
-  &.justify-aligned{
+  &.q-justify-aligned{
     text-align: justify;
   }
 }

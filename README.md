@@ -13,7 +13,7 @@
   <p align="center">
     An awesome lightweight React UI Component library
     <br />
-    <a href="#docsify"><strong>Explore the docs »</strong></a>
+    <a href="https://quarkify-d871b.firebaseapp.com/"><strong>Explore the docs »</strong></a>
     <br />
     <br />
     <a href="https://trendyol.github.io/quarkify">View Demo</a>
@@ -38,6 +38,7 @@
 * [Getting Started](#getting-started)
   * [Installation](#installation)
 * [Usage](#usage)
+  * [Examples](#examples)
 * [Contributing](#contributing)
 * [License](#license)   
 * [Acknowledgements](#acknowledgements)
@@ -124,14 +125,14 @@ yarn start
 ## Usage
 
 To preview the live demo and see usages of the components please
-refer to our [demo](https://trendyol.github.io/quarkify)
+refer to our [demo][storybook-url]
 
 ### Examples
 
-We have several examples on the [website](#docsify-url). Here is the first one to get you started:
+We have several examples on our [document][docsify-url]. Here is the first one to get you started:
 
 ```js
-import Button from "quarkify/dist/components/button"
+import Button from "quarkify/components/button"
 
 function App() {
   return (
@@ -153,8 +154,8 @@ As you can see, to import components into your project, you need to specify the 
 
 Furthermore, to use `Modal` component:
 ```js
-import Button from "quarkify/dist/components/button"
-import Modal from "quarkify/dist/components/modal";
+import Button from "quarkify/components/button"
+import Modal from "quarkify/components/modal";
 
 let show = false;
 
@@ -196,7 +197,7 @@ When button is toggled, it will render the modal as it is seen below:
 
 [![Modal Component][modal]](#)
 
-For more examples, please refer to the [documentation](#docsify-url)
+For more examples, please refer to the [documentation][docsify-url]
 
 
 <!-- CONTRIBUTING -->
@@ -240,5 +241,7 @@ Distributed under the MIT License. See `LICENSE` for more information.
 [contributors-url]: https://github.com/Trendyol/quarkify/issues
 [license-shield]: https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square
 [license-url]: LICENSE
+[storybook-url]: https://trendyol.github.io/quarkify
+[docsify-url]: https://quarkify-d871b.firebaseapp.com/
 [button]: images/button.png
 [modal]: images/modal.png

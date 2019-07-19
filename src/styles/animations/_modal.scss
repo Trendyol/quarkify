@@ -1,66 +1,69 @@
 @mixin modal-animation($duration: 300ms) {
-  .slideInRight{
-    transition: left $duration;
-
-    &.modal-enter {
-      left: 100vw;
+  .q-slideInRight{
+    &.q-modal-enter {
+      transform: translateX(100vw);
     }
-    &.modal-enter-active {
-      left: 0;
+    &.q-modal-enter-active {
+      transform: translateX(0);
+      transition: transform $duration;
     }
-    &.modal-exit {
-      left: 0;
+    &.q-modal-exit {
+      transform: translateX(0);
     }
-    &.modal-exit-active {
-      left: 100vw;
-    }
-  }
-
-  .slideInLeft{
-    transition: left $duration;
-    &.modal-enter {
-      left: -100vw;
-    }
-    &.modal-enter-active {
-      left: 0;
-    }
-    &.modal-exit {
-      left: 0;
-    }
-    &.modal-exit-active {
-      left: -100vw;
+    &.q-modal-exit-active {
+      transform: translateX(100vw);
+      transition: transform $duration;
     }
   }
 
-  .slideInDown {
-    transition: top $duration;
-    &.modal-enter {
-      top: 100vh;
+  .q-slideInLeft{
+    &.q-modal-enter {
+      transform: translateX(-100vw);
     }
-    &.modal-enter-active {
-      top: 0;
+    &.q-modal-enter-active {
+      transform: translateX(0);
+      transition: transform $duration;
     }
-    &.modal-exit {
-      top: 0;
+    &.q-modal-exit {
+      transform: translateX(0);
     }
-    &.modal-exit-active {
-      top: 100vh;
+    &.q-modal-exit-active {
+      transform: translateX(-100vw);
+      transition: transform $duration;
     }
   }
 
-  .slideInUp{
-    transition: top $duration;
-    &.modal-enter {
-      top: -100vh;
+  .q-slideInDown {
+    &.q-modal-enter {
+      transform: translateY(100vh);
     }
-    &.modal-enter-active {
-      top: 0;
+    &.q-modal-enter-active {
+      transform: translateY(0);
+      transition: transform $duration;
     }
-    &.modal-exit {
-      top: 0;
+    &.q-modal-exit {
+      transform: translateY(0);
     }
-    &.modal-exit-active {
-      top: -100vh;
+    &.q-modal-exit-active {
+      transform: translateY(100vh);
+      transition: transform $duration;
+    }
+  }
+
+  .q-slideInUp{
+    &.q-modal-enter {
+      transform: translateY(-100vh);
+    }
+    &.q-modal-enter-active {
+      transform: translateY(0);
+      transition: transform $duration;
+    }
+    &.q-modal-exit {
+      transform: translateY(0);
+    }
+    &.q-modal-exit-active {
+      transform: translateY(-100vh);
+      transition: transform $duration;
     }
   }
 }

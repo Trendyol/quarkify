@@ -1,0 +1,92 @@
+@import "../variables";
+
+.q-loader {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255,255,255,.85);
+  border-radius: inherit;
+
+  .q-loading-animation {
+    width: 64px;
+    height: 64px;
+    position: absolute;
+    display: block;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    .q-loader-item {
+      animation: loader 0.9s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+      transform-origin: 32px 32px;
+    }
+
+    .q-loader-item:after {
+      content: " ";
+      display: block;
+      position: absolute;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: $primary;
+      margin: -3px 0 0 -3px;
+    }
+
+    @for $i from 1 through 8 {
+      .q-loader-item:nth-child(#{$i}){
+        animation-delay: calc(#{$i * -0.036s});
+      }
+    }
+
+    .q-loader-item:nth-child(1):after {
+      top: 50px;
+      left: 50px;
+    }
+
+    .q-loader-item:nth-child(2):after {
+      top: 54px;
+      left: 45px;
+    }
+
+    .q-loader-item:nth-child(3):after {
+      top: 57px;
+      left: 39px;
+    }
+
+    .q-loader-item:nth-child(4):after {
+      top: 58px;
+      left: 32px;
+    }
+
+    .q-loader-item:nth-child(5):after {
+      top: 57px;
+      left: 25px;
+    }
+
+    .q-loader-item:nth-child(6):after {
+      top: 54px;
+      left: 19px;
+    }
+
+    .q-loader-item:nth-child(7):after {
+      top: 50px;
+      left: 14px;
+    }
+
+    .q-loader-item:nth-child(8):after {
+      top: 45px;
+      left: 10px;
+    }
+  }
+}
+
+@keyframes loader {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

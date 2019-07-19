@@ -1,10 +1,10 @@
 import classNames from "classnames";
-import React from "react";
+import React, { PureComponent } from "react";
 import IInput from "../../interfaces/input";
 import "../../styles/components/_input.scss";
 import classNamesDefault from "../../utils/class-names-default";
 
-class Input extends React.PureComponent<IProps> {
+class Input extends PureComponent<IProps> {
   private static defaultProps = {
     type: "text",
   };
@@ -26,22 +26,23 @@ class Input extends React.PureComponent<IProps> {
       newType = "text";
     }
     const inputClasses = classNames(
-      "input-wrapper",
+      "q-input-wrapper",
       classNamesDefault({ error, disabled, fluid }),
       className);
     return (
       <div className={inputClasses}>
         {label && (
-          <label>{label}</label>
+          <label className={"q-label"}>{label}</label>
         )}
-        {subtext && <span className="input-subtext">{subtext}</span>}
+        {subtext && <span className="q-span q-input-subtext">{subtext}</span>}
         <input
+          className={"q-input"}
           disabled={disabled}
           type={newType}
           {...props}
         />
         {error && errorMessage && (
-          <span className="input-error">{errorMessage}</span>
+          <span className="q-span q-input-error">{errorMessage}</span>
         )}
       </div>
     );

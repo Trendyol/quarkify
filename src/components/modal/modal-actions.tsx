@@ -1,7 +1,9 @@
-import React from "react";
+import React, { PureComponent } from "react";
 
-const Actions = ({ children }: { children: any }) => {
-  return <div className="modal-actions">{children}</div>;
-};
+class Actions extends PureComponent {
+  public render() {
+    return <div className="q-modal-actions">{this.props.children}</div>;
+  }
+}
 
 export default Actions;

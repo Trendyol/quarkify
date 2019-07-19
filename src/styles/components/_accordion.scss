@@ -1,0 +1,48 @@
+@import "../_variables";
+@import "../animations/_accordion.scss";
+
+.q-accordion {
+  background-color: $white-two;
+
+  .q-accordion-header {
+    padding: $padding-x $padding-y;
+    border-bottom: 1px solid $very-light-pink;
+    width: 100%;
+    height: $modal-header-height;
+    display: flex;
+    background-color: $white;
+    justify-content: space-between;
+
+    .q-accordion-title{
+      font-size: $font-size-base;
+      font-weight: $bold;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      overflow: hidden;
+      margin-bottom: 0;
+      padding-left: $modal-icon-size;
+      height: 100%;
+    }
+
+    .q-i {
+      padding-right: 10px;
+      line-height: 1rem;
+      transition: transform 300ms;
+
+      &.expanded {
+        transform: rotate(180deg);
+      }
+    }
+  }
+
+  .q-accordion-content {
+    background-color: $dark-gray-two;
+    border-bottom: 1px solid $very-light-pink;
+    overflow: hidden;
+    will-change: max-height;
+    padding: 0 1rem;
+  }
+}
+
+//Animations
+@include accordion-animation;

@@ -3,6 +3,7 @@ import Adapter from "enzyme-adapter-react-16";
 import faker from "faker";
 import React from "react";
 import sinon from "sinon";
+import Modal from "../../modal";
 import Select from "../../select";
 
 Enzyme.configure({ adapter: new Adapter() });
@@ -56,7 +57,7 @@ describe("select specs", () => {
 
   it("should render select component", () => {
     const wrapper = shallow(<Select items={items} />);
-    expect(wrapper.exists(".select-group")).toEqual(true);
+    expect(wrapper.exists(".q-select-group")).toEqual(true);
   });
 
   it("should render 3 options", () => {
@@ -90,7 +91,7 @@ describe("select specs", () => {
       wrapper
         .render()
         .find("select [selected]")
-        .hasClass("secondary"),
+        .hasClass("q-secondary"),
     ).toEqual(true);
   });
 
@@ -106,8 +107,8 @@ describe("select specs", () => {
 
   it("should have className fluid when given fluid prop", () => {
     const wrapper = shallow(<Select items={items} fluid />);
-    const selectWrapper = wrapper.find(".select-wrapper");
-    expect(selectWrapper.hasClass("fluid")).toBe(true);
+    const selectWrapper = wrapper.find(".q-select-wrapper");
+    expect(selectWrapper.hasClass("q-fluid")).toBe(true);
   });
 
   it("should set values and names properly", () => {
@@ -126,6 +127,18 @@ describe("select specs", () => {
         .find("select [selected]")
         .text(),
     ).toEqual("Plane");
+  });
+
+  it("should have a left icon if leftIcon prop is given", () => {
+    const wrapper = mount(<Select items={customItems} leftIcon={"close"} />);
+
+    expect(wrapper.find(".q-select-group").find(".q-select-icon-left")).toHaveLength(2);
+  });
+
+  it("should have a right icon if leftIcon prop is given", () => {
+    const wrapper = mount(<Select items={customItems} rightIcon={"close"} />);
+
+    expect(wrapper.find(".q-select-group").find(".q-select-icon-right")).toHaveLength(2);
   });
 
   it("should accept additional classNames", () => {

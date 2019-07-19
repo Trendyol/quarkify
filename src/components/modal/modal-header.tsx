@@ -1,33 +1,35 @@
-import React, { FunctionComponent } from "react";
-import { IconTypes } from "../../types/modal";
+import classNames from "classnames";
+import React, { PureComponent } from "react";
 import Icon from "../icon";
 
-const Header: FunctionComponent<IHeaderProps> = ({
-  children,
-  icon = "close",
-  noIcon = false,
-  leftIcon,
-  leftIconOnClick,
-  onClose,
-}) => {
-  const classNames = ["modal-header", leftIcon && "has-left-icon"];
-  return (
-    <div className={classNames.join(" ")}>
-      {leftIcon && <Icon name={leftIcon} onClick={leftIconOnClick} />}
-      <h1 className="modal-title">{children}</h1>
-      {!noIcon && (
-        <Icon role="button" aria-label={icon} name={icon} onClick={onClose} />
-      )}
-    </div>
-  );
-};
+class Header extends PureComponent<IHeaderProps> {
+  public render() {
+      const {
+        children,
+        rightIcon,
+        leftIcon,
+        leftIconOnClick,
+        rightIconOnClick,
+      } = this.props;
+      const headerClasses = classNames("q-modal-header", leftIcon && "q-has-left-icon");
+      return (
+        <div className={headerClasses}>
+          {leftIcon &&
+          <Icon className={"q-i"} aria-label={leftIcon} name={leftIcon} onClick={leftIconOnClick} />}
+          <h1 className="q-modal-title">{children}</h1>
+          {rightIcon &&
+          <Icon className={"q-i"} aria-label={rightIcon} name={rightIcon} onClick={rightIconOnClick} />
+          }
+        </div>
+      );
+    }
+  }
 
 export interface IHeaderProps {
-  icon?: IconTypes;
-  noIcon?: boolean;
-  leftIcon?: IconTypes;
+  leftIcon?: string;
+  rightIcon?: string;
   leftIconOnClick?(event: React.SyntheticEvent): void;
-  onClose?(event: React.SyntheticEvent): void;
+  rightIconOnClick?(event: React.SyntheticEvent): void;
 }
 
 export default Header;

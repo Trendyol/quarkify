@@ -1,8 +1,7 @@
-@import '../variables';
 @import '../globals';
 @import "../animations/_popup.scss";
 
-.popup-main{
+.q-popup-main{
   position:fixed;
   background-color: $white-two;
   top:50%;
@@ -17,7 +16,7 @@
   max-height: 90vh;
   border-radius: $border-radius;
 
-  .popup-content {
+  .q-popup-content {
     overflow-y: scroll;
     max-height: 50vh;
     -ms-overflow-style: none;
@@ -27,13 +26,13 @@
     }
   }
 
-  .popup-icon-position {
+  .q-popup-icon-position {
     margin-left: auto;
     width: fit-content;
     display: flex;
   }
 
-  .popup-icon-left {
+  .q-popup-icon-left {
     justify-content: flex-start;
   }
 }
@@ -41,7 +40,7 @@
 //Animations
 @include popup-animation
 
-.popup-overlay {
+.q-popup-overlay {
   height: 100%;
   width: 100%;
   position: fixed;
@@ -51,14 +50,14 @@
   background-color: rgba(0, 0, 0, .5);
 }
 
-body.disable-scroll{
+body.q-disable-scroll{
   position: fixed;
   overflow: hidden;
   height: 100%;
   width: 100%;
 }
 
-html.disable-scroll{
+html.q-disable-scroll{
   overflow: hidden;
   height: 100%;
   width: 100%;

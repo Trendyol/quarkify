@@ -3,12 +3,12 @@ import classNames from "classnames";
 const classNamesDefault = (props: any) => {
   return classNames(
     props.className,
-    props.variant && `${props.variant}`,
-    props.disabled && "disabled",
-    props.size && `${props.size}`,
-    props.fluid && "fluid",
-    props.error && "error",
-    props.round && "round",
+    props.variant && `q-${props.variant}`,
+    props.disabled && "q-disabled",
+    props.size && `q-${props.size}`,
+    props.fluid && "q-fluid",
+    props.error && "q-error",
+    props.round && "q-round",
   );
 };
 

@@ -59,3 +59,10 @@ stories.add("Button with Icon", () => (
 stories.add("Circular", () => (
   <Button variant="primary" circular icon="heart" onClick={actionLog}/>
 ));
+
+stories.add("Ripple", () => (
+  <>
+    <Button variant="primary" ripple>Ripple</Button>
+    <Button variant="secondary" ripple>Ripple</Button>
+  </>
+));

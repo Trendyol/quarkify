@@ -8,6 +8,7 @@ import Input from "../components/input";
 import Modal from "../components/modal";
 import Popup from "../components/popup";
 import Select from "../components/select";
+import Typography from "../components/typography";
 import "./demo.css";
 
 const stories = storiesOf("Demo", module);
@@ -72,8 +73,12 @@ const BasketStory = () => {
       </div>
       <div className={"product-info"} style={{ marginBottom: "70px" }}>
         <div className={"product-info__container"}>
-          <h1 className="product-info__brand">TRENDYOLMİLLA</h1>
-          <h2 className="product_info__product_name">Lacivert Baskılı Basic Örme T-shirt TWOSS19TC0012</h2>
+          <Typography variant="h5" className="product-info__brand">
+            TRENDYOLMİLLA
+          </Typography>
+          <Typography variant="subtitle1" className="product_info__product_name">
+            Lacivert Baskılı Basic Örme T-shirt TWOSS19TC0012
+          </Typography>
         </div>
         <div className={"product-info__footer"}>
           <div className={"product-info__footer-wrapper"}>
@@ -302,7 +307,7 @@ const BasketStory = () => {
         </div>
       </div>
       <Modal show={show}>
-        <Modal.Header onClose={closeModal} leftIcon="back-button" leftIconOnClick={closeModal} noIcon>
+        <Modal.Header rightIconOnClick={closeModal} leftIcon="back-button" leftIconOnClick={closeModal}>
           Sepetim (4 Urun)
         </Modal.Header>
         <Modal.Content className="basket-content">

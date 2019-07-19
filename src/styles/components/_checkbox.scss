@@ -1,13 +1,12 @@
-@import '../_variables';
 @import '../_globals';
 @import '../mixins/_color-scheme';
 @import '../mixins/_fluid.scss';
 
-.checkbox-wrapper{
+.q-checkbox-wrapper{
   user-select: none;
   font-family: icomoon !important;
 
-  input[type=checkbox] + label {
+  .q-input[type=checkbox] + .q-label {
     display: inline-flex;
     align-items: center;
     margin: $checkbox-margin;
@@ -15,11 +14,11 @@
     padding: $checkbox-padding;
   }
 
-  input[type=checkbox] {
+  .q-input[type=checkbox] {
     display: none;
   }
 
-  input[type=checkbox] + label:before {
+  .q-input[type=checkbox] + .q-label:before {
     font-family: icomoon !important;
     content: "\e933";
     border: $checkbox-border-width solid $checkbox-border-passive;
@@ -31,45 +30,49 @@
     margin-right: 5px;
   }
 
-  input[type=checkbox] + label:active:before {
+  .q-input[type=checkbox]:checked + .q-label{
+    font-weight: $bold;
+  }
+
+  .q-input[type=checkbox] + .q-label:active:before {
     transform: scale(0);
   }
 
-  input[type=checkbox]:checked + label:before {
+  .q-input[type=checkbox]:checked + .q-label:before {
     background-color: $primary;
     border-color: $primary;
     color: $white-two;
   }
 
-  input[type=checkbox]:disabled + label{
+  .q-input[type=checkbox]:disabled + .q-label{
     color: $light-gray;
   }
 
-  input[type=checkbox]:checked:disabled + label{
+  .q-input[type=checkbox]:checked:disabled + .q-label{
     color: $light-gray;
   }
 
-  input[type=checkbox]:disabled + label:before {
+  .q-input[type=checkbox]:disabled + .q-label:before {
     transform: scale(1);
     border-color: $light-gray;
   }
 
-  input[type=checkbox]:checked:disabled + label:before {
+  .q-input[type=checkbox]:checked:disabled + .q-label:before {
     transform: scale(1);
     background-color: $light-gray;
     border-color: $light-gray;
   }
 
-  &.error {
-    input[type=checkbox] + label:before {
+  &.q-error {
+    .q-input[type=checkbox] + .q-label:before {
       border-color: $red;
     }
-    input[type=checkbox]:checked + label:before {
+    .q-input[type=checkbox]:checked + .q-label:before {
       background-color: $white-two;
       border-color: $red;
       color: $red;
     }
-    input[type=checkbox] + label {
+    .q-input[type=checkbox] + .q-label {
       color: $red;
     }
   }

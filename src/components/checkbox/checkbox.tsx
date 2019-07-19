@@ -1,20 +1,27 @@
 import classNames from "classnames";
-import React from "react";
+import React, { PureComponent } from "react";
 import IInput from "../../interfaces/input";
 import "../../styles/components/_checkbox.scss";
+import classNamesDefault from "../../utils/class-names-default";
 
-class CheckBox extends React.PureComponent<IProps> {
+class CheckBox extends PureComponent<IProps> {
   public render() {
-    const { error, label, type, className, ...props } = this.props;
+    const { checked, error, label, type, className, ...props } = this.props;
     const checkBoxClasses = classNames(
-      "checkbox-wrapper",
-      error && "error",
+      "q-checkbox-wrapper",
+      classNamesDefault({error}),
       className);
     return (
       <div className={checkBoxClasses}>
-        <input id={`checkbox-${this.props.value}`} type="checkbox" {...props} />
+        <input
+          className={"q-input"}
+          id={`checkbox-${this.props.value}`}
+          type="checkbox"
+          {...props}
+          defaultChecked={checked}
+        />
         {label && (
-          <label htmlFor={`checkbox-${this.props.value}`}>{label}</label>
+          <label className={"q-label"} htmlFor={`checkbox-${this.props.value}`}>{label}</label>
         )}
       </div>
     );
