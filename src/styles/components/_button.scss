@@ -22,10 +22,10 @@
     &.q-ripple{
       transition: background 0.5s;
     }
-    &.q-ripple:hover{
+    &.q-ripple:hover:not(.q-disabled){
       background: $primary radial-gradient(circle, transparent 1%, $primary 1%) center / 15000%;
     }
-    &.q-ripple:active{
+    &.q-ripple:active:not(.q-disabled){
       background-color: rgba($primary, 0.8);
       background-size: 100%;
     }
