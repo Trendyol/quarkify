@@ -1,5 +1,5 @@
 import { storiesOf } from "@storybook/react";
-import React, {useState} from "react";
+import React, { useState } from "react";
 import Button from "../components/button";
 
 const stories = storiesOf("Button", module);
