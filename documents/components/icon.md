@@ -4,7 +4,7 @@ Icon component uses icomoon library to render icon elements. Of course it is pos
 ## Name
 Icon component takes name prop as required to specify which icon will be rendered. 
 
-```
+```html
 <Icon name="account"/>
 <Icon name="heart" />
 ```
@@ -28,7 +28,7 @@ To change the size of the icon, you can give size prop to the Icon component:
 
 By default, the size of the Icon component is set to normal.
 
-```
+```html
 <Icon name="account" size="small"/>
 <Icon name="account"/>
 <Icon name="account" size="large"/>
@@ -42,7 +42,7 @@ It is possible to use most used icon color schemas which are:
 - primary (orange theme)
 - gray
 
-```
+```html
 <Icon name="search" variant="primary"/>
 <Icon name="search" variant="gray"/>
 ```
@@ -52,13 +52,14 @@ To change the color of the icon, you can give color prop to the Icon component w
 
 By default, the color of the Icon component is set to gray.
 
-```
+```html
 <Icon name="search" color={"rgba(0,0,0,1)"} style={{backgroundColor: "red"}}/>
 ```
 
 #### Additional content
 You can use some other props as well such as:
-```
+
+```html
 <Icon name="account" disabled/>
 <Icon name="account" className="someClassName"/>
 ```

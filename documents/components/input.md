@@ -1,7 +1,7 @@
 # Inputs
 Custom input styles in numerous elements can be found here.
 
-```
+```html
 <Input />
 ```
 
@@ -10,7 +10,7 @@ Custom input styles in numerous elements can be found here.
 ## Label
 It is possible to add label next to the input by giving label property
 
-```
+```html
 <Input label="My Label"/>
 ``` 
 
@@ -18,7 +18,8 @@ It is possible to add label next to the input by giving label property
 
 ## Sub Text
 Sub texts are less attractive than labels but gives enough information about the content.
-```
+
+```html
 <Input label="Email" subtext="Your email has to be at least 8 characters"/>
 ``` 
 
@@ -27,7 +28,7 @@ Sub texts are less attractive than labels but gives enough information about the
 ## Fluid
 Adding fluid prop to input element makes the component spread into the div's width.
 
-```
+```html
 <Input label="Email" subtext="Your email has to be at least 8 characters" fluid/>
 ```
 
@@ -36,7 +37,7 @@ Adding fluid prop to input element makes the component spread into the div's wid
 ## Error
 When the user types something wrong in the input field, you can always show him/her the error message.
 
-```
+```html
 <Input label={"Text with label"} subtext={"Say something here"} error errorMessage={"Error message comes here"} />
 ```
 
@@ -44,7 +45,8 @@ When the user types something wrong in the input field, you can always show him/
 
 #### Additional content
 And of course you can use any other HTML input properties:
-```
+
+```html
 <Input placeholder="Some Placeholder"/>
 <Input value={"Bike"}/>
 <Input label={"I have a bike"}/>
