@@ -90,4 +90,9 @@ describe("button specs", () => {
 
     expect(wrapper.find(".q-loader")).toHaveLength(1);
   });
+
+  it("should be disabled when the button is loading", () => {
+    const wrapper = shallow(<Button loading={true}/>);
+    expect(wrapper.find("button[disabled]")).toHaveLength(1);
+  });
 });
