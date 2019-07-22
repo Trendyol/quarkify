@@ -1,11 +1,9 @@
 @import './variables';
 @import './reboot';
 @import './globals';
-
 // Mixins
 @import './mixins/color-scheme';
 @import "./mixins/fluid";
-
 // Components
 @import './components/button';
 @import './components/input';

@@ -9,7 +9,7 @@ class Radio extends PureComponent<IProps> {
     const { checked, error, label, type, className, ...props } = this.props;
     const radioClasses = classNames(
       "q-radio-wrapper",
-      classNamesDefault({error}),
+      classNamesDefault({ error }),
       className,
     );
     return (

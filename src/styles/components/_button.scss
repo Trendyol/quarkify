@@ -24,45 +24,53 @@
   &.q-primary {
     @include primary;
   }
+
   &.q-secondary {
     @include secondary;
   }
+
   &.q-gray {
     @include gray;
   }
+
   &.q-disabled {
     @include disabled;
   }
-  &.q-fluid{
+
+  &.q-fluid {
     @include fluid;
   }
+
   &.q-round {
     border-radius: $button-round;
   }
-  &.q-circular{
+
+  &.q-circular {
     border-radius: 50%;
     width: 30px;
     height: 30px;
     padding: 0;
   }
 
-  &:focus{
+  &:focus {
     outline: none !important;
   }
 
   //Icon
-  .q-i{
+  .q-i {
     padding-left: 0;
   }
-  .q-i:only-child{
+
+  .q-i:only-child {
     padding-right: 0;
   }
 
   //Loader
-  &.loading{
-    .q-loader{
+  &.loading {
+    .q-loader {
       background-color: transparent;
     }
+
     //Hide button contents
     .q-loader + span {
       opacity: 0;

@@ -42,6 +42,6 @@ stories.add("Icon", () => (
 
 stories.add("Fluid", () => (
   <div>
-    <Select fluid items={items} rightIcon={"close"} />
+    <Select fluid items={items} rightIcon={"close"}/>
   </div>
 ));

@@ -72,7 +72,7 @@ describe("typography specs", () => {
   });
 
   it("should have className underline when given underline prop", () => {
-    const wrapper = shallow(<Typography variant={"h1"} underline />);
+    const wrapper = shallow(<Typography variant={"h1"} underline/>);
 
     expect(wrapper.exists(".q-underline")).toEqual(true);
   });

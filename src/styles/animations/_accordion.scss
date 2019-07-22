@@ -3,18 +3,22 @@
     &.q-accordion-enter {
       max-height: 0;
     }
+
     &.q-accordion-enter-active {
       max-height: 100vh;
       transition: max-height $duration, transform $duration;
     }
+
     &.q-accordion-exit {
       max-height: 100vh;
     }
+
     &.q-accordion-exit-active {
       max-height: 0;
       transition: max-height $duration;
     }
-    &.q-accordion-exit-done{
+
+    &.q-accordion-exit-done {
     }
   }
 }

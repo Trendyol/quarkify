@@ -70,5 +70,5 @@ const ControlledAccordionWrapper = () => {
   );
 };
 
-stories.add("Accordion", () => <AccordionWrapper />);
-stories.add("Controlled Accordion", () => <ControlledAccordionWrapper />);
+stories.add("Accordion", () => <AccordionWrapper/>);
+stories.add("Controlled Accordion", () => <ControlledAccordionWrapper/>);

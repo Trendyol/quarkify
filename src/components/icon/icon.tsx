@@ -16,7 +16,7 @@ class Icon extends PureComponent<IProps> {
       className,
     );
     return (
-      <i style={{color, ...style}} className={iconClass} {...props}>
+      <i style={{ color, ...style }} className={iconClass} {...props}>
         {this.props.children}
       </i>
     );

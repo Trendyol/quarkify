@@ -7,11 +7,11 @@ import Layout from "../components/layout";
 const stories = storiesOf("Layout", module);
 
 stories.add("Default", () => (
-    <Layout>
-      <Box>
-        <p>{faker.lorem.lines(10)}</p>
-      </Box>
-    </Layout>
+  <Layout>
+    <Box>
+      <p>{faker.lorem.lines(10)}</p>
+    </Box>
+  </Layout>
 ));
 
 stories.add("Fluid", () => (

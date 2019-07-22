@@ -9,7 +9,7 @@ class ProductSlider extends PureComponent<IProductSliderProps> {
       "q-product-slider",
       className,
     );
-    return(
+    return (
       <div className={productSliderClasses}>
         {React.Children.map(this.props.children, (child) => (
           <div className="q-item">

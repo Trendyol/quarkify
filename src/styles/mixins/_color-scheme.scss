@@ -4,10 +4,10 @@
   background-color: $primary;
   color: $white-two;
   border: 1px solid $primary;
-  i:before{
+  i:before {
     color: $white-two;
   }
-  &:active:not(.loading){
+  &:active:not(.loading) {
     opacity: 0.8;
   }
 }
@@ -16,7 +16,7 @@
   background-color: $white-two;
   color: $primary;
   border: 1px solid $primary;
-  &:active:not(.loading){
+  &:active:not(.loading) {
     background-color: $primary;
     color: $white-two;
   }
@@ -26,7 +26,7 @@
   background-color: $white-two;
   color: $light-gray;
   border: 1px solid $light-gray;
-  &:active:not(.loading){
+  &:active:not(.loading) {
     color: $primary;
     border: 1px solid $primary;
   }

@@ -7,17 +7,19 @@ import classNamesDefault from "../../utils/class-names-default";
 class Typography extends PureComponent<ITypographyProps> {
 
   public render() {
-    const { variant,
-            component,
-            bold = false,
-            underline,
-            noWrap = false,
-            display = "initial",
-            className,
-            ...props } = this.props;
+    const {
+      variant,
+      component,
+      bold = false,
+      underline,
+      noWrap = false,
+      display = "initial",
+      className,
+      ...props
+    } = this.props;
     const typographyClasses = classNames(
       "q-typography",
-      classNamesDefault({ variant}),
+      classNamesDefault({ variant }),
       bold && "q-bold",
       underline && "q-underline",
       noWrap && "q-ellipsis",

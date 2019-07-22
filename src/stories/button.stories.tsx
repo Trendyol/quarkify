@@ -67,7 +67,7 @@ stories.add("Button with Icon", () => (
       Sepette %20 indirim
     </Button>
     &nbsp;
-    <Button variant="secondary" icon="heart" onClick={actionLog} />
+    <Button variant="secondary" icon="heart" onClick={actionLog}/>
   </div>
 ));
 
