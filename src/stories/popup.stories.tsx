@@ -7,66 +7,44 @@ import Popup from "../components/popup";
 const stories = storiesOf("Popup", module);
 
 const PopupWrapper = ({
-                        closeOnOverlayClick,
-                      }: {
+  closeOnOverlayClick,
+}: {
   closeOnOverlayClick?: boolean;
 }) => {
   const [show, setShow] = useState(false);
-
-  function handleChange() {
-    setShow(!show);
+  function handleClick() {
+    setShow(true);
   }
-
   function closePopup() {
     setShow(false);
   }
-
   return (
     <>
-      <Button onClick={handleChange}>Toggle Me</Button>
+      {Array.from({length: 30}, (_, i) => <p>Down {i}</p>)}
+      <Button onClick={handleClick}>Toggle Me</Button>
       <Popup
         show={show}
         onClose={closePopup}
         closeOnOverlayClick={closeOnOverlayClick}
-      />
-      <p>Content</p>
-      <p>Content</p>
-      <p>Content</p>
-      <p>Content</p>
-      <p>Content</p>
-      <p>Content</p>
-      <p>Content</p>
-      <p>Content</p>
-      <p>Content</p>
-      <p>Content</p>
-      <p>Content</p>
-      <p>Content</p>
-      <p>Content</p>
-      <p>Content</p>
-      <p>Content</p>
-      <p>Content</p>
-      <p>Content</p>
-      <p>Content</p>
-      <p>Content</p>
+      >
+        {Array.from({length: 80}, (_, i) => <p>Line {i}</p>)}
+      </Popup>
     </>
   );
 };
 
 const PopupBasketWrapper = ({
-                              closeOnOverlayClick,
-                            }: {
+  closeOnOverlayClick,
+}: {
   closeOnOverlayClick?: boolean;
 }) => {
   const [show, setShow] = useState(false);
-
   function handleChange() {
     setShow(!show);
   }
-
   function closePopup() {
     setShow(false);
   }
-
   return (
     <>
       <Button onClick={handleChange}>Toggle Me</Button>
@@ -75,7 +53,7 @@ const PopupBasketWrapper = ({
         onClose={closePopup}
         closeOnOverlayClick={closeOnOverlayClick}
       >
-        <Icon name="basket" style={{ fontSize: "6rem" }}/>
+        <Icon name="basket" style={{ fontSize: "6rem" }} />
         <h1>URUN SEPETINE EKLENDI</h1>
         <h4 style={{ color: "grey" }}>
           Alışverişe devam etmek mi istersin sepete gitmek mi?
@@ -99,8 +77,8 @@ const PopupBasketWrapper = ({
   );
 };
 
-stories.add("Default", () => <PopupWrapper/>);
+stories.add("Default", () => <PopupWrapper />);
 stories.add("CloseOnOverlayClick disabled", () => (
-  <PopupWrapper closeOnOverlayClick={false}/>
+  <PopupWrapper closeOnOverlayClick={false} />
 ));
-stories.add("Urun sepete eklendi", () => <PopupBasketWrapper/>);
+stories.add("Urun sepete eklendi", () => <PopupBasketWrapper />);
