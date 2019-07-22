@@ -7,25 +7,36 @@
   i:before{
     color: $white-two;
   }
+  &:active:not(.loading){
+    opacity: 0.8;
+  }
 }
 
 @mixin secondary {
   background-color: $white-two;
   color: $primary;
   border: 1px solid $primary;
+  &:active:not(.loading){
+    background-color: $primary;
+    color: $white-two;
+  }
 }
 
 @mixin gray {
   background-color: $white-two;
   color: $light-gray;
   border: 1px solid $light-gray;
+  &:active:not(.loading){
+    color: $primary;
+    border: 1px solid $primary;
+  }
 }
 
 
 @mixin disabled {
-  background-color: $dark-gray-two;
-  opacity: 0.9;
-  color: $white-two;
-  cursor: not-allowed;
-  border: 0;
+  background-color: $dark-gray-two !important;
+  opacity: 0.9 !important;
+  color: $white-two !important;
+  cursor: not-allowed !important;
+  border: 0 !important;
 }
