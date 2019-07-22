@@ -3,26 +3,27 @@
 
     &.q-popup-enter {
       .q-popup-main{
-        transform: translate(-50%,-50%) scale(0);
+        transform: scale(0);
       }
     }
 
     &.q-popup-enter-active {
       .q-popup-main{
-        transform: translate(-50%,-50%) scale(1);
+        transform: scale(1);
         transition: transform $duration;
       }
     }
 
     &.q-popup-exit {
       .q-popup-main{
+        transform: scale(1);
         transition: transform $duration;
       }
     }
 
     &.q-popup-exit-active {
       .q-popup-main{
-        transform: translate(-50%,-50%) scale(0);
+        transform: scale(0);
       }
     }
   }
