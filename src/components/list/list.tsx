@@ -18,7 +18,7 @@ class List extends PureComponent<IListProps> {
       noDot && "q-no-dot",
       className,
     );
-    return(
+    return (
       <ul className={listClasses} {...props}>
         {children}
       </ul>

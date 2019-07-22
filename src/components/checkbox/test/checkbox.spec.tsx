@@ -23,7 +23,7 @@ describe("checkbox specs", () => {
   it("should call onChange function ", () => {
     const spy = sandbox.spy();
     const text = faker.random.word();
-    const wrapper = shallow(<CheckBox value={"test"} onChange={spy} />);
+    const wrapper = shallow(<CheckBox value={"test"} onChange={spy}/>);
     const event = { target: { value: text } };
 
     wrapper.find("input").simulate("change", event);
@@ -34,7 +34,7 @@ describe("checkbox specs", () => {
   it("should not call callback function when changed and input is disabled", () => {
     const spy = sandbox.spy();
     const text = faker.random.word();
-    const wrapper = shallow(<CheckBox value={"test"} disabled />);
+    const wrapper = shallow(<CheckBox value={"test"} disabled/>);
     const event = { target: { value: text } };
 
     wrapper.simulate("change", event);
@@ -44,25 +44,25 @@ describe("checkbox specs", () => {
 
   it("should render a label", () => {
     const text = faker.random.word();
-    const wrapper = shallow(<CheckBox value={"test"} label={text} />);
+    const wrapper = shallow(<CheckBox value={"test"} label={text}/>);
 
     expect(wrapper.find("label")).toHaveLength(1);
   });
 
   it("should accept additional classNames", () => {
     const testClass = faker.lorem.word();
-    const wrapper = shallow(<CheckBox value={"test"} className={testClass} />);
+    const wrapper = shallow(<CheckBox value={"test"} className={testClass}/>);
     expect(wrapper.find(`.${testClass}`)).toHaveLength(1);
   });
 
   it("should convert text type prop to checkbox type prop", () => {
-    const wrapper = shallow(<CheckBox value={"test"} type="text" />);
+    const wrapper = shallow(<CheckBox value={"test"} type="text"/>);
     const inputElement = wrapper.find("input");
     expect(inputElement.prop("type")).toBe("checkbox");
   });
 
   it("should have error className when error prop is passed", () => {
-    const wrapper = shallow(<CheckBox value={"test"} error />);
+    const wrapper = shallow(<CheckBox value={"test"} error/>);
 
     expect(wrapper.hasClass("q-error")).toBe(true);
   });

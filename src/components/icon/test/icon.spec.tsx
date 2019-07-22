@@ -16,19 +16,19 @@ describe("icon specs", () => {
 
   it("should render icon component", () => {
     const text = faker.lorem.word();
-    const wrapper = shallow(<Icon name={text} />);
+    const wrapper = shallow(<Icon name={text}/>);
     expect(wrapper.find(".icon-" + text)).toHaveLength(1);
   });
 
   it("should be rendered with given large size prop", () => {
-    const wrapper = shallow(<Icon name="search" size="large" />);
+    const wrapper = shallow(<Icon name="search" size="large"/>);
 
     expect(wrapper.exists(".q-large")).toEqual(true);
   });
 
   it("should call function when close icon is clicked", () => {
     const spy = sandbox.spy();
-    const wrapper = shallow(<Icon onClick={spy} name="search" />);
+    const wrapper = shallow(<Icon onClick={spy} name="search"/>);
     wrapper.find(".icon-search").simulate("click");
     expect(spy.calledOnce).toEqual(true);
   });

@@ -27,7 +27,7 @@ class Select extends PureComponent<IProps> {
       this.props.value === undefined ? "value" : this.props.value;
     const selectClasses = classNames(
       "q-select-wrapper",
-      classNamesDefault({fluid}),
+      classNamesDefault({ fluid }),
       className,
     );
     return (
@@ -50,7 +50,7 @@ class Select extends PureComponent<IProps> {
                 );
               })}
             </select>
-            {rightIcon && <Icon className={"q-select-icon-right"} name={rightIcon} variant={rightIconColor} />}
+            {rightIcon && <Icon className={"q-select-icon-right"} name={rightIcon} variant={rightIconColor}/>}
           </div>
         </div>
       </div>

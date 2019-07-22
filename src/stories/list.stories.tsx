@@ -24,7 +24,7 @@ stories.add("No Dot", () => (
 
 stories.add("Icon", () => (
   <List noDot>
-    <List.Item icon={"search"}>15 gün içerisinde ücretsiz iade. Detaylı bilgi için  </List.Item>
+    <List.Item icon={"search"}>15 gün içerisinde ücretsiz iade. Detaylı bilgi için </List.Item>
     <List.Item icon={"search"}>24 saatte kargoda fırsatı iş günlerinde geçerlidir.</List.Item>
     <List.Item icon={"search"}>Modelin Ölçüleri: Boy: 1.75, Göğüs: 80, Bel: 60, Kalça: 88</List.Item>
     <List.Item icon={"search"}>Mankenin üzerindeki ürün S/36 bedendir.</List.Item>

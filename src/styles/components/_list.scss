@@ -14,7 +14,7 @@
     color: $dark-gray;
   }
 
-  .q-list-item::before{
+  .q-list-item::before {
     content: "";
     position: absolute;
     left: 0;
@@ -26,7 +26,7 @@
 
   }
 
-  &.q-no-dot{
+  &.q-no-dot {
     .q-list-item::before {
       display: none;
     }

@@ -8,7 +8,7 @@ class Loader extends PureComponent<ILoaderProps> {
       return null;
     }
 
-    return(
+    return (
       <div className="q-loader">
         <div className="q-loading-animation"/>
       </div>

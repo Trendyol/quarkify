@@ -18,13 +18,13 @@ describe("accordion specs", () => {
     const text = faker.random.word();
     const wrapper = shallow(
       <Accordion>
-      <Accordion.Header>
-        {text}
-      </Accordion.Header>
-      <Accordion.Content>
-        {text}
-      </Accordion.Content>
-    </Accordion>);
+        <Accordion.Header>
+          {text}
+        </Accordion.Header>
+        <Accordion.Content>
+          {text}
+        </Accordion.Content>
+      </Accordion>);
 
     expect(wrapper.find(".q-accordion")).toHaveLength(1);
   });
@@ -78,7 +78,7 @@ describe("accordion specs", () => {
         <Accordion.Content/>
       </Accordion>);
 
-    wrapper.setProps({expanded: true});
+    wrapper.setProps({ expanded: true });
 
     expect(wrapper.state("expanded")).toBe(true);
   });
@@ -91,7 +91,7 @@ describe("accordion specs", () => {
         <Accordion.Content/>
       </Accordion>);
 
-    wrapper.setState({expanded: true});
+    wrapper.setState({ expanded: true });
 
     expect(onChangeSpy.calledOnce).toBe(true);
   });
@@ -104,7 +104,7 @@ describe("accordion specs", () => {
       </Accordion>);
     const oldExpandedState = wrapper.state("expanded");
 
-    wrapper.setProps({className: faker.lorem.word()});
+    wrapper.setProps({ className: faker.lorem.word() });
 
     expect(wrapper.state("expanded")).toBe(oldExpandedState);
   });

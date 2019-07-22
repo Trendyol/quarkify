@@ -60,14 +60,14 @@ const BasketStory = () => {
     setShow(true);
   };
 
-  return(
+  return (
     <div>
       <div className={"image-container"}>
         <img
           className="gallery__image"
           alt="gallery image"
           src="https://img-trendyol.mncdn.com//Assets/ProductImages/oa/67/4720220/2/8681825033965_1_org_zoom.jpg"
-          style={{float: "left", width: "100%", position: "relative", height: "100%"}}
+          style={{ float: "left", width: "100%", position: "relative", height: "100%" }}
           data-index="0"
         />
       </div>
@@ -174,54 +174,64 @@ const BasketStory = () => {
             </div>
           </Box>
         </div>
-      <div className={"product-reviews"}>
-        <div className={"product-reviews__header"}>
-          <div className={"product-reviews__header-title"}>
-            Ürün Değerlendirmeleri
+        <div className={"product-reviews"}>
+          <div className={"product-reviews__header"}>
+            <div className={"product-reviews__header-title"}>
+              Ürün Değerlendirmeleri
+            </div>
+            <div className={"product-reviews__header-comments-count"}>
+              Tüm Yorumlar (7) <Icon name={"forward-button"}/>
+            </div>
           </div>
-          <div className={"product-reviews__header-comments-count"}>
-            Tüm Yorumlar (7) <Icon name={"forward-button"}/>
-          </div>
-        </div>
-        <div className={"product-reviews__body"}>
-          <div className={"product-reviews__body-img"}>
-            {/* tslint:disable-next-line:max-line-length */}
-            <img src="https://img-trendyol.mncdn.com/mnresize/400/-/Assets/ProductImages/oa/76/5930871/1/8698669560489_1_org.jpg"/>
-          </div>
-          <div className={"product-reviews__body-info"}>
-            <h5 className={"product-reviews__body-info__title"}>Avva</h5>
-            <div className={"product-reviews__body-info__subtitle"}>Erkek Taş Basic Pantolon - A91B3556</div>
-            <div className={"product-info__footer-wrapper__stars"} style={{ marginTop: "50px"}}>
-              <div className={"product-info__footer-wrapper__stars-name"}>
-                5.0
+          <div className={"product-reviews__body"}>
+            <div className={"product-reviews__body-img"}>
+              <img
+                src={"https://img-trendyol.mncdn.com/mnresize/400/-/Assets/" +
+                "ProductImages/oa/76/5930871/1/8698669560489_1_org.jpg"}
+              />
+            </div>
+            <div className={"product-reviews__body-info"}>
+              <h5 className={"product-reviews__body-info__title"}>Avva</h5>
+              <div className={"product-reviews__body-info__subtitle"}>Erkek Taş Basic Pantolon - A91B3556</div>
+              <div className={"product-info__footer-wrapper__stars"} style={{ marginTop: "50px" }}>
+                <div className={"product-info__footer-wrapper__stars-name"}>
+                  5.0
+                </div>
+                <div className={"product-info__footer-wrapper__stars-icon"}>
+                  <Icon name={"star"} style={{ color: "#ffc000" }}/>
+                </div>
               </div>
-              <div className={"product-info__footer-wrapper__stars-icon"}>
-                <Icon name={"star"} style={{ color: "#ffc000" }}/>
+              <div className={"product-info__footer-wrapper-reviews"}>
+                11 Değerlendirme 7 Yorum
               </div>
             </div>
-            <div className={"product-info__footer-wrapper-reviews"}>
-              11 Değerlendirme 7 Yorum
-            </div>
+          </div>
+          <div className={"product-reviews__footer"}>
+            <Button onClick={showPopup} fluid variant={"primary"}>Ürünü Değerlendir</Button>
+            <Popup
+              show={popup}
+              onClose={closePopup}
+            >
+              <h2>Ürünü Değerlendir</h2>
+              {/* tslint:disable-next-line:max-line-length jsx-alignment */}
+              <div style={{
+                display: "flex",
+                justifyContent: "space-between",
+                width: "60%",
+                // tslint:disable-next-line:object-literal-sort-keys
+                textAlign: "center",
+                margin: "auto",
+              }}
+              >
+                <CheckBox style={{ width: "30%" }} value={"kotu"} label={"Kötü"}/>
+                <CheckBox style={{ width: "30%" }} value={"orta"} label={"Orta"}/>
+                <CheckBox style={{ width: "30%" }} value={"iyi"} label={"İyi"}/>
+              </div>
+              <Input style={{ marginTop: "30px" }} size={5} placeholder={"Lütfen Yorumunuzu Yazın..."} fluid/>
+              <Button style={{ marginTop: "30px" }} onClick={closePopup} variant={"primary"} fluid>Gönder</Button>
+            </Popup>
           </div>
         </div>
-        <div className={"product-reviews__footer"}>
-          <Button onClick={showPopup} fluid variant={"primary"}>Ürünü Değerlendir</Button>
-          <Popup
-            show={popup}
-            onClose={closePopup}
-          >
-            <h2>Ürünü Değerlendir</h2>
-            {/* tslint:disable-next-line:max-line-length */}
-            <div style={{ display: "flex", justifyContent: "space-between", width: "60%", textAlign: "center", margin: "auto" }}>
-              <CheckBox style={{ width: "30%" }} value={"kotu"} label={"Kötü"}/>
-              <CheckBox style={{ width: "30%" }} value={"orta"} label={"Orta"}/>
-              <CheckBox style={{ width: "30%" }} value={"iyi"} label={"İyi"}/>
-            </div>
-            <Input style={{ marginTop: "30px" }} size={5} placeholder={"Lütfen Yorumunuzu Yazın..."} fluid/>
-            <Button style={{ marginTop: "30px" }} onClick={closePopup} variant={"primary"} fluid>Gönder</Button>
-          </Popup>
-        </div>
-      </div>
         <div className={"comments"}>
           <Box>
             <div className={"comment"}>
@@ -293,7 +303,7 @@ const BasketStory = () => {
             </div>
           </Box>
         </div>
-    </div>
+      </div>
 
       <div className={"price"}>
         <div className={"price__container discount__container"}>
@@ -316,7 +326,7 @@ const BasketStory = () => {
               <img
                 alt="gallery image"
                 src="https://img-trendyol.mncdn.com//Assets/ProductImages/oa/67/5959626/2/8682164080030_1_org_zoom.jpg"
-                style={{borderRadius: "3px", width: "100px", position: "relative"}}
+                style={{ borderRadius: "3px", width: "100px", position: "relative" }}
                 data-index="0"
               />
               <div className="product-details">
@@ -340,7 +350,7 @@ const BasketStory = () => {
               <img
                 alt="gallery image"
                 src="https://img-trendyol.mncdn.com//Assets/ProductImages/oa/67/6570246/2/8682164248607_1_org_zoom.jpg"
-                style={{borderRadius: "3px", width: "100px", position: "relative"}}
+                style={{ borderRadius: "3px", width: "100px", position: "relative" }}
                 data-index="0"
               />
               <div className="product-details">
@@ -364,7 +374,7 @@ const BasketStory = () => {
               <img
                 alt="gallery image"
                 src="https://img-trendyol.mncdn.com//Assets/ProductImages/oa/67/6019075/2/8681825243685_6_org_zoom.jpg"
-                style={{borderRadius: "3px", width: "100px", position: "relative"}}
+                style={{ borderRadius: "3px", width: "100px", position: "relative" }}
                 data-index="0"
               />
               <div className="product-details">
@@ -388,7 +398,7 @@ const BasketStory = () => {
               <img
                 alt="gallery image"
                 src="https://img-trendyol.mncdn.com//Assets/ProductImages/oa/67/4720220/2/8681825033965_1_org_zoom.jpg"
-                style={{borderRadius: "3px", width: "100px", position: "relative"}}
+                style={{ borderRadius: "3px", width: "100px", position: "relative" }}
                 data-index="0"
               />
               <div className="product-details">
@@ -414,4 +424,4 @@ const BasketStory = () => {
   );
 };
 
-stories.add("Basket", () => <BasketStory />);
+stories.add("Basket", () => <BasketStory/>);

@@ -5,7 +5,7 @@
 .q-select-wrapper {
   display: flex;
 
-  &.q-fluid{
+  &.q-fluid {
     @include fluid;
   }
 
@@ -40,7 +40,7 @@
       outline: none !important;
     }
 
-    .q-select-icon-left{
+    .q-select-icon-left {
       position: absolute;
       top: 8px;
       left: -8px;
@@ -48,7 +48,7 @@
       pointer-events: none
     }
 
-    .q-select-icon-right{
+    .q-select-icon-right {
       position: absolute;
       top: 8px;
       right: -8px;
@@ -58,7 +58,7 @@
 
   }
 
-  .q-select-group:active{
+  .q-select-group:active {
     border: 1px solid $light-gray;
   }
 

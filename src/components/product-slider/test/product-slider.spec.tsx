@@ -18,7 +18,7 @@ describe("product-slider specs", () => {
     const wrapper = shallow(
       <ProductSlider>
         {Array.from(
-          {length: numberOfChildren}, (_, key) => (<div key={key}/>))}
+          { length: numberOfChildren }, (_, key) => (<div key={key}/>))}
       </ProductSlider>,
     );
 
@@ -30,7 +30,7 @@ describe("product-slider specs", () => {
     const numberOfChildren = faker.random.number(10);
     const wrapper = mount(
       <ProductSlider className={fakeClass}>
-      {Array.from({length: numberOfChildren}, (_, key) => (<div key={key}/>))}
+        {Array.from({ length: numberOfChildren }, (_, key) => (<div key={key}/>))}
       </ProductSlider>);
 
     expect(wrapper.hasClass(fakeClass)).toBe(true);

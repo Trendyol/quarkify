@@ -16,7 +16,7 @@ class ListItem extends PureComponent<IItemProps> {
       "q-list-item",
       className,
     );
-    return(
+    return (
       <li className={listItemClasses} {...props}>
         {icon && <Icon name={icon} color={iconColor}/>}
         {children}

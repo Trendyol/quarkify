@@ -36,7 +36,7 @@ class Button extends PureComponent<IButtonProps> {
         {...props}
       >
         <Loader active={loading}/>
-        {icon && <Icon name={icon} />}
+        {icon && <Icon name={icon}/>}
         {children && <span>{children}</span>}
       </button>
     );

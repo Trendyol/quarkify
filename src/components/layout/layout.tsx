@@ -13,7 +13,7 @@ class Layout extends PureComponent<ILayoutProps> {
       ...props
     } = this.props;
     const layoutClasses = classNames(
-      classNamesDefault({fluid}),
+      classNamesDefault({ fluid }),
       "q-layout",
       className);
     return (

@@ -1,8 +1,8 @@
 @import '../globals';
 @import "../animations/_modal.scss";
 
-.q-modal-main{
-  position:fixed;
+.q-modal-main {
+  position: fixed;
   background-color: $white;
   top: 0;
   left: 0;
@@ -13,7 +13,7 @@
   z-index: $modal-z-index;
   overflow-y: scroll;
 
-  .q-modal-header{
+  .q-modal-header {
     padding: 1rem 1rem 0 1rem;
     border-bottom: 1px solid $very-light-pink;
     width: 100%;
@@ -23,7 +23,7 @@
     background-color: $white-two;
     z-index: $modal-z-index;
 
-    .q-modal-title{
+    .q-modal-title {
       font-size: $font-size-base;
       font-weight: $bold;
       width: 90%;
@@ -39,33 +39,35 @@
       line-height: $font-size-base;
     }
 
-    .q-i{
+    .q-i {
       padding: 0;
     }
-    &.q-has-left-icon{
-      .q-modal-title{
+
+    &.q-has-left-icon {
+      .q-modal-title {
         padding-left: 0;
       }
     }
   }
 
-    .q-modal-content {
-      background-color: $white-two;
-      overflow-y: scroll;
+  .q-modal-content {
+    background-color: $white-two;
+    overflow-y: scroll;
 
-      -ms-overflow-style: none;
-      padding: $modal-content-padding;
-      margin: 75px 15px 15px;
-      border: 1px solid $very-light-pink;
-      &::-webkit-scrollbar {
-        width: 0;
-        height: 0;
-      }
-    }
+    -ms-overflow-style: none;
+    padding: $modal-content-padding;
+    margin: 75px 15px 15px;
+    border: 1px solid $very-light-pink;
 
-    .q-modal-actions{
-      margin: 15px;
+    &::-webkit-scrollbar {
+      width: 0;
+      height: 0;
     }
+  }
+
+  .q-modal-actions {
+    margin: 15px;
+  }
 
 }
 
