@@ -77,6 +77,18 @@ describe("typography specs", () => {
     expect(wrapper.exists(".q-underline")).toEqual(true);
   });
 
+  it("should have className bold when given bold prop", () => {
+    const wrapper = shallow(<Typography variant={"h1"} bold/>);
+
+    expect(wrapper.exists(".q-bold")).toEqual(true);
+  });
+
+  it("should have className ellipsis when given noWrap prop", () => {
+    const wrapper = shallow(<Typography variant={"h1"} noWrap/>);
+
+    expect(wrapper.exists(".q-ellipsis")).toEqual(true);
+  });
+
   it("should accept additional classNames", () => {
     const fakeClass = faker.lorem.word();
     const wrapper = shallow(<Typography variant={"h1"} className={fakeClass}/>);
