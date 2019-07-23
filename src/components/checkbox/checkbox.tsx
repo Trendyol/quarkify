@@ -14,6 +14,7 @@ class CheckBox extends PureComponent<IProps> {
     return (
       <div className={checkBoxClasses}>
         <input
+          onTouchStart={undefined}
           className={"q-input"}
           id={`checkbox-${this.props.value}`}
           type="checkbox"

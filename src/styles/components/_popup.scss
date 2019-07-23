@@ -1,7 +1,7 @@
 @import '../globals';
 @import "../animations/_popup.scss";
 
-.q-popup-main{
+.q-popup-main {
   position: absolute;
   background-color: $white-two;
   display: block;
@@ -54,14 +54,14 @@
   align-items: center;
 }
 
-body.q-disable-scroll{
+body.q-disable-scroll {
   position: fixed;
   overflow: hidden;
   height: 100%;
   width: 100%;
 }
 
-html.q-disable-scroll{
+html.q-disable-scroll {
   overflow: hidden;
   height: 100%;
   width: 100%;
