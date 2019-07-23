@@ -17,8 +17,7 @@
   color: $primary;
   border: 1px solid $primary;
   &:active:not(.loading) {
-    background-color: $primary;
-    color: $white-two;
+    background-color: rgba($primary, 0.2)
   }
 }
 
@@ -27,8 +26,7 @@
   color: $light-gray;
   border: 1px solid $light-gray;
   &:active:not(.loading) {
-    color: $primary;
-    border: 1px solid $primary;
+    background-color: rgba($light-gray, 0.2)
   }
 }
 
