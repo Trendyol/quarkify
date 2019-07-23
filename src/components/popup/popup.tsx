@@ -1,36 +1,36 @@
 import classNames from "classnames";
-import React, { ReactNode } from "react";
+import React from "react";
 import ReactDOM from "react-dom";
 import { CSSTransition } from "react-transition-group";
 import "../../styles/components/_popup.scss";
 import Icon from "../icon";
 
-class Popup extends React.Component<IProps> {
-  public componentDidMount(): void {
-    if (this.props.show && typeof window !== "undefined") {
-      document.body.classList.add("q-disable-scroll");
-    }
-  }
+class Popup extends React.PureComponent<IPopupProps> {
+  // public componentDidMount(): void {
+  //   if (this.props.show && typeof window !== "undefined") {
+  //     document.body.classList.add("q-disable-scroll");
+  //   }
+  // }
 
-  public shouldComponentUpdate(
-    nextProps: Readonly<IProps>,
-    nextState: Readonly<{}>,
-    nextContext: any,
-  ): boolean {
-    if (nextProps.show !== this.props.show && this.props.onChange) {
-      this.props.onChange();
+  public componentWillReceiveProps(
+    prevProps: Readonly<IPopupProps>,
+    nextProps: Readonly<IPopupProps>,
+  ): void {
+    if (prevProps.show !== nextProps.show) {
+      if (prevProps.onChange) {
+        prevProps.onChange();
+      }
+      if (typeof window !== "undefined") {
+        this.toggleScrollLock();
+      }
     }
-    if (nextProps.show && typeof window !== "undefined") {
-      document.body.classList.add("q-disable-scroll");
-      document.documentElement.classList.add("q-disable-scroll");
-    } else if (typeof window !== "undefined") {
-      document.body.classList.remove("q-disable-scroll");
-      document.documentElement.classList.remove("q-disable-scroll");
-    }
-    return true;
   }
 
   public render() {
+    if (typeof window === "undefined") {
+      return null;
+    }
+
     const {
       show,
       children,
@@ -56,10 +56,6 @@ class Popup extends React.Component<IProps> {
       }
     };
 
-    if (typeof window === "undefined") {
-      return null;
-    }
-
     return ReactDOM.createPortal(
       <CSSTransition
         in={show}
@@ -76,7 +72,9 @@ class Popup extends React.Component<IProps> {
                 name="close"
               />
             )}
-            {children}
+            <div className="q-popup-content">
+              {children}
+            </div>
           </div>
         </div>
       </CSSTransition>,
@@ -87,11 +85,20 @@ class Popup extends React.Component<IProps> {
   private popupBodyClick = (event: React.SyntheticEvent) => {
     event.stopPropagation();
   }
+
+  private toggleScrollLock = () => {
+    if (document.body.classList.contains("q-disable-scroll")) {
+      document.body.classList.remove("q-disable-scroll");
+      document.documentElement.classList.remove("q-disable-scroll");
+    } else {
+      document.body.classList.add("q-disable-scroll");
+      document.documentElement.classList.add("q-disable-scroll");
+    }
+  }
 }
 
-interface IProps {
+interface IPopupProps {
   show: boolean;
-  children?: ReactNode;
   onClose: () => void;
   onChange?: () => void;
   iconLeft?: boolean;

@@ -13,8 +13,8 @@ const PopupWrapper = ({
 }) => {
   const [show, setShow] = useState(false);
 
-  function handleChange() {
-    setShow(!show);
+  function handleClick() {
+    setShow(true);
   }
 
   function closePopup() {
@@ -23,31 +23,15 @@ const PopupWrapper = ({
 
   return (
     <>
-      <Button onClick={handleChange}>Toggle Me</Button>
+      {Array.from({ length: 30 }, (_, i) => <p>Down {i}</p>)}
+      <Button onClick={handleClick}>Toggle Me</Button>
       <Popup
         show={show}
         onClose={closePopup}
         closeOnOverlayClick={closeOnOverlayClick}
-      />
-      <p>Content</p>
-      <p>Content</p>
-      <p>Content</p>
-      <p>Content</p>
-      <p>Content</p>
-      <p>Content</p>
-      <p>Content</p>
-      <p>Content</p>
-      <p>Content</p>
-      <p>Content</p>
-      <p>Content</p>
-      <p>Content</p>
-      <p>Content</p>
-      <p>Content</p>
-      <p>Content</p>
-      <p>Content</p>
-      <p>Content</p>
-      <p>Content</p>
-      <p>Content</p>
+      >
+        {Array.from({ length: 80 }, (_, i) => <p>Line {i}</p>)}
+      </Popup>
     </>
   );
 };

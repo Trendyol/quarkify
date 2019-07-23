@@ -15,6 +15,7 @@ class Radio extends PureComponent<IProps> {
     return (
       <div className={radioClasses}>
         <input
+          onTouchStart={undefined}
           className={"q-input"}
           id={`radio-${this.props.value}`}
           type="radio"
