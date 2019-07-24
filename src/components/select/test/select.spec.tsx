@@ -3,7 +3,6 @@ import Adapter from "enzyme-adapter-react-16";
 import faker from "faker";
 import React from "react";
 import sinon from "sinon";
-import Modal from "../../modal";
 import Select from "../../select";
 
 Enzyme.configure({ adapter: new Adapter() });
@@ -56,17 +55,17 @@ describe("select specs", () => {
   });
 
   it("should render select component", () => {
-    const wrapper = shallow(<Select items={items} />);
+    const wrapper = shallow(<Select items={items}/>);
     expect(wrapper.exists(".q-select-group")).toEqual(true);
   });
 
   it("should render 3 options", () => {
-    const wrapper = shallow(<Select items={items} />);
+    const wrapper = shallow(<Select items={items}/>);
     expect(wrapper.render().find("select option")).toHaveLength(3);
   });
 
   it("should find selected item as 'Plane'", () => {
-    const wrapper = shallow(<Select items={items} />);
+    const wrapper = shallow(<Select items={items}/>);
     expect(
       wrapper
         .render()
@@ -76,7 +75,7 @@ describe("select specs", () => {
   });
 
   it("should find selected item's value as 3", () => {
-    const wrapper = shallow(<Select items={items} />);
+    const wrapper = shallow(<Select items={items}/>);
     expect(
       wrapper
         .render()
@@ -86,7 +85,7 @@ describe("select specs", () => {
   });
 
   it("should find selected item's class name as secondary", () => {
-    const wrapper = shallow(<Select items={items} />);
+    const wrapper = shallow(<Select items={items}/>);
     expect(
       wrapper
         .render()
@@ -96,7 +95,7 @@ describe("select specs", () => {
   });
 
   it("should find disabled item as Bike", () => {
-    const wrapper = shallow(<Select items={items} />);
+    const wrapper = shallow(<Select items={items}/>);
     expect(
       wrapper
         .render()
@@ -106,14 +105,14 @@ describe("select specs", () => {
   });
 
   it("should have className fluid when given fluid prop", () => {
-    const wrapper = shallow(<Select items={items} fluid />);
+    const wrapper = shallow(<Select items={items} fluid/>);
     const selectWrapper = wrapper.find(".q-select-wrapper");
     expect(selectWrapper.hasClass("q-fluid")).toBe(true);
   });
 
   it("should set values and names properly", () => {
     const wrapper = shallow(
-      <Select items={customItems} value={"id"} name={"vehicle"} fluid />,
+      <Select items={customItems} value={"id"} name={"vehicle"} fluid/>,
     );
     expect(
       wrapper
@@ -130,21 +129,27 @@ describe("select specs", () => {
   });
 
   it("should have a left icon if leftIcon prop is given", () => {
-    const wrapper = mount(<Select items={customItems} leftIcon={"close"} />);
+    const wrapper = mount(<Select items={customItems} leftIcon={"close"}/>);
 
     expect(wrapper.find(".q-select-group").find(".q-select-icon-left")).toHaveLength(2);
   });
 
   it("should have a right icon if leftIcon prop is given", () => {
-    const wrapper = mount(<Select items={customItems} rightIcon={"close"} />);
+    const wrapper = mount(<Select items={customItems} rightIcon={"close"}/>);
 
     expect(wrapper.find(".q-select-group").find(".q-select-icon-right")).toHaveLength(2);
   });
 
   it("should accept additional classNames", () => {
     const fakeClass = faker.lorem.word();
-    const wrapper = mount(<Select className={fakeClass} items={customItems} />);
+    const wrapper = mount(<Select className={fakeClass} items={customItems}/>);
 
     expect(wrapper.hasClass(fakeClass)).toBe(true);
+  });
+
+  it("should have q-error className if error prop is passed", () => {
+    const wrapper = mount(<Select error items={customItems}/>);
+
+    expect(wrapper.find(".q-error")).toHaveLength(1);
   });
 });

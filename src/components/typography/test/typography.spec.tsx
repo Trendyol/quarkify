@@ -36,45 +36,32 @@ describe("typography specs", () => {
     expect(wrapper.type()).toBe("h3");
   });
 
-  it("should be of type h4 if given h4 variant", () => {
-    const wrapper = shallow(<Typography variant={"h4"}/>);
-    expect(wrapper.type()).toBe("h4");
-  });
-
-  it("should be of type h5 if given h5 variant", () => {
-    const wrapper = shallow(<Typography variant={"h5"}/>);
-    expect(wrapper.type()).toBe("h5");
-  });
-
-  it("should be of type h6 if given h6 variant", () => {
-    const wrapper = shallow(<Typography variant={"h6"}/>);
-    expect(wrapper.type()).toBe("h6");
-  });
-
-  it("should be of type p if given body1 variant", () => {
-    const wrapper = shallow(<Typography variant={"body1"}/>);
+  it("should be of type p if given paragraph variant", () => {
+    const wrapper = shallow(<Typography variant={"paragraph"}/>);
     expect(wrapper.type()).toBe("p");
   });
 
-  it("should be of type p if given body2 variant", () => {
-    const wrapper = shallow(<Typography variant={"body2"}/>);
+  it("should be of type p if given smallParagraph variant", () => {
+    const wrapper = shallow(<Typography variant={"smallParagraph"}/>);
     expect(wrapper.type()).toBe("p");
-  });
-
-  it("should be of type h6 if given subtitle1 variant", () => {
-    const wrapper = shallow(<Typography variant={"subtitle1"}/>);
-    expect(wrapper.type()).toBe("h6");
-  });
-
-  it("should be of type h6 if given subtitle2 variant", () => {
-    const wrapper = shallow(<Typography variant={"subtitle2"}/>);
-    expect(wrapper.type()).toBe("h6");
   });
 
   it("should have className underline when given underline prop", () => {
-    const wrapper = shallow(<Typography variant={"h1"} underline />);
+    const wrapper = shallow(<Typography variant={"h1"} underline/>);
 
     expect(wrapper.exists(".q-underline")).toEqual(true);
+  });
+
+  it("should have className bold when given bold prop", () => {
+    const wrapper = shallow(<Typography variant={"h1"} bold/>);
+
+    expect(wrapper.exists(".q-bold")).toEqual(true);
+  });
+
+  it("should have className ellipsis when given noWrap prop", () => {
+    const wrapper = shallow(<Typography variant={"h1"} noWrap/>);
+
+    expect(wrapper.exists(".q-ellipsis")).toEqual(true);
   });
 
   it("should accept additional classNames", () => {

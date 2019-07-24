@@ -4,10 +4,21 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
-## [1.5.17] - 2019-07-12
+## [1.7.4] - 2019-07-24
+### Added
+- `typography` component added
+- button-loading animation added
+- `xlarge` prop added to `icon` component
+- `disabled` and `error` props added to `select` component 
+
+### Changed
+- loading animation
+- ripple effect in `button` component
+
+## [1.6.9] - 2019-07-12
 ### Added
 - Added `accordion` component
-- Added `riddle` prop to button component
+- Added `ripple` prop to button component
 - Added `list` component
 - Added `color` prop to icon component
 - Added `variant` prop to icon component
@@ -25,7 +36,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - Removed unnecessary props from `select` component
 - Subtext prop removed from `select` component
 
-## [1.0.8] - 2019-07-12
+## [1.1.3] - 2019-07-12
 ### Added
 - `className` prop to all components
 - `coverage` shield to readme
@@ -40,7 +51,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [1.0.4] - 2019-07-10
 ### Added
-- docsify document has been added
+- `docsify` document has been added
 ### Changed
 - storybook folder name changed to story from docs
 
@@ -68,8 +79,6 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ## [0.4.7] - 2019-07-09
 ### Added
 - `husky` package added to configure precommit and prepush
-  
-
 
 ## [0.4.6] - 2019-07-04
 ### Changed

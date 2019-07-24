@@ -1,13 +1,16 @@
 @import '../_globals';
 @import '../mixins/_color-scheme';
 @import '../mixins/_fluid.scss';
+@import '../mixins/_ripple.scss';
 
 .q-button {
+  @include ripple;
   cursor: pointer;
   display: inline-block;
-  padding-right: 20px;
-  padding-left: 20px;
-  font-weight: 400;
+  position: relative;
+  padding-left: $space-small;
+  padding-right: $space-small;
+  font-weight: $regular;
   height: $button-height;
   font-family: $font-family;
   font-size: $button-font-size;
@@ -19,62 +22,60 @@
   border-radius: $border-radius;
 
   &.q-primary {
-    &.q-ripple{
-      transition: background 0.5s;
-    }
-    &.q-ripple:hover{
-      background: $primary radial-gradient(circle, transparent 1%, $primary 1%) center / 15000%;
-    }
-    &.q-ripple:active{
-      background-color: rgba($primary, 0.8);
-      background-size: 100%;
-    }
     @include primary;
-    &:active{
-      opacity: 0.80;
-      transition: opacity 300ms;
-    }
   }
+
   &.q-secondary {
     @include secondary;
-    &:active{
-      background-color: $primary;
-      color: $white-two;
-    }
   }
+
   &.q-gray {
     @include gray;
-    &:active{
-      color: $primary;
-      border: 1px solid $primary;
-    }
   }
+
   &.q-disabled {
     @include disabled;
   }
-  &.q-fluid{
+
+  &.q-fluid {
     @include fluid;
   }
+
   &.q-round {
     border-radius: $button-round;
   }
-  &.q-circular{
+
+  &.q-circular {
     border-radius: 50%;
-    width: 30px;
-    height: 30px;
+    width: $button-circular;
+    height: $button-circular;
     padding: 0;
   }
 
-  &:focus{
+  &:focus {
     outline: none !important;
   }
 
   //Icon
-  .q-i{
+  .q-i {
     padding-left: 0;
+    padding-right: $space-small;
   }
-  .q-i:only-child{
+
+  .q-i:only-child {
     padding-right: 0;
+  }
+
+  //Loader
+  &.loading {
+    .q-loader {
+      background-color: transparent;
+    }
+
+    //Hide button contents
+    .q-loader + span {
+      opacity: 0;
+    }
   }
 
 }

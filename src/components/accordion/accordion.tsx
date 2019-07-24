@@ -44,19 +44,19 @@ class Accordion extends PureComponent<IAccordionProps, IAccordionState> {
     const accordionClasses = classNames("q-accordion", className);
     const [AccordionHeader, AccordionContent] = React.Children.toArray(children);
 
-    return(
+    return (
       <div className={accordionClasses}>
         {React.cloneElement(
           AccordionHeader as React.ReactElement,
-          {expanded: this.state.expanded, handleClick: this.handleHeaderClick})
+          { expanded: this.state.expanded, handleClick: this.handleHeaderClick })
         }
-        {React.cloneElement(AccordionContent as React.ReactElement, {expanded: this.state.expanded})}
+        {React.cloneElement(AccordionContent as React.ReactElement, { expanded: this.state.expanded })}
       </div>
     );
   }
 
   private handleHeaderClick() {
-    this.setState({expanded: !this.state.expanded});
+    this.setState({ expanded: !this.state.expanded });
   }
 
 }

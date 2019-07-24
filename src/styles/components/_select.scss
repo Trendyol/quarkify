@@ -3,13 +3,45 @@
 @import '../mixins/_fluid.scss';
 
 .q-select-wrapper {
-  display: flex;
+  display: inline-flex;
 
-  &.q-fluid{
+  &.q-fluid {
     @include fluid;
   }
 
+  &.q-disabled {
+    opacity: 0.5;
+    user-select: none;
+    -moz-user-select: none;
+    select {
+      pointer-events: none;
+    }
+  }
+
+  &.q-error {
+    animation-name: select-error;
+    animation-duration: .2s;
+    animation-direction: alternate;
+    animation-iteration-count: 2;
+
+    .q-select-group{
+      border-color: $red;
+    }
+  }
+
+  @keyframes select-error {
+    0%{
+      transform: scale(1);
+    }
+    50%{
+      transform: scale(1.2);
+    }
+  }
+
   .q-select-group {
+    display: flex;
+    align-items: center;
+    padding: $space-small;
     height: $select-height;
     width: inherit;
     text-align: center;
@@ -40,26 +72,22 @@
       outline: none !important;
     }
 
-    .q-select-icon-left{
-      position: absolute;
-      top: 8px;
-      left: -8px;
+    .q-select-icon-left {
       font-size: $font-size-small-paragraph;
-      pointer-events: none
+      pointer-events: none;
     }
 
-    .q-select-icon-right{
-      position: absolute;
-      top: 8px;
-      right: -8px;
+    .q-select-icon-right {
       font-size: $font-size-small-paragraph;
-      pointer-events: none
+      pointer-events: none;
     }
 
   }
 
-  .q-select-group:active{
-    border: 1px solid $light-gray;
+  &:not(.q-disabled){
+    .q-select-group:active {
+      border: 1px solid $light-gray;
+    }
   }
 
 }

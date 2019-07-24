@@ -1,25 +1,25 @@
 @import '../globals';
 @import "../animations/_popup.scss";
 
-.q-popup-main{
-  position:fixed;
+.q-popup-main {
+  position: absolute;
   background-color: $white-two;
-  top:50%;
-  left:50%;
-  transform: translate(-50%,-50%);
   display: block;
   text-align: center;
   padding: $popup-padding;
-  height: fit-content;
   width: 100%;
   max-width: 90vw;
   max-height: 90vh;
   border-radius: $border-radius;
+  z-index: 1022;
+
 
   .q-popup-content {
     overflow-y: scroll;
-    max-height: 50vh;
     -ms-overflow-style: none;
+    -webkit-overflow-scrolling: touch;
+    max-height: 50vh;
+
     &::-webkit-scrollbar {
       width: 0;
       height: 0;
@@ -27,9 +27,10 @@
   }
 
   .q-popup-icon-position {
-    margin-left: auto;
-    width: fit-content;
     display: flex;
+    justify-content: flex-end;
+    width: 16px;
+    margin-left: auto;
   }
 
   .q-popup-icon-left {
@@ -38,7 +39,7 @@
 }
 
 //Animations
-@include popup-animation
+@include popup-animation;
 
 .q-popup-overlay {
   height: 100%;
@@ -46,18 +47,21 @@
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 1022;
+  z-index: 1021;
   background-color: rgba(0, 0, 0, .5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-body.q-disable-scroll{
+body.q-disable-scroll {
   position: fixed;
   overflow: hidden;
   height: 100%;
   width: 100%;
 }
 
-html.q-disable-scroll{
+html.q-disable-scroll {
   overflow: hidden;
   height: 100%;
   width: 100%;

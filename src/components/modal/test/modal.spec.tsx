@@ -15,19 +15,19 @@ describe("modal specs", () => {
   });
 
   it("should render modal component", () => {
-    const wrapper = mount(<Modal show={true} />);
+    const wrapper = mount(<Modal show={true}/>);
     expect(wrapper.exists(".q-modal-main")).toEqual(true);
   });
 
   it("should not render modal component", () => {
-    const wrapper = mount(<Modal show={false} />);
+    const wrapper = mount(<Modal show={false}/>);
     expect(wrapper.exists(".q-modal-main")).toEqual(false);
   });
 
   it("should render header sub component", () => {
     const wrapper = mount(
       <Modal show={true}>
-        <Modal.Header />
+        <Modal.Header/>
       </Modal>,
     );
     expect(wrapper.find(".q-modal-header")).toHaveLength(1);
@@ -60,7 +60,7 @@ describe("modal specs", () => {
   it("should have no icon by default", () => {
     const wrapper = mount(
       <Modal show={true}>
-        <Modal.Header />
+        <Modal.Header/>
       </Modal>,
     );
     expect(wrapper.find(".q-modal-header").children()).toHaveLength(1);
@@ -69,7 +69,7 @@ describe("modal specs", () => {
   it("should have a right icon if rightIcon prop is given", () => {
     const wrapper = mount(
       <Modal show={true}>
-        <Modal.Header rightIcon={"close"} />
+        <Modal.Header rightIcon={"close"}/>
       </Modal>,
     );
     expect(wrapper.find(".icon-close")).toHaveLength(1);
@@ -79,7 +79,7 @@ describe("modal specs", () => {
     const onClose = sandbox.spy();
     const wrapper = mount(
       <Modal show={true}>
-        <Modal.Header rightIcon={"close"} rightIconOnClick={onClose} />
+        <Modal.Header rightIcon={"close"} rightIconOnClick={onClose}/>
       </Modal>,
     );
     wrapper.find("i").simulate("click");
@@ -89,7 +89,7 @@ describe("modal specs", () => {
   it("should have a left icon if leftIcon prop is given", () => {
     const wrapper = mount(
       <Modal show={true}>
-        <Modal.Header leftIcon="back-button" />
+        <Modal.Header leftIcon="back-button"/>
       </Modal>,
     );
     expect(wrapper.find(".q-i.icon-back-button")).toHaveLength(1);
@@ -99,7 +99,7 @@ describe("modal specs", () => {
     const leftOnClose = sandbox.spy();
     const wrapper = mount(
       <Modal show={true}>
-        <Modal.Header leftIcon="back-button" leftIconOnClick={leftOnClose} />
+        <Modal.Header leftIcon="back-button" leftIconOnClick={leftOnClose}/>
       </Modal>,
     );
     wrapper.find(".q-i.icon-back-button").simulate("click");
@@ -107,14 +107,14 @@ describe("modal specs", () => {
   });
 
   it("should add disable-scroll class when modal is shown", () => {
-    const wrapper = mount(<Modal show={false} />);
+    const wrapper = mount(<Modal show={false}/>);
     wrapper.setProps({ show: true });
 
     expect(document.body.classList.contains("q-disable-scroll")).toBe(true);
   });
 
   it("should remove disable-scroll class when modal is hidden", () => {
-    const wrapper = mount(<Modal show={true} />);
+    const wrapper = mount(<Modal show={true}/>);
     wrapper.setProps({ show: false });
 
     expect(document.body.classList.contains("q-disable-scroll")).toBe(false);
@@ -123,7 +123,7 @@ describe("modal specs", () => {
   it("should call onChange when show prop is changed", () => {
     const onChange = sandbox.spy();
     const wrapper = mount(
-      <Modal onChange={onChange} show={false} />,
+      <Modal onChange={onChange} show={false}/>,
     );
     wrapper.setProps({ show: true });
 

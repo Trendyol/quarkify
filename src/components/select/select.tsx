@@ -20,6 +20,8 @@ class Select extends PureComponent<IProps> {
       rightIconColor,
       leftIconColor,
       className,
+      disabled,
+      error,
       ...props
     } = this.props;
     const nameKey = this.props.name === undefined ? "name" : this.props.name;
@@ -27,15 +29,16 @@ class Select extends PureComponent<IProps> {
       this.props.value === undefined ? "value" : this.props.value;
     const selectClasses = classNames(
       "q-select-wrapper",
-      classNamesDefault({fluid}),
+      classNamesDefault({ fluid, disabled }),
       className,
+      error && "q-error",
     );
     return (
       <div style={{ position: "relative" }}>
         <div className={selectClasses}>
           <div className={"q-select-group"}>
             {leftIcon && <Icon className={"q-select-icon-left"} name={leftIcon} variant={leftIconColor}/>}
-            <select className="q-select" {...props}>
+            <select className="q-select" disabled={disabled} {...props}>
               {this.props.items.map((item, index) => {
                 return (
                   <option
@@ -50,7 +53,7 @@ class Select extends PureComponent<IProps> {
                 );
               })}
             </select>
-            {rightIcon && <Icon className={"q-select-icon-right"} name={rightIcon} variant={rightIconColor} />}
+            {rightIcon && <Icon className={"q-select-icon-right"} name={rightIcon} variant={rightIconColor}/>}
           </div>
         </div>
       </div>
@@ -64,6 +67,7 @@ interface IProps extends ISelect {
   fluid?: boolean;
   value?: string;
   name?: string;
+  error?: boolean;
   rightIcon?: string;
   leftIcon?: string;
   className?: string;

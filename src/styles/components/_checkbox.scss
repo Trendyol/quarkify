@@ -2,7 +2,7 @@
 @import '../mixins/_color-scheme';
 @import '../mixins/_fluid.scss';
 
-.q-checkbox-wrapper{
+.q-checkbox-wrapper {
   user-select: none;
   font-family: icomoon !important;
 
@@ -26,11 +26,11 @@
     display: inline-block;
     color: transparent;
     line-height: 1rem;
-    transition: .2s ;
+    transition: .2s;
     margin-right: 5px;
   }
 
-  .q-input[type=checkbox]:checked + .q-label{
+  .q-input[type=checkbox]:checked + .q-label {
     font-weight: $bold;
   }
 
@@ -44,11 +44,11 @@
     color: $white-two;
   }
 
-  .q-input[type=checkbox]:disabled + .q-label{
+  .q-input[type=checkbox]:disabled + .q-label {
     color: $light-gray;
   }
 
-  .q-input[type=checkbox]:checked:disabled + .q-label{
+  .q-input[type=checkbox]:checked:disabled + .q-label {
     color: $light-gray;
   }
 
@@ -67,11 +67,13 @@
     .q-input[type=checkbox] + .q-label:before {
       border-color: $red;
     }
+
     .q-input[type=checkbox]:checked + .q-label:before {
       background-color: $white-two;
       border-color: $red;
       color: $red;
     }
+
     .q-input[type=checkbox] + .q-label {
       color: $red;
     }

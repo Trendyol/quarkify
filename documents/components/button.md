@@ -51,6 +51,14 @@ Adding icon prop to button creates a button with an icon
 <Button variant="secondary" icon="heart">Heart</Button>
 ```
 
+##Loading
+Adding loading prop to button hides the buttons content and
+shows a loading icon.
+
+```html
+<Button loading>This text will be hidden</Button>
+```
+
 <iframe src="https://codesandbox.io/embed/lingering-wave-sfo2b?fontsize=14" title="lingering-wave-sfo2b" allow="geolocation; microphone; camera; midi; vr; accelerometer; gyroscope; payment; ambient-light-sensor; encrypted-media" style="width:100%; height:300px; border:0; border-radius: 4px; overflow:hidden;" sandbox="allow-modals allow-forms allow-popups allow-scripts allow-same-origin"></iframe>
 
 #### Additional content

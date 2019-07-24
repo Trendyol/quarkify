@@ -10,7 +10,7 @@ class Switch extends PureComponent<IProps> {
     const { error, disabled, checked, label, type = "checkbox", className, ...props } = this.props;
     const switchClasses = classNames(
       "q-switch-wrapper",
-      classNamesDefault({error, disabled}),
+      classNamesDefault({ error, disabled }),
       className);
     return (
       <label className={switchClasses}>

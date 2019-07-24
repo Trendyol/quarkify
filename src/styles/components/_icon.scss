@@ -3,9 +3,7 @@
 @import '../mixins/_fluid.scss';
 
 .q-i {
-  padding: $padding-y $padding-x;
   display: inline-block;
-  border-radius: $border-radius;
   line-height: $line-height;
 
   &.q-primary {
@@ -20,7 +18,17 @@
     @include disabled;
   }
 
+  &.q-circular {
+    background-color: $white-two;
+    border-radius: 50%;
+    padding: .5em;
+  }
+
   // Icon Sizes
+  &.q-xlarge {
+    font-size: $font-size-xlarge;
+  }
+
   &.q-large {
     font-size: $font-size-large;
   }

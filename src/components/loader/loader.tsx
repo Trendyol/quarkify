@@ -4,29 +4,21 @@ import "../../styles/components/_loader.scss";
 class Loader extends PureComponent<ILoaderProps> {
 
   public render() {
-
     if (!this.props.active) {
       return null;
     }
 
-    return(
+    return (
       <div className="q-loader">
-        {this.renderLoadingAnimation()}
+        <div className="q-loading-animation"/>
       </div>
     );
   }
-
-  private renderLoadingAnimation = () => (
-    <div className="q-loading-animation">
-      {Array.from({length : 8}, (_, i) => (
-        <div className="q-loader-item" key={i}/>
-      ))}
-    </div>
-  )
 }
 
 interface ILoaderProps {
   active: boolean;
+  type?: string;
 }
 
 export default Loader;

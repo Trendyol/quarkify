@@ -42,6 +42,18 @@ stories.add("Icon", () => (
 
 stories.add("Fluid", () => (
   <div>
-    <Select fluid items={items} rightIcon={"close"} />
+    <Select fluid items={items} rightIcon={"close"}/>
+  </div>
+));
+
+stories.add("Disabled", () => (
+  <div>
+    <Select disabled items={items} rightIcon={"close"}/>
+  </div>
+));
+
+stories.add("Error", () => (
+  <div>
+    <Select error items={items} rightIcon={"close"}/>
   </div>
 ));

@@ -24,5 +24,9 @@ stories.add("Box", () => (
     <Box spaced textAlign="justify">
       <span>Justify spaced Box Justify spaced Box Justify spaced Box</span>
     </Box>
+
+    <Box fitted spaced>
+      <span>Fitted spaced box</span>
+    </Box>
   </div>
 ));

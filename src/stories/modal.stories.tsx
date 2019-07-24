@@ -16,12 +16,15 @@ interface IProps {
 
 const ModalWrapper = ({ animation, leftIcon, rightIcon }: IProps) => {
   const [show, setShow] = useState(false);
+
   function handleChange() {
     setShow(!show);
   }
+
   function closeModal() {
     setShow(false);
   }
+
   return (
     <>
       <Button onClick={handleChange}>Toggle Me</Button>
@@ -50,12 +53,15 @@ const ModalWrapper = ({ animation, leftIcon, rightIcon }: IProps) => {
 
 const AddressModalWrapper = ({ animation, leftIcon, rightIcon }: IProps) => {
   const [show, setShow] = useState(false);
+
   function handleChange() {
     setShow(true);
   }
+
   function closeModal() {
     setShow(false);
   }
+
   return (
     <>
       <Button onClick={handleChange}>Toggle Me</Button>
@@ -67,10 +73,10 @@ const AddressModalWrapper = ({ animation, leftIcon, rightIcon }: IProps) => {
             label="E-posta"
             subtext="Siparis bilgileriniz bu adrese gonderilecektir"
           />
-          <Input fluid label="Adres Basligi" />
+          <Input fluid label="Adres Basligi"/>
           <div style={{ display: "flex" }}>
-            <Input style={{ width: "100" }} fluid label="Ad" />
-            <Input style={{ width: "100" }} fluid label="Soyad" />
+            <Input style={{ width: "100" }} fluid label="Ad"/>
+            <Input style={{ width: "100" }} fluid label="Soyad"/>
           </div>
         </Modal.Content>
         <Modal.Actions>
@@ -83,14 +89,14 @@ const AddressModalWrapper = ({ animation, leftIcon, rightIcon }: IProps) => {
   );
 };
 
-stories.add("Default", () => <ModalWrapper />);
+stories.add("Default", () => <ModalWrapper/>);
 stories.add("Left Icon", () => (
-  <ModalWrapper leftIcon="back-button" />
+  <ModalWrapper leftIcon="back-button"/>
 ));
 stories.add("Right Icon", () => (
-  <ModalWrapper rightIcon="close" />
+  <ModalWrapper rightIcon="close"/>
 ));
 stories.add("SlideInLeft", () => <ModalWrapper animation="slideInLeft" rightIcon="close"/>);
 stories.add("SlideInDown", () => <ModalWrapper animation="slideInDown" rightIcon="close"/>);
 stories.add("SlideInUp", () => <ModalWrapper animation="slideInUp" rightIcon="close"/>);
-stories.add("Address", () => <AddressModalWrapper rightIcon="close" />);
+stories.add("Address", () => <AddressModalWrapper rightIcon="close"/>);

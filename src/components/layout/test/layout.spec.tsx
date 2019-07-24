@@ -3,7 +3,6 @@ import Adapter from "enzyme-adapter-react-16";
 import faker from "faker";
 import React from "react";
 import sinon from "sinon";
-import Input from "../../input";
 import Layout from "../layout";
 
 Enzyme.configure({ adapter: new Adapter() });
@@ -20,9 +19,9 @@ describe("layout specs", () => {
     expect(wrapper.find(".q-layout")).toHaveLength(1);
   });
 
-  it("should have className fluid when given fluid prop", () => {
-    const wrapper = shallow(<Layout fluid />);
-    expect(wrapper.hasClass("q-fluid")).toBe(true);
+  it("should have className fitted when given fitted prop", () => {
+    const wrapper = shallow(<Layout fitted/>);
+    expect(wrapper.hasClass("q-fitted")).toBe(true);
   });
 
   it("should accept additional classNames", () => {

@@ -15,7 +15,7 @@ describe("switch specs", () => {
   });
 
   it("should render switch component", () => {
-    const wrapper = shallow(<Switch value={"test"} />);
+    const wrapper = shallow(<Switch value={"test"}/>);
 
     expect(wrapper).toHaveLength(1);
   });
@@ -23,7 +23,7 @@ describe("switch specs", () => {
   it("should call onChange function ", () => {
     const spy = sandbox.spy();
     const text = faker.random.word();
-    const wrapper = shallow(<Switch value={"test"} onChange={spy} />);
+    const wrapper = shallow(<Switch value={"test"} onChange={spy}/>);
     const event = { target: { value: text } };
 
     wrapper.find("input").simulate("change", event);
@@ -34,7 +34,7 @@ describe("switch specs", () => {
   it("should not call callback function when changed and switch is disabled", () => {
     const spy = sandbox.spy();
     const text = faker.random.word();
-    const wrapper = shallow(<Switch value={"test"} disabled />);
+    const wrapper = shallow(<Switch value={"test"} disabled/>);
     const event = { target: { value: text } };
 
     wrapper.simulate("change", event);
@@ -44,25 +44,25 @@ describe("switch specs", () => {
 
   it("should render a label", () => {
     const text = faker.random.word();
-    const wrapper = shallow(<Switch value={"test"} label={text} />);
+    const wrapper = shallow(<Switch value={"test"} label={text}/>);
 
     expect(wrapper.find("label")).toHaveLength(2);
   });
 
   it("should accept additional classNames", () => {
     const testClass = faker.lorem.word();
-    const wrapper = shallow(<Switch value={"test"} className={testClass} />);
+    const wrapper = shallow(<Switch value={"test"} className={testClass}/>);
     expect(wrapper.find(`.${testClass}`)).toHaveLength(1);
   });
 
   it("should be checkbox type by fault", () => {
-    const wrapper = shallow(<Switch value={"test"} />);
+    const wrapper = shallow(<Switch value={"test"}/>);
     const inputElement = wrapper.find("input");
     expect(inputElement.prop("type")).toBe("checkbox");
   });
 
   it("should have error className when error prop is passed", () => {
-    const wrapper = shallow(<Switch value={"test"}  error />);
+    const wrapper = shallow(<Switch value={"test"} error/>);
 
     expect(wrapper.hasClass("q-error")).toBe(true);
   });

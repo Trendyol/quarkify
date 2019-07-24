@@ -1,9 +1,10 @@
 @import "../variables";
 
-.q-product-slider{
+.q-product-slider {
   display: flex;
-  flex-wrap: nowrap;
-  overflow-x: scroll;
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
 
   .q-item + .q-item {
     margin-left: 10px;

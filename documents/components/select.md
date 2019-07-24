@@ -54,4 +54,10 @@ const items = [
 ]
 <Select items={items} name="myNewName" value="id"/>
 ``` 
- 
+
+## Error
+Select can be displayed in an error state
+
+```html
+    <Select items={items} error/>
+```

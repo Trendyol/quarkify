@@ -1,13 +1,12 @@
-import { storiesOf } from "@storybook/react";
-import React, { useState } from "react";
-import Accordion from "../components/accordion";
-import Button from "../components/button";
+# Accordion
 
-const stories = storiesOf("Accordion", module);
+Accordion component hides and reveals its contents depending on user
+action. By default accordion holds an expanded state set to false.
+But you can implement your own state to control accordion component.
 
-const AccordionWrapper = () => {
-  return (
-    <>
+## Default
+
+```html
       <Accordion>
         <Accordion.Header>
           Accordion 1
@@ -21,26 +20,11 @@ const AccordionWrapper = () => {
           <Button>Button</Button>
         </Accordion.Content>
       </Accordion>
-      <Accordion>
-        <Accordion.Header>
-          Accordion 2
-        </Accordion.Header>
-        <Accordion.Content>
-          <div>Some content</div>
-          <div>Some content</div>
-          <div>Some content</div>
-          <div>Some content</div>
-          <div>Some content</div>
-          <Button>Button</Button>
-        </Accordion.Content>
-      </Accordion>
-      <h1>Text</h1>
-    </>
-  );
-};
+```
+## Controlled
 
-const ControlledAccordionWrapper = () => {
-  const [expanded, setExpanded] = useState(true);
+```js
+ const [expanded, setExpanded] = useState(true);
 
   const handleChange = () => {
     setExpanded(!expanded);
@@ -68,7 +52,4 @@ const ControlledAccordionWrapper = () => {
       <Button onClick={handleClick}>Toggle Accordion</Button>
     </>
   );
-};
-
-stories.add("Accordion", () => <AccordionWrapper/>);
-stories.add("Controlled Accordion", () => <ControlledAccordionWrapper/>);
+```
