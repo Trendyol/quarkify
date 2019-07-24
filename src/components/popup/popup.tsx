@@ -24,6 +24,10 @@ class Popup extends React.PureComponent<IPopupProps> {
     }
   }
 
+  public componentWillUnmount(): void {
+    document.removeEventListener("touchmove", this.handleTouchMove);
+  }
+
   public handleTouchMove(e: Event): void {
     e.stopImmediatePropagation();
     const scrollElement = document.getElementsByClassName("q-popup-content")[0];

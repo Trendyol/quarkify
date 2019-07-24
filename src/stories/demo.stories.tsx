@@ -50,11 +50,14 @@ const BasketStory = () => {
   const closeModal = () => {
     setShow(false);
   };
-  const closePopup = () => {
-    setShowPopup(false);
+  const handleChange = (status: boolean) => {
+    setShowPopup(status);
   };
   const showPopup = () => {
     setShowPopup(true);
+  };
+  const closePopup = () => {
+    setShowPopup(false);
   };
   const showModal = () => {
     setShow(true);
@@ -210,7 +213,7 @@ const BasketStory = () => {
             <Button onClick={showPopup} fluid variant={"primary"}>Ürünü Değerlendir</Button>
             <Popup
               show={popup}
-              onClose={closePopup}
+              onChange={handleChange}
             >
               <h2>Ürünü Değerlendir</h2>
               {/* tslint:disable-next-line:max-line-length jsx-alignment */}
