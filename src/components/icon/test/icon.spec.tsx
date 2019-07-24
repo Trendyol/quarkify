@@ -26,6 +26,12 @@ describe("icon specs", () => {
     expect(wrapper.exists(".q-large")).toEqual(true);
   });
 
+  it("should have q-circular className when circular prop is passed", () => {
+    const wrapper = shallow(<Icon name="search" circular/>);
+
+    expect(wrapper.exists(".q-circular")).toEqual(true);
+  });
+
   it("should call function when close icon is clicked", () => {
     const spy = sandbox.spy();
     const wrapper = shallow(<Icon onClick={spy} name="search"/>);

@@ -17,11 +17,9 @@ no component prop then variant prop also decided the component type.
 
 Some variant types are:
 
-```js
-variantTypes = "h1" | "h2" | "h3" |
-  "h4" | "h5" | "h6" |
-  "subtitle1" | "subtitle2" | "body1" |
-  "body2";
+```html
+"h1", "h2", "h3", "h4", "h5", "h6",
+"header", small, "subtitle1", "subtitle2", "body1", "body2"
 ```
 
 ## Component

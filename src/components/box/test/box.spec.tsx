@@ -27,6 +27,12 @@ describe("Box specs", () => {
     expect(wrapper.hasClass("q-spaced")).toBe(true);
   });
 
+  it("should have fitted className when fitted prop is given", () => {
+    const wrapper = shallow(<Box fitted/>);
+
+    expect(wrapper.hasClass("q-fitted")).toBe(true);
+  });
+
   it("should have left-aligned className by default", () => {
     const wrapper = shallow(<Box/>);
 

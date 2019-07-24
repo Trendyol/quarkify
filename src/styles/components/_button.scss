@@ -8,9 +8,9 @@
   cursor: pointer;
   display: inline-block;
   position: relative;
-  padding-right: 20px;
-  padding-left: 20px;
-  font-weight: 400;
+  padding-left: $space-small;
+  padding-right: $space-small;
+  font-weight: $regular;
   height: $button-height;
   font-family: $font-family;
   font-size: $button-font-size;
@@ -47,8 +47,8 @@
 
   &.q-circular {
     border-radius: 50%;
-    width: 30px;
-    height: 30px;
+    width: $button-circular;
+    height: $button-circular;
     padding: 0;
   }
 
@@ -59,6 +59,7 @@
   //Icon
   .q-i {
     padding-left: 0;
+    padding-right: $space-small;
   }
 
   .q-i:only-child {

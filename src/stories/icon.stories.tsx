@@ -8,17 +8,11 @@ stories.add("Icons", () => (
   <div>
     <Icon name="search" color={"rgba(0,0,0,1)"} style={{ backgroundColor: "red" }}/>
     <Icon name="search" disabled/>
-    <Icon name="search" size="small"/>
-    <Icon name="search" size="large"/>
-    <br/>
-    <Icon name="spinner"/>
-    <Icon name="shopping-cart"/>
-    <Icon name="like"/>
-    <Icon name="account"/>
-    <br/>
-    <Icon name="facebook"/>
-    <Icon name="twitter"/>
-    <Icon name="whatsapp" variant={"gray"}/>
     <Icon name="checkmark-full" variant={"primary"}/>
+    <br/>
+    <Icon name={"heart"}  size="small" circular/>
+    <Icon name={"heart"}  circular/>
+    <Icon name={"heart"}  size="large" circular/>
+    <Icon name={"heart"}  size="xlarge" circular/>
   </div>
 ));

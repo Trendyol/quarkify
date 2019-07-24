@@ -1,12 +1,12 @@
 # Popups
  
-Popus are predefined styled components which covers some width and height of the page.
+Popups are intrusive components which covers some width and height of the page.
  
 Here is the simple usage of the popup component:
  
  ```
 <Button onClick={handleChange}>Toggle Me</Button>
-<Popup show={show} onClose={closePopup}>
+<Popup show={show} onChange={handleChange}>
     <Icon name="basket" style={{ fontSize: "6rem" }} />
     <h1>URUN SEPETINE EKLENDI</h1>
     <h4 style={{ color: "grey" }}>
@@ -31,10 +31,21 @@ Here is the simple usage of the popup component:
  
 <iframe src="https://codesandbox.io/embed/confident-hertz-yn4x6?fontsize=14" title="confident-hertz-yn4x6" allow="geolocation; microphone; camera; midi; vr; accelerometer; gyroscope; payment; ambient-light-sensor; encrypted-media" style="width:100%; height:700px; border:0; border-radius: 4px; overflow:hidden;" sandbox="allow-modals allow-forms allow-popups allow-scripts allow-same-origin"></iframe>
  
+## Show 
 Popup component is shown or hidden by the prop it takes show. If show prop is true, popup will be shown. Otherwise it will not be rendered.
 
-## onClose
-onClose property of Popup component is called whenever popup's show property goes from true to false. In other words, whenever popup component has been closed, this function gets triggered.
+## onChange
+onChange property of Popup component is called whenever popup's show is changed. onChange function is called with a status parameter indicating the current state of the popup.
+
+### onChange Example
+      const [show, setShow] = useState(false);
+      const handleChange = (status: boolean) => {
+        setShow(status);
+      }
+      <Popup
+        show={show}
+        onChange={handleChange}
+      >
 
 ## closeOnOverlayClick
 By default, popup component will be closed whenever the user clicks to the out of the box. It can be disabled by simply setting this prop to false.

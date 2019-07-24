@@ -8,12 +8,13 @@ import classNamesDefault from "../../utils/class-names-default";
 class Icon extends PureComponent<IProps> {
 
   public render() {
-    const { name, color, size, disabled, className, style, variant, ...props } = this.props;
+    const { name, color, size, circular, disabled, className, style, variant, ...props } = this.props;
     const iconClass = classNames(
       classNamesDefault({ variant, name, size, disabled }),
       `icon-${name}`,
       "q-i",
       className,
+      circular && "q-circular",
     );
     return (
       <i style={{ color, ...style }} className={iconClass} {...props}>
@@ -31,6 +32,7 @@ interface IProps extends IIcon {
   style?: CSSProperties;
   className?: string;
   variant?: variantTypes;
+  circular?: boolean;
 }
 
 export default Icon;

@@ -15,7 +15,7 @@ stories.add("Default", () => (
 ));
 
 stories.add("Fluid", () => (
-  <Layout fluid>
+  <Layout fitted>
     <Box>
       <p>{faker.lorem.lines(10)}</p>
     </Box>

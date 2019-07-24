@@ -22,6 +22,7 @@ $checkbox-border-passive: #d6d6d6;
 $font-family: "Source Sans Pro", sans-serif;
 
 $font-size-base: 1rem !default; // Assumes the browser default, typically `16px`
+$font-size-xlarge: $font-size-base * 4 !default;
 $font-size-large: $font-size-base * 1.5 !default;
 $font-size-small: $font-size-base * .750 !default;
 
@@ -61,15 +62,16 @@ $line-height-large: 1.5 !default;
 
 //Button
 $button-font-size: 100%;
-$button-height: 44px;
+$button-height: 40px;
 $button-round: 22px;
+$button-circular: 30px;
 
 //Input
 $input-font-size: 100%;
 $input-height: 40px;
 
 //Select
-$select-height: 42px;
+$select-height: 40px;
 $select-line-height: 18px;
 $select-padding: 10px 22px 10px 22px;
 

@@ -4,14 +4,14 @@
   background-color: $border-gray;
   height: 100%;
   display: block;
-  padding: 10px;
+  padding: $space-medium;
   margin: 0;
   border: 0;
   font-family: $font-family;
   outline: none;
   user-select: none;
 
-  &.q-fluid {
+  &.q-fitted {
     padding: 0;
   }
 }
