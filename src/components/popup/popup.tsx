@@ -6,24 +6,38 @@ import "../../styles/components/_popup.scss";
 import Icon from "../icon";
 
 class Popup extends React.PureComponent<IPopupProps> {
-  // public componentDidMount(): void {
-  //   if (this.props.show && typeof window !== "undefined") {
-  //     document.body.classList.add("q-disable-scroll");
-  //   }
-  // }
 
-  public componentWillReceiveProps(
+  constructor(props: IPopupProps) {
+    super(props);
+    this.handleTouchMove = this.handleTouchMove.bind(this);
+    this.onEnter = this.onEnter.bind(this);
+    this.onExit = this.onExit.bind(this);
+  }
+
+  public componentDidUpdate(
     prevProps: Readonly<IPopupProps>,
-    nextProps: Readonly<IPopupProps>,
   ): void {
-    if (prevProps.show !== nextProps.show) {
+    if (prevProps.show !== this.props.show) {
       if (prevProps.onChange) {
-        prevProps.onChange();
-      }
-      if (typeof window !== "undefined") {
-        this.toggleScrollLock();
+        prevProps.onChange(this.props.show);
       }
     }
+  }
+
+  public handleTouchMove(e: Event): void {
+    e.stopImmediatePropagation();
+    const scrollElement = document.getElementsByClassName("q-popup-content")[0];
+    if (!e.composedPath().includes(scrollElement as EventTarget)) {
+      e.preventDefault();
+    }
+  }
+
+  public onEnter(): void {
+    document.addEventListener("touchmove", this.handleTouchMove, { passive: false });
+  }
+
+  public onExit(): void {
+    document.removeEventListener("touchmove", this.handleTouchMove);
   }
 
   public render() {
@@ -34,12 +48,13 @@ class Popup extends React.PureComponent<IPopupProps> {
     const {
       show,
       children,
-      onClose,
       iconLeft,
       noIcon = false,
       closeOnOverlayClick = true,
+      onChange,
       className,
     } = this.props;
+
     const popupClasses = classNames(
       "q-popup-overlay",
       className,
@@ -52,13 +67,19 @@ class Popup extends React.PureComponent<IPopupProps> {
 
     const overlayClick = () => {
       if (closeOnOverlayClick) {
-        onClose();
+        onChange(false);
       }
+    };
+
+    const handleIconClick = () => {
+      onChange(false);
     };
 
     return ReactDOM.createPortal(
       <CSSTransition
         in={show}
+        onEnter={this.onEnter}
+        onExit={this.onExit}
         unmountOnExit
         timeout={150}
         classNames="q-zoomIn q-popup"
@@ -68,7 +89,7 @@ class Popup extends React.PureComponent<IPopupProps> {
             {!noIcon && (
               <Icon
                 className={popupIconClasses}
-                onClick={onClose}
+                onClick={handleIconClick}
                 name="close"
               />
             )}
@@ -86,21 +107,11 @@ class Popup extends React.PureComponent<IPopupProps> {
     event.stopPropagation();
   }
 
-  private toggleScrollLock = () => {
-    if (document.body.classList.contains("q-disable-scroll")) {
-      document.body.classList.remove("q-disable-scroll");
-      document.documentElement.classList.remove("q-disable-scroll");
-    } else {
-      document.body.classList.add("q-disable-scroll");
-      document.documentElement.classList.add("q-disable-scroll");
-    }
-  }
 }
 
 interface IPopupProps {
   show: boolean;
-  onClose: () => void;
-  onChange?: () => void;
+  onChange: (status: boolean) => void;
   iconLeft?: boolean;
   noIcon?: boolean;
   closeOnOverlayClick?: boolean;
