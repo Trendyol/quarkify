@@ -32,13 +32,8 @@ class Typography extends PureComponent<ITypographyProps> {
       h1: "h1",
       h2: "h2",
       h3: "h3",
-      h4: "h4",
-      h5: "h5",
-      h6: "h6",
-      header: "header",
-      small: "small",
-      subtitle1: "h6",
-      subtitle2: "h6",
+      paragraph: "p",
+      smallParagraph: "p",
     };
     const Component = component || defaultVariantMapping[variant];
     return (
@@ -51,7 +46,7 @@ class Typography extends PureComponent<ITypographyProps> {
 
 interface ITypographyProps {
   variant: variantTypes;
-  component?: variantTypes;
+  component?: string;
   bold?: boolean;
   underline?: boolean;
   noWrap?: boolean;

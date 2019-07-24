@@ -76,10 +76,10 @@ const BasketStory = () => {
       </div>
       <div className={"product-info"} style={{ marginBottom: "70px" }}>
         <div className={"product-info__container"}>
-          <Typography variant="h5" className="product-info__brand">
+          <Typography variant="h3" className="product-info__brand">
             TRENDYOLMİLLA
           </Typography>
-          <Typography variant="subtitle1" className="product_info__product_name">
+          <Typography variant="paragraph" className="product_info__product_name">
             Lacivert Baskılı Basic Örme T-shirt TWOSS19TC0012
           </Typography>
         </div>
