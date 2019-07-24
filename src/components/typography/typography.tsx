@@ -35,6 +35,8 @@ class Typography extends PureComponent<ITypographyProps> {
       h4: "h4",
       h5: "h5",
       h6: "h6",
+      header: "header",
+      small: "small",
       subtitle1: "h6",
       subtitle2: "h6",
     };
