@@ -4,10 +4,20 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
-## [1.5.17] - 2019-07-12
+## [1.5.24] - 2019-07-24
+### Added
+- Added button-loading animation
+- Added `xlarge` prop to `icon` component
+- Added `disabled` and `error` props to `select` component
+
+### Changed
+- loading animation
+- Ripple effect in `button` component
+
+## [1.5.19] - 2019-07-12
 ### Added
 - Added `accordion` component
-- Added `riddle` prop to button component
+- Added `ripple` prop to button component
 - Added `list` component
 - Added `color` prop to icon component
 - Added `variant` prop to icon component
