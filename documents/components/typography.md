@@ -18,8 +18,7 @@ no component prop then variant prop also decided the component type.
 Some variant types are:
 
 ```html
-"h1", "h2", "h3", "h4", "h5", "h6",
-"header", small, "subtitle1", "subtitle2", "body1", "body2"
+"h1", "h2", "h3", "paragraph", "smallParagraph"
 ```
 
 ## Component
@@ -40,7 +39,7 @@ prop type but its styles is the one declared in variant prop.
 You can use a custom class.
 
 ```html
-<Typography variant={"body"} className="someClassName">
+<Typography variant={"h1"} className="someClassName">
  h1 Hello there
 </Typography>
 ```
