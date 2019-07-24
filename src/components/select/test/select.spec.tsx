@@ -146,4 +146,10 @@ describe("select specs", () => {
 
     expect(wrapper.hasClass(fakeClass)).toBe(true);
   });
+
+  it("should have q-error className if error prop is passed", () => {
+    const wrapper = mount(<Select error items={customItems}/>);
+
+    expect(wrapper.find(".q-error")).toHaveLength(1);
+  });
 });
