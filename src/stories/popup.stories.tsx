@@ -17,46 +17,45 @@ const PopupWrapper = ({
     setShow(true);
   }
 
-  function closePopup() {
-    setShow(false);
+  function handleChange(status: boolean) {
+    setShow(status);
   }
 
   return (
     <>
-      {Array.from({ length: 30 }, (_, i) => <p>Down {i}</p>)}
+      {Array.from({ length: 15 }, (_, i) => <p>Down {i}</p>)}
       <Button onClick={handleClick}>Toggle Me</Button>
+      {Array.from({ length: 15 }, (_, i) => <p>Down {i + 16}</p>)}
       <Popup
         show={show}
-        onClose={closePopup}
+        onChange={handleChange}
         closeOnOverlayClick={closeOnOverlayClick}
       >
-        {Array.from({ length: 80 }, (_, i) => <p>Line {i}</p>)}
+        {Array.from({ length: 30 }, (_, i) => <p>Line {i}</p>)}
       </Popup>
     </>
   );
 };
 
-const PopupBasketWrapper = ({
-                              closeOnOverlayClick,
-                            }: {
+const PopupBasketWrapper = ({ closeOnOverlayClick }: {
   closeOnOverlayClick?: boolean;
 }) => {
   const [show, setShow] = useState(false);
 
-  function handleChange() {
-    setShow(!show);
+  function handleClick() {
+    setShow(true);
   }
 
-  function closePopup() {
-    setShow(false);
+  function handleChange(status: boolean) {
+    setShow(status);
   }
 
   return (
     <>
-      <Button onClick={handleChange}>Toggle Me</Button>
+      <Button onClick={handleClick}>Toggle Me</Button>
       <Popup
         show={show}
-        onClose={closePopup}
+        onChange={handleChange}
         closeOnOverlayClick={closeOnOverlayClick}
       >
         <Icon name="basket" style={{ fontSize: "6rem" }}/>
