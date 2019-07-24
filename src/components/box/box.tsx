@@ -8,12 +8,14 @@ class Box extends PureComponent<IBoxProps> {
     const {
       children,
       spaced,
+      fitted,
       textAlign = "left",
       className,
     } = this.props;
     const boxClasses = classNames(
       "q-box",
       spaced && "q-spaced",
+      fitted && "q-fitted",
       `q-${textAlign}-aligned`,
       className,
     );
@@ -25,6 +27,7 @@ class Box extends PureComponent<IBoxProps> {
 
 interface IBoxProps {
   spaced?: boolean;
+  fitted?: boolean;
   textAlign?: textAlignTypes;
   className?: string;
 }

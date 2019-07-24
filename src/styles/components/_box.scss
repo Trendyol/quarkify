@@ -4,10 +4,15 @@
   background-color: $white-two;
   border: 1px solid $border-gray;
   border-radius: $border-radius;
+  padding: $space-medium;
   position: relative;
 
   &.q-spaced {
     margin: $box-margin;
+  }
+
+  &.q-fitted{
+    padding: 0;
   }
 
   &.q-left-aligned {
