@@ -22,7 +22,8 @@ Here are the list of possible names:
 ...
 
 ## Size
-To change the size of the icon, you can give size prop to the Icon component:
+An icon can have the following sizes:
+- xlarge
 - large
 - small
 
@@ -32,7 +33,16 @@ By default, the size of the Icon component is set to normal.
 <Icon name="account" size="small"/>
 <Icon name="account"/>
 <Icon name="account" size="large"/>
+<Icon name="account" size="xlarge"/>
 ```
+
+## Circular
+An icon can have a circular background
+
+```html
+<Icon name="account" circular/>
+```
+
 
 <iframe src="https://codesandbox.io/embed/delicate-wildflower-lk1i0?fontsize=14" title="delicate-wildflower-lk1i0" allow="geolocation; microphone; camera; midi; vr; accelerometer; gyroscope; payment; ambient-light-sensor; encrypted-media" style="width:100%; height:300px; border:0; border-radius: 4px; overflow:hidden;" sandbox="allow-modals allow-forms allow-popups allow-scripts allow-same-origin"></iframe>
 

@@ -24,13 +24,23 @@ The textAlign prop, like the name suggest, makes box component's children
 aligned according to the value. The default value is left.
 
 ```html
-<Box spaced textAlign="right">
+<Box textAlign="right">
   <span>Right aligned spaced Box</span>
 </Box>
-<Box spaced textAlign="center">
+<Box textAlign="center">
   <span>Center aligned spaced Box</span>
 </Box>
-<Box spaced textAlign="justify">
+<Box textAlign="justify">
   <span>Justify spaced Box Justify spaced Box Justify spaced Box</span>
+</Box>
+```
+
+## Fitted
+
+The fitted prop sets the padding of the box to 0.
+
+```html
+<Box fitted>
+  <span>Fitted box</span>
 </Box>
 ```
