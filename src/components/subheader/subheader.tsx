@@ -20,13 +20,13 @@ class SubHeader extends PureComponent<ISubHeader> {
       <div className={subHeaderClasses}>
         <Box>
           <div className="left-icon">
-            {leftIcon && <Icon name={leftIcon} onClick={leftIconOnClick} />}
+            {leftIcon && <Icon name={leftIcon} onClick={leftIconOnClick}/>}
           </div>
-           <Typography className="title" variant={"body"} >{title}</Typography>
+          <Typography className="title" variant={"body"}>{title}</Typography>
           <div className="right-icon">
-            {rightIcon && <Icon name={rightIcon} onClick={rightIconOnClick} />}
+            {rightIcon && <Icon name={rightIcon} onClick={rightIconOnClick}/>}
           </div>
-         <div/>
+          <div/>
         </Box>
       </div>
     );
@@ -38,7 +38,9 @@ export interface ISubHeader {
   leftIcon?: string;
   rightIcon?: string;
   className?: string;
+
   leftIconOnClick?(event: React.SyntheticEvent): void;
+
   rightIconOnClick?(event: React.SyntheticEvent): void;
 }
 
