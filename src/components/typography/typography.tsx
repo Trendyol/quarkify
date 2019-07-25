@@ -27,8 +27,7 @@ class Typography extends PureComponent<ITypographyProps> {
       className,
     );
     const defaultVariantMapping: any = {
-      body1: "p",
-      body2: "p",
+      body: "p",
       h1: "h1",
       h2: "h2",
       h3: "h3",

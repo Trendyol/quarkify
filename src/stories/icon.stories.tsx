@@ -10,9 +10,9 @@ stories.add("Icons", () => (
     <Icon name="search" disabled/>
     <Icon name="checkmark-full" variant={"primary"}/>
     <br/>
-    <Icon name={"heart"}  size="small" circular/>
-    <Icon name={"heart"}  circular/>
-    <Icon name={"heart"}  size="large" circular/>
-    <Icon name={"heart"}  size="xlarge" circular/>
+    <Icon name={"heart"} size="small" circular/>
+    <Icon name={"heart"} circular/>
+    <Icon name={"heart"} size="large" circular/>
+    <Icon name={"heart"} size="xlarge" circular/>
   </div>
 ));

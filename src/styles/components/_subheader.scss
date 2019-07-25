@@ -1,0 +1,35 @@
+@import '../globals';
+@import "../animations/_modal.scss";
+
+
+.q-subheader {
+
+  .q-box {
+
+    display: flex;
+
+    .q-i {
+      display: flex;
+      align-items: center;
+    }
+
+    .left-icon {
+      @extend .q-i;
+      flex: 1;
+    }
+
+    .title {
+      text-align: center;
+      flex: 12;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      overflow: hidden;
+    }
+
+    .right-icon {
+      @extend .q-i;
+      flex: 1;
+    }
+  }
+}
+
