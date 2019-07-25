@@ -18,6 +18,7 @@
   - [Product Slider](components/product-slider.md)
   - [Radio](components/radio.md)
   - [Select](components/select.md)
+  - [SubHeader](components/subheader.md)
   - [Switch](components/switch.md)
   - [Typography](components/typography.md)
   
