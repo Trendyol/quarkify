@@ -1,11 +1,12 @@
 import { storiesOf } from "@storybook/react";
 import React from "react";
-import Box from "../components/box";
+import {Box, BoxGroup} from "../components/box";
+import Layout from "../components/layout";
 
 const stories = storiesOf("Box", module);
 
 stories.add("Box", () => (
-  <div style={{ backgroundColor: "#f5f5f5", height: "100vh" }}>
+  <Layout style={{ height: "100vh" }}>
     <Box>
       <span>Box</span>
     </Box>
@@ -28,5 +29,21 @@ stories.add("Box", () => (
     <Box fitted spaced>
       <span>Fitted spaced box</span>
     </Box>
-  </div>
+  </Layout>
+));
+
+stories.add("Box Group", () => (
+    <Layout style={{height: "100vh"}}>
+        <BoxGroup style={{marginTop: "20px"}}>
+            <Box>
+                <span>Box</span>
+            </Box>
+            <Box>
+                <span>Box</span>
+            </Box>
+            <Box>
+                <span>Box</span>
+            </Box>
+        </BoxGroup>
+    </Layout>
 ));

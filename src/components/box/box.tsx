@@ -1,35 +1,35 @@
 import classNames from "classnames";
-import React, { PureComponent } from "react";
+import React, {PureComponent} from "react";
+import IDiv from "../../interfaces/div";
 import "../../styles/components/_box.scss";
-import { textAlignTypes } from "../../types/box";
+import {textAlignTypes} from "../../types/box";
 
-class Box extends PureComponent<IBoxProps> {
-  public render() {
-    const {
-      children,
-      spaced,
-      fitted,
-      textAlign = "left",
-      className,
-    } = this.props;
-    const boxClasses = classNames(
-      "q-box",
-      spaced && "q-spaced",
-      fitted && "q-fitted",
-      `q-${textAlign}-aligned`,
-      className,
-    );
-    return (
-      <div className={boxClasses}>{children}</div>
-    );
-  }
+export default class Box extends PureComponent<IBoxProps> {
+    public render() {
+        const {
+            children,
+            spaced,
+            fitted,
+            textAlign = "left",
+            className,
+            ...props
+        } = this.props;
+        const boxClasses = classNames(
+            "q-box",
+            spaced && "q-spaced",
+            fitted && "q-fitted",
+            `q-${textAlign}-aligned`,
+            className,
+        );
+        return (
+            <div className={boxClasses} {...props}>{children}</div>
+        );
+    }
 }
 
-interface IBoxProps {
-  spaced?: boolean;
-  fitted?: boolean;
-  textAlign?: textAlignTypes;
-  className?: string;
+interface IBoxProps extends IDiv {
+    spaced?: boolean;
+    fitted?: boolean;
+    textAlign?: textAlignTypes;
+    className?: string;
 }
-
-export default Box;
