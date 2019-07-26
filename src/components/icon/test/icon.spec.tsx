@@ -39,6 +39,13 @@ describe("icon specs", () => {
     expect(spy.calledOnce).toEqual(true);
   });
 
+  it("should have the given color prop as the className", () => {
+    const fakeIconName = faker.lorem.word();
+    const wrapper = shallow(<Icon name={fakeIconName} color="red"/>);
+
+    expect(wrapper.exists(".red")).toBe(true);
+  });
+
   it("should accept additional classNames", () => {
     const fakeClass = faker.lorem.word();
     const wrapper = shallow(<Icon name="search" className={fakeClass}/>);
