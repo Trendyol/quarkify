@@ -1,18 +1,20 @@
 import { storiesOf } from "@storybook/react";
 import React from "react";
 import Icon from "../components/icon";
+import Layout from "../components/layout";
 
 const stories = storiesOf("Icon", module);
 
 stories.add("Icons", () => (
-  <div>
-    <Icon name="search" color={"rgba(0,0,0,1)"} style={{ backgroundColor: "red" }}/>
+  // @ts-ignore
+  <Layout style={{height: "100vh"}}>
+    <Icon name="search"/>
     <Icon name="search" disabled/>
-    <Icon name="checkmark-full" variant={"primary"}/>
+    <Icon name="checkmark-full"/>
     <br/>
-    <Icon name={"heart"} size="small" circular/>
-    <Icon name={"heart"} circular/>
-    <Icon name={"heart"} size="large" circular/>
-    <Icon name={"heart"} size="xlarge" circular/>
-  </div>
+    <Icon color="green" name="cargo-box"  size="small" circular/>
+    <Icon color="green" name="alarm" circular/>
+    <Icon color="red" name="heart" size="large" circular/>
+    <Icon color="primary" name="discount-shape" size="xlarge" circular/>
+  </Layout>
 ));
