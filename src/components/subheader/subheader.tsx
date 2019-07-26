@@ -1,7 +1,8 @@
 import classNames from "classnames";
 import React, { PureComponent } from "react";
+import IDiv from "../../interfaces/div";
 import "../../styles/components/_subheader.scss";
-import Box from "../box";
+import {Box} from "../box";
 import Icon from "../icon";
 import Typography from "../typography";
 
@@ -33,14 +34,11 @@ class SubHeader extends PureComponent<ISubHeader> {
   }
 }
 
-export interface ISubHeader {
+interface ISubHeader extends IDiv {
   title: string;
   leftIcon?: string;
   rightIcon?: string;
-  className?: string;
-
   leftIconOnClick?(event: React.SyntheticEvent): void;
-
   rightIconOnClick?(event: React.SyntheticEvent): void;
 }
 
