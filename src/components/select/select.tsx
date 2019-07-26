@@ -2,6 +2,7 @@ import classNames from "classnames";
 import React, { PureComponent } from "react";
 import ISelect from "../../interfaces/select";
 import "../../styles/components/_select.scss";
+import { colorTypes } from "../../types/color";
 import { variantTypes as iconVariantTypes } from "../../types/icon";
 import { variantTypes } from "../../types/select";
 import classNamesDefault from "../../utils/class-names-default";
@@ -37,7 +38,7 @@ class Select extends PureComponent<IProps> {
       <div style={{ position: "relative" }}>
         <div className={selectClasses}>
           <div className={"q-select-group"}>
-            {leftIcon && <Icon className={"q-select-icon-left"} name={leftIcon} variant={leftIconColor}/>}
+            {leftIcon && <Icon className={"q-select-icon-left"} name={leftIcon} color={leftIconColor}/>}
             <select className="q-select" disabled={disabled} {...props}>
               {this.props.items.map((item, index) => {
                 return (
@@ -53,7 +54,7 @@ class Select extends PureComponent<IProps> {
                 );
               })}
             </select>
-            {rightIcon && <Icon className={"q-select-icon-right"} name={rightIcon} variant={rightIconColor}/>}
+            {rightIcon && <Icon className={"q-select-icon-right"} name={rightIcon} color={rightIconColor}/>}
           </div>
         </div>
       </div>
@@ -71,8 +72,8 @@ interface IProps extends ISelect {
   rightIcon?: string;
   leftIcon?: string;
   className?: string;
-  rightIconColor?: iconVariantTypes;
-  leftIconColor?: iconVariantTypes;
+  rightIconColor?: colorTypes;
+  leftIconColor?: colorTypes;
 }
 
 export default Select;

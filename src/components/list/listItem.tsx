@@ -1,6 +1,7 @@
 import classNames from "classnames";
 import React, { PureComponent, ReactNode } from "react";
 import "../../styles/components/_list.scss";
+import { colorTypes } from "../../types/color";
 import Icon from "../icon";
 
 class ListItem extends PureComponent<IItemProps> {
@@ -27,9 +28,8 @@ class ListItem extends PureComponent<IItemProps> {
 
 interface IItemProps {
   icon?: string;
-  iconColor?: string;
+  iconColor?: colorTypes;
   className?: string;
-  children?: ReactNode;
 }
 
 export default ListItem;
