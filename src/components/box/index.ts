@@ -1,3 +1,7 @@
 import Box from "./box";
+import BoxGroup from "./box-group";
 
-export default Box;
+export {
+    Box,
+    BoxGroup,
+};
