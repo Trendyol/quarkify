@@ -56,6 +56,10 @@
     outline: none !important;
   }
 
+  &:hover {
+    text-decoration: none;
+  }
+
   //Icon
   .q-i {
     padding-left: 0;
@@ -78,5 +82,13 @@
     }
   }
 
+  &.q-anchor {
+    display: inline-flex;
+    align-items: center;
+  }
+
+  &.q-anchor-disabled {
+    pointer-events: none;
+  }
 }
 
