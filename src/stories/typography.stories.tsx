@@ -9,8 +9,8 @@ stories.add("Default", () => (
     <Typography variant={"h1"} component={"h2"}>
       h1 Hello there
     </Typography>
-    <Typography variant={"h2"}>
-      h2 Hello there
+    <Typography variant={"h2"} color="green">
+      h2 Hello there color green
     </Typography>
     <Typography variant={"h3"}>
       h3 Hello there

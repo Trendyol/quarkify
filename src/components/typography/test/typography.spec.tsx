@@ -49,19 +49,25 @@ describe("typography specs", () => {
   it("should have className underline when given underline prop", () => {
     const wrapper = shallow(<Typography variant={"h1"} underline/>);
 
-    expect(wrapper.exists(".q-underline")).toEqual(true);
+    expect(wrapper.exists(".underline")).toEqual(true);
   });
 
   it("should have className bold when given bold prop", () => {
     const wrapper = shallow(<Typography variant={"h1"} bold/>);
 
-    expect(wrapper.exists(".q-bold")).toEqual(true);
+    expect(wrapper.exists(".bold")).toEqual(true);
   });
 
   it("should have className ellipsis when given noWrap prop", () => {
     const wrapper = shallow(<Typography variant={"h1"} noWrap/>);
 
-    expect(wrapper.exists(".q-ellipsis")).toEqual(true);
+    expect(wrapper.exists(".ellipsis")).toEqual(true);
+  });
+
+  it("should have the given color prop as the className", () => {
+    const wrapper = shallow(<Typography variant={"h1"} color="red"/>);
+
+    expect(wrapper.exists(".red")).toBe(true);
   });
 
   it("should accept additional classNames", () => {

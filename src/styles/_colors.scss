@@ -1,0 +1,19 @@
+$primary: #f27a1a;
+$green: #0bc15c;
+$red: #b30000;
+$black: #333333;
+$dark-gray: #666666;
+$light-gray: #999999;
+$border-gray: #e6e6e6;
+
+$colors: () !default;
+$colors: map_merge((
+  "primary": $primary,
+  "green": $green,
+  "red": $red,
+  "black": $black,
+  "dark-gray": $dark-gray,
+  "light-gray": $light-gray,
+  "border-gray": $border-gray,
+  ), $colors
+);
