@@ -1,34 +1,32 @@
 import { storiesOf } from "@storybook/react";
-import React, { useState } from "react";
+import React from "react";
 import Link from "../components/link";
 
 const stories = storiesOf("Link", module);
 
-const action = () => alert("Clicked");
-// tslint:disable-next-line:no-console
-const actionLog = () => console.log("Clicked");
+const url = "https://github.com/Trendyol/quarkify";
 
 stories.add("Variants", () => (
   <div>
-    <Link to={"https://google.com"}>Google</Link>
+    <Link to={url}>Google</Link>
     &nbsp;
-    <Link to={"https://google.com"} variant="secondary">
+    <Link to={url} variant="secondary">
       Google
     </Link>
     &nbsp;
-    <Link to={"https://google.com"} variant="gray">
+    <Link to={url} variant="gray">
       Google
     </Link>
   </div>
 ));
 
 stories.add("Disabled", () => (
-  <Link to={"https://google.com"} disabled>
+  <Link to={url} disabled>
     Disabled Google
   </Link>
 ));
 stories.add("Blank", () => (
-  <Link target={"_blank"} to={"https://google.com"} variant="primary">
+  <Link target={"_blank"} to={url} variant="primary">
     Google in new tab
   </Link>
 ));

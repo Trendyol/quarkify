@@ -20,49 +20,57 @@ describe("link specs", () => {
 
   it("should render link component", () => {
     const text = faker.random.word();
-    const wrapper = shallow(<Link to={"https://google.com"}>{text}</Link>);
+    const url = faker.lorem.word();
+    const wrapper = shallow(<Link to={url}>{text}</Link>);
 
     expect(wrapper.find("a")).toHaveLength(1);
   });
 
-  it("should go to google when clicked", () => {
+  it("should have given href attribute", () => {
     const text = faker.random.word();
-    const wrapper = shallow(<Link to={"https://google.com"}>{text}</Link>);
+    const url = faker.lorem.word();
+    const wrapper = shallow(<Link to={url}>{text}</Link>);
 
-    expect(wrapper.find("a").prop("href")).toEqual("https://google.com");
+    expect(wrapper.find("a").prop("href")).toEqual(url);
   });
 
   it("should be rendered with given primary variant prop", () => {
-    const wrapper = shallow(<Link to={"google.com"} variant="primary"/>);
+    const url = faker.lorem.word();
+    const wrapper = shallow(<Link to={url} variant="primary"/>);
 
     expect(wrapper.exists(".q-primary")).toEqual(true);
   });
 
   it("should have className fluid when given fluid prop", () => {
-    const wrapper = shallow(<Link to={"google.com"} fluid/>);
+    const url = faker.lorem.word();
+    const wrapper = shallow(<Link to={url} fluid/>);
 
     expect(wrapper.exists(".q-fluid")).toEqual(true);
   });
 
   it("should have className round when given round prop", () => {
-    const wrapper = shallow(<Link to={"google.com"} round/>);
+    const url = faker.lorem.word();
+    const wrapper = shallow(<Link to={url} round/>);
 
     expect(wrapper.exists(".q-round")).toEqual(true);
   });
 
   it("should have icon component when given icon prop", () => {
-    const wrapper = mount(<Link to={"google.com"} icon="heart"/>);
+    const url = faker.lorem.word();
+    const wrapper = mount(<Link to={url} icon="heart"/>);
     expect(wrapper.exists(".icon-heart")).toBe(true);
   });
 
   it("should have className circular when given circular prop", () => {
-    const wrapper = shallow(<Link to={"google.com"} circular/>);
+    const url = faker.lorem.word();
+    const wrapper = shallow(<Link to={url} circular/>);
 
     expect(wrapper.exists(".q-circular")).toBe(true);
   });
 
   it("should have className disabled when given disabled prop", () => {
-    const wrapper = shallow(<Link to={"google.com"} disabled circular/>);
+    const url = faker.lorem.word();
+    const wrapper = shallow(<Link to={url} disabled circular/>);
 
     expect(wrapper.exists(".q-anchor-disabled")).toBe(true);
   });
