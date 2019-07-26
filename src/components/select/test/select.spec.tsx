@@ -56,7 +56,7 @@ describe("select specs", () => {
 
   it("should render select component", () => {
     const wrapper = shallow(<Select items={items}/>);
-    expect(wrapper.exists(".q-select-group")).toEqual(true);
+    expect(wrapper.exists(".q-select-wrapper")).toEqual(true);
   });
 
   it("should render 3 options", () => {
@@ -131,13 +131,13 @@ describe("select specs", () => {
   it("should have a left icon if leftIcon prop is given", () => {
     const wrapper = mount(<Select items={customItems} leftIcon={"close"}/>);
 
-    expect(wrapper.find(".q-select-group").find(".q-select-icon-left")).toHaveLength(2);
+    expect(wrapper.find(".q-select-wrapper").find(".q-select-icon-left")).toHaveLength(2);
   });
 
   it("should have a right icon if leftIcon prop is given", () => {
     const wrapper = mount(<Select items={customItems} rightIcon={"close"}/>);
 
-    expect(wrapper.find(".q-select-group").find(".q-select-icon-right")).toHaveLength(2);
+    expect(wrapper.find(".q-select-wrapper").find(".q-select-icon-right")).toHaveLength(2);
   });
 
   it("should accept additional classNames", () => {

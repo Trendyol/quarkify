@@ -4,6 +4,19 @@
 
 .q-select-wrapper {
   display: inline-flex;
+  position: relative;
+  align-items: center;
+  height: $select-height;
+  width: fit-content;
+  text-align: center;
+  align-content: center;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border-radius: $border-radius;
+  background-color: $white-two;
+  border: 1px solid $border-gray-two;
+  color: $dark-gray;
 
   &.q-fluid {
     @include fluid;
@@ -39,56 +52,47 @@
     }
   }
 
-  .q-select-group {
-    display: flex;
-    align-items: center;
-    padding: $space-small;
-    height: $select-height;
-    width: inherit;
-    text-align: center;
-    align-content: center;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-    border-radius: $border-radius;
-    background-color: $white-two;
-    border: 1px solid $border-gray-two;
-    color: $dark-gray;
-    position: relative;
-
-    .q-select {
-      width: inherit;
-      color: currentColor;
-      padding: $select-padding;
-      font-size: $font-size-paragraph;
-      -webkit-appearance: none;
-      -moz-appearance: none;
-      appearance: none;
-      border: 0;
-      line-height: $select-line-height;
-      background: 0;
-    }
-
-    .q-select:focus {
-      outline: none !important;
-    }
-
-    .q-select-icon-left {
-      font-size: $font-size-small-paragraph;
-      pointer-events: none;
-    }
-
-    .q-select-icon-right {
-      font-size: $font-size-small-paragraph;
-      pointer-events: none;
-    }
-
-  }
-
   &:not(.q-disabled) {
     .q-select-group:active {
       border: 1px solid $light-gray;
     }
   }
 
+  .select-left-padding {
+    padding-left: 20px;
+  }
+
+  .select-right-padding {
+    padding-right: 20px;
+  }
+
+  .q-select-icon {
+    font-size: $font-size-small-paragraph;
+    pointer-events: none;
+    position: absolute;
+  }
+  .q-select-icon-left {
+    @extend .q-select-icon;
+    left: 5px;
+  }
+  .q-select-icon-right {
+    @extend .q-select-icon;
+    right: 5px;
+  }
+}
+
+.q-select {
+  width: 100%;
+  color: currentColor;
+  padding: $select-padding;
+  font-size: $font-size-paragraph;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border: 0;
+  line-height: $select-line-height;
+  background: 0;
+  &:focus {
+    outline: none !important;
+  }
 }
