@@ -1,5 +1,5 @@
 import classNames from "classnames";
-import React, { PureComponent, ReactNode } from "react";
+import React, { PureComponent } from "react";
 import "../../styles/components/_typography.scss";
 import { colorTypes } from "../../types/color";
 import { displayTypes, variantTypes } from "../../types/typography";
