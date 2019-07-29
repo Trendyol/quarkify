@@ -1,11 +1,11 @@
 import classNames from "classnames";
-import React from "react";
+import React, { PureComponent } from "react";
 import ReactDOM from "react-dom";
 import { CSSTransition } from "react-transition-group";
 import "../../styles/components/_popup.scss";
 import Icon from "../icon";
 
-export default class Popup extends React.PureComponent<IPopupProps> {
+export default class Popup extends PureComponent<IPopupProps> {
 
   constructor(props: IPopupProps) {
     super(props);

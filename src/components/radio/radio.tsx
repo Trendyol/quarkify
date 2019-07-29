@@ -6,7 +6,7 @@ import classNamesDefault from "../../utils/class-names-default";
 
 export default class Radio extends PureComponent<IProps> {
   public render() {
-    const { checked, error, label, type, className, ...props } = this.props;
+    const { checked, error, label, type, value, className, ...props } = this.props;
     const radioClasses = classNames(
       "q-radio-wrapper",
       classNamesDefault({ error }),
@@ -17,12 +17,12 @@ export default class Radio extends PureComponent<IProps> {
         <input
           onTouchStart={undefined}
           className={"q-input"}
-          id={`radio-${this.props.value}`}
+          id={`radio-${value}`}
           type="radio"
           {...props}
           defaultChecked={checked}
         />
-        {label && <label className={"q-label"} htmlFor={`radio-${this.props.value}`}>{label}</label>}
+        {label && <label className={"q-label"} htmlFor={`radio-${value}`}>{label}</label>}
       </div>
     );
   }

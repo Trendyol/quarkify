@@ -6,7 +6,6 @@ import Layout from "../components/layout";
 const stories = storiesOf("Icon", module);
 
 stories.add("Icons", () => (
-  // @ts-ignore
   <Layout style={{height: "100vh"}}>
     <Icon name="search"/>
     <Icon name="search" disabled/>
