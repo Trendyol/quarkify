@@ -55,6 +55,5 @@ interface ITypographyProps {
   noWrap?: boolean;
   display?: displayTypes;
   color?: colorTypes;
-  children?: ReactNode;
   className?: string;
 }

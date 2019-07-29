@@ -22,6 +22,5 @@ export default class ProductSlider extends PureComponent<IProductSliderProps> {
 }
 
 interface IProductSliderProps {
-  children?: any;
   className?: string;
 }
