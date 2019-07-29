@@ -37,7 +37,7 @@
     @include disabled;
   }
 
-  &.q-fluid {
+  &.q-disabled {
     @include fluid;
   }
 
@@ -61,12 +61,12 @@
   }
 
   //Icon
-  .q-i {
+  .q-icon {
     padding-left: 0;
     padding-right: $space-small;
   }
 
-  .q-i:only-child {
+  .q-icon:only-child {
     padding-right: 0;
   }
 
@@ -82,13 +82,5 @@
     }
   }
 
-  &.q-anchor {
-    display: inline-flex;
-    align-items: center;
-  }
-
-  &.q-anchor-disabled {
-    pointer-events: none;
-  }
 }
 

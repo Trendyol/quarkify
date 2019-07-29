@@ -1,7 +1,7 @@
 import classNames from "classnames";
 import React, { PureComponent } from "react";
 import ILink from "../../interfaces/link";
-import "../../styles/components/_button.scss";
+import "../../styles/components/_link.scss";
 import { variantTypes } from "../../types/button";
 import classNamesDefault from "../../utils/class-names-default";
 import Icon from "../icon";
@@ -29,8 +29,7 @@ export default class Link extends PureComponent<ILinkProps> {
       circular && "q-circular",
       loading && "loading",
       ripple && "q-ripple",
-      className, "q-button",
-      to && "q-anchor",
+      className, "q-anchor",
       disabled && to && "q-anchor-disabled",
     );
     return (

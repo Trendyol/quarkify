@@ -13,7 +13,7 @@ export default  class Icon extends PureComponent<IProps> {
     const iconClass = classNames(
       classNamesDefault({ name, size, disabled }),
       `icon-${name}`,
-      "q-i",
+      "q-icon",
       className,
       circular && "q-circular",
       color && `${color}`,

@@ -8,13 +8,13 @@
 
     display: flex;
 
-    .q-i {
+    .q-icon {
       display: flex;
       align-items: center;
     }
 
     .left-icon {
-      @extend .q-i;
+      @extend .q-icon;
       flex: 1;
     }
 
@@ -27,7 +27,7 @@
     }
 
     .right-icon {
-      @extend .q-i;
+      @extend .q-icon;
       flex: 1;
     }
   }
