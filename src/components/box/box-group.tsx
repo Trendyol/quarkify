@@ -16,7 +16,7 @@ export default class BoxGroup extends PureComponent<IBoxGroupProps> {
         );
         return (
             <div className={boxGroupClasses} {...props}>
-                {this.props.children}
+                {children}
             </div>
         );
     }

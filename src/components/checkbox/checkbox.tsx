@@ -6,7 +6,7 @@ import classNamesDefault from "../../utils/class-names-default";
 
 export default  class CheckBox extends PureComponent<IProps> {
   public render() {
-    const { checked, error, label, type, className, ...props } = this.props;
+    const { checked, error, label, type, value, className, ...props } = this.props;
     const checkBoxClasses = classNames(
       "q-checkbox-wrapper",
       classNamesDefault({ error }),
@@ -22,7 +22,7 @@ export default  class CheckBox extends PureComponent<IProps> {
           defaultChecked={checked}
         />
         {label && (
-          <label className={"q-label"} htmlFor={`checkbox-${this.props.value}`}>{label}</label>
+          <label className={"q-label"} htmlFor={`checkbox-${value}`}>{label}</label>
         )}
       </div>
     );

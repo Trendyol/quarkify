@@ -1,5 +1,5 @@
 import classNames from "classnames";
-import React, { PureComponent } from "react";
+import React, { PureComponent, ReactNode } from "react";
 import IIcon from "../../interfaces/icon";
 import "../../styles/components/_icon.scss";
 import { colorTypes } from "../../types/color";
@@ -9,7 +9,7 @@ import classNamesDefault from "../../utils/class-names-default";
 export default  class Icon extends PureComponent<IProps> {
 
   public render() {
-    const { name, size, circular, disabled, className, color, ...props } = this.props;
+    const { name, size, color, circular, disabled, children, className, ...props } = this.props;
     const iconClass = classNames(
       classNamesDefault({ name, size, disabled }),
       `icon-${name}`,
@@ -20,7 +20,7 @@ export default  class Icon extends PureComponent<IProps> {
     );
     return (
       <i className={iconClass} {...props}>
-        {this.props.children}
+        {children}
       </i>
     );
   }
@@ -30,7 +30,8 @@ interface IProps extends IIcon {
   name: string;
   size?: sizeTypes;
   disabled?: boolean;
-  className?: string;
   circular?: boolean;
   color?: colorTypes;
+  children?: ReactNode;
+  className?: string;
 }

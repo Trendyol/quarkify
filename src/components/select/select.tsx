@@ -24,9 +24,9 @@ export default class Select extends PureComponent<IProps> {
       error,
       ...props
     } = this.props;
-    const nameKey = this.props.name === undefined ? "name" : this.props.name;
+    const nameKey = name === undefined ? "name" : name;
     const valueKey =
-      this.props.value === undefined ? "value" : this.props.value;
+      value === undefined ? "value" : value;
     const selectDivClasses = classNames(
       "q-select-wrapper",
       classNamesDefault({ fluid, disabled }),
@@ -42,7 +42,7 @@ export default class Select extends PureComponent<IProps> {
       <div className={selectDivClasses}>
         {leftIcon && <Icon className={"q-select-icon-left"} name={leftIcon} color={leftIconColor}/>}
         <select className={selectClasses} disabled={disabled} {...props}>
-          {this.props.items.map((item, index) => {
+          {items.map((item, index) => {
             return (
               <option
                 selected={item.selected}
