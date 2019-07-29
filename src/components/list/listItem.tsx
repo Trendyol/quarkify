@@ -4,7 +4,7 @@ import "../../styles/components/_list.scss";
 import { colorTypes } from "../../types/color";
 import Icon from "../icon";
 
-class ListItem extends PureComponent<IItemProps> {
+export default class ListItem extends PureComponent<IItemProps> {
   public render() {
     const {
       icon,
@@ -31,5 +31,3 @@ interface IItemProps {
   iconColor?: colorTypes;
   className?: string;
 }
-
-export default ListItem;

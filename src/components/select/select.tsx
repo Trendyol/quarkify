@@ -3,12 +3,11 @@ import React, { PureComponent } from "react";
 import ISelect from "../../interfaces/select";
 import "../../styles/components/_select.scss";
 import { colorTypes } from "../../types/color";
-import { variantTypes as iconVariantTypes } from "../../types/icon";
 import { variantTypes } from "../../types/select";
 import classNamesDefault from "../../utils/class-names-default";
 import Icon from "../icon";
 
-class Select extends PureComponent<IProps> {
+export default class Select extends PureComponent<IProps> {
   public render() {
     const {
       items,
@@ -75,5 +74,3 @@ interface IProps extends ISelect {
   rightIconColor?: colorTypes;
   leftIconColor?: colorTypes;
 }
-
-export default Select;

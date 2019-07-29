@@ -2,7 +2,7 @@ import classNames from "classnames";
 import React, { PureComponent } from "react";
 import "../../styles/components/_product-slider.scss";
 
-class ProductSlider extends PureComponent<IProductSliderProps> {
+export default class ProductSlider extends PureComponent<IProductSliderProps> {
   public render() {
     const { className } = this.props;
     const productSliderClasses = classNames(
@@ -25,5 +25,3 @@ interface IProductSliderProps {
   children?: any;
   className?: string;
 }
-
-export default ProductSlider;

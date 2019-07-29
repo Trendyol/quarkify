@@ -4,7 +4,7 @@ import "../../styles/components/_accordion.scss";
 import Content from "./accordion-content";
 import Header from "./accordion-header";
 
-class Accordion extends PureComponent<IAccordionProps, IAccordionState> {
+export default class Accordion extends PureComponent<IAccordionProps, IAccordionState> {
   public static Header = Header;
   public static Content = Content;
 
@@ -70,5 +70,3 @@ interface IAccordionProps {
 interface IAccordionState {
   expanded: boolean;
 }
-
-export default Accordion;

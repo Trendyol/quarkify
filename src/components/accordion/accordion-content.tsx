@@ -3,7 +3,7 @@ import { CSSTransition } from "react-transition-group";
 import "../../styles/components/_accordion.scss";
 import { animationTypes } from "../../types/modal";
 
-class Content extends PureComponent<IAccordionContentProps> {
+export default class Content extends PureComponent<IAccordionContentProps> {
 
   public render() {
     const { expanded, children } = this.props;
@@ -26,5 +26,3 @@ interface IAccordionContentProps {
   className?: string;
   expanded?: boolean;
 }
-
-export default Content;

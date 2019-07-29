@@ -6,7 +6,7 @@ import {Box} from "../box";
 import Icon from "../icon";
 import Typography from "../typography";
 
-class SubHeader extends PureComponent<ISubHeader> {
+export default class SubHeader extends PureComponent<ISubHeader> {
   public render() {
     const {
       title,
@@ -41,5 +41,3 @@ interface ISubHeader extends IDiv {
   leftIconOnClick?(event: React.SyntheticEvent): void;
   rightIconOnClick?(event: React.SyntheticEvent): void;
 }
-
-export default SubHeader;

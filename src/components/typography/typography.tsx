@@ -5,7 +5,7 @@ import { colorTypes } from "../../types/color";
 import { displayTypes, variantTypes } from "../../types/typography";
 import classNamesDefault from "../../utils/class-names-default";
 
-class Typography extends PureComponent<ITypographyProps> {
+export default class Typography extends PureComponent<ITypographyProps> {
 
   public render() {
     const {
@@ -56,5 +56,3 @@ interface ITypographyProps {
   color?: colorTypes;
   className?: string;
 }
-
-export default Typography;

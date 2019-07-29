@@ -5,7 +5,7 @@ import "../../styles/components/_switch.scss";
 import { switchTypes, variantTypes } from "../../types/switch";
 import classNamesDefault from "../../utils/class-names-default";
 
-class Switch extends PureComponent<IProps> {
+export default class Switch extends PureComponent<IProps> {
   public render() {
     const { error, disabled, checked, label, type = "checkbox", className, ...props } = this.props;
     const switchClasses = classNames(
@@ -40,5 +40,3 @@ interface IProps extends IInput {
   label?: string;
   className?: string;
 }
-
-export default Switch;
