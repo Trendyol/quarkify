@@ -1,6 +1,6 @@
 import { storiesOf } from "@storybook/react";
 import React, { useState } from "react";
-import Box from "../components/box";
+import { Box } from "../components/box";
 import Button from "../components/button";
 import CheckBox from "../components/checkbox";
 import Icon from "../components/icon";

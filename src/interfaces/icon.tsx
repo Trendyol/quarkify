@@ -1,8 +1,6 @@
 import * as React from "react";
 
-interface IIcon
+export default interface IIcon
   extends React.DetailedHTMLProps<React.HTMLAttributes<HTMLElement>,
     HTMLElement> {
 }
-
-export default IIcon;

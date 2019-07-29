@@ -5,7 +5,7 @@ import { CSSTransition } from "react-transition-group";
 import "../../styles/components/_popup.scss";
 import Icon from "../icon";
 
-class Popup extends React.PureComponent<IPopupProps> {
+export default class Popup extends React.PureComponent<IPopupProps> {
 
   constructor(props: IPopupProps) {
     super(props);
@@ -121,5 +121,3 @@ interface IPopupProps {
   closeOnOverlayClick?: boolean;
   className?: string;
 }
-
-export default Popup;

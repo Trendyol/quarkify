@@ -7,7 +7,7 @@ import Actions from "./modal-actions";
 import Content from "./modal-content";
 import Header from "./modal-header";
 
-class Modal extends React.Component<IModalProps> {
+export default class Modal extends React.Component<IModalProps> {
   public static Header = Header;
   public static Actions = Actions;
   public static Content = Content;
@@ -59,5 +59,3 @@ interface IModalProps {
   onChange?: () => void;
   className?: string;
 }
-
-export default Modal;

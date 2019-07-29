@@ -1,5 +1,6 @@
 @import '../_globals';
-@import '../mixins/_color-scheme';
+@import '../_colors';
+@import "../mixins/text-truncate";
 
 .q-typography {
   margin: 0;
@@ -7,17 +8,15 @@
   font-style: normal;
   font-stretch: normal;
 
-  &.q-bold {
-    font-weight: 600;
+  &.bold {
+    font-weight: $bold;
   }
 
-  &.q-ellipsis {
-    overflow: hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis;
+  &.ellipsis {
+    @include text-truncate;
   }
 
-  &.q-underline {
+  &.underline {
     text-decoration: underline;
   }
 
@@ -49,5 +48,11 @@
   &.q-body {
     font-size: 16px;
     line-height: 20px;
+  }
+
+  @each $color, $value in $colors {
+    &.#{$color} {
+      color: $value;
+    }
   }
 }

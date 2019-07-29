@@ -31,3 +31,17 @@
     text-align: justify;
   }
 }
+
+.q-box-group{
+  border: 1px solid $border-gray;
+
+  .q-box{
+    border:0;
+    border-radius: 0;
+  }
+
+  .q-box:not(:last-child){
+    border-bottom: 1px solid $border-gray;
+
+  }
+}

@@ -44,3 +44,21 @@ The fitted prop sets the padding of the box to 0.
   <span>Fitted box</span>
 </Box>
 ```
+
+# Box Group
+
+Box Group component is a wrapper component for multiple box components.
+
+```html
+<BoxGroup>
+ <Box>
+   <span>Box</span>
+ </Box>
+ <Box>
+   <span>Box</span>
+ </Box>
+ <Box>
+   <span>Box</span>
+ </Box>
+</BoxGroup>
+```

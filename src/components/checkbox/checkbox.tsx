@@ -4,7 +4,7 @@ import IInput from "../../interfaces/input";
 import "../../styles/components/_checkbox.scss";
 import classNamesDefault from "../../utils/class-names-default";
 
-class CheckBox extends PureComponent<IProps> {
+export default  class CheckBox extends PureComponent<IProps> {
   public render() {
     const { checked, error, label, type, className, ...props } = this.props;
     const checkBoxClasses = classNames(
@@ -35,5 +35,3 @@ interface IProps extends IInput {
   value: string;
   className?: string;
 }
-
-export default CheckBox;

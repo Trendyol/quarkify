@@ -1,13 +1,13 @@
 import classNames from "classnames";
 import React, { PureComponent } from "react";
-import IButton from "../../interfaces/button";
+import ILink from "../../interfaces/link";
 import "../../styles/components/_button.scss";
 import { variantTypes } from "../../types/button";
 import classNamesDefault from "../../utils/class-names-default";
 import Icon from "../icon";
 import Loader from "../loader";
 
-export default  class Button extends PureComponent<IButtonProps> {
+export default class Link extends PureComponent<ILinkProps> {
 
   public render() {
     const {
@@ -21,6 +21,7 @@ export default  class Button extends PureComponent<IButtonProps> {
       children,
       className,
       loading = false,
+      to,
       ...props
     } = this.props;
     const buttonClasses = classNames(
@@ -28,22 +29,25 @@ export default  class Button extends PureComponent<IButtonProps> {
       circular && "q-circular",
       loading && "loading",
       ripple && "q-ripple",
-      className, "q-button");
+      className, "q-button",
+      to && "q-anchor",
+      disabled && to && "q-anchor-disabled",
+    );
     return (
-      <button
+      <a
         className={buttonClasses}
-        disabled={disabled || loading}
+        href={to}
         {...props}
       >
         <Loader active={loading}/>
         {icon && <Icon name={icon}/>}
         {children && <span>{children}</span>}
-      </button>
+      </a>
     );
   }
 }
 
-interface IButtonProps extends IButton {
+interface ILinkProps extends ILink {
   variant?: variantTypes;
   fluid?: boolean;
   disabled?: boolean;
@@ -53,4 +57,5 @@ interface IButtonProps extends IButton {
   circular?: boolean;
   className?: string;
   loading?: boolean;
+  to: string;
 }

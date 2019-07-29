@@ -1,11 +1,6 @@
+@import "_colors";
 // Colors
-$primary: #f27a1a;
-$black: #333333;
-$dark-gray: #666666;
-$light-gray: #999999;
 $dark-gray-two: #d2d2d2;
-$red: #b30000;
-$green: #0bc15c;
 $white: #f8f8f8;
 $white-two: #ffffff;
 $marigold: #ffc000;
@@ -22,7 +17,7 @@ $checkbox-border-passive: #d6d6d6;
 $font-family: "Source Sans Pro", sans-serif;
 
 $font-size-base: 1rem !default; // Assumes the browser default, typically `16px`
-$font-size-xlarge: $font-size-base * 4 !default;
+$font-size-xlarge: $font-size-base * 3 !default;
 $font-size-large: $font-size-base * 1.5 !default;
 $font-size-small: $font-size-base * .750 !default;
 
@@ -73,7 +68,7 @@ $input-height: 40px;
 //Select
 $select-height: 40px;
 $select-line-height: 18px;
-$select-padding: 10px 22px 10px 22px;
+$select-padding: 10px 35px 10px 35px;
 
 //Checkbox
 $checkbox-border-width: 1.5px;

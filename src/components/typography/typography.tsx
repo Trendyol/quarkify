@@ -1,10 +1,11 @@
 import classNames from "classnames";
-import React, { PureComponent, ReactNode } from "react";
+import React, { PureComponent } from "react";
 import "../../styles/components/_typography.scss";
+import { colorTypes } from "../../types/color";
 import { displayTypes, variantTypes } from "../../types/typography";
 import classNamesDefault from "../../utils/class-names-default";
 
-class Typography extends PureComponent<ITypographyProps> {
+export default class Typography extends PureComponent<ITypographyProps> {
 
   public render() {
     const {
@@ -14,16 +15,18 @@ class Typography extends PureComponent<ITypographyProps> {
       underline,
       noWrap = false,
       display = "initial",
+      color,
       className,
       ...props
     } = this.props;
     const typographyClasses = classNames(
       "q-typography",
       classNamesDefault({ variant }),
-      bold && "q-bold",
-      underline && "q-underline",
-      noWrap && "q-ellipsis",
+      bold && "bold",
+      underline && "underline",
+      noWrap && "ellipsis",
       display && `q-${display}`,
+      color && `${color}`,
       className,
     );
     const defaultVariantMapping: any = {
@@ -50,8 +53,6 @@ interface ITypographyProps {
   underline?: boolean;
   noWrap?: boolean;
   display?: displayTypes;
-  children?: ReactNode;
+  color?: colorTypes;
   className?: string;
 }
-
-export default Typography;

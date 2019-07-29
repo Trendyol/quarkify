@@ -2,7 +2,7 @@ import classNames from "classnames";
 import React, { PureComponent } from "react";
 import Icon from "../icon";
 
-class Header extends PureComponent<IHeaderProps> {
+export default class Header extends PureComponent<IHeaderProps> {
   public render() {
     const {
       children,
@@ -33,5 +33,3 @@ export interface IHeaderProps {
 
   rightIconOnClick?(event: React.SyntheticEvent): void;
 }
-
-export default Header;

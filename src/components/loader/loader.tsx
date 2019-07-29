@@ -1,7 +1,7 @@
 import React, { PureComponent } from "react";
 import "../../styles/components/_loader.scss";
 
-class Loader extends PureComponent<ILoaderProps> {
+export default class Loader extends PureComponent<ILoaderProps> {
 
   public render() {
     if (!this.props.active) {
@@ -20,5 +20,3 @@ interface ILoaderProps {
   active: boolean;
   type?: string;
 }
-
-export default Loader;

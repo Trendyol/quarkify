@@ -1,0 +1,13 @@
+.flex {
+    display: flex;
+    width: 100%;
+}
+
+.select-w40 {
+    width: 40%;
+    margin-right: 10px;
+}
+
+.button-w60 {
+    width: 60%;
+}

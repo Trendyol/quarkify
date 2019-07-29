@@ -3,7 +3,7 @@ import React, { PureComponent, ReactNode } from "react";
 import "../../styles/components/_list.scss";
 import ListItem from "./listItem";
 
-class List extends PureComponent<IListProps> {
+export default class List extends PureComponent<IListProps> {
   public static Item = ListItem;
 
   public render() {
@@ -31,5 +31,3 @@ interface IListProps {
   className?: string;
   children?: ReactNode;
 }
-
-export default List;
