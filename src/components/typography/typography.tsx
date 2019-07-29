@@ -1,5 +1,6 @@
 import classNames from "classnames";
 import React, { PureComponent, ReactNode } from "react";
+import ITypography from "../../interfaces/typography";
 import "../../styles/components/_typography.scss";
 import { colorTypes } from "../../types/color";
 import { displayTypes, variantTypes } from "../../types/typography";
@@ -47,7 +48,7 @@ export default class Typography extends PureComponent<ITypographyProps> {
   }
 }
 
-interface ITypographyProps {
+interface ITypographyProps extends ITypography {
   variant: variantTypes;
   component?: string;
   bold?: boolean;
