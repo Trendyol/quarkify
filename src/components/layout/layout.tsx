@@ -1,8 +1,9 @@
 import classNames from "classnames";
 import React, { PureComponent, ReactNode } from "react";
+import IDiv from "../../interfaces/div";
 import "../../styles/components/_layout.scss";
 
-class Layout extends PureComponent<ILayoutProps> {
+export default class Layout extends PureComponent<ILayoutProps> {
 
   public render() {
     const {
@@ -26,10 +27,6 @@ class Layout extends PureComponent<ILayoutProps> {
   }
 }
 
-interface ILayoutProps {
+interface ILayoutProps extends IDiv {
   fitted?: boolean;
-  children?: ReactNode;
-  className?: string;
 }
-
-export default Layout;

@@ -3,7 +3,8 @@ import Adapter from "enzyme-adapter-react-16";
 import faker from "faker";
 import React from "react";
 import sinon from "sinon";
-import Box from "../box";
+
+import {Box, BoxGroup} from "../index";
 
 Enzyme.configure({ adapter: new Adapter() });
 
@@ -57,10 +58,18 @@ describe("Box specs", () => {
     expect(wrapper.hasClass("q-justify-aligned")).toBe(true);
   });
 
+  it("should have box-group className", () => {
+    const wrapper = shallow(<BoxGroup/>);
+
+    expect(wrapper.hasClass("q-box-group")).toBe(true);
+  });
+
   it("should accept additional classNames", () => {
     const fakeClass = faker.lorem.word();
-    const wrapper = shallow(<Box className={fakeClass}/>);
+    const wrapperBox = shallow(<Box className={fakeClass}/>);
+    const wrapperBoxGroup = shallow(<BoxGroup className={fakeClass}/>);
 
-    expect(wrapper.hasClass(fakeClass)).toBe(true);
+    expect(wrapperBox.hasClass(fakeClass)).toBe(true);
+    expect(wrapperBoxGroup.hasClass(fakeClass)).toBe(true);
   });
 });

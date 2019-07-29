@@ -6,7 +6,7 @@ import { colorTypes } from "../../types/color";
 import { sizeTypes } from "../../types/icon";
 import classNamesDefault from "../../utils/class-names-default";
 
-class Icon extends PureComponent<IProps> {
+export default  class Icon extends PureComponent<IProps> {
 
   public render() {
     const { name, size, circular, disabled, className, color, ...props } = this.props;
@@ -34,5 +34,3 @@ interface IProps extends IIcon {
   circular?: boolean;
   color?: colorTypes;
 }
-
-export default Icon;

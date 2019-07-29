@@ -4,7 +4,7 @@ import IInput from "../../interfaces/input";
 import "../../styles/components/_radio.scss";
 import classNamesDefault from "../../utils/class-names-default";
 
-class Radio extends PureComponent<IProps> {
+export default class Radio extends PureComponent<IProps> {
   public render() {
     const { checked, error, label, type, className, ...props } = this.props;
     const radioClasses = classNames(
@@ -34,5 +34,3 @@ interface IProps extends IInput {
   value: string;
   className?: string;
 }
-
-export default Radio;

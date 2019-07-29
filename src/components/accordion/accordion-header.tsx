@@ -1,7 +1,7 @@
 import React, { PureComponent } from "react";
 import Icon from "../icon";
 
-class Header extends PureComponent<IHeaderProps> {
+export default  class Header extends PureComponent<IHeaderProps> {
   public render() {
     const { children, icon = "chevron-down", handleClick, expanded } = this.props;
     return (
@@ -24,5 +24,3 @@ export interface IHeaderProps {
   expanded?: boolean;
   handleClick?: () => void;
 }
-
-export default Header;

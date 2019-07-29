@@ -4,7 +4,7 @@ import IInput from "../../interfaces/input";
 import "../../styles/components/_input.scss";
 import classNamesDefault from "../../utils/class-names-default";
 
-class Input extends PureComponent<IProps> {
+export default class Input extends PureComponent<IProps> {
   private static defaultProps = {
     type: "text",
   };
@@ -58,5 +58,3 @@ interface IProps extends IInput {
   fluid?: boolean;
   className?: string;
 }
-
-export default Input;

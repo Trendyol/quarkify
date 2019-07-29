@@ -7,7 +7,7 @@ import classNamesDefault from "../../utils/class-names-default";
 import Icon from "../icon";
 import Loader from "../loader";
 
-class Link extends PureComponent<ILinkProps> {
+export default class Link extends PureComponent<ILinkProps> {
 
   public render() {
     const {
@@ -59,5 +59,3 @@ interface ILinkProps extends ILink {
   loading?: boolean;
   to: string;
 }
-
-export default Link;

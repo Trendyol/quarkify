@@ -7,7 +7,7 @@ import classNamesDefault from "../../utils/class-names-default";
 import Icon from "../icon";
 import Loader from "../loader";
 
-class Button extends PureComponent<IButtonProps> {
+export default  class Button extends PureComponent<IButtonProps> {
 
   public render() {
     const {
@@ -54,5 +54,3 @@ interface IButtonProps extends IButton {
   className?: string;
   loading?: boolean;
 }
-
-export default Button;
