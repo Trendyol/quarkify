@@ -1,6 +1,8 @@
 import { storiesOf } from "@storybook/react";
 import React from "react";
+import Button from "../components/button";
 import Select from "../components/select";
+import "./styles/select.css";
 
 const stories = storiesOf("Select", module);
 const items = [
@@ -37,6 +39,13 @@ stories.add("Icon", () => (
     <br/>
     <br/>
     <Select items={items} value={"id"} leftIcon={"filter"} leftIconColor={"primary"} rightIcon={"close"}/>
+    <br/>
+    <br/>
+    <div className={"flex"}>
+      {/* tslint:disable-next-line:max-line-length */}
+      <Select className={"select-w40"} items={items} value={"id"} leftIcon={"filter"} leftIconColor={"primary"} rightIcon={"close"}/>
+      <Button className={"button-w60"}>Hello World</Button>
+    </div>
   </div>
 ));
 
