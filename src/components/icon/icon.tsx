@@ -32,6 +32,7 @@ interface IProps extends IIcon {
   disabled?: boolean;
   circular?: boolean;
   color?: colorTypes;
+  onClick?: (event: any) => any;
   children?: ReactNode;
   className?: string;
 }
