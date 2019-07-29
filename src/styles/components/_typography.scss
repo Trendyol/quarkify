@@ -50,6 +50,15 @@
     line-height: 20px;
   }
 
+  &.q-block{
+    display: block;
+  }
+
+  &.q-inline{
+    display: inline;
+  }
+
+
   @each $color, $value in $colors {
     &.#{$color} {
       color: $value;
