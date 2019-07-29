@@ -28,6 +28,7 @@
 
     .right-icon {
       @extend .q-icon;
+      justify-content: flex-end;
       flex: 1;
     }
   }
