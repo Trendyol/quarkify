@@ -21,6 +21,7 @@ export default class Select extends PureComponent<IProps> {
       leftIconColor,
       className,
       disabled,
+      selected,
       error,
       ...props
     } = this.props;
@@ -41,11 +42,10 @@ export default class Select extends PureComponent<IProps> {
     return (
       <div className={selectDivClasses}>
         {leftIcon && <Icon className={"q-select-icon-left"} name={leftIcon} color={leftIconColor}/>}
-        <select className={selectClasses} disabled={disabled} {...props}>
+        <select defaultValue={selected} className={selectClasses} disabled={disabled} {...props}>
           {items.map((item, index) => {
             return (
               <option
-                selected={item.selected}
                 key={index}
                 value={item[valueKey]}
                 disabled={item.disabled}
@@ -72,6 +72,7 @@ interface IProps extends ISelect {
   rightIcon?: string;
   leftIcon?: string;
   className?: string;
+  selected?: string;
   rightIconColor?: colorTypes;
   leftIconColor?: colorTypes;
 }
