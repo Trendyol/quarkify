@@ -21,6 +21,9 @@ stories.add("Default", () => (
     <Typography variant={"smallParagraph"} >
       small-paragraph Hello there
     </Typography>
+    <Typography variant={"smallParagraph"} color="white">
+      small-paragraph White color
+    </Typography>
   </div>
 
 ));

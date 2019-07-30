@@ -5,6 +5,7 @@ $black: #333333;
 $dark-gray: #666666;
 $light-gray: #999999;
 $border-gray: #e6e6e6;
+$white: #f8f8f8;
 
 $colors: () !default;
 $colors: map_merge((
@@ -15,5 +16,5 @@ $colors: map_merge((
   "dark-gray": $dark-gray,
   "light-gray": $light-gray,
   "border-gray": $border-gray,
-  ), $colors
-);
+  "white": $white,
+), $colors);
