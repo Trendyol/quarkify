@@ -18,7 +18,12 @@ no component prop then variant prop also decided the component type.
 Some variant types are:
 
 ```html
-"h1", "h2", "h3", "paragraph", "smallParagraph"
+  * "h1"
+  * "h2"
+  * "h3"
+  * "paragraph"
+  * "smallParagraph"
+  * "body"
 ```
 
 ## Component
