@@ -65,31 +65,31 @@ describe("select specs", () => {
   });
 
   it("should find selected item as 'Plane'", () => {
-    const wrapper = shallow(<Select items={items}/>);
+    const wrapper = shallow(<Select items={items} selected={"3"}/>);
     expect(
       wrapper
         .render()
-        .find("select [selected]")
+        .find("select option:selected")
         .text(),
     ).toEqual("Plane");
   });
 
   it("should find selected item's value as 3", () => {
-    const wrapper = shallow(<Select items={items}/>);
+    const wrapper = shallow(<Select items={items} selected={"3"}/>);
     expect(
       wrapper
         .render()
-        .find("select [selected]")
+        .find("select")
         .val(),
     ).toEqual("3");
   });
 
   it("should find selected item's class name as secondary", () => {
-    const wrapper = shallow(<Select items={items}/>);
+    const wrapper = shallow(<Select items={items} selected={"3"}/>);
     expect(
       wrapper
         .render()
-        .find("select [selected]")
+        .find("select option:selected")
         .hasClass("q-secondary"),
     ).toEqual(true);
   });
@@ -112,18 +112,18 @@ describe("select specs", () => {
 
   it("should set values and names properly", () => {
     const wrapper = shallow(
-      <Select items={customItems} value={"id"} name={"vehicle"} fluid/>,
+      <Select items={customItems} value={"id"} name={"vehicle"} fluid selected={"3"}/>,
     );
     expect(
       wrapper
         .render()
-        .find("select [selected]")
+        .find("select")
         .val(),
     ).toEqual("3");
     expect(
       wrapper
         .render()
-        .find("select [selected]")
+        .find("select option:selected")
         .text(),
     ).toEqual("Plane");
   });
