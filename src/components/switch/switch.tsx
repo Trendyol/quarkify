@@ -7,7 +7,7 @@ import classNamesDefault from "../../utils/class-names-default";
 
 export default class Switch extends PureComponent<IProps> {
   public render() {
-    const { error, disabled, checked, label, type = "checkbox", className, ...props } = this.props;
+    const { error, disabled, checked, label, value, type = "checkbox", className, ...props } = this.props;
     const switchClasses = classNames(
       "q-switch-wrapper",
       classNamesDefault({ error, disabled }),
@@ -17,14 +17,14 @@ export default class Switch extends PureComponent<IProps> {
         <input
           disabled={disabled}
           className={"q-input"}
-          id={`switch-${this.props.value}`}
+          id={`switch-${value}`}
           type={type}
           {...props}
           defaultChecked={checked}
         />
         <span className="q-switch-slider"/>
         {label && (
-          <label className={"q-label"} htmlFor={`switch-${this.props.value}`}>{label}</label>
+          <label className={"q-label"} htmlFor={`switch-${value}`}>{label}</label>
         )}
       </label>
     );

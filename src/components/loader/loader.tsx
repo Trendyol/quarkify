@@ -4,7 +4,9 @@ import "../../styles/components/_loader.scss";
 export default class Loader extends PureComponent<ILoaderProps> {
 
   public render() {
-    if (!this.props.active) {
+    const {active} = this.props;
+
+    if (!active) {
       return null;
     }
 

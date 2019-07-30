@@ -1,5 +1,6 @@
 import classNames from "classnames";
-import React, { PureComponent } from "react";
+import React, { PureComponent, ReactNode } from "react";
+import ITypography from "../../interfaces/typography";
 import "../../styles/components/_typography.scss";
 import { colorTypes } from "../../types/color";
 import { displayTypes, variantTypes } from "../../types/typography";
@@ -16,6 +17,7 @@ export default class Typography extends PureComponent<ITypographyProps> {
       noWrap = false,
       display = "initial",
       color,
+      children,
       className,
       ...props
     } = this.props;
@@ -40,13 +42,13 @@ export default class Typography extends PureComponent<ITypographyProps> {
     const Component = component || defaultVariantMapping[variant];
     return (
       <Component className={typographyClasses} {...props}>
-        {this.props.children}
+        {children}
       </Component>
     );
   }
 }
 
-interface ITypographyProps {
+interface ITypographyProps extends ITypography {
   variant: variantTypes;
   component?: string;
   bold?: boolean;

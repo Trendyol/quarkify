@@ -3,15 +3,19 @@
 .q-list {
 
   list-style: none;
-  padding: $-padding;
+  padding: $list-padding;
 
   .q-list-item {
     word-wrap: break-word;
     position: relative;
     padding-left: $padding-x;
-    margin-bottom: .5rem;
+    margin-bottom: 0.625rem;
     line-height: $item-line-height;
     color: $dark-gray;
+
+    .q-icon{
+      margin-right: 5px;
+    }
   }
 
   .q-list-item::before {
@@ -23,7 +27,6 @@
     width: 5px;
     height: 5px;
     border-radius: 100%;
-
   }
 
   &.q-no-dot {

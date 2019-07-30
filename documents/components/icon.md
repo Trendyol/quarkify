@@ -30,10 +30,10 @@ An icon can have the following sizes:
 By default, the size of the Icon component is set to normal.
 
 ```html
-<Icon name="account" size="small"/>
+<Icon name="account" size="small" />
 <Icon name="account"/>
-<Icon name="account" size="large"/>
-<Icon name="account" size="xlarge"/>
+<Icon name="account" size="large" />
+<Icon name="account" size="xlarge" />
 ```
 
 ## Circular
@@ -58,20 +58,27 @@ It is possible to use most used icon color schemas which are:
 ```
 
 ## Color
-To change the color of the icon, you can give color prop to the Icon component which takes css styles:
 
-By default, the color of the Icon component is set to gray.
+Icon has different color variants.
+
+  * "primary"
+  * "green"
+  * "red"
+  * "black"
+  * "dark-gray"
+  * "light-gray"
+  * "border-gray"
 
 ```html
-<Icon name="search" color={"rgba(0,0,0,1)"} style={{backgroundColor: "red"}}/>
+<Icon name="account" color={"green"} />
 ```
 
 #### Additional content
 You can use some other props as well such as:
 
 ```html
-<Icon name="account" disabled/>
-<Icon name="account" className="someClassName"/>
+<Icon name="account" disabled />
+<Icon name="account" className="someClassName" />
 ```
 
 <iframe src="https://codesandbox.io/embed/cranky-dream-imo6l?fontsize=14" title="cranky-dream-imo6l" allow="geolocation; microphone; camera; midi; vr; accelerometer; gyroscope; payment; ambient-light-sensor; encrypted-media" style="width:100%; height:300px; border:0; border-radius: 4px; overflow:hidden;" sandbox="allow-modals allow-forms allow-popups allow-scripts allow-same-origin"></iframe>

@@ -29,5 +29,4 @@ export default class List extends PureComponent<IListProps> {
 interface IListProps {
   noDot?: boolean;
   className?: string;
-  children?: ReactNode;
 }

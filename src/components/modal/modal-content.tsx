@@ -2,7 +2,8 @@ import React, { PureComponent } from "react";
 
 export default class Content extends PureComponent<IModalContentProps> {
   public render() {
-    return <div className={`q-modal-content ${this.props.className}`}>{this.props.children}</div>;
+    const {children, className} = this.props;
+    return <div className={`q-modal-content ${className}`}>{children}</div>;
   }
 }
 

@@ -18,7 +18,7 @@ stories.add("Default", () => (
     <Typography variant={"paragraph"}>
       paragraph Hello there
     </Typography>
-    <Typography variant={"smallParagraph"}>
+    <Typography variant={"smallParagraph"} >
       small-paragraph Hello there
     </Typography>
   </div>
