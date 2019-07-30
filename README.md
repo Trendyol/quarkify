@@ -149,7 +149,7 @@ This will render Button component with primary variant:
 
 As you can see, to import components into your project, you need to specify the path as 
 ```
-"quarkify/dist/components/{component-name}"
+"quarkify/components/{component-name}"
 ```
 
 Furthermore, to use `Modal` component:
