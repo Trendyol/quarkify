@@ -1,5 +1,6 @@
 import React, { PureComponent } from "react";
 import { CSSTransition } from "react-transition-group";
+import IDiv from "../../interfaces/div";
 import "../../styles/components/_accordion.scss";
 import { animationTypes } from "../../types/modal";
 
@@ -20,7 +21,7 @@ export default class Content extends PureComponent<IAccordionContentProps> {
   }
 }
 
-interface IAccordionContentProps {
+interface IAccordionContentProps extends IDiv {
   animation?: animationTypes;
   onChange?: () => void;
   className?: string;
