@@ -6,8 +6,9 @@ import { variantTypes } from "../../types/button";
 import classNamesDefault from "../../utils/class-names-default";
 import Icon from "../icon";
 import Loader from "../loader";
+import withRipple from "../withRipple/withRipple";
 
-export default  class Button extends PureComponent<IButtonProps> {
+class Button extends PureComponent<IButtonProps> {
 
   public render() {
     const {
@@ -16,7 +17,6 @@ export default  class Button extends PureComponent<IButtonProps> {
       disabled,
       icon,
       round,
-      ripple = true,
       circular,
       children,
       className,
@@ -27,7 +27,6 @@ export default  class Button extends PureComponent<IButtonProps> {
       classNamesDefault({ variant, fluid, disabled, round }),
       circular && "q-circular",
       loading && "loading",
-      ripple && "q-ripple",
       className, "q-button");
     return (
       <button
@@ -43,13 +42,14 @@ export default  class Button extends PureComponent<IButtonProps> {
   }
 }
 
+export default withRipple(Button);
+
 interface IButtonProps extends IButton {
   variant?: variantTypes;
   fluid?: boolean;
   disabled?: boolean;
   icon?: string;
   round?: boolean;
-  ripple?: boolean;
   circular?: boolean;
   className?: string;
   loading?: boolean;
