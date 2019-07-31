@@ -15,10 +15,10 @@ const withRipple = (WrappedComponent: any) => {
     }
 
     public render() {
-      const {ripple = true, ...props} = this.props;
-      const rippleClasses = classNames("q-ripple", !!this.props.className && this.props.className);
+      const {ripple = true, className, ...props} = this.props;
+      const rippleClasses = classNames("q-ripple", this.props.className && className);
       if (!ripple) {
-        return <WrappedComponent {...props}/>;
+        return <WrappedComponent className={className} {...props}/>;
       }
       return <WrappedComponent className={rippleClasses} {...props} onClick={this.showRipple}>
           {this.state.show &&
