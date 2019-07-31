@@ -62,7 +62,12 @@ class ScrollToTop extends PureComponent<IScrollToTopProps, IScrollToTopState> {
   private handleClick(): void {
     this.startTime = null;
     this.initialPosition = window.pageYOffset;
-    this.requestAnimationFrameId = window.requestAnimationFrame(this.scrollStep);
+    if (!this.props.smooth) {
+      // Scroll without animation
+      window.scrollTo(0, 0);
+    } else {
+      this.requestAnimationFrameId = window.requestAnimationFrame(this.scrollStep);
+    }
   }
 
   private handleScroll(): void {
