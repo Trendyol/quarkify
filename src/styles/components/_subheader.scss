@@ -3,34 +3,49 @@
 
 
 .q-subheader {
+  display: flex;
+  height: 52px;
+  border: 0;
+  border-bottom: 1px solid $border-gray;
+  align-content: center;
 
-  .q-box {
-
-    display: flex;
 
     .q-icon {
       display: flex;
+      font-size: 20px;
       align-items: center;
     }
 
     .left-icon {
       @extend .q-icon;
       flex: 1;
+      justify-content: flex-end;
     }
 
     .title {
-      text-align: center;
+      margin-left: 5px;
+      margin-right: 5px;
       flex: 12;
-      text-overflow: ellipsis;
-      white-space: nowrap;
-      overflow: hidden;
+      text-align: center;
+      display: flex;
+      justify-content: center;
+      .q-typography{
+        color: black;
+        line-height: 52px;
+        width: 75vw;
+        text-align: center;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
+      }
+
+
     }
 
     .right-icon {
       @extend .q-icon;
-      justify-content: flex-end;
       flex: 1;
     }
-  }
+
 }
 

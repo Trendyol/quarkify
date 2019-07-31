@@ -18,18 +18,18 @@ export default class SubHeader extends PureComponent<ISubHeader> {
     } = this.props;
     const subHeaderClasses = classNames("q-subheader", className);
     return (
-      <div className={subHeaderClasses}>
-        <Box>
-          <div className="left-icon">
-            {leftIcon && <Icon name={leftIcon} onClick={leftIconOnClick}/>}
+        <div className={subHeaderClasses}>
+          <div className="left-icon" onClick={leftIconOnClick}>
+            {leftIcon && <Icon name={leftIcon} />}
           </div>
-          <Typography className="title" variant={"body"}>{title}</Typography>
-          <div className="right-icon">
-            {rightIcon && <Icon name={rightIcon} onClick={rightIconOnClick}/>}
+          <div className="title" >
+            <Typography variant={"body"} color={"black"}>{title}</Typography>
+          </div>
+          <div className="right-icon" onClick={rightIconOnClick}>
+            {rightIcon && <Icon name={rightIcon} />}
           </div>
           <div/>
-        </Box>
-      </div>
+        </div>
     );
   }
 }
