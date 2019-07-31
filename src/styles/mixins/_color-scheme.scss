@@ -7,27 +7,18 @@
   i:before {
     color: $white-two;
   }
-  &:active:not(.loading) {
-    opacity: 0.8;
-  }
 }
 
 @mixin secondary {
   background-color: $white-two;
   color: $primary;
   border: 1px solid $primary;
-  &:active:not(.loading) {
-    background-color: rgba($primary, 0.2)
-  }
 }
 
 @mixin gray {
   background-color: $white-two;
   color: $light-gray;
   border: 1px solid $light-gray;
-  &:active:not(.loading) {
-    background-color: rgba($light-gray, 0.2)
-  }
 }
 
 
