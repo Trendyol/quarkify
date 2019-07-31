@@ -1,6 +1,6 @@
 import classNames from "classnames";
 import React, { PureComponent } from "react";
-import IItem from "../../interfaces/item";
+import IListItem from "../../interfaces/list-item";
 import "../../styles/components/_list.scss";
 import { colorTypes } from "../../types/color";
 import Icon from "../icon";
@@ -27,7 +27,7 @@ export default class ListItem extends PureComponent<IItemProps> {
   }
 }
 
-interface IItemProps extends IItem {
+interface IItemProps extends IListItem {
   icon?: string;
   iconColor?: colorTypes;
   className?: string;
