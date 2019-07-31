@@ -7,5 +7,10 @@
     "jsx-boolean-value": false,
     "no-implicit-dependencies": [true, "dev"],
     "jsx-no-multiline-js": false
+  },
+  "linterOptions": {
+    "exclude": [
+      "src/*.spec.tsx"
+    ]
   }
 }

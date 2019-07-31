@@ -8,6 +8,7 @@
   cursor: pointer;
   display: inline-block;
   position: relative;
+  user-select: none;
   padding-left: $space-small;
   padding-right: $space-small;
   font-weight: $regular;
@@ -37,7 +38,7 @@
     @include disabled;
   }
 
-  &.q-disabled {
+  &.q-fluid {
     @include fluid;
   }
 

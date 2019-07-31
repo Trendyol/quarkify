@@ -4,6 +4,21 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
+## [1.10.7] - 2019-07-31
+### Added
+- `scroll-to-top` component added
+- `white` color now set to #fff
+
+### Changed
+- `select` component takes `selected` prop to identify selected element
+- `ripple` effect in `button` component does not affect background color anymore
+- `ripple` effect transform time reduced to .3s from .5s 
+
+### Fix
+- The components that do not extend `div` element now extends
+- `Use default value instead` warning resolved in `select` component
+- `Subheader` styles fixed
+
 ## [1.9.4] - 2019-07-30
 ### Added
 - `display` types to typography
