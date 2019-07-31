@@ -15,10 +15,11 @@ export default class SubHeader extends PureComponent<ISubHeader> {
       className,
       leftIconOnClick,
       rightIconOnClick,
+      ...props
     } = this.props;
     const subHeaderClasses = classNames("q-subheader", className);
     return (
-        <div className={subHeaderClasses}>
+        <div className={subHeaderClasses} {...props}>
           <div className="left-icon" onClick={leftIconOnClick}>
             {leftIcon && <Icon name={leftIcon} />}
           </div>

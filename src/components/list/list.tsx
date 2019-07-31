@@ -1,5 +1,6 @@
 import classNames from "classnames";
 import React, { PureComponent, ReactNode } from "react";
+import IList from "../../interfaces/list";
 import "../../styles/components/_list.scss";
 import ListItem from "./listItem";
 
@@ -26,7 +27,7 @@ export default class List extends PureComponent<IListProps> {
   }
 }
 
-interface IListProps {
+interface IListProps extends IList {
   noDot?: boolean;
   className?: string;
 }
