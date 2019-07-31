@@ -84,4 +84,12 @@ describe("scroll to top specs", () => {
     expect(stopScrollingStub.called).toBe(true);
   });
 
+  it("should scroll without animation if smooth prop is false", () => {
+    const wrapper = shallow(<ScrollToTop smooth={false}/>);
+
+    wrapper.find(".q-scroll-to-top").simulate("click");
+
+    expect(requestAnimationFrameStub.called).toBe(false);
+  });
+
 });
