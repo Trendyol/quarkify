@@ -18,7 +18,7 @@
       background-position: 50%;
       transform: scale(10, 10);
       opacity: 0;
-      transition: transform .5s, opacity 1s;
+      transition: transform .3s, opacity 1s;
     }
 
     &:active:after {
