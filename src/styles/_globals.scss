@@ -7,3 +7,27 @@
   box-sizing: border-box;
   font-family: "Source Sans Pro", sans-serif;
 }
+
+.q-ripple {
+  position: relative;
+  overflow: hidden;
+
+  span.ripple {
+    position: absolute;
+    border-radius: 100%;
+    background-color: rgba(black, 0.15);
+    animation: ripple .5s;
+    opacity: 1;
+  }
+
+  @keyframes ripple {
+    from {
+      opacity: 1;
+      transform: scale(0);
+    }
+    to {
+      opacity: 0;
+      transform: scale(1.5);
+    }
+  }
+}
