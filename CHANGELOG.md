@@ -15,7 +15,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - `ripple` effect transform time reduced to .3s from .5s 
 
 ### Fix
-- The components that does not extend `div` element not extends
+- The components that do not extend `div` element now extends
 - `Use default value instead` warning resolved in `select` component
 - `Subheader` styles fixed
 
