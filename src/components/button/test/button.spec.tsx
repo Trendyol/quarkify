@@ -20,7 +20,7 @@ describe("button specs", () => {
 
   it("should render button component", () => {
     const text = faker.random.word();
-    const wrapper = shallow(<Button onClick={onClick}>{text}</Button>);
+    const wrapper = shallow(<Button onClick={onClick}>{text}</Button>).dive();
 
     expect(wrapper.find("button")).toHaveLength(1);
   });
@@ -44,19 +44,19 @@ describe("button specs", () => {
   });
 
   it("should be rendered with given primary variant prop", () => {
-    const wrapper = shallow(<Button onClick={onClick} variant="primary"/>);
+    const wrapper = shallow(<Button onClick={onClick} variant="primary"/>).dive();
 
     expect(wrapper.exists(".q-primary")).toEqual(true);
   });
 
   it("should have className fluid when given fluid prop", () => {
-    const wrapper = shallow(<Button onClick={onClick} fluid/>);
+    const wrapper = shallow(<Button onClick={onClick} fluid/>).dive();
 
     expect(wrapper.exists(".q-fluid")).toEqual(true);
   });
 
   it("should have className round when given round prop", () => {
-    const wrapper = shallow(<Button onClick={onClick} round/>);
+    const wrapper = shallow(<Button onClick={onClick} round/>).dive();
 
     expect(wrapper.exists(".q-round")).toEqual(true);
   });
@@ -67,7 +67,7 @@ describe("button specs", () => {
   });
 
   it("should have className circular when given circular prop", () => {
-    const wrapper = shallow(<Button circular/>);
+    const wrapper = shallow(<Button circular/>).dive();
 
     expect(wrapper.exists(".q-circular")).toBe(true);
   });
@@ -92,7 +92,7 @@ describe("button specs", () => {
   });
 
   it("should be disabled when the button is loading", () => {
-    const wrapper = shallow(<Button loading={true}/>);
+    const wrapper = shallow(<Button loading={true}/>).dive();
     expect(wrapper.find("button[disabled]")).toHaveLength(1);
   });
 });

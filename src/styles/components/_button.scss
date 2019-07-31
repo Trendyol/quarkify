@@ -1,10 +1,8 @@
 @import '../_globals';
 @import '../mixins/_color-scheme';
 @import '../mixins/_fluid.scss';
-@import '../mixins/_ripple.scss';
 
 .q-button {
-  @include ripple;
   cursor: pointer;
   display: inline-block;
   position: relative;
