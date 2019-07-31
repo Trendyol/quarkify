@@ -14,7 +14,11 @@ const withRipple = (WrappedComponent: any) => {
     }
 
     public render() {
-      return <WrappedComponent className="q-ripple" {...this.props} onClick={this.showRipple}>
+      const {ripple = true, ...props} = this.props;
+      if (!ripple) {
+        return <WrappedComponent {...props}/>;
+      }
+      return <WrappedComponent className="q-ripple" {...props} onClick={this.showRipple}>
           {this.state.show &&
           <span
             className="ripple"
