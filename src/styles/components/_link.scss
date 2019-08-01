@@ -2,7 +2,7 @@
 
 .q-anchor {
   @extend .q-button;
-  display: inline-flex;
+  display: grid;
   align-items: center;
 
   &.q-anchor-disabled {
