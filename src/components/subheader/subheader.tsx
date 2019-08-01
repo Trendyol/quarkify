@@ -39,6 +39,6 @@ interface ISubHeader extends IDiv {
   title: string;
   leftIcon?: string;
   rightIcon?: string;
-  leftIconOnClick?(event: React.SyntheticEvent): void;
-  rightIconOnClick?(event: React.SyntheticEvent): void;
+  leftIconOnClick?: (event: any) => any;
+  rightIconOnClick?: (event: any) => any;
 }

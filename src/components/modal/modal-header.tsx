@@ -29,7 +29,7 @@ export interface IHeaderProps {
   leftIcon?: string;
   rightIcon?: string;
 
-  leftIconOnClick?(event: React.SyntheticEvent): void;
+  leftIconOnClick?: (event: any) => any;
 
-  rightIconOnClick?(event: React.SyntheticEvent): void;
+  rightIconOnClick?: (event: any) => any;
 }
