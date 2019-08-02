@@ -5,26 +5,19 @@ import "../../styles/components/_input.scss";
 import classNamesDefault from "../../utils/class-names-default";
 
 export default class Input extends PureComponent<IProps> {
-  private static defaultProps = {
-    type: "text",
-  };
-
   public render() {
-    let newType = this.props.type;
     const {
       error,
       errorMessage,
       fluid,
       subtext,
-      type,
+      type = "text",
       label,
       disabled,
       className,
       ...props
     } = this.props;
-    if (type === "checkbox" || type === "radio") {
-      newType = "text";
-    }
+    const newType = type === "checkbox" || type === "radio" ? "text" : type;
     const inputClasses = classNames(
       "q-input-wrapper",
       classNamesDefault({ error, disabled, fluid }),
