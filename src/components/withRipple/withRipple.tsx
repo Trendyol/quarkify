@@ -1,9 +1,9 @@
 import React from "react";
 import "../../styles/components/_with-ripple.scss";
 const withRipple = (WrappedComponent: any) => {
-  return class extends React.Component<IRippleProps, IRippleState> {
+  return class extends React.Component<any> {
 
-    constructor(props: IRippleProps) {
+    constructor(props: any) {
       super(props);
       this.handleAnimationEnd = this.handleAnimationEnd.bind(this);
       this.showRipple = this.showRipple.bind(this);
@@ -49,13 +49,6 @@ const withRipple = (WrappedComponent: any) => {
 
   };
 };
-
-interface IRippleState {
-  show: boolean;
-  rippleX: number;
-  rippleY: number;
-  rippleSize: number;
-}
 
 interface IRippleProps {
   ripple?: boolean;

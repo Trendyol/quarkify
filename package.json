@@ -1,15 +1,15 @@
 {
   "name": "quarkify",
-  "version": "1.11.7",
+  "version": "1.11.8",
   "license": "MIT",
   "description": "An awesome lightweight React UI Component library",
   "repository": "https://github.com/Trendyol/quarkify",
   "dependencies": {
     "@types/jest": "24.0.15",
     "@types/node": "12.0.10",
-    "@types/react": "16.3.2",
+    "@types/react": "16.8.6",
     "@types/react-dom": "16.0.11",
-    "@types/react-transition-group": "^2.9.2",
+    "@types/react-transition-group": "^4.2.0",
     "classnames": "^2.2.6",
     "node-sass": "^4.12.0",
     "react": "16.3.2",
