@@ -25,7 +25,7 @@ const InputWrapper = () => {
       <Input
         type={"text"}
         placeholder={"Required"}
-        required
+        requiredtrue
         value={value}
         onChange={handleChange}
       />

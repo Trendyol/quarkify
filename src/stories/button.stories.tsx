@@ -1,5 +1,5 @@
 import { storiesOf } from "@storybook/react";
-import React, { useState } from "react";
+import React, { PureComponent } from "react";
 import Button from "../components/button";
 
 const stories = storiesOf("Button", module);
@@ -8,20 +8,24 @@ const action = () => alert("Clicked");
 // tslint:disable-next-line:no-console
 const actionLog = () => console.log("Clicked");
 
-const LoadingWrapper = () => {
-  const [loading, setLoading] = useState(false);
-  const handleClick = () => {
-    setLoading(true);
-    setTimeout(() => setLoading(false), 1000);
+class LoadingWrapper extends PureComponent {
+  public state = {
+    loading: false,
   };
-  return (
-    <>
-      <Button variant="primary" loading={loading} onClick={handleClick}>Add to Basket</Button>
-      <Button variant="secondary" loading={loading} onClick={handleClick}>Add to Basket</Button>
-      <Button variant="gray" loading={loading} onClick={handleClick}>Add to Basket</Button>
-    </>
-  );
-};
+  public render() {
+    return (
+      <>
+        <Button variant="primary" loading={this.state.loading} onClick={this.handleClick}>Add to Basket</Button>
+        <Button variant="secondary" loading={this.state.loading} onClick={this.handleClick}>Add to Basket</Button>
+        <Button variant="gray" loading={this.state.loading} onClick={this.handleClick}>Add to Basket</Button>
+      </>
+    );
+  }
+  private handleClick = () => {
+    this.setState({loading: true});
+    setTimeout(() => this.setState({loading: false}), 1000);
+  }
+}
 
 stories.add("Variants", () => (
   <div>
