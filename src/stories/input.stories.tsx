@@ -1,50 +1,59 @@
 import { storiesOf } from "@storybook/react";
-import React, { useState } from "react";
+import React, { PureComponent } from "react";
 import Input from "../components/input";
 
 const stories = storiesOf("Input", module);
 
-const InputWrapper = () => {
-  const [value, setValue] = useState();
-
-  function handleChange(e: any) {
-    setValue(e.target.value);
+class InputWrapper extends PureComponent<any, any> {
+  public constructor(props: any) {
+    super(props);
+    this.state = {
+      value: "",
+    };
+    this.handleChange = this.handleChange.bind(this);
+  }
+  public render() {
+    return (
+      <div>
+        <Input type={"text"} value={this.state.value} onChange={this.handleChange}/>
+        <Input
+          type={"text"}
+          placeholder={"Placeholder value"}
+          value={this.state.value}
+          onChange={this.handleChange}
+        />
+        <Input type={"text"} placeholder={"Disabled"} disabled/>
+        <Input type={"text"} placeholder={"Error"} error/>
+        <Input
+          type={"text"}
+          placeholder={"Required"}
+          required
+          value={this.state.value}
+          onChange={this.handleChange}
+        />
+        <Input
+          type={"text"}
+          value={this.state.value}
+          placeholder={"Primary"}
+          onChange={this.handleChange}
+        />
+        <Input
+          type={"text"}
+          value={this.state.value}
+          placeholder={"Secondary"}
+          onChange={this.handleChange}
+        />
+        <p>Value: {this.state.value}</p>
+      </div>
+    );
   }
 
-  return (
-    <div>
-      <Input type={"text"} value={value} onChange={handleChange}/>
-      <Input
-        type={"text"}
-        placeholder={"Placeholder value"}
-        value={value}
-        onChange={handleChange}
-      />
-      <Input type={"text"} placeholder={"Disabled"} disabled/>
-      <Input type={"text"} placeholder={"Error"} error/>
-      <Input
-        type={"text"}
-        placeholder={"Required"}
-        requiredtrue
-        value={value}
-        onChange={handleChange}
-      />
-      <Input
-        type={"text"}
-        value={value}
-        placeholder={"Primary"}
-        onChange={handleChange}
-      />
-      <Input
-        type={"text"}
-        value={value}
-        placeholder={"Secondary"}
-        onChange={handleChange}
-      />
-      <p>Value: {value}</p>
-    </div>
-  );
-};
+  private handleChange(e: any) {
+    this.setState({
+      value: e.target.value,
+    });
+  }
+}
 
 stories.add("Text", () => {
   return <InputWrapper/>;
