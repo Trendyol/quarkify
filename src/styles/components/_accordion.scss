@@ -5,7 +5,7 @@
   background-color: $white-two;
 
   .q-accordion-header {
-    padding: $padding-x $padding-y;
+    padding: $padding-x 15px;
     border-bottom: 1px solid $very-light-pink;
     width: 100%;
     height: $modal-header-height;
@@ -20,14 +20,14 @@
       white-space: nowrap;
       overflow: hidden;
       margin-bottom: 0;
-      padding-left: $modal-icon-size;
       height: 100%;
     }
 
     .q-icon {
-      padding-right: 10px;
       line-height: 1rem;
       transition: transform 300ms;
+      display: flex;
+      align-items: center;
 
       &.expanded {
         transform: rotate(180deg);
