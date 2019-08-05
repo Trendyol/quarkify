@@ -1,8 +1,7 @@
 import { storiesOf } from "@storybook/react";
 import * as faker from "faker";
-import React, { useState } from "react";
+import React, { PureComponent } from "react";
 import Button from "../components/button";
-import Input from "../components/input";
 import Modal from "../components/modal";
 import { animationTypes } from "../types/modal";
 
@@ -14,80 +13,53 @@ interface IProps {
   leftIcon?: string;
 }
 
-const ModalWrapper = ({ animation, leftIcon, rightIcon }: IProps) => {
-  const [show, setShow] = useState(false);
+interface IState {
+  show: boolean;
+}
 
-  function handleChange() {
-    setShow(!show);
+class ModalWrapper extends PureComponent<IProps, IState> {
+  public constructor(props: IProps) {
+    super(props);
+    this.state = {show: false};
+    this.handleChange = this.handleChange.bind(this);
+    this.closeModal = this.closeModal.bind(this);
   }
 
-  function closeModal() {
-    setShow(false);
+  public render() {
+    return (
+      <>
+        <Button onClick={this.handleChange}>Toggle Me</Button>
+        <Modal show={this.state.show} animation={this.props.animation}>
+          <Modal.Header
+            rightIconOnClick={this.closeModal}
+            rightIcon={this.props.rightIcon}
+            leftIcon={this.props.leftIcon}
+            leftIconOnClick={this.closeModal}
+          >
+            Cok y cok g cok cok cok cok cok cok cok cok cok cok cok cok cok cok
+            cok uzun title
+          </Modal.Header>
+          <Modal.Content>
+            <p>{faker.lorem.words(1000)}</p>
+          </Modal.Content>
+          <Modal.Actions>
+            <Button fluid onClick={this.closeModal}>
+              Ok
+            </Button>
+          </Modal.Actions>
+        </Modal>
+      </>
+    );
   }
 
-  return (
-    <>
-      <Button onClick={handleChange}>Toggle Me</Button>
-      <Modal show={show} animation={animation}>
-        <Modal.Header
-          rightIconOnClick={closeModal}
-          rightIcon={rightIcon}
-          leftIcon={leftIcon}
-          leftIconOnClick={closeModal}
-        >
-          Cok y cok g cok cok cok cok cok cok cok cok cok cok cok cok cok cok
-          cok uzun title
-        </Modal.Header>
-        <Modal.Content>
-          <p>{faker.lorem.words(1000)}</p>
-        </Modal.Content>
-        <Modal.Actions>
-          <Button onClick={closeModal} fluid>
-            Ok
-          </Button>
-        </Modal.Actions>
-      </Modal>
-    </>
-  );
-};
-
-const AddressModalWrapper = ({ animation, leftIcon, rightIcon }: IProps) => {
-  const [show, setShow] = useState(false);
-
-  function handleChange() {
-    setShow(true);
+  private handleChange() {
+    this.setState({show: !this.state.show});
   }
 
-  function closeModal() {
-    setShow(false);
+  private closeModal() {
+    this.setState({show: false});
   }
-
-  return (
-    <>
-      <Button onClick={handleChange}>Toggle Me</Button>
-      <Modal show={show} animation={animation}>
-        <Modal.Header rightIcon={rightIcon} rightIconOnClick={closeModal}>Adres Ekle</Modal.Header>
-        <Modal.Content>
-          <Input
-            fluid
-            label="E-posta"
-            subtext="Siparis bilgileriniz bu adrese gonderilecektir"
-          />
-          <Input fluid label="Adres Basligi"/>
-          <div style={{ display: "flex" }}>
-            <Input style={{ width: "100" }} fluid label="Ad"/>
-            <Input style={{ width: "100" }} fluid label="Soyad"/>
-          </div>
-        </Modal.Content>
-        <Modal.Actions>
-          <Button fluid disabled onClick={closeModal}>
-            Kaydet ve Devam Et
-          </Button>
-        </Modal.Actions>
-      </Modal>
-    </>
-  );
-};
+}
 
 stories.add("Default", () => <ModalWrapper/>);
 stories.add("Left Icon", () => (
@@ -99,4 +71,3 @@ stories.add("Right Icon", () => (
 stories.add("SlideInLeft", () => <ModalWrapper animation="slideInLeft" rightIcon="close"/>);
 stories.add("SlideInDown", () => <ModalWrapper animation="slideInDown" rightIcon="close"/>);
 stories.add("SlideInUp", () => <ModalWrapper animation="slideInUp" rightIcon="close"/>);
-stories.add("Address", () => <AddressModalWrapper rightIcon="close"/>);

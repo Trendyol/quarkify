@@ -72,12 +72,6 @@ describe("button specs", () => {
     expect(wrapper.exists(".q-circular")).toBe(true);
   });
 
-  it("should have className ripple when given ripple prop", () => {
-    const wrapper = shallow(<Button ripple/>);
-
-    expect(wrapper.exists(".q-ripple")).toBe(true);
-  });
-
   it("should accept additional classNames", () => {
     const fakeClass = faker.lorem.word();
     const wrapper = shallow(<Button className={fakeClass}/>);
