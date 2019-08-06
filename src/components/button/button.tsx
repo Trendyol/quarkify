@@ -30,7 +30,7 @@ export default class Button extends PureComponent<IButtonProps> {
       loading && "loading",
       className, "q-button");
     return (
-      <Ripple active={ripple && !(disabled || loading)}>
+      <Ripple display={fluid ? "block" : "inline-block"} active={ripple && !(disabled || loading)}>
         <button
           className={buttonClasses}
           disabled={disabled || loading}
