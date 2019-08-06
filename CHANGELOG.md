@@ -24,15 +24,15 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [1.11.2] - 2019-07-31
 ### Fixed
-- Fix `withRipple`
+- Fix `ripple`
 
 ## [1.11.1] - 2019-07-31
 ### Fixed
-- Fix `withRipple` with additional classNames
+- Fix `ripple` with additional classNames
 
 ## [1.11.0] - 2019-07-31
 ### Added
-- `withRipple` higher order component added
+- `ripple` higher order component added
 
 ## [1.10.7] - 2019-07-31
 ### Added

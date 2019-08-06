@@ -6,9 +6,9 @@ import { variantTypes } from "../../types/button";
 import classNamesDefault from "../../utils/class-names-default";
 import Icon from "../icon";
 import Loader from "../loader";
-import withRipple from "../withRipple/withRipple";
+import Ripple from "../ripple";
 
-class Button extends PureComponent<IButtonProps> {
+export default class Button extends PureComponent<IButtonProps> {
 
   public render() {
     const {
@@ -21,6 +21,7 @@ class Button extends PureComponent<IButtonProps> {
       children,
       className,
       loading = false,
+      ripple = true,
       ...props
     } = this.props;
     const buttonClasses = classNames(
@@ -29,20 +30,20 @@ class Button extends PureComponent<IButtonProps> {
       loading && "loading",
       className, "q-button");
     return (
-      <button
-        className={buttonClasses}
-        disabled={disabled || loading}
-        {...props}
-      >
-        <Loader active={loading}/>
-        {icon && <Icon name={icon}/>}
-        {children && <span>{children}</span>}
-      </button>
+      <Ripple active={ripple && !(disabled || loading)}>
+        <button
+          className={buttonClasses}
+          disabled={disabled || loading}
+          {...props}
+        >
+          <Loader active={loading}/>
+          {icon && <Icon name={icon}/>}
+          {children && <span>{children}</span>}
+        </button>
+      </Ripple>
     );
   }
 }
-
-export default withRipple(Button);
 
 interface IButtonProps extends IButton {
   variant?: variantTypes;
@@ -53,4 +54,5 @@ interface IButtonProps extends IButton {
   circular?: boolean;
   className?: string;
   loading?: boolean;
+  ripple?: boolean;
 }
