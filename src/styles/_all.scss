@@ -5,10 +5,11 @@
 @import './mixins/flex';
 @import "./mixins/fluid";
 @import "./mixins/text-truncate";
-@import "~bootstrap/scss/mixins";
+@import "./mixins/breakpoints";
 
 // Components
 @import './components/accordion';
+@import './components/badge';
 @import './components/box';
 @import './components/button';
 @import './components/checkbox';

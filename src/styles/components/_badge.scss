@@ -1,0 +1,35 @@
+@import '../_globals';
+@import '../_colors';
+@import "../mixins/text-truncate";
+
+.q-badge {
+  font-size: 12px;
+  line-height: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 3px;
+  padding-left: 5px;
+  padding-right: 5px;
+  height: 20px;
+  margin-right: 5px;
+  min-width: 28px;
+  @each $color, $value in $colors {
+    &.#{$color} {
+      color: $value;
+      border: 1px solid $value;
+    }
+  }
+
+  .q-icon {
+    padding-left: 0;
+    padding-right: $space-small;
+  }
+
+  .q-icon:only-child {
+    padding-right: 0;
+  }
+  div {
+    @include text-truncate();
+  }
+}

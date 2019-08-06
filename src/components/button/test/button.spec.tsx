@@ -27,7 +27,7 @@ describe("button specs", () => {
 
   it("should call callback function when clicked", () => {
     const spy = sandbox.spy();
-    const wrapper = mount(<Button onClick={spy}/>);
+    const wrapper = shallow(<Button onClick={spy}/>);
 
     wrapper.find("button").simulate("click");
 
@@ -35,28 +35,28 @@ describe("button specs", () => {
   });
 
   it("should not call callback function when clicked but button is disabled", () => {
-    const spy = sandbox.spy();
-    const wrapper = mount(<Button onClick={spy} disabled/>);
+    const stub = sandbox.stub();
+    const wrapper = mount(<Button onClick={stub} disabled/>);
 
     wrapper.find("button").simulate("click");
 
-    expect(spy.callCount).toEqual(0);
+    expect(stub.called).toBe(false);
   });
 
   it("should be rendered with given primary variant prop", () => {
-    const wrapper = shallow(<Button onClick={onClick} variant="primary"/>).dive();
+    const wrapper = shallow(<Button onClick={onClick} variant="primary"/>);
 
     expect(wrapper.exists(".q-primary")).toEqual(true);
   });
 
   it("should have className fluid when given fluid prop", () => {
-    const wrapper = shallow(<Button onClick={onClick} fluid/>).dive();
+    const wrapper = shallow(<Button onClick={onClick} fluid/>);
 
     expect(wrapper.exists(".q-fluid")).toEqual(true);
   });
 
   it("should have className round when given round prop", () => {
-    const wrapper = shallow(<Button onClick={onClick} round/>).dive();
+    const wrapper = shallow(<Button onClick={onClick} round/>);
 
     expect(wrapper.exists(".q-round")).toEqual(true);
   });
@@ -67,7 +67,7 @@ describe("button specs", () => {
   });
 
   it("should have className circular when given circular prop", () => {
-    const wrapper = shallow(<Button circular/>).dive();
+    const wrapper = shallow(<Button circular/>);
 
     expect(wrapper.exists(".q-circular")).toBe(true);
   });
@@ -75,8 +75,7 @@ describe("button specs", () => {
   it("should accept additional classNames", () => {
     const fakeClass = faker.lorem.word();
     const wrapper = shallow(<Button className={fakeClass}/>);
-
-    expect(wrapper.hasClass(fakeClass)).toBe(true);
+    expect(wrapper.find("button").hasClass(fakeClass)).toBe(true);
   });
 
   it("should render Loader component when loading prop is passed", () => {
@@ -86,7 +85,7 @@ describe("button specs", () => {
   });
 
   it("should be disabled when the button is loading", () => {
-    const wrapper = shallow(<Button loading={true}/>).dive();
+    const wrapper = shallow(<Button loading={true}/>);
     expect(wrapper.find("button[disabled]")).toHaveLength(1);
   });
 });
