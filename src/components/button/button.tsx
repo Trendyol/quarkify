@@ -27,10 +27,13 @@ export default class Button extends PureComponent<IButtonProps> {
     const buttonClasses = classNames(
       classNamesDefault({ variant, fluid, disabled, round }),
       circular && "q-circular",
-      loading && "loading",
-      className, "q-button");
+      loading && "loading", "q-button");
     return (
-      <Ripple display={fluid ? "block" : "inline-block"} active={ripple && !(disabled || loading)}>
+      <Ripple
+        className={className}
+        display={fluid ? "block" : "inline-block"}
+        active={ripple && !(disabled || loading)}
+      >
         <button
           className={buttonClasses}
           disabled={disabled || loading}
