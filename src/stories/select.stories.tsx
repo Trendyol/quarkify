@@ -44,7 +44,7 @@ stories.add("Icon", () => (
     <div className={"flex"}>
       {/* tslint:disable-next-line:max-line-length */}
       <Select className={"select-w40"} items={items} value={"id"} leftIcon={"filter"} leftIconColor={"primary"} rightIcon={"close"} selected={"3"}/>
-      <Button className={"button-w60"}>Hello World</Button>
+      <Button className={"button-w60"} fluid>Hello World</Button>
     </div>
   </div>
 ));

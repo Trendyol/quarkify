@@ -75,7 +75,7 @@ describe("button specs", () => {
   it("should accept additional classNames", () => {
     const fakeClass = faker.lorem.word();
     const wrapper = shallow(<Button className={fakeClass}/>);
-    expect(wrapper.find("button").hasClass(fakeClass)).toBe(true);
+    expect(wrapper.find("." + fakeClass)).toHaveLength(1);
   });
 
   it("should render Loader component when loading prop is passed", () => {
