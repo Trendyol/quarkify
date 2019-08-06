@@ -1,5 +1,6 @@
 @import '../_globals';
 @import '../_colors';
+@import "../mixins/text-truncate";
 
 .q-badge {
   font-size: 12px;
@@ -13,9 +14,7 @@
   height: 20px;
   margin-right: 5px;
   min-width: 28px;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
+  @include text-truncate();
   @each $color, $value in $colors {
     &.#{$color} {
       color: $value;
