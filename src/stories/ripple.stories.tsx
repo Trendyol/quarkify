@@ -9,12 +9,11 @@ const stories = storiesOf("Ripple", module);
 class TestComponent extends React.PureComponent<any> {
   public render() {
     return (
-        <Box>
-          <p>1</p>
-          <p>2</p>
-          <p>3</p>
-          <p>4</p>
-        </Box>
+         <Box>
+           <p>1</p>
+           <img src="https://picsum.photos/200/300"/>
+           <p>1</p>
+         </Box>
     );
   }
 }
