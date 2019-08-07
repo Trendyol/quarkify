@@ -17,7 +17,6 @@ export default class Ripple extends React.PureComponent<IRipplesProps, IRippleSt
     super(props);
     this.state = {
       rippleStyle: {
-        animationTimingFunction: "cubic-bezier(0.4, 0, 0.2, 1)",
         backgroundColor: props.color,
         borderRadius: "50%",
         height: 1,
@@ -73,14 +72,6 @@ export default class Ripple extends React.PureComponent<IRipplesProps, IRippleSt
     const size = Math.max(width, height);
     const rippleX = Math.round(event.clientX - left);
     const rippleY = Math.round(event.clientY - top);
-    // const {
-    //   pageX,
-    //   pageY,
-    //   currentTarget: { offsetLeft, offsetTop, offsetWidth, offsetHeight },
-    // } = event;
-    // const left = pageX - offsetLeft;
-    // const top = pageY - offsetTop;
-    // const size = Math.max(offsetWidth, offsetHeight);
 
     this.setState(
       (state) => {
@@ -104,7 +95,7 @@ export default class Ripple extends React.PureComponent<IRipplesProps, IRippleSt
               ...state.rippleStyle,
               opacity: 0,
               transform: `translate(-50%, -50%) scale(2)`,
-              transition: `all ${during}ms`,
+              transition: `all ${during}ms cubic-bezier(0.4, 0, 0.2, 1) 0s`,
             },
           }));
         }, 50);
