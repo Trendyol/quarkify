@@ -11,7 +11,7 @@ class ScrollToTopWrapper extends PureComponent {
     return(
       <div>
         {Array.from({ length: 60 }, (_, i) => <p>Down {i}</p>)}
-        <ScrollToTop className="basket-scroll"/>
+        <ScrollToTop className="basket-scroll" duration={300} showUnder={500}/>
         <div className={"price"}>
           <div className={"price__container discount__container"}>
             <div className={"price__discount"}>

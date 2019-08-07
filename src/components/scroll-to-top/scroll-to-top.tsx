@@ -7,6 +7,8 @@ import Icon from "../icon";
 
 class ScrollToTop extends PureComponent<IScrollToTopProps, IScrollToTopState> {
   public static defaultProps = {
+    duration: 500,
+    showUnder: 0,
     smooth: true,
   };
   private requestAnimationFrameId: number | null;
@@ -73,7 +75,7 @@ class ScrollToTop extends PureComponent<IScrollToTopProps, IScrollToTopState> {
   private handleScroll(): void {
     this.setState({show:
         window.pageYOffset <= this.lastScrollPosition &&
-        window.pageYOffset > 0,
+        window.pageYOffset > this.props.showUnder!,
     });
     this.lastScrollPosition = window.pageYOffset;
   }
@@ -84,7 +86,7 @@ class ScrollToTop extends PureComponent<IScrollToTopProps, IScrollToTopState> {
     const scrollPosition = this.easeOutCubic(
       timestamp - this.startTime!,
       this.initialPosition,
-      500,
+      this.props.duration!,
     );
     if (window.pageYOffset > 0) {
       window.scrollTo(0, scrollPosition);
@@ -110,6 +112,8 @@ class ScrollToTop extends PureComponent<IScrollToTopProps, IScrollToTopState> {
 }
 
 interface IScrollToTopProps extends IDiv {
+  duration?: number;
+  showUnder?: number;
   smooth?: boolean;
 }
 
