@@ -1,4 +1,4 @@
-import Enzyme, { mount, shallow } from "enzyme";
+import Enzyme, { shallow } from "enzyme";
 import Adapter from "enzyme-adapter-react-16";
 import faker from "faker";
 import React from "react";
@@ -6,6 +6,24 @@ import sinon from "sinon";
 import Ripple from "../ripple";
 
 Enzyme.configure({ adapter: new Adapter() });
+
+const createMockDiv = (width: number, height: number) => {
+  const div = document.createElement("div");
+  Object.assign(div.style, {
+    height: height + "px",
+    width: width + "px",
+  });
+
+  div.getBoundingClientRect = () => ({
+    bottom: height,
+    height,
+    left: 0,
+    right: width,
+    top: 0,
+    width,
+  });
+  return div;
+};
 
 describe("ripple specs", () => {
   const sandbox = sinon.createSandbox();
@@ -37,14 +55,7 @@ describe("ripple specs", () => {
   it("should extend onClick", () => {
     const stub = sandbox.stub();
     const event = {
-      currentTarget: {
-        offsetHeight: faker.random.number(),
-        offsetLeft: faker.random.number(),
-        offsetTop: faker.random.number(),
-        offsetWidth: faker.random.number(),
-      },
-      pageX: faker.random.number(),
-      pageY: faker.random.number(),
+      currentTarget: createMockDiv(faker.random.number(), faker.random.number()),
       stopPropagation: sandbox.stub(),
     };
     const wrapper = shallow(<Ripple onClick={stub}/>);
@@ -55,14 +66,7 @@ describe("ripple specs", () => {
 
   it("should not propagate the event", () => {
     const event = {
-      currentTarget: {
-        offsetHeight: faker.random.number(),
-        offsetLeft: faker.random.number(),
-        offsetTop: faker.random.number(),
-        offsetWidth: faker.random.number(),
-      },
-      pageX: faker.random.number(),
-      pageY: faker.random.number(),
+      currentTarget: createMockDiv(faker.random.number(), faker.random.number()),
       stopPropagation: sandbox.stub(),
     };
     const wrapper = shallow(<Ripple/>);
@@ -73,14 +77,7 @@ describe("ripple specs", () => {
 
   it("should disappear after animation ends", () => {
     const event = {
-      currentTarget: {
-        offsetHeight: faker.random.number(),
-        offsetLeft: faker.random.number(),
-        offsetTop: faker.random.number(),
-        offsetWidth: faker.random.number(),
-      },
-      pageX: faker.random.number(),
-      pageY: faker.random.number(),
+      currentTarget: createMockDiv(faker.random.number(), faker.random.number()),
       stopPropagation: sandbox.stub(),
     };
     const wrapper = shallow(<Ripple/>);

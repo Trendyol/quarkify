@@ -8,7 +8,7 @@ export default class Ripple extends React.PureComponent<IRipplesProps, IRippleSt
     className: "",
     color: "rgba(0, 0, 0, 0.3)",
     display: "inline-flex",
-    during: 600,
+    during: 550,
   };
 
   private boxStyle: CSSProperties;
@@ -19,12 +19,12 @@ export default class Ripple extends React.PureComponent<IRipplesProps, IRippleSt
       rippleStyle: {
         backgroundColor: props.color,
         borderRadius: "50%",
-        height: 35,
+        height: 1,
         opacity: 0,
         pointerEvents: "none",
         position: "absolute",
-        transform: "translate(-50%, -50%)",
-        width: 35,
+        transform: "translate(-50%, -50%) scale(0)",
+        width: 1,
       },
     };
     this.boxStyle = {
@@ -68,25 +68,23 @@ export default class Ripple extends React.PureComponent<IRipplesProps, IRippleSt
   private onClick(event: React.MouseEvent<HTMLDivElement>) {
     const { during, onClick } = this.props;
     event.stopPropagation();
-    const {
-      pageX,
-      pageY,
-      currentTarget: { offsetLeft, offsetTop, offsetWidth, offsetHeight },
-    } = event;
-    const left = pageX - offsetLeft;
-    const top = pageY - offsetTop;
-    const size = Math.max(offsetWidth, offsetHeight);
+    const { left, top, width, height } = event.currentTarget.getBoundingClientRect();
+    const size = Math.max(width, height);
+    const rippleX = Math.round(event.clientX - left);
+    const rippleY = Math.round(event.clientY - top);
 
     this.setState(
       (state) => {
         return {
           rippleStyle: {
             ...state.rippleStyle,
-            left,
+            height: size,
+            left: rippleX,
             opacity: 1,
-            top,
-            transform: "translate(-50%, -50%) scale(1)",
+            top: rippleY,
+            transform: "translate(-50%, -50%) scale(0)",
             transition: "initial",
+            width: size,
           },
         };
       },
@@ -96,11 +94,11 @@ export default class Ripple extends React.PureComponent<IRipplesProps, IRippleSt
             rippleStyle: {
               ...state.rippleStyle,
               opacity: 0,
-              transform: `translate(-50%, -50%) scale(${size / 9})`,
-              transition: `all ${during}ms`,
+              transform: `translate(-50%, -50%) scale(2)`,
+              transition: `all ${during}ms cubic-bezier(0.4, 0, 0.2, 1) 0s`,
             },
           }));
-        }, 0);
+        }, 50);
       },
 
     );
