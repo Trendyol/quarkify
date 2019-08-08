@@ -1,5 +1,11 @@
 # Layout
 
+## Props
+
+| Name      	| Type                                            	| Description                                                  	|
+|-----------	|-------------------------------------------------	|--------------------------------------------------------------	|
+| fitted    	| boolean                                         	| Sets padding of the box to 0                                 	|
+
 Layout is a wrapper component used to display elements in a set style.
 
 ```html

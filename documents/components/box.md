@@ -1,6 +1,16 @@
 # Box
-
 Box is a wrapper component used to display elements in a set style.
+
+## Props
+
+| Name      	| Type                                            	| Description                                                  	|
+|-----------	|-------------------------------------------------	|--------------------------------------------------------------	|
+| className 	| string                                          	| Additional classes                                           	|
+| spaced    	| boolean                                         	| Adds 10px margin to the box                                  	|
+| fitted    	| boolean                                         	| Sets padding of the box to 0                                 	|
+| textAlign 	| "left"  \|  "right"  \|  "center"  \|  "justify"  	| Text aligment of the box contents 	|
+
+## Default
 
 ```html
 <Box>

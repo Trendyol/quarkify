@@ -1,6 +1,17 @@
 # Icons
 Icon component uses icomoon library to render icon elements. Of course it is possible to overwrite the icons by giving appropriate class names to the Icon component.
 
+## Props 
+| Name      	| Type                                                                                                                            	| Description                                  	|
+|-----------	|---------------------------------------------------------------------------------------------------------------------------------	|----------------------------------------------	|
+| className 	| string                                                                                                                          	| Additional classes                           	|
+| name      	| string                                                                                                                          	| Name of the icon                             	|
+| size      	| small"  \|  "large"  \|  "xlarge" ;                                                                                             	| Size variant of the icon                     	|
+| disabled  	| boolean                                                                                                                         	| Displays the icon as inactive                	|
+| circular  	| boolean                                                                                                                         	| Displays the icon with a circular background 	|
+| color     	| "primary"  \|    "green"  \|    "red"  \|    "black"  \|    "dark-gray"  \|    "light-gray"  \|    "border-gray"  \|    "white" 	| Sets the color of the icon                   	|
+| onClick   	| function                                                                                                                        	| A callback fired when the icon is clicked    	|
+
 ## Name
 Icon component takes name prop as required to specify which icon will be rendered. 
 

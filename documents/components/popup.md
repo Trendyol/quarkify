@@ -1,6 +1,16 @@
 # Popups
  
 Popups are intrusive components which covers some width and height of the page.
+
+## Props
+| Name                	| Type     	| Description                                                                        	|
+|---------------------	|----------	|------------------------------------------------------------------------------------	|
+| className           	| string   	| Additional classes                                                                 	|
+| show                	| boolean  	| When `true`, popup is displayed                                                    	|
+| onChange            	| function 	| A callback fired when popup is displayed or hidden                                 	|
+| iconLeft            	| boolean  	| Close icon is displayed on top left                                                	|
+| noIcon              	| boolean  	| When `true`, top icon is hidden                                                    	|
+| closeOnOverlayClick 	| boolean  	| Default value: `true`, when `true` popup can be closed when the overlay is clicked 	|
  
 Here is the simple usage of the popup component:
  

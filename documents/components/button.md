@@ -1,6 +1,19 @@
 # Buttons
 Custom button styles in numerous elements can be found here. Use any of the available button style types to quickly create a styled button. 
 
+## Props
+| Name      	| Type                                   	| Description                                                 	|
+|-----------	|----------------------------------------	|-------------------------------------------------------------	|
+| className 	| string                                 	| Additional classes                                          	|
+| variant   	| "primary"  \|  "secondary"  \|  "gray" 	| Visual variant of the button                                	|
+| fluid     	| boolean                                	| Occupies the entire horizontal space of its parent.         	|
+| disabled  	| boolean                                	| Make buttons look inactive                                  	|
+| icon      	| string                                 	| Appends an icon to the button                               	|
+| round     	| boolean                                	| Sets the border-radius of the button to 22px                	|
+| circular  	| boolean                                	| Makes the button circular                                   	|
+| loading   	| boolean                                	| Shows a loading indicator                                   	|
+| ripple    	| boolean                                	| Default value: `true`, creates a ripple effect when clicked 	|
+
 ## Variant
 You can change the variant prop to give some predefined styles to the button component. For now, there are only 4 type of variants which are:
 - primary

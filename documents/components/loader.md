@@ -4,6 +4,11 @@ the application needs to indicate to the user that there are running
 requests and the user should wait. This component's position is
 absolute and the parent wrapper component must have a relative position.
 
+## Props
+| Name   	| Type    	| Description                                                	|
+|--------	|---------	|------------------------------------------------------------	|
+| active 	| boolean 	| When `true`, loader is displayed over the parent component 	|
+
 ## Active
 
 A loader can be active or disabled.
