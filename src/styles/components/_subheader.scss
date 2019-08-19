@@ -20,21 +20,34 @@
     flex: 1;
     justify-content: flex-end;
   }
+
   .title {
     margin-left: 5px;
     margin-right: 5px;
+
+    .q-typography{
+      color: black;
+      line-height: 52px;
+    }
+  }
+
+  .title-group{
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .title, .title-group{
     flex: 12;
     text-align: center;
     display: flex;
     justify-content: center;
     .q-typography{
-      color: black;
-      line-height: 52px;
       width: 75vw;
       text-align: center;
       @include text-truncate;
     }
   }
+
   .right-icon {
     @extend .q-icon;
     flex: 1;
