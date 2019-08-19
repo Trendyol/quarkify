@@ -31,7 +31,7 @@ export default class SubHeader extends PureComponent<ISubHeader> {
           }
           {!subTitle &&
           <div className="title" >
-            <Typography variant={"body"} color={"black"}>{title}</Typography>
+            <Typography variant={"body"} color={"zero"}>{title}</Typography>
           </div>
           }
           <div className="right-icon" onClick={rightIconOnClick}>
