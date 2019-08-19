@@ -62,6 +62,13 @@ describe("subheader specs", () => {
     expect(wrapper.find(".title")).toHaveLength(1);
   });
 
+  it("should render a subtitle", () => {
+    const text = faker.random.word();
+    const wrapper = shallow(<SubHeader title={text} subTitle={text}/>);
+
+    expect(wrapper.find(".title-group")).toHaveLength(1);
+  });
+
   it("should accept additional classNames", () => {
     const fakeClass = faker.lorem.word();
     const wrapper = shallow(<SubHeader title={fakeClass} className={fakeClass}/>);
