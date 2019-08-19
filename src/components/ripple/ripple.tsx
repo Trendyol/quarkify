@@ -1,4 +1,5 @@
 import React, { CSSProperties } from "react";
+import "../../styles/components/_ripple.scss";
 
 export default class Ripple extends React.PureComponent<IRipplesProps, IRippleState> {
   public static displayName = "Ripples";
