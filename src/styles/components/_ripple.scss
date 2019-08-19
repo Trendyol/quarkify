@@ -1,0 +1,7 @@
+@import '../mixins/_fluid.scss';
+
+.q-ripple{
+ &.q-fluid{
+     @include fluid;
+ }
+}
