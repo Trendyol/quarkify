@@ -6,4 +6,5 @@ export type colorTypes =
   "dark-gray" |
   "light-gray" |
   "border-gray" |
-  "white";
+  "white" |
+  "zero";
