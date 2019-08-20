@@ -9,6 +9,7 @@
   border: 0;
   border-bottom: 1px solid $border-gray;
   align-content: center;
+  position: relative;
 
   .q-icon {
     display: flex;
@@ -17,8 +18,14 @@
   }
   .left-icon {
     @extend .q-icon;
-    flex: 1;
-    justify-content: flex-end;
+    height: 100%;
+    padding: 10px;
+    display: flex;
+    top: 0;
+    align-items: center;
+    position: absolute;
+    left: 10px;
+    justify-content: space-between;
   }
 
   .title {
@@ -49,7 +56,15 @@
 
   .right-icon {
     @extend .q-icon;
-    flex: 1;
+    height: 100%;
+    padding: 10px;
+    display: flex;
+    top: 0;
+    align-items: center;
+    position: absolute;
+
+    right: 10px;
+    justify-content: space-between;
   }
 
 }
