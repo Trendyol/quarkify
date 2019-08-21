@@ -2,7 +2,7 @@ import classNames from "classnames";
 import React, { PureComponent } from "react";
 import ILink from "../../interfaces/link";
 import "../../styles/components/_link.scss";
-import { variantTypes } from "../../types/button";
+import { buttonSize, variantTypes } from "../../types/button";
 import classNamesDefault from "../../utils/class-names-default";
 import Icon from "../icon";
 import Loader from "../loader";
@@ -12,6 +12,7 @@ export default class Link extends PureComponent<ILinkProps> {
   public render() {
     const {
       variant = "primary",
+      size = "medium",
       fluid,
       disabled,
       icon,
@@ -26,6 +27,7 @@ export default class Link extends PureComponent<ILinkProps> {
     } = this.props;
     const buttonClasses = classNames(
       classNamesDefault({ variant, fluid, disabled, round }),
+      size && `q-button-${size}`,
       circular && "q-circular",
       loading && "loading",
       ripple && "q-ripple",
@@ -48,6 +50,7 @@ export default class Link extends PureComponent<ILinkProps> {
 
 interface ILinkProps extends ILink {
   variant?: variantTypes;
+  size?: buttonSize;
   fluid?: boolean;
   disabled?: boolean;
   icon?: string;
