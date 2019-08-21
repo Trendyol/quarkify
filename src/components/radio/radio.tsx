@@ -31,6 +31,6 @@ export default class Radio extends PureComponent<IProps> {
 interface IProps extends IInput {
   error?: boolean;
   label?: string;
-  value: string;
+  value: any;
   className?: string;
 }

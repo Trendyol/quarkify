@@ -32,6 +32,6 @@ export default  class CheckBox extends PureComponent<IProps> {
 interface IProps extends IInput {
   error?: boolean;
   label?: string;
-  value: string;
+  value: any;
   className?: string;
 }
