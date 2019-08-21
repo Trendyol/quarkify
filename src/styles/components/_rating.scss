@@ -17,9 +17,6 @@
       display: inline-block;
       width: 18px;
     }
-    .q-icon:not(:last-child) {
-      //margin-right: 3px;
-    }
   }
 
   &.q-rating-medium {
@@ -32,9 +29,6 @@
       display: inline-block;
       width: 14px;
     }
-    .q-icon:not(:last-child) {
-      //margin-right: 3px;
-    }
   }
 
   &.q-rating-small {
@@ -46,9 +40,6 @@
     .q-icon::before{
       display: inline-block;
       width: 10px;
-    }
-    .q-icon:not(:last-child){
-      //margin-right: 3px;
     }
   }
 
