@@ -19,8 +19,11 @@ export default class Icon extends PureComponent<IProps> {
       color && `${color}`,
       className,
     );
+    const sizePixelWrapper = sizePixel ? {
+      fontSize: `${sizePixel}px`,
+    } : {};
     return (
-      <i className={iconClass} style={{fontSize: `${sizePixel}px`}} {...props}>
+      <i className={iconClass} style={sizePixelWrapper} {...props}>
         {children}
       </i>
     );
