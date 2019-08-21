@@ -15,7 +15,10 @@ stories.add("Default", () => (
 
 stories.add("Subtitle", () => (
   <div>
-      <SubHeader title={faker.lorem.words(10)} subTitle={faker.lorem.words(10)} />
+    <SubHeader title={faker.lorem.words(10)} subTitle={faker.lorem.words(10)} />
+    <br/>
+    <br/>
+    <SubHeader leftIcon="back-button" title={faker.lorem.words(10)} subTitle={faker.lorem.words(10)} />
   </div>
 ));
 

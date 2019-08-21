@@ -3,7 +3,7 @@
 
 .q-modal-main {
   position: fixed;
-  background-color: $white;
+  background-color: $background-gray-two;
   top: 0;
   left: 0;
   display: block;
@@ -20,7 +20,7 @@
     height: $modal-header-height;
     display: flex;
     position: fixed;
-    background-color: $white-two;
+    background-color: $white;
     z-index: $modal-z-index;
 
     .q-modal-title {
@@ -51,7 +51,7 @@
   }
 
   .q-modal-content {
-    background-color: $white-two;
+    background-color: $white;
     overflow-y: scroll;
 
     -ms-overflow-style: none;
