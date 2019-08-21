@@ -3,16 +3,20 @@ import React, { PureComponent } from "react";
 import Accordion from "../components/accordion";
 import Button from "../components/button";
 
+import Typography from "../components/typography";
+import "./styles/accordion.css";
+
 const stories = storiesOf("Accordion", module);
 
 const AccordionWrapper = () => {
   return (
     <>
+      <div style={{ height: "50px", backgroundColor: "white" }}/>
       <Accordion>
-        <Accordion.Header>
-          Accordion 1
+        <Accordion.Header className="accordion-header">
+          <Typography variant="smallParagraph">Some Small</Typography>
         </Accordion.Header>
-        <Accordion.Content>
+        <Accordion.Content className="accordion-content">
           <div>Some content</div>
           <div>Some content</div>
           <div>Some content</div>
