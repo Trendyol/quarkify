@@ -1,2 +1,2 @@
-export type sizeTypes = "large" | "medium" | "small";
+export type sizeTypes = "large" | "medium" | "small" | "xlarge";
 export type variantTypes = "primary" | "gray";
