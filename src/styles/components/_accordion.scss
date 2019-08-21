@@ -47,5 +47,18 @@
   padding: 0 1rem;
 }
 
+.q-accordion-group{
+  border: 1px solid $border-gray;
+
+  .q-accordion, .q-accordion-header{
+    border:0;
+    border-radius: 0;
+  }
+
+  .q-accordion:not(:last-child){
+    border-bottom: 1px solid $border-gray;
+  }
+}
+
 //Animations
 @include accordion-animation;
