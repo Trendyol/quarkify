@@ -2,7 +2,7 @@
 @import "../animations/_accordion.scss";
 
 .q-accordion {
-  background-color: $white-two;
+  background-color: $white;
 
   .q-accordion-header {
     padding: $padding-x 15px;
@@ -10,7 +10,7 @@
     width: 100%;
     height: $modal-header-height;
     display: flex;
-    background-color: $white;
+    background-color: $background-gray-two;
     justify-content: space-between;
 
     .q-accordion-title {
