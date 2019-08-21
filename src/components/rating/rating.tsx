@@ -15,14 +15,23 @@ export default class Rating extends PureComponent<IProps> {
     small: 10,
   };
 
-  public calculateWidth(score: number, size: string) {
-    const plus = (Math.ceil(score) - 1) * 3;
+  private defaultMargin: number = 3;
+  private defaultStars: number = 5;
+
+  public calculateWidth(score: number, size: string, margin: number, stars: number) {
+    const plus = (Math.ceil(score) - 1) * margin;
     return (score * this.defaultSizeMapping[size] + plus) * 100 /
-      (5 * this.defaultSizeMapping[size] + 3 * 4);
+      (stars * this.defaultSizeMapping[size] + margin * (stars - 1));
   }
 
   public render() {
-    const { value, icon = "star", size = "medium", color, disabled, children, className, ...props } = this.props;
+    const {
+      value = 0,
+      icon = "star",
+      size = "medium",
+      color = "yellow",
+      disabled,
+      children, className, margin = this.defaultMargin, stars = this.defaultStars, ...props } = this.props;
     const ratingClasses = classNames(
       classNamesDefault({ disabled }),
       "q-rating",
@@ -33,18 +42,14 @@ export default class Rating extends PureComponent<IProps> {
     return (
       <div className={ratingClasses} {...props}>
         <div className="q-rating-empty">
-          <Icon name={icon}/>
-          <Icon name={icon}/>
-          <Icon name={icon}/>
-          <Icon name={icon}/>
-          <Icon name={icon}/>
+          {Array.from({ length: stars }, (_, i) =>
+            <Icon key={i} style={{ marginRight: `${i + 1 === stars ? 0 : margin}px` }} name={icon}/>,
+            )}
         </div>
-        <div style={{width: `${this.calculateWidth(value, size)}%`}} className="q-rating-full">
-          <Icon name={icon} color="yellow"/>
-          <Icon name={icon} color="yellow"/>
-          <Icon name={icon} color="yellow"/>
-          <Icon name={icon} color="yellow"/>
-          <Icon name={icon} color="yellow"/>
+        <div style={{width: `${this.calculateWidth(value, size, margin, stars)}%`}} className="q-rating-full">
+          {Array.from({ length: stars }, (_, i) =>
+            <Icon key={i} style={{ marginRight: `${i + 1 === stars ? 0 : margin}px` }} name={icon} color={color}/>,
+            )}
         </div>
       </div>
     );
@@ -52,10 +57,12 @@ export default class Rating extends PureComponent<IProps> {
 }
 
 interface IProps extends IDiv {
-  value: number;
+  value?: number;
   icon?: string;
   size?: ratingSize;
   disabled?: boolean;
   color?: colorTypes;
   className?: string;
+  margin?: number;
+  stars?: number;
 }
