@@ -23,3 +23,28 @@ stories.add("Default", () => (
     </form>
   </div>
 ));
+stories.add("Label Size", () => (
+  <div>
+    <Radio name={"vehicle1"} value={"1"} label={"I have a bike"} labelVariant={"h1"}/>
+    <br/>
+    <br/>
+    <Radio name={"vehicle1"} value={"2"} label={"I have a bike"} labelVariant={"h2"}/>
+    <br/>
+    <br/>
+    <Radio name={"vehicle1"} value={"3"} label={"I have a bike"} labelVariant={"h3"}/>
+    <br/>
+    <br/>
+    <Radio name={"vehicle1"} value={"4"} label={"I have a bike"} labelVariant={"paragraph"}/>
+    <br/>
+    <br/>
+    <Radio name={"vehicle1"} value={"5"} label={"I have a bike"} labelVariant={"smallParagraph"}/>
+    <br/>
+    <br/>
+    <Radio name={"vehicle1"} value={"6"} label={"I have a bike"} labelVariant={"body"}/>
+    <br/>
+    <br/>
+    <Radio name={"vehicle1"} value={"7"} label={"I have a bike"} labelVariant={"subtitle"}/>
+    <br/>
+    <br/>
+  </div>
+));
