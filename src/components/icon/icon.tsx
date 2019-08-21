@@ -9,17 +9,18 @@ import classNamesDefault from "../../utils/class-names-default";
 export default class Icon extends PureComponent<IProps> {
 
   public render() {
-    const { name, size, color, circular, disabled, children, className, ...props } = this.props;
+    const { name, size, sizePixel, color, circular, disabled, children, className, ...props } = this.props;
     const iconClass = classNames(
-      classNamesDefault({ name, size, disabled }),
-      `icon-${name}`,
+      classNamesDefault({ name, disabled }),
       "q-icon",
-      className,
+      size && `q-icon-${size}`,
+      `icon-${name}`,
       circular && "q-circular",
       color && `${color}`,
+      className,
     );
     return (
-      <i className={iconClass} {...props}>
+      <i className={iconClass} style={{fontSize: `${sizePixel}px`}} {...props}>
         {children}
       </i>
     );
@@ -29,6 +30,7 @@ export default class Icon extends PureComponent<IProps> {
 interface IProps extends IIcon {
   name: string;
   size?: sizeTypes;
+  sizePixel?: number;
   disabled?: boolean;
   circular?: boolean;
   color?: colorTypes;
