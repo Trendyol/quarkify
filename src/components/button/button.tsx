@@ -2,7 +2,7 @@ import classNames from "classnames";
 import React, { PureComponent } from "react";
 import IButton from "../../interfaces/button";
 import "../../styles/components/_button.scss";
-import { variantTypes } from "../../types/button";
+import { buttonSize, variantTypes } from "../../types/button";
 import classNamesDefault from "../../utils/class-names-default";
 import Icon from "../icon";
 import Loader from "../loader";
@@ -13,6 +13,7 @@ export default class Button extends PureComponent<IButtonProps> {
   public render() {
     const {
       variant = "primary",
+      size = "medium",
       fluid,
       disabled,
       icon,
@@ -30,6 +31,7 @@ export default class Button extends PureComponent<IButtonProps> {
     );
     const buttonClasses = classNames(
       classNamesDefault({ variant, fluid, disabled, round }),
+      size && `q-button-${size}`,
       circular && "q-circular",
       loading && "loading", "q-button");
     return (
@@ -54,6 +56,7 @@ export default class Button extends PureComponent<IButtonProps> {
 
 interface IButtonProps extends IButton {
   variant?: variantTypes;
+  size?: buttonSize;
   fluid?: boolean;
   disabled?: boolean;
   icon?: string;

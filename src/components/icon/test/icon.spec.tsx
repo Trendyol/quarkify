@@ -23,7 +23,7 @@ describe("icon specs", () => {
   it("should be rendered with given large size prop", () => {
     const wrapper = shallow(<Icon name="search" size="large"/>);
 
-    expect(wrapper.exists(".q-large")).toEqual(true);
+    expect(wrapper.exists(".q-icon-large")).toEqual(true);
   });
 
   it("should have q-circular className when circular prop is passed", () => {

@@ -29,6 +29,17 @@ class LoadingWrapper extends PureComponent {
 
 stories.add("Variants", () => (
   <div>
+    <Button onClick={actionLog} size="small">Primary</Button>
+    &nbsp;
+    <Button variant="secondary" onClick={actionLog} size="small">
+      Secondary
+    </Button>
+    &nbsp;
+    <Button variant="gray" onClick={actionLog} size="small">
+      Gray
+    </Button>
+    <br/>
+    <br/>
     <Button onClick={actionLog}>Primary</Button>
     &nbsp;
     <Button variant="secondary" onClick={actionLog}>
@@ -36,6 +47,17 @@ stories.add("Variants", () => (
     </Button>
     &nbsp;
     <Button variant="gray" onClick={actionLog}>
+      Gray
+    </Button>
+    <br/>
+    <br/>
+    <Button onClick={actionLog} size="large">Primary</Button>
+    &nbsp;
+    <Button variant="secondary" onClick={actionLog} size="large">
+      Secondary
+    </Button>
+    &nbsp;
+    <Button variant="gray" onClick={actionLog} size="large">
       Gray
     </Button>
   </div>

@@ -3,7 +3,8 @@ import Adapter from "enzyme-adapter-react-16";
 import faker from "faker";
 import React from "react";
 import sinon from "sinon";
-import Accordion from "../accordion";
+import { BoxGroup } from "../../box";
+import { Accordion, AccordionGroup } from "../index";
 
 Enzyme.configure({ adapter: new Adapter() });
 
@@ -109,6 +110,12 @@ describe("accordion specs", () => {
     expect(wrapper.state("expanded")).toBe(oldExpandedState);
   });
 
+  it("should have accordion-group className", () => {
+    const wrapper = shallow(<AccordionGroup/>);
+
+    expect(wrapper.hasClass("q-accordion-group")).toBe(true);
+  });
+
   it("should accept additional classNames", () => {
     const fakeClass = faker.lorem.word();
     const wrapper = mount(
@@ -116,6 +123,14 @@ describe("accordion specs", () => {
         <Accordion.Header/>
         <Accordion.Content/>
       </Accordion>);
+    const wrapperAccordionGroup = shallow(
+      <AccordionGroup className={fakeClass}>
+        <Accordion>
+          <Accordion.Header/>
+          <Accordion.Content/>
+        </Accordion>
+      </AccordionGroup>);
     expect(wrapper.hasClass(fakeClass)).toBe(true);
+    expect(wrapperAccordionGroup.hasClass(fakeClass)).toBe(true);
   });
 });

@@ -1,5 +1,5 @@
 import classNames from "classnames";
-import React, { PureComponent, ReactNode } from "react";
+import React, { PureComponent } from "react";
 import IDiv from "../../interfaces/div";
 import "../../styles/components/_layout.scss";
 

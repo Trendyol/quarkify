@@ -23,8 +23,8 @@
 
 
 @mixin disabled {
-  background-color: $dark-gray-two !important;
-  opacity: 0.9 !important;
+  background-color: $disabled !important;
+  opacity: 0.4 !important;
   color: $white !important;
   cursor: not-allowed !important;
   border: 0 !important;
