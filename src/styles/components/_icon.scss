@@ -19,16 +19,16 @@
   }
 
   // Icon Sizes
-  &.q-xlarge {
-    font-size: $font-size-xlarge;
+  &.q-icon-large {
+    font-size: $icon-font-size-large;
   }
 
-  &.q-large {
-    font-size: $font-size-large;
+  &.q-icon-medium {
+    font-size: $icon-font-size-medium;
   }
 
-  &.q-small {
-    font-size: $font-size-small;
+  &.q-icon-small {
+    font-size: $icon-font-size-small;
   }
 
   //Color variants
