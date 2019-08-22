@@ -1,5 +1,5 @@
 import classNames from "classnames";
-import React, { PureComponent, ReactNode } from "react";
+import React, { PureComponent } from "react";
 import IList from "../../interfaces/list";
 import "../../styles/components/_list.scss";
 import ListItem from "./listItem";

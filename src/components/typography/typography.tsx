@@ -1,5 +1,5 @@
 import classNames from "classnames";
-import React, { PureComponent, ReactNode } from "react";
+import React, { PureComponent } from "react";
 import ITypography from "../../interfaces/typography";
 import "../../styles/components/_typography.scss";
 import { colorTypes } from "../../types/color";
@@ -38,6 +38,7 @@ export default class Typography extends PureComponent<ITypographyProps> {
       h3: "h3",
       paragraph: "p",
       smallParagraph: "p",
+      subtitle: "p",
     };
     const Component = component || defaultVariantMapping[variant];
     return (

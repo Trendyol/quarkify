@@ -4,6 +4,20 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
+## [1.14.7] - 2019-08-22
+### Added
+- `rating` component added
+- `accordion group` component added
+- new color variables added
+- subtitle type added to `typography`
+### Changed
+- `button` and `link` sizes changed
+- `icon` sizes changed
+- `subheader` align properties changed
+- some color variables changed
+### Fix
+- `button` ripple and fluid bug fixed
+
 
 ## [1.12.3] - 2019-08-07
 ### Added

@@ -2,30 +2,30 @@
 
 @mixin primary {
   background-color: $primary;
-  color: $white-two;
+  color: $white;
   border: 1px solid $primary;
   i:before {
-    color: $white-two;
+    color: $white;
   }
 }
 
 @mixin secondary {
-  background-color: $white-two;
+  background-color: $white;
   color: $primary;
   border: 1px solid $primary;
 }
 
 @mixin gray {
-  background-color: $white-two;
+  background-color: $white;
   color: $light-gray;
   border: 1px solid $light-gray;
 }
 
 
 @mixin disabled {
-  background-color: $dark-gray-two !important;
-  opacity: 0.9 !important;
-  color: $white-two !important;
+  background-color: $disabled !important;
+  opacity: 0.4 !important;
+  color: $white !important;
   cursor: not-allowed !important;
   border: 0 !important;
 }

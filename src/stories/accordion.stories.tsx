@@ -1,18 +1,22 @@
 import { storiesOf } from "@storybook/react";
 import React, { PureComponent } from "react";
-import Accordion from "../components/accordion";
+import { Accordion, AccordionGroup } from "../components/accordion";
 import Button from "../components/button";
+import Layout from "../components/layout";
+import Typography from "../components/typography";
+import "./styles/accordion.css";
 
 const stories = storiesOf("Accordion", module);
 
 const AccordionWrapper = () => {
   return (
     <>
+      <div style={{ height: "50px", backgroundColor: "white" }}/>
       <Accordion>
-        <Accordion.Header>
-          Accordion 1
+        <Accordion.Header className="accordion-header">
+          <Typography variant="smallParagraph">Some Small</Typography>
         </Accordion.Header>
-        <Accordion.Content>
+        <Accordion.Content className="accordion-content">
           <div>Some content</div>
           <div>Some content</div>
           <div>Some content</div>
@@ -21,6 +25,7 @@ const AccordionWrapper = () => {
           <Button>Button</Button>
         </Accordion.Content>
       </Accordion>
+      <br/>
       <Accordion>
         <Accordion.Header>
           Accordion 2
@@ -35,6 +40,55 @@ const AccordionWrapper = () => {
         </Accordion.Content>
       </Accordion>
       <h1>Text</h1>
+    </>
+  );
+};
+
+const AccordionGroupWrapper = () => {
+  return (
+    <>
+      <div style={{ height: "50px", backgroundColor: "white" }}/>
+      <AccordionGroup>
+        <Accordion>
+          <Accordion.Header>
+            Accordion 1
+          </Accordion.Header>
+          <Accordion.Content className="accordion-content">
+            <div>Some content</div>
+            <div>Some content</div>
+            <div>Some content</div>
+            <div>Some content</div>
+            <div>Some content</div>
+            <Button>Button</Button>
+          </Accordion.Content>
+        </Accordion>
+        <Accordion>
+          <Accordion.Header>
+            Accordion 2
+          </Accordion.Header>
+          <Accordion.Content>
+            <div>Some content</div>
+            <div>Some content</div>
+            <div>Some content</div>
+            <div>Some content</div>
+            <div>Some content</div>
+            <Button>Button</Button>
+          </Accordion.Content>
+        </Accordion>
+        <Accordion>
+          <Accordion.Header>
+            Accordion 3
+          </Accordion.Header>
+          <Accordion.Content>
+            <div>Some content</div>
+            <div>Some content</div>
+            <div>Some content</div>
+            <div>Some content</div>
+            <div>Some content</div>
+            <Button>Button</Button>
+          </Accordion.Content>
+        </Accordion>
+      </AccordionGroup>
     </>
   );
 };
@@ -75,4 +129,5 @@ class ControlledAccordionWrapper extends PureComponent {
 }
 
 stories.add("Accordion", () => <AccordionWrapper/>);
+stories.add("Accordion Group", () => <AccordionGroupWrapper/>);
 stories.add("Controlled Accordion", () => <ControlledAccordionWrapper/>);

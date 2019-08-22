@@ -1,0 +1,59 @@
+@import '../_globals';
+@import '../mixins/_color-scheme';
+
+.q-rating {
+  display: inline-block;
+  align-items: center;
+  position: relative;
+  width: fit-content;
+
+  &.q-rating-large {
+    .q-icon{
+      width: 18px;
+      font-size: 18px;
+      line-height: 24px;
+    }
+    .q-icon::before{
+      display: inline-block;
+      width: 18px;
+    }
+  }
+
+  &.q-rating-medium {
+    .q-icon{
+      width: 14px;
+      font-size: 14px;
+      line-height: 24px;
+    }
+    .q-icon::before{
+      display: inline-block;
+      width: 14px;
+    }
+  }
+
+  &.q-rating-small {
+    .q-icon{
+      width: 10px;
+      font-size: 10px;
+      line-height: 24px;
+    }
+    .q-icon::before{
+      display: inline-block;
+      width: 10px;
+    }
+  }
+
+  .q-rating-empty {
+    letter-spacing: 5px;
+  }
+
+  .q-rating-full {
+    width: 0;
+    position: absolute;
+    letter-spacing: 5px;
+    left: 0px;
+    top: 0px;
+    overflow: hidden;
+    white-space: nowrap;
+  }
+}

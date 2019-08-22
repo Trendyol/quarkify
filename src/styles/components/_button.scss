@@ -10,15 +10,28 @@
   padding-left: $space-small;
   padding-right: $space-small;
   font-weight: $regular;
-  height: $button-height;
   font-family: $font-family;
-  font-size: $button-font-size;
   font-style: normal;
   font-stretch: normal;
   line-height: normal;
   letter-spacing: normal;
   text-align: center;
   border-radius: $border-radius;
+
+  &.q-button-large{
+    height: $button-height-large;
+    font-size: $button-font-size-large
+  }
+
+  &.q-button-medium{
+    height: $button-height-medium;
+    font-size: $button-font-size-medium;
+  }
+
+  &.q-button-small{
+    height: $button-height-small;
+    font-size: $button-font-size-small
+  }
 
   &.q-primary {
     @include primary;

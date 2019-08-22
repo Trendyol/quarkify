@@ -4,11 +4,13 @@
 
 
 .q-subheader {
+  background-color: $white;
   display: flex;
   height: 52px;
   border: 0;
   border-bottom: 1px solid $border-gray;
   align-content: center;
+  position: relative;
 
   .q-icon {
     display: flex;
@@ -17,27 +19,53 @@
   }
   .left-icon {
     @extend .q-icon;
-    flex: 1;
-    justify-content: flex-end;
+    height: 100%;
+    padding: 10px;
+    display: flex;
+    top: 0;
+    align-items: center;
+    position: absolute;
+    left: 10px;
+    justify-content: space-between;
   }
+
   .title {
     margin-left: 5px;
     margin-right: 5px;
+
+    .q-typography{
+      line-height: 52px;
+    }
+  }
+
+  .title-group{
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .title, .title-group{
     flex: 12;
     text-align: center;
     display: flex;
     justify-content: center;
     .q-typography{
-      color: black;
-      line-height: 52px;
       width: 75vw;
       text-align: center;
       @include text-truncate;
     }
   }
+
   .right-icon {
     @extend .q-icon;
-    flex: 1;
+    height: 100%;
+    padding: 10px;
+    display: flex;
+    top: 0;
+    align-items: center;
+    position: absolute;
+
+    right: 10px;
+    justify-content: space-between;
   }
 
 }

@@ -1,25 +1,29 @@
 import classNames from "classnames";
-import React, { PureComponent, ReactNode } from "react";
+import React, { PureComponent } from "react";
 import IIcon from "../../interfaces/icon";
 import "../../styles/components/_icon.scss";
 import { colorTypes } from "../../types/color";
 import { sizeTypes } from "../../types/icon";
 import classNamesDefault from "../../utils/class-names-default";
 
-export default  class Icon extends PureComponent<IProps> {
+export default class Icon extends PureComponent<IProps> {
 
   public render() {
-    const { name, size, color, circular, disabled, children, className, ...props } = this.props;
+    const { name, size, sizePixel, color, circular, disabled, children, className, ...props } = this.props;
     const iconClass = classNames(
-      classNamesDefault({ name, size, disabled }),
-      `icon-${name}`,
+      classNamesDefault({ name, disabled }),
       "q-icon",
-      className,
+      size && `q-icon-${size}`,
+      `icon-${name}`,
       circular && "q-circular",
       color && `${color}`,
+      className,
     );
+    const sizePixelWrapper = sizePixel ? {
+      fontSize: `${sizePixel}px`,
+    } : {};
     return (
-      <i className={iconClass} {...props}>
+      <i className={iconClass} style={sizePixelWrapper} {...props}>
         {children}
       </i>
     );
@@ -29,6 +33,7 @@ export default  class Icon extends PureComponent<IProps> {
 interface IProps extends IIcon {
   name: string;
   size?: sizeTypes;
+  sizePixel?: number;
   disabled?: boolean;
   circular?: boolean;
   color?: colorTypes;

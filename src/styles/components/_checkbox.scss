@@ -41,7 +41,7 @@
   .q-input[type=checkbox]:checked + .q-label:before {
     background-color: $primary;
     border-color: $primary;
-    color: $white-two;
+    color: $white;
   }
 
   .q-input[type=checkbox]:disabled + .q-label {
@@ -69,7 +69,7 @@
     }
 
     .q-input[type=checkbox]:checked + .q-label:before {
-      background-color: $white-two;
+      background-color: $white;
       border-color: $red;
       color: $red;
     }

@@ -11,7 +11,7 @@
   }
 
   &.q-circular {
-    background-color: $white-two;
+    background-color: $white;
     border-radius: 50%;
     padding: 1.25rem;
     border: 1px solid $very-light-pink;
@@ -19,16 +19,20 @@
   }
 
   // Icon Sizes
-  &.q-xlarge {
-    font-size: $font-size-xlarge;
+  &.q-icon-xlarge {
+    font-size: $icon-font-size-xlarge;
   }
 
-  &.q-large {
-    font-size: $font-size-large;
+  &.q-icon-large {
+    font-size: $icon-font-size-large;
   }
 
-  &.q-small {
-    font-size: $font-size-small;
+  &.q-icon-medium {
+    font-size: $icon-font-size-medium;
+  }
+
+  &.q-icon-small {
+    font-size: $icon-font-size-small;
   }
 
   //Color variants

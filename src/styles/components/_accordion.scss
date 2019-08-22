@@ -2,45 +2,61 @@
 @import "../animations/_accordion.scss";
 
 .q-accordion {
-  background-color: $white-two;
+  background-color: $white;
+}
 
-  .q-accordion-header {
-    padding: $padding-x 15px;
-    border-bottom: 1px solid $very-light-pink;
-    width: 100%;
-    height: $modal-header-height;
+.q-accordion-header {
+  padding: $padding-x 15px;
+  border-bottom: 1px solid $very-light-pink;
+  border-top: 1px solid $very-light-pink;
+  width: 100%;
+  height: $modal-header-height;
+  display: flex;
+  background-color: $white;
+  justify-content: space-between;
+
+  .q-accordion-title {
+    font-size: $font-size-base;
+    font-weight: $bold;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    margin-bottom: 0;
+    height: 100%;
     display: flex;
-    background-color: $white;
-    justify-content: space-between;
-
-    .q-accordion-title {
-      font-size: $font-size-base;
-      font-weight: $bold;
-      text-overflow: ellipsis;
-      white-space: nowrap;
-      overflow: hidden;
-      margin-bottom: 0;
-      height: 100%;
-    }
-
-    .q-icon {
-      line-height: 1rem;
-      transition: transform 300ms;
-      display: flex;
-      align-items: center;
-
-      &.expanded {
-        transform: rotate(180deg);
-      }
-    }
+    align-items: center;
   }
 
-  .q-accordion-content {
-    background-color: $dark-gray-two;
-    border-bottom: 1px solid $very-light-pink;
-    overflow: hidden;
-    will-change: max-height;
-    padding: 0 1rem;
+  .q-icon {
+    line-height: 1rem;
+    transition: transform 300ms;
+    display: flex;
+    align-items: center;
+
+    &.expanded {
+      transform: rotate(180deg);
+    }
+  }
+}
+
+.q-accordion-content {
+  background-color: $white;
+  border-bottom: 1px solid $very-light-pink;
+  overflow: hidden;
+  will-change: max-height;
+  padding: 0 1rem;
+}
+
+.q-accordion-group{
+  border: 1px solid $border-gray;
+
+  .q-accordion, .q-accordion-header{
+    border:0;
+    border-radius: 0;
+  }
+
+  .q-accordion:not(:last-child){
+    border-bottom: 1px solid $border-gray;
   }
 }
 

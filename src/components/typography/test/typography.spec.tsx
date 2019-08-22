@@ -46,6 +46,11 @@ describe("typography specs", () => {
     expect(wrapper.type()).toBe("p");
   });
 
+  it("should be of type p if given subtitle variant", () => {
+    const wrapper = shallow(<Typography variant={"subtitle"}/>);
+    expect(wrapper.type()).toBe("p");
+  });
+
   it("should have className underline when given underline prop", () => {
     const wrapper = shallow(<Typography variant={"h1"} underline/>);
 
