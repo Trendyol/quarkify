@@ -16,6 +16,7 @@ stories.add("Icons", () => (
     <Icon name="search" size="small"/>
     <Icon name="search" disabled size="medium"/>
     <Icon name="checkmark-full" size="large"/>
+    <Icon name="search" size="xlarge"/>
     <br/>
     <br/>
     <Icon name="search" sizePixel={100}/>
