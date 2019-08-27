@@ -1,0 +1,41 @@
+@import '../globals';
+@import "../animations/_bottom-sheet.scss";
+
+.q-bottom-sheet-main {
+  position: fixed;
+  background-color: $white;
+  display: block;
+  bottom: 0;
+  text-align: center;
+  width: 100%;
+  border-radius: $border-radius;
+  z-index: 1022;
+  overflow-y: scroll;
+  max-height: 100vh;
+  -ms-overflow-style: none;
+  -webkit-overflow-scrolling: touch;
+  .q-bottom-sheet-content {
+    overflow-y: scroll;
+
+    max-height: 100vh;
+  }
+  &::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+  }
+}
+
+//Animations
+@include bottom-sheet-animation;
+
+.q-bottom-sheet-overlay {
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1021;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
