@@ -22,13 +22,9 @@ export default class BottomSheet extends PureComponent<IBottomSheetProps> {
     }
   }
 
-  public componentWillUnmount(): void {
-    document.removeEventListener("touchmove", this.handleTouchMove);
-  }
-
   public handleTouchMove(e: Event): void {
     e.stopImmediatePropagation();
-    const scrollElement = document.getElementsByClassName("q-bottom-sheet-content")[0];
+    const scrollElement = document.getElementsByClassName("q-bottom-sheet-main")[0];
     if (!e.composedPath().includes(scrollElement as EventTarget)) {
       e.preventDefault();
     }
@@ -54,7 +50,7 @@ export default class BottomSheet extends PureComponent<IBottomSheetProps> {
     } = this.props;
 
     const bottomSheetClasses = classNames(
-      "q-bottom-sheet-overlay",
+      "q-bottom-sheet-main",
       className,
     );
 
@@ -67,14 +63,15 @@ export default class BottomSheet extends PureComponent<IBottomSheetProps> {
       onEnter={this.onEnter}
       onExit={this.onExit}
       unmountOnExit
-      timeout={150}
+      timeout={{
+        enter: 0,
+        exit: 500,
+      }}
       classNames="q-slideInDown q-bottom-sheet"
     >
-      <div className={bottomSheetClasses} onClick={overlayClick}>
-        <div className="q-bottom-sheet-main" onClick={this.bottomSheetBodyClick}>
-          <div className="q-bottom-sheet-content">
+      <div className={"q-bottom-sheet-overlay"} onClick={overlayClick}>
+        <div className={bottomSheetClasses} onClick={this.bottomSheetBodyClick}>
             {children}
-          </div>
         </div>
       </div>
     </CSSTransition>;

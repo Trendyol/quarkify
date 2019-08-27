@@ -12,28 +12,16 @@
   z-index: 1022;
   overflow-y: scroll;
   max-height: 100vh;
-
+  -ms-overflow-style: none;
+  -webkit-overflow-scrolling: touch;
   .q-bottom-sheet-content {
     overflow-y: scroll;
-    -ms-overflow-style: none;
-    -webkit-overflow-scrolling: touch;
+
     max-height: 100vh;
-
-    &::-webkit-scrollbar {
-      width: 0;
-      height: 0;
-    }
   }
-
-  .q-bottom-sheet-icon-position {
-    display: flex;
-    justify-content: flex-end;
-    width: 16px;
-    margin-left: auto;
-  }
-
-  .q-bottom-sheet-icon-left {
-    justify-content: flex-start;
+  &::-webkit-scrollbar {
+    width: 0;
+    height: 0;
   }
 }
 
@@ -47,7 +35,6 @@
   top: 0;
   left: 0;
   z-index: 1021;
-  background-color: rgba(0, 0, 0, .5);
   display: flex;
   justify-content: center;
   align-items: center;

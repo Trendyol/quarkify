@@ -1,10 +1,10 @@
 import { storiesOf } from "@storybook/react";
-import * as faker from "faker";
 import React, { PureComponent } from "react";
 import BottomSheet from "../components/bottom-sheet";
 import Button from "../components/button";
 import Icon from "../components/icon";
 import { animationTypes } from "../types/modal";
+import "./styles/bottom-sheet.css";
 
 const stories = storiesOf("Bottom Sheet", module);
 
