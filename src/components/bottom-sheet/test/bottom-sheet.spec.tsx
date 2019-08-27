@@ -12,24 +12,24 @@ function handleChange() {
   return null;
 }
 
-describe("modal specs", () => {
+describe("bottom sheet specs", () => {
   const sandbox = sinon.createSandbox();
 
   afterEach(() => {
     sandbox.verifyAndRestore();
   });
 
-  it("should render modal component", () => {
+  it("should render bottom-sheet component", () => {
     const wrapper = shallow(<BottomSheet show={true} onClose={handleChange}/>);
     expect(wrapper.exists(".q-bottom-sheet-main")).toEqual(true);
   });
 
-  it("should not render modal component", () => {
+  it("should not render bottom-sheet component", () => {
     const wrapper = mount(<BottomSheet show={false} onClose={handleChange}/>);
     expect(wrapper.exists(".q-bottom-sheet-main")).toEqual(false);
   });
 
-  it("should  render modal component", () => {
+  it("should  render bottom-sheet component", () => {
     const wrapper = shallow(<BottomSheet show={true} onClose={handleChange}/>);
     expect(wrapper.exists(".q-bottom-sheet-main")).toEqual(true);
   });
