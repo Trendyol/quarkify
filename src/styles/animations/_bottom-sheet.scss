@@ -1,0 +1,35 @@
+@mixin bottom-sheet-animation($duration: 200ms) {
+  .q-slideInDown {
+    .q-bottom-sheet-main {
+      transition: transform $duration ease-out;
+    }
+    &.q-bottom-sheet-overlay {
+      transition: background-color $duration linear;
+    }
+
+    &.q-bottom-sheet-enter-done {
+      background-color: rgba(0, 0, 0, .5);
+    }
+    &.q-bottom-sheet-enter {
+      .q-bottom-sheet-main {
+        transform: translateY(100vh);
+      }
+    }
+
+    &.q-bottom-sheet-exit {
+      .q-bottom-sheet-main {
+        transform: translateY(0);
+      }
+    }
+    &.q-bottom-sheet-exit-active {
+      .q-bottom-sheet-main {
+        transform: translateY(100%);
+        transition: transform $duration;
+        transition-timing-function: ease-out;
+      }
+      &.q-bottom-sheet-overlay {
+        background-color: transparent;
+      }
+    }
+  }
+}
