@@ -1,9 +1,17 @@
-@import url("https://i.icomoon.io/public/8a084d4b90/TyIcons/style.css");
-@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro&display=swap');
-@import './_reboot';
-@import './_variables';
-
 * {
   box-sizing: border-box;
   font-family: "Source Sans Pro", sans-serif;
+}
+
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+body, p{
+  margin: 0;
 }
