@@ -2,7 +2,6 @@ import { storiesOf } from "@storybook/react";
 import React, { PureComponent } from "react";
 import { Accordion, AccordionGroup } from "../components/accordion";
 import Button from "../components/button";
-import Layout from "../components/layout";
 import Typography from "../components/typography";
 import "./styles/accordion.css";
 

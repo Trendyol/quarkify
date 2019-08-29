@@ -1,5 +1,6 @@
-@import '../globals';
 @import "../animations/_popup.scss";
+@import '../_colors';
+@import '../variables';
 
 .q-popup-main {
   position: absolute;
