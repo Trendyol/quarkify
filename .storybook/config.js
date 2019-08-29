@@ -2,7 +2,6 @@ import { configure } from "@storybook/react";
 import '../src/styles/_globals.scss';
 import '../src/styles/_icon-url.scss';
 import '../src/styles/_font.scss';
-import '../src/styles/_reboot.scss';
 
 const req = require.context("../src/stories", true, /.stories.tsx$/);
 
