@@ -1,6 +1,12 @@
-@import '../_globals';
 @import '../_colors';
+@import "../_variables";
 @import "../mixins/text-truncate";
+
+h1,h2,h3,
+h4,h5,h6
+p, span{
+  margin: 0;
+}
 
 .q-typography {
   margin: 0;

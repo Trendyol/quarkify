@@ -4,6 +4,7 @@
   @extend .q-button;
   display: inline-grid;
   align-items: center;
+  text-decoration: none;
 
   &.q-anchor-disabled {
     pointer-events: none;

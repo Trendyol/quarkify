@@ -73,6 +73,7 @@ class ScrollToTop extends PureComponent<IScrollToTopProps, IScrollToTopState> {
   }
 
   private handleScroll(): void {
+
     this.setState({show:
         window.pageYOffset <= this.lastScrollPosition &&
         window.pageYOffset > this.props.showUnder!,

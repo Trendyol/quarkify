@@ -1,4 +1,3 @@
-@import '../_globals';
 @import '../mixins/_color-scheme';
 @import '../mixins/_fluid.scss';
 
@@ -39,6 +38,7 @@
 
   .q-input {
     background-color: $border-gray-two;
+    font-size: $input-font-size;
     border: 1px solid $border-gray;
     width: inherit;
     border-radius: $border-radius;
