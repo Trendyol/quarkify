@@ -5,9 +5,6 @@
 /.pnp
 .pnp.js
 
-#storybook
-/docs
-
 # testing
 /coverage
 
