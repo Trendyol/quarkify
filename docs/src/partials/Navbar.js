@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from "react-router-dom";
 
 class Navbar extends React.Component {
   render() {
@@ -8,10 +9,10 @@ class Navbar extends React.Component {
           <div className="container">
             <div className="branding">
               <h1 className="logo">
-                <a href="index.html">
+                <Link to="/">
                   <span aria-hidden="true" className="icon_documents_alt icon"/>
                   <span className="text-highlight">Pretty</span><span className="text-bold">Docs</span>
-                </a>
+                </Link>
               </h1>
             </div>
             <ol className="breadcrumb">

@@ -1,22 +1,32 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
 import * as serviceWorker from './serviceWorker';
 import Index from "./pages/Index";
 import { Route, BrowserRouter as Router, Switch } from "react-router-dom";
-import Button from "./components/Button";
+import Button from "./components/Button.jsx";
 import Navbar from "./partials/Navbar";
 import Footer from "./partials/Footer";
-
-let currentLocation = window.location.pathname;
-
+import CheckBox from "./components/CheckBox";
+import SideMenu from "./partials/SideMenu";
 
 const routing = (
   <Router>
-    <Navbar location={currentLocation}/>
+    <Navbar/>
     <div>
       <Route exact path="/" component={Index} />
-      <Route path="/button" component={Button} />
+      <div className="doc-wrapper">
+        <div className="container">
+          <div className="doc-body row">
+            <Route path="/:component" component={SideMenu}/>
+            <div className="doc-content col-md-9 col-12 order-1">
+              <div className="content-inner">
+                <Route path="/button" component={Button} />
+                <Route path="/checkbox" component={CheckBox} />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
     <Footer/>
   </Router>
