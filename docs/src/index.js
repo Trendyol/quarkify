@@ -2,12 +2,14 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import * as serviceWorker from './serviceWorker';
 import Index from "./pages/Index";
-import { Route, BrowserRouter as Router, Switch } from "react-router-dom";
+import { Route, BrowserRouter as Router } from "react-router-dom";
 import Button from "./components/Button.jsx";
 import Navbar from "./partials/Navbar";
 import Footer from "./partials/Footer";
-import CheckBox from "./components/CheckBox";
+import CheckBox from "./components/CheckBox.jsx";
 import SideMenu from "./partials/SideMenu";
+import Accordion from "./components/Accordion";
+import Box from "./components/Box";
 
 const routing = (
   <Router>
@@ -20,6 +22,8 @@ const routing = (
             <Route path="/:component" component={SideMenu}/>
             <div className="doc-content col-md-9 col-12 order-1">
               <div className="content-inner">
+                <Route path="/accordion" component={Accordion} />
+                <Route path="/box" component={Box} />
                 <Route path="/button" component={Button} />
                 <Route path="/checkbox" component={CheckBox} />
               </div>
@@ -30,7 +34,7 @@ const routing = (
     </div>
     <Footer/>
   </Router>
-)
+);
 
 ReactDOM.render(routing, document.getElementById('root'));
 

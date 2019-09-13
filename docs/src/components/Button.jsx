@@ -3,6 +3,7 @@ import QButton from "quarkify/components/button"
 import EmbeddedGist from "../partials/EmbeddedGist"
 import { Box } from "quarkify/components/box";
 import { Link } from "react-router-dom";
+import renderTable from "../partials/Table";
 
 const props = [
   {
@@ -188,33 +189,7 @@ function Button() {
           <EmbeddedGist gist="yavuzkoca/35fe912b51a3d80bef640fd1e76e4412" file="button_10.jsx"/>
         </div>
 
-        <h2 className="section-title">API</h2>
-        <div className="section-block">
-          <div className="table-responsive">
-            <table className="table table-bordered">
-              <thead>
-              <tr>
-                <th>Name</th>
-                <th>Type</th>
-                <th>Default</th>
-                <th>Description</th>
-              </tr>
-              </thead>
-              <tbody>
-              {props.map((value, index) => {
-                return (
-                  <tr>
-                    <th scope="row">{value.name}</th>
-                    <td>{value.type}</td>
-                    <td>{value.default}</td>
-                    <td>{value.description}</td>
-                  </tr>
-                )
-              })}
-              </tbody>
-            </table>
-          </div>
-        </div>
+        {renderTable(props)}
       </section>
     </>
   );
