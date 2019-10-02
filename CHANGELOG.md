@@ -4,6 +4,10 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
+## [1.15.5] - 2019-10-02
+### Changed
+- padding is removed from `.left-icon` class
+
 ## [1.15.4] - 2019-09-24
 ### Changed
 - react and react-dom package version updated to 16.9.0
@@ -91,7 +95,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ### Changed
 - `select` component takes `selected` prop to identify selected element
 - `ripple` effect in `button` component does not affect background color anymore
-- `ripple` effect transform time reduced to .3s from .5s 
+- `ripple` effect transform time reduced to .3s from .5s
 
 ### Fix
 - The components that do not extend `div` element now extends
@@ -131,7 +135,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - `typography` component added
 - button-loading animation added
 - `xlarge` prop added to `icon` component
-- `disabled` and `error` props added to `select` component 
+- `disabled` and `error` props added to `select` component
 
 ### Changed
 - loading animation
@@ -165,7 +169,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 -  Added `loader` component
 
 ### Changed
-- Changed node-sass from dev-dependencies to dependencies 
+- Changed node-sass from dev-dependencies to dependencies
 
 ## [1.0.5] - 2019-07-11
 ### Added
@@ -240,10 +244,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - `onClick` prop in `button` component changed to required
 
 ### Added
-- `size` prop added to `button` component 
-- `variant` prop added to `button` component 
-- `fluid` prop added to `button` component 
-- `disabled` prop added to `button` component 
+- `size` prop added to `button` component
+- `variant` prop added to `button` component
+- `fluid` prop added to `button` component
+- `disabled` prop added to `button` component
 
 ## [0.1.1] - 2019-06-27
 ### Added
