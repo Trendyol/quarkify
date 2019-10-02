@@ -21,12 +21,11 @@
   .left-icon {
     @extend .q-icon;
     height: 100%;
-    padding: 10px;
     display: flex;
     top: 0;
     align-items: center;
     position: absolute;
-    left: 10px;
+    left: 20px;
     justify-content: space-between;
   }
 
