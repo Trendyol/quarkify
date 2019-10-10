@@ -3,7 +3,6 @@
 
 .q-layout {
   background-color: $background-gray;
-  height: 100%;
   display: block;
   padding: $space-medium;
   margin: 0;
@@ -14,6 +13,9 @@
 
   &.q-fitted {
     padding: 0;
+  }
+  &.q-fullscreen {
+    height: 100%;
   }
 }
 

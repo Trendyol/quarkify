@@ -30,7 +30,7 @@ export default class Icon extends PureComponent<IProps> {
   }
 }
 
-interface IProps extends IIcon {
+export interface IProps extends IIcon {
   name: string;
   size?: sizeTypes;
   sizePixel?: number;

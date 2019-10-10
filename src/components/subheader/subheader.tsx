@@ -2,6 +2,7 @@ import classNames from "classnames";
 import React, { PureComponent } from "react";
 import IDiv from "../../interfaces/div";
 import "../../styles/components/_subheader.scss";
+import { sizeTypes } from "../../types/icon";
 import Icon from "../icon";
 import Typography from "../typography";
 
@@ -12,6 +13,8 @@ export default class SubHeader extends PureComponent<ISubHeader> {
       subTitle,
       rightIcon,
       leftIcon,
+      rightIconSize,
+      leftIconSize,
       className,
       leftIconOnClick,
       rightIconOnClick,
@@ -21,7 +24,7 @@ export default class SubHeader extends PureComponent<ISubHeader> {
     return (
         <div className={subHeaderClasses} {...props}>
           <div className="left-icon" onClick={leftIconOnClick}>
-            {leftIcon && <Icon name={leftIcon} />}
+            {leftIcon && <Icon name={leftIcon} size={leftIconSize || undefined} />}
           </div>
           {subTitle &&
           <div className="title-group">
@@ -35,7 +38,7 @@ export default class SubHeader extends PureComponent<ISubHeader> {
           </div>
           }
           <div className="right-icon" onClick={rightIconOnClick}>
-            {rightIcon && <Icon name={rightIcon} />}
+            {rightIcon && <Icon name={rightIcon} size={rightIconSize || undefined} />}
           </div>
           <div/>
         </div>
@@ -48,6 +51,8 @@ interface ISubHeader extends IDiv {
   subTitle?: string;
   leftIcon?: string;
   rightIcon?: string;
+  leftIconSize?: sizeTypes;
+  rightIconSize?: sizeTypes;
   leftIconOnClick?: (event: any) => any;
   rightIconOnClick?: (event: any) => any;
 }

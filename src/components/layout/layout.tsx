@@ -8,6 +8,7 @@ export default class Layout extends PureComponent<ILayoutProps> {
   public render() {
     const {
       fitted,
+      fullScreen,
       children,
       className,
       ...props
@@ -15,6 +16,7 @@ export default class Layout extends PureComponent<ILayoutProps> {
     const layoutClasses = classNames(
       "q-layout",
       fitted && "q-fitted",
+      fullScreen && "q-fullscreen",
       className);
     return (
       <div
@@ -29,4 +31,5 @@ export default class Layout extends PureComponent<ILayoutProps> {
 
 interface ILayoutProps extends IDiv {
   fitted?: boolean;
+  fullScreen?: boolean;
 }
