@@ -24,6 +24,11 @@ describe("layout specs", () => {
     expect(wrapper.hasClass("q-fitted")).toBe(true);
   });
 
+  it("should have className fullscreen when fullScreen prop is given", () => {
+    const wrapper = shallow(<Layout fullScreen/>);
+    expect(wrapper.hasClass("q-fullscreen")).toBe(true);
+  });
+
   it("should accept additional classNames", () => {
     const fakeClass = faker.lorem.word();
     const wrapper = shallow(<Layout className={fakeClass}/>);
