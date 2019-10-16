@@ -57,6 +57,7 @@ export default class Popup extends PureComponent<IPopupProps> {
       closeOnOverlayClick = true,
       onChange,
       className,
+      contentClassName,
     } = this.props;
 
     const popupClasses = classNames(
@@ -67,6 +68,11 @@ export default class Popup extends PureComponent<IPopupProps> {
       iconLeft && "q-popup-icon-left",
       "icon-close",
       "q-popup-icon-position",
+    );
+
+    const popupContentClasses = classNames(
+      contentClassName,
+      "q-popup-content",
     );
 
     const overlayClick = () => {
@@ -97,7 +103,7 @@ export default class Popup extends PureComponent<IPopupProps> {
                 name="close"
               />
             )}
-            <div className="q-popup-content">
+            <div className={popupContentClasses}>
               {children}
             </div>
           </div>
@@ -120,4 +126,5 @@ interface IPopupProps {
   noIcon?: boolean;
   closeOnOverlayClick?: boolean;
   className?: string;
+  contentClassName?: string;
 }

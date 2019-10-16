@@ -90,4 +90,11 @@ describe("popup specs", () => {
 
     expect(wrapper.hasClass(fakeClass)).toBe(true);
   });
+
+  it("should accept additional classNames for popup content", () => {
+    const fakeClass = faker.lorem.word();
+    const onChange = sandbox.spy();
+    const wrapper = mount(<Popup show={true} onChange={onChange} contentClassName={fakeClass}/>);
+    expect(wrapper.find(`.${fakeClass}`)).toHaveLength(1);
+  });
 });
