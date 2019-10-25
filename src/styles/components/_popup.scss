@@ -12,7 +12,7 @@
   max-width: 90vw;
   max-height: 90vh;
   border-radius: $border-radius;
-  z-index: 1022;
+  z-index: 1031;
 
 
   .q-popup-content {
@@ -48,7 +48,7 @@
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 1021;
+  z-index: 1030;
   background-color: rgba(0, 0, 0, .5);
   display: flex;
   justify-content: center;
