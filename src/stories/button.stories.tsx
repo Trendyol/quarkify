@@ -29,6 +29,8 @@ class LoadingWrapper extends PureComponent {
 
 stories.add("Variants", () => (
   <div>
+    <Button onClick={actionLog} size="xsmall">Small button</Button>
+    &nbsp;
     <Button onClick={actionLog} size="small">Primary</Button>
     &nbsp;
     <Button variant="secondary" onClick={actionLog} size="small">
