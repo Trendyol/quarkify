@@ -15,9 +15,16 @@ class SideMenu extends React.Component {
                 <Link className="nav-link" to="/box">Box</Link>
                 <Link className="nav-link" to="/button">Button</Link>
                 <Link className="nav-link" to="/checkbox">Checkbox</Link>
+                <Link className="nav-link" to="/icon">Icon</Link>
+                <Link className="nav-link" to="/input">Input</Link>
+                <Link className="nav-link" to="/layout">Layout</Link>
+                <Link className="nav-link" to="/list">List</Link>
+                <Link className="nav-link" to="/loader">Loader</Link>
+                <Link className="nav-link" to="/modal">Modal</Link>
+                <Link className="nav-link" to="/popup">Popup</Link>
+                <Link className="nav-link" to="/product-slider">Product Slider</Link>
+                <Link className="nav-link" to="/radio">Radio</Link>
                 <a className="nav-link" href="#members">Members</a>
-                <a className="nav-link" href="#account">User Account</a>
-                <a className="nav-link" href="#others">Others</a>
               </nav>
               <a className="nav-link scrollto" href="#ui-components">UI Components</a>
             </nav>

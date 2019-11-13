@@ -10,6 +10,15 @@ import CheckBox from "./components/CheckBox.jsx";
 import SideMenu from "./partials/SideMenu";
 import Accordion from "./components/Accordion";
 import Box from "./components/Box";
+import Modal from "./components/Modal";
+import Loader from "./components/Loader";
+import List from "./components/List";
+import Layout from "./components/Layout";
+import Input from "./components/Input";
+import Icon from "./components/Icon";
+import Popup from "./components/Popup";
+import ProductSlider from "./components/ProductSlider";
+import Radio from "./components/Radio";
 
 const routing = (
   <Router>
@@ -26,6 +35,15 @@ const routing = (
                 <Route path="/box" component={Box} />
                 <Route path="/button" component={Button} />
                 <Route path="/checkbox" component={CheckBox} />
+                <Route path="/icon" component={Icon} />
+                <Route path="/input" component={Input} />
+                <Route path="/layout" component={Layout} />
+                <Route path="/list" component={List} />
+                <Route path="/loader" component={Loader} />
+                <Route path="/modal" component={Modal} />
+                <Route path="/popup" component={Popup} />
+                <Route path="/product-slider" component={ProductSlider} />
+                <Route path="/radio" component={Radio} />
               </div>
             </div>
           </div>
