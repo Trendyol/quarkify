@@ -7,6 +7,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ## [1.17.1 - 2019-11-12
 ### Changed
 - Fixed display issue of `NotFound` component with no title and subtitle
+- Fixed tests of `NotFound` component
 
 ## [1.17.0] - 2019-11-12
 ### Added
