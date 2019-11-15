@@ -27,7 +27,7 @@ export default class NotFound extends PureComponent<INotFoundProps> {
     return (
       <Box className="q-not-found" spaced textAlign="center">
         <Icon
-          className="q-icon__icon"
+          className="q-not-found__icon"
           name={icon}
           size={iconSize}
           color={iconColor}
