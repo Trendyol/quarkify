@@ -1,0 +1,19 @@
+.q-not-found {
+  .q-icon {
+    display: block;
+    margin-bottom: 15px;
+  }
+
+  &__title {
+    margin: 4vw;
+  }
+
+  &__subtitle {
+    margin-bottom: 6vw;
+  }
+
+  &__button button {
+    border: solid 2px #f27a1a !important;
+    padding: 0 10vw;
+  }
+}

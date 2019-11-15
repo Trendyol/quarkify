@@ -1,5 +1,5 @@
-@import '../mixins/_color-scheme';
-@import '../mixins/_fluid.scss';
+@import "../mixins/_color-scheme";
+@import "../mixins/_fluid.scss";
 
 .q-icon {
   display: inline-block;
@@ -14,7 +14,7 @@
     border-radius: 50%;
     padding: 1.25rem;
     border: 1px solid $very-light-pink;
-    box-shadow: 0 1px 2px 0 rgba(0,0,0,.06);
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.06);
   }
 
   // Icon Sizes
@@ -37,9 +37,13 @@
   //Color variants
   @each $color, $value in $colors {
     &.#{$color} {
-      &:before{
+      &:before {
         color: $value;
       }
     }
+  }
+
+  > span {
+    font-family: inherit;
   }
 }

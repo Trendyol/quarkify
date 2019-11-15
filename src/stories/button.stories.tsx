@@ -15,23 +15,45 @@ class LoadingWrapper extends PureComponent {
   public render() {
     return (
       <>
-        <Button variant="primary" loading={this.state.loading} onClick={this.handleClick}>Add to Basket</Button>
-        <Button variant="secondary" loading={this.state.loading} onClick={this.handleClick}>Add to Basket</Button>
-        <Button variant="gray" loading={this.state.loading} onClick={this.handleClick}>Add to Basket</Button>
+        <Button
+          variant="primary"
+          loading={this.state.loading}
+          onClick={this.handleClick}
+        >
+          Add to Basket
+        </Button>
+        <Button
+          variant="secondary"
+          loading={this.state.loading}
+          onClick={this.handleClick}
+        >
+          Add to Basket
+        </Button>
+        <Button
+          variant="gray"
+          loading={this.state.loading}
+          onClick={this.handleClick}
+        >
+          Add to Basket
+        </Button>
       </>
     );
   }
   private handleClick = () => {
-    this.setState({loading: true});
-    setTimeout(() => this.setState({loading: false}), 1000);
+    this.setState({ loading: true });
+    setTimeout(() => this.setState({ loading: false }), 1000);
   }
 }
 
 stories.add("Variants", () => (
   <div>
-    <Button onClick={actionLog} size="xsmall">Small button</Button>
+    <Button onClick={actionLog} size="xsmall">
+      Small button
+    </Button>
     &nbsp;
-    <Button onClick={actionLog} size="small">Primary</Button>
+    <Button onClick={actionLog} size="small">
+      Primary
+    </Button>
     &nbsp;
     <Button variant="secondary" onClick={actionLog} size="small">
       Secondary
@@ -40,8 +62,8 @@ stories.add("Variants", () => (
     <Button variant="gray" onClick={actionLog} size="small">
       Gray
     </Button>
-    <br/>
-    <br/>
+    <br />
+    <br />
     <Button onClick={actionLog}>Primary</Button>
     &nbsp;
     <Button variant="secondary" onClick={actionLog}>
@@ -51,9 +73,11 @@ stories.add("Variants", () => (
     <Button variant="gray" onClick={actionLog}>
       Gray
     </Button>
-    <br/>
-    <br/>
-    <Button onClick={actionLog} size="large">Primary</Button>
+    <br />
+    <br />
+    <Button onClick={actionLog} size="large">
+      Primary
+    </Button>
     &nbsp;
     <Button variant="secondary" onClick={actionLog} size="large">
       Secondary
@@ -66,9 +90,9 @@ stories.add("Variants", () => (
 ));
 
 stories.add("Button with Action", () => (
-  <div>
-    <Button onClick={action} variant="primary">Click</Button>
-  </div>
+  <Button onClick={action} variant="primary">
+    Click
+  </Button>
 ));
 
 stories.add("Disabled", () => (
@@ -82,7 +106,7 @@ stories.add("Fluid", () => (
   </Button>
 ));
 stories.add("Button with Icon", () => (
-  <div>
+  <>
     <Button variant="primary" icon="star" onClick={actionLog}>
       Favorilere ekle
     </Button>
@@ -95,19 +119,24 @@ stories.add("Button with Icon", () => (
       Sepette %20 indirim
     </Button>
     &nbsp;
-    <Button variant="secondary" icon="heart" onClick={actionLog}/>
-  </div>
+    <Button variant="secondary" icon="heart" onClick={actionLog} />
+  </>
 ));
 
 stories.add("Circular", () => (
-  <Button variant="primary" circular icon="heart" onClick={actionLog}/>
+  <Button variant="primary" circular icon="heart" onClick={actionLog} />
 ));
 
 stories.add("Ripple", () => (
   <>
-    {/*<Button variant="primary" ripple>Ripple</Button>*/}
-    {/*<Button variant="secondary" ripple>Ripple</Button>*/}
+    <Button variant="primary" ripple>
+      Ripple
+    </Button>
+    &nbsp;
+    <Button variant="secondary" ripple>
+      Ripple
+    </Button>
   </>
 ));
 
-stories.add("Loading", () => (<LoadingWrapper/>));
+stories.add("Loading", () => <LoadingWrapper />);
