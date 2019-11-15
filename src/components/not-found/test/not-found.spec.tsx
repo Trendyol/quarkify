@@ -42,7 +42,7 @@ describe("NotFound specs", () => {
     const wrapper = shallow(<NotFound iconColor="light-gray" />);
 
     expect(wrapper.find(".q-not-found")).toHaveLength(1);
-    expect(wrapper.find(".q-icon__icon")).toHaveLength(1);
+    expect(wrapper.find(".q-not-found__icon")).toHaveLength(1);
     expect(wrapper.find(".q-not-found__title")).toHaveLength(0);
     expect(wrapper.find(".q-not-found__subtitle")).toHaveLength(0);
     expect(
@@ -56,6 +56,6 @@ describe("NotFound specs", () => {
     const spanCount = faker.random.number({ max: 10 });
     const wrapper = mount(<NotFound stroke={spanCount} />);
 
-    expect(wrapper.find(".q-icon__icon > span")).toHaveLength(spanCount);
+    expect(wrapper.find(".q-not-found__icon > span")).toHaveLength(spanCount);
   });
 });
