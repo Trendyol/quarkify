@@ -1,3 +1,4 @@
+import classNames from "classnames";
 import React, { PureComponent } from "react";
 import { CONTINUE_TO_SHOPPING } from "../../enums/not-found";
 import IDiv from "../../interfaces/div";
@@ -22,10 +23,12 @@ export default class NotFound extends PureComponent<INotFoundProps> {
       iconSize = "xlarge",
       iconColor = "dark-gray",
       stroke,
+      className,
     } = this.props;
+    const notFoundClasses = classNames("q-not-found", className);
 
     return (
-      <Box className="q-not-found" spaced textAlign="center">
+      <Box className={notFoundClasses} spaced textAlign="center">
         <Icon
           className="q-not-found__icon"
           name={icon}

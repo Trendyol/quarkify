@@ -24,5 +24,5 @@ stories.add("Page Error", () => (
   />
 ));
 stories.add("No Parameters", () => (
-  <NotFound/>
+  <NotFound />
 ));
