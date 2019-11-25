@@ -1,5 +1,6 @@
 import classNames from "classnames";
 import React, { PureComponent } from "react";
+import { BUTTON_RIPPLE_WARNING } from "../../enums/button";
 import IButton from "../../interfaces/button";
 import "../../styles/components/_button.scss";
 import { buttonSize, variantTypes } from "../../types/button";
@@ -33,8 +34,7 @@ export default class Button extends PureComponent<IButtonProps> {
     );
 
     if (ripple && process.env.NODE_ENV === "development") {
-      console.warn(`quarkify: 'ripple' prop for Button component is no longer supported.
-        Please remove 'ripple' prop from Buttons.`);
+      console.warn(BUTTON_RIPPLE_WARNING);
     }
 
     return (
