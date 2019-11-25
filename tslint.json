@@ -6,7 +6,8 @@
     "quotemark": [true, "double", "jsx-double"],
     "jsx-boolean-value": false,
     "no-implicit-dependencies": [true, "dev"],
-    "jsx-no-multiline-js": false
+    "jsx-no-multiline-js": false,
+    "no-console": ["error", { "allow": ["warn"] }] 
   },
   "linterOptions": {
     "exclude": [
