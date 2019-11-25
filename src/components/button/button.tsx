@@ -1,55 +1,52 @@
 import classNames from "classnames";
 import React, { PureComponent } from "react";
+import { BUTTON_RIPPLE_WARNING } from "../../enums/button";
 import IButton from "../../interfaces/button";
 import "../../styles/components/_button.scss";
 import { buttonSize, variantTypes } from "../../types/button";
 import classNamesDefault from "../../utils/class-names-default";
 import Icon from "../icon";
 import Loader from "../loader";
-import Ripple from "../ripple";
 
 export default class Button extends PureComponent<IButtonProps> {
 
   public render() {
     const {
       variant = "primary",
-      size = "medium",
       fluid,
       disabled,
-      icon,
       round,
+      size = "medium",
       circular,
+      loading = false,
+      ripple,
+      icon,
       children,
       className,
-      loading = false,
-      ripple = true,
       ...props
     } = this.props;
-    const rippleClasses = classNames(
-      fluid && "q-fluid",
-      className,
-    );
     const buttonClasses = classNames(
       classNamesDefault({ variant, fluid, disabled, round }),
       size && `q-button-${size}`,
       circular && "q-circular",
-      loading && "loading", "q-button");
+      loading && "loading", "q-button",
+      className,
+    );
+
+    if (ripple && process.env.NODE_ENV === "development") {
+      console.warn(BUTTON_RIPPLE_WARNING);
+    }
+
     return (
-      <Ripple
-        className={rippleClasses}
-        display={fluid ? "block" : "inline-block"}
-        active={ripple && !(disabled || loading)}
+      <button
+        className={buttonClasses}
+        disabled={disabled || loading}
+        {...props}
       >
-        <button
-          className={buttonClasses}
-          disabled={disabled || loading}
-          {...props}
-        >
-          <Loader active={loading}/>
-          {icon && <Icon name={icon}/>}
-          {children && <span>{children}</span>}
-        </button>
-      </Ripple>
+        <Loader active={loading} />
+        {icon && <Icon name={icon} />}
+        {children && <span>{children}</span>}
+      </button>
     );
   }
 }

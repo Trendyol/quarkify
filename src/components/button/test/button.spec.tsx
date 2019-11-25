@@ -20,7 +20,7 @@ describe("button specs", () => {
 
   it("should render button component", () => {
     const text = faker.random.word();
-    const wrapper = shallow(<Button onClick={onClick}>{text}</Button>).dive();
+    const wrapper = shallow(<Button onClick={onClick}>{text}</Button>);
 
     expect(wrapper.find("button")).toHaveLength(1);
   });

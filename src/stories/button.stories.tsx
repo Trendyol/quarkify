@@ -127,16 +127,4 @@ stories.add("Circular", () => (
   <Button variant="primary" circular icon="heart" onClick={actionLog} />
 ));
 
-stories.add("Ripple", () => (
-  <>
-    <Button variant="primary" ripple>
-      Ripple
-    </Button>
-    &nbsp;
-    <Button variant="secondary" ripple>
-      Ripple
-    </Button>
-  </>
-));
-
 stories.add("Loading", () => <LoadingWrapper />);
