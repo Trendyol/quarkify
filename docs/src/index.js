@@ -33,6 +33,7 @@ const routing = (
     <Navbar/>
     <div>
       <Route exact path="/" component={Index} />
+      <Route exact path="/quarkify" component={Index} />
       <div className="doc-wrapper">
         <div className="container">
           <div className="doc-body row">
