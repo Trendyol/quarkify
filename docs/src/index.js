@@ -19,6 +19,14 @@ import Icon from "./components/Icon";
 import Popup from "./components/Popup";
 import ProductSlider from "./components/ProductSlider";
 import Radio from "./components/Radio";
+import Rating from "./components/Rating";
+import Ripple from "./components/Ripple";
+import ScrollToTop from "./components/ScrollToTop";
+import Select from "./components/Select";
+import SubHeader from "./components/SubHeader";
+import Switch from "./components/Switch";
+import Typography from "./components/Typography";
+import GettingStarted from "./pages/GettingStarted";
 
 const routing = (
   <Router>
@@ -44,6 +52,15 @@ const routing = (
                 <Route path="/popup" component={Popup} />
                 <Route path="/product-slider" component={ProductSlider} />
                 <Route path="/radio" component={Radio} />
+                <Route path="/rating" component={Rating} />
+                <Route path="/ripple" component={Ripple} />
+                <Route path="/scroll-to-top" component={ScrollToTop} />
+                <Route path="/select" component={Select} />
+                <Route path="/sub-header" component={SubHeader} />
+                <Route path="/switch" component={Switch} />
+                <Route path="/typography" component={Typography} />
+
+                <Route path="/getting-started" component={GettingStarted} />
               </div>
             </div>
           </div>

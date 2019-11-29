@@ -5,7 +5,7 @@
   "homepage": "./",
   "dependencies": {
     "prop-types": "^15.7.2",
-    "quarkify": "^1.15.3",
+    "quarkify": "^1.17.3",
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
     "react-html-parser": "^2.0.2",

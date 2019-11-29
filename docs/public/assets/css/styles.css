@@ -1,4 +1,4 @@
-/*   
+/*
  * Template Name: PrettyDocs - Bootstrap 4 Template for documentations
  * Version: 2.0
  * Author: Xiaoying Riley
@@ -1024,7 +1024,7 @@ select {
   top: 15px;
 }
 
-.affix, 
+.affix,
 .affix-bottom {
   width: 230px;
 }
@@ -1454,4 +1454,17 @@ select {
   .main-search-box .search-form .search-input {
     width: 560px;
   }
+}
+
+.code {
+  margin-bottom: 16px;
+}
+
+.code pre {
+  padding: 16px;
+  overflow: auto;
+  font-size: 85%;
+  line-height: 1.45;
+  background-color: #e2e4e6;
+  border-radius: 3px;
 }
