@@ -10,7 +10,7 @@ function Index() {
       <div className="page-wrapper">
         <section className="cards-section text-center">
           <div className="container">
-            <img src="./assets/images/quarkify_logo.png" alt="Logo" width="200" height="200" style={{maxWidth: "100%"}} />
+            <img src="./assets/images/quarkify_logo.png" alt="Logo" width="200" height="200" style={{maxWidth: "100%"}} onerror='this.onerror = null; this.src="./quarkify/assets/images/quarkify_logo.png"' />
             <Typography variant="paragraph" bold>An awesome lightweight React UI Component library</Typography>
             <div className="intro" style={{ marginTop: "30px" }}>
               <p style={{textAlign: "left"}}>There are many great UI libraries for react available but almost all of them are highly customizable and full of boilerplate code, so we decided to create our own lightweight React Component library and you should give it a try. Here's why:
