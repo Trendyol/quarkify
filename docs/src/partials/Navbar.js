@@ -9,7 +9,7 @@ class Navbar extends React.Component {
           <div className="container">
             <div className="branding">
               <h1 className="logo">
-                <Link to="/">
+                <Link to="/quarkify">
                   <span aria-hidden="true" className="icon_documents_alt icon"/> &nbsp;
                   <span className="text-bold">QUARKIFY</span>
                 </Link>
