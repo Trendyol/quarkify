@@ -33,10 +33,6 @@ export default class Button extends PureComponent<IButtonProps> {
       className,
     );
 
-    if (ripple && process.env.NODE_ENV === "development") {
-      console.warn(BUTTON_RIPPLE_WARNING);
-    }
-
     return (
       <button
         className={buttonClasses}
