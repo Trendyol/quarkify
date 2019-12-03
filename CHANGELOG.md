@@ -9,6 +9,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - Not Found Component reverted
 ### Changed
 - Popup Component's box-sizing fixed
+- Tweaks to gitignore and package.json files
+### Added 
+- Icon tests for stroke prop are added
 
 ## [1.17.4 - 2019-11-15
 ### Changed
