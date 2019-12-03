@@ -52,4 +52,26 @@ describe("icon specs", () => {
 
     expect(wrapper.hasClass(fakeClass)).toBe(true);
   });
+
+  it("should create correct amount of strokes", () => {
+    const fakeClass = faker.lorem.word();
+    const randomStrokes = faker.random.number({min: 1, max: 10});
+    const wrapper = shallow(<Icon name="search" stroke={randomStrokes} className={fakeClass}/>);
+
+    expect(wrapper.find(`.${fakeClass} > span`)).toHaveLength(randomStrokes);
+  });
+
+  it("should not create strokes when the value is not defined", () => {
+    const fakeClass = faker.lorem.word();
+    const wrapper = shallow(<Icon name="search" className={fakeClass}/>);
+
+    expect(wrapper.find(`.${fakeClass} > span`)).toHaveLength(0);
+  });
+
+  it("should not create strokes when the value is 0", () => {
+    const fakeClass = faker.lorem.word();
+    const wrapper = shallow(<Icon name="search" stroke={0} className={fakeClass}/>);
+
+    expect(wrapper.find(`.${fakeClass} > span`)).toHaveLength(0);
+  });
 });

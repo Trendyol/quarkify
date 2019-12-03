@@ -1,6 +1,6 @@
 {
   "name": "quarkify",
-  "version": "1.17.4",
+  "version": "1.17.5",
   "license": "MIT",
   "description": "An awesome lightweight React UI Component library",
   "repository": "https://github.com/Trendyol/quarkify",
@@ -35,9 +35,13 @@
   "jest": {
     "collectCoverageFrom": [
       "src/**/*.{ts,tsx}",
+      "!src/**/index.ts",
       "!src/**/*.stories.tsx",
       "!src/types/*",
-      "!src/interfaces/*"
+      "!src/interfaces/*",
+      "!src/utils/*",
+      "!src/enums/*",
+      "!src/react-app-env.d.ts"
     ],
     "coverageThreshold": {
       "global": {
