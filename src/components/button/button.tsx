@@ -1,6 +1,5 @@
 import classNames from "classnames";
 import React, { PureComponent } from "react";
-import { BUTTON_RIPPLE_WARNING } from "../../enums/button";
 import IButton from "../../interfaces/button";
 import "../../styles/components/_button.scss";
 import { buttonSize, variantTypes } from "../../types/button";
