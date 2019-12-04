@@ -20,6 +20,7 @@
 /styles
 /types
 /utils
+/enums
 
 # misc
 .DS_Store

@@ -1,6 +1,5 @@
 import classNames from "classnames";
 import React, { PureComponent } from "react";
-import { BUTTON_RIPPLE_WARNING } from "../../enums/button";
 import IButton from "../../interfaces/button";
 import "../../styles/components/_button.scss";
 import { buttonSize, variantTypes } from "../../types/button";
@@ -32,10 +31,6 @@ export default class Button extends PureComponent<IButtonProps> {
       loading && "loading", "q-button",
       className,
     );
-
-    if (ripple && process.env.NODE_ENV === "development") {
-      console.warn(BUTTON_RIPPLE_WARNING);
-    }
 
     return (
       <button
