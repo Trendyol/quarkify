@@ -30,7 +30,7 @@ export default class Icon extends PureComponent<IProps> {
 
     return (
       <i className={iconClass} style={sizePixelWrapper} {...props}>
-        {stroke && stroke > 0 && renderSpanElements()}
+        {!!stroke && renderSpanElements()}
         {children}
       </i>
     );
