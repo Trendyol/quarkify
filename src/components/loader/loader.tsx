@@ -15,7 +15,7 @@ export default class Loader extends PureComponent<ILoaderProps> {
 
     return (
       <div className="q-loader" {...props}>
-        <img srcset={Spinner} src={SpinnerAlt} alt="loading" />
+        <img srcSet={Spinner} src={SpinnerAlt} alt="loading" />
       </div>
     );
   }
