@@ -1,11 +1,13 @@
 import React, { PureComponent } from "react";
+import SpinnerAlt from "../../assets/spinner.gif";
+import Spinner from "../../assets/spinner.svg";
 import IDiv from "../../interfaces/div";
 import "../../styles/components/_loader.scss";
 
 export default class Loader extends PureComponent<ILoaderProps> {
 
   public render() {
-    const {active, ...props} = this.props;
+    const { active, ...props } = this.props;
 
     if (!active) {
       return null;
@@ -13,7 +15,7 @@ export default class Loader extends PureComponent<ILoaderProps> {
 
     return (
       <div className="q-loader" {...props}>
-        <div className="q-loading-animation"/>
+        <img srcset={Spinner} src={SpinnerAlt} alt="loading" />
       </div>
     );
   }
