@@ -21,6 +21,7 @@
 /types
 /utils
 /enums
+/assets
 
 # misc
 .DS_Store
