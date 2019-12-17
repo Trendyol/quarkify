@@ -14,17 +14,17 @@ stories.add("Loader over Box", () => (
       <Loader active/>
       <h1>Content 1</h1>
       <Button onClick={onClick}>Button</Button>
-      <p>{faker.lorem.lines(10)}</p>
+      <p>{faker.lorem.lines(20)}</p>
     </Box>
     <Box spaced>
       <Loader active/>
       <h1>Content 2</h1>
-      <p>{faker.lorem.lines(10)}</p>
+      <p>{faker.lorem.lines(20)}</p>
     </Box>
     <Box spaced>
       <Loader active/>
       <h1>Content 3</h1>
-      <p>{faker.lorem.lines(10)}</p>
+      <p>{faker.lorem.lines(20)}</p>
     </Box>
   </div>
 ));
