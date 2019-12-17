@@ -6,7 +6,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [1.17.7 - 2019-12-17
 ### Changed
-- Loading component bugfix
+- Loader icon is changed from SVG to CSS
 
 ## [1.17.6 - 2019-12-16
 ### Changed
