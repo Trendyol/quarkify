@@ -1,6 +1,4 @@
 import React, { PureComponent } from "react";
-import SpinnerAlt from "../../assets/spinner.gif";
-import Spinner from "../../assets/spinner.svg";
 import IDiv from "../../interfaces/div";
 import "../../styles/components/_loader.scss";
 
@@ -15,7 +13,11 @@ export default class Loader extends PureComponent<ILoaderProps> {
 
     return (
       <div className="q-loader" {...props}>
-        <img srcSet={Spinner} src={SpinnerAlt} alt="loading" />
+        <div className="q-loader-parent">
+          <div className="q-loader-children">
+            {Array.from({ length: 12 }, () => <div><div /></div>)}
+          </div>
+        </div>
       </div>
     );
   }
