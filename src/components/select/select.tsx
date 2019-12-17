@@ -23,6 +23,7 @@ export default class Select extends PureComponent<IProps> {
       disabled,
       selected,
       error,
+      onChange,
       ...props
     } = this.props;
     const nameKey = name === undefined ? "name" : name;
@@ -42,7 +43,7 @@ export default class Select extends PureComponent<IProps> {
     return (
       <div className={selectDivClasses}>
         {leftIcon && <Icon className={"q-select-icon-left"} name={leftIcon} color={leftIconColor}/>}
-        <select defaultValue={selected} className={selectClasses} disabled={disabled} {...props}>
+        <select value={selected} className={selectClasses} disabled={disabled} onChange={onChange} {...props}>
           {items.map((item, index) => {
             return (
               <option
