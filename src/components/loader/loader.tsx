@@ -15,7 +15,9 @@ export default class Loader extends PureComponent<ILoaderProps> {
       <div className="q-loader" {...props}>
         <div className="q-loader-parent">
           <div className="q-loader-children">
-            {Array.from({ length: 12 }, () => <div><div /></div>)}
+            <div><div /></div><div><div /></div><div><div /></div><div><div /></div>
+            <div><div /></div><div><div /></div><div><div /></div><div><div /></div>
+            <div><div /></div><div><div /></div><div><div /></div><div><div /></div>
           </div>
         </div>
       </div>
