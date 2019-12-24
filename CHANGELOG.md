@@ -6,7 +6,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [1.17.9 - 2019-12-24
 ### Fixed
-- Fixes to loader component.
+- Fix to loader component.
 
 ## [1.17.8 - 2019-12-17
 ### Fixed
