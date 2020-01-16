@@ -97,4 +97,24 @@ describe("popup specs", () => {
     const wrapper = mount(<Popup show={true} onChange={onChange} contentClassName={fakeClass}/>);
     expect(wrapper.find(`.${fakeClass}`)).toHaveLength(1);
   });
+
+  it("should not render q-popup-header when there is no icon and title", () => {
+    const onChange = sandbox.spy();
+    const wrapper = mount(<Popup show={true} noIcon onChange={onChange} />);
+    expect(wrapper.find(`.q-popup-header`).exists()).toEqual(false);
+    expect(wrapper.find(`.q-popup-header-text`).exists()).toEqual(false);
+  });
+
+  it("should render q-popup-header when there is icon and not title", () => {
+    const onChange = sandbox.spy();
+    const wrapper = mount(<Popup show={true} onChange={onChange} />);
+    expect(wrapper.find(`.q-popup-header`).exists()).toEqual(true);
+  });
+
+  it("should render q-popup-header when there is title and not icon", () => {
+    const onChange = sandbox.spy();
+    const wrapper = mount(<Popup show={true} onChange={onChange} title={faker.lorem.word()} noIcon />);
+    expect(wrapper.find(`.q-popup-header`).exists()).toEqual(true);
+    expect(wrapper.find(`.q-popup-header-text`).exists()).toEqual(true);
+  });
 });

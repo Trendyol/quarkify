@@ -4,23 +4,27 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
-## [1.17.9 - 2019-12-24
+## [1.17.10] - 2020-01-16
+### Added
+- Title prop added to popup component
+
+## [1.17.9] - 2019-12-24
 ### Fixed
 - Fix to loader component.
 
-## [1.17.8 - 2019-12-17
+## [1.17.8] - 2019-12-17
 ### Fixed
 - Select component selected prop issue resolved.
 
-## [1.17.7 - 2019-12-17
+## [1.17.7] - 2019-12-17
 ### Changed
 - Loader icon is changed from SVG to CSS
 
-## [1.17.6 - 2019-12-16
+## [1.17.6] - 2019-12-16
 ### Changed
 - Loading icon changed with a better one
 
-## [1.17.5 - 2019-12-02
+## [1.17.5] - 2019-12-02
 ### Reverted
 - Not Found Component reverted
 ### Changed
@@ -29,19 +33,19 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ### Added 
 - Icon tests for stroke prop are added
 
-## [1.17.4 - 2019-11-15
+## [1.17.4] - 2019-11-15
 ### Changed
 - Buttons no longer have ripple effect, please remove ripple prop with any value from Buttons
 
-## [1.17.3 - 2019-11-15
+## [1.17.3] - 2019-11-15
 ### Fixed
 - Fixes for `NotFound` component
 
-## [1.17.2 - 2019-11-15
+## [1.17.2] - 2019-11-15
 ### Changed
 - Styles of `NotFound` component added to _all.scss
 
-## [1.17.1 - 2019-11-12
+## [1.17.1] - 2019-11-12
 ### Changed
 - Fixed display issue of `NotFound` component with no title and subtitle
 - Fixed tests of `NotFound` component

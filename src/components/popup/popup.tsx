@@ -4,6 +4,7 @@ import ReactDOM from "react-dom";
 import { CSSTransition } from "react-transition-group";
 import "../../styles/components/_popup.scss";
 import Icon from "../icon";
+import Typography from "../typography";
 
 export default class Popup extends PureComponent<IPopupProps> {
 
@@ -58,6 +59,7 @@ export default class Popup extends PureComponent<IPopupProps> {
       onChange,
       className,
       contentClassName,
+      title,
     } = this.props;
 
     const popupClasses = classNames(
@@ -96,13 +98,20 @@ export default class Popup extends PureComponent<IPopupProps> {
       >
         <div className={popupClasses} onClick={overlayClick}>
           <div className="q-popup-main" onClick={this.popupBodyClick}>
-            {!noIcon && (
-              <Icon
-                className={popupIconClasses}
-                onClick={handleIconClick}
-                name="close"
-              />
-            )}
+            {
+              (!noIcon || title) && <div className="q-popup-header">
+                <div className="q-popup-header-text">
+                  {title}
+                </div>
+                {!noIcon && (
+                  <Icon
+                    className={popupIconClasses}
+                    onClick={handleIconClick}
+                    name="close"
+                  />
+                )}
+              </div>
+            }
             <div className={popupContentClasses}>
               {children}
             </div>
@@ -127,4 +136,5 @@ interface IPopupProps {
   closeOnOverlayClick?: boolean;
   className?: string;
   contentClassName?: string;
+  title?: React.ReactElement | string;
 }

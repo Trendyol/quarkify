@@ -3,6 +3,7 @@ import React, { PureComponent } from "react";
 import Button from "../components/button";
 import Icon from "../components/icon";
 import Popup from "../components/popup";
+import Typography from "../components/typography";
 
 const stories = storiesOf("Popup", module);
 
@@ -17,6 +18,7 @@ class PopupWrapper extends PureComponent<any, any> {
   }
 
   public render() {
+    const { closeOnOverlayClick } = this.props;
     return (
       <>
         {Array.from({ length: 15 }, (_, i) => <p>Down {i}</p>)}
@@ -25,7 +27,8 @@ class PopupWrapper extends PureComponent<any, any> {
         <Popup
           show={this.state.show}
           onChange={this.handleChange}
-          closeOnOverlayClick={false}
+          closeOnOverlayClick={closeOnOverlayClick}
+          title={<Typography variant={"body"}>Kullanıcı Sözleşmesi</Typography>}
         >
           {Array.from({ length: 30 }, (_, i) => <p>Line {i}</p>)}
         </Popup>
@@ -103,8 +106,8 @@ class PopupBasketWrapper extends PureComponent<any, any> {
   }
 }
 
-stories.add("Default", () => <PopupWrapper/>);
+stories.add("Default", () => <PopupWrapper closeOnOverlayClick={true} />);
 stories.add("CloseOnOverlayClick disabled", () => (
-  <PopupWrapper/>
+  <PopupWrapper closeOnOverlayClick={false}/>
 ));
-stories.add("Urun sepete eklendi", () => <PopupBasketWrapper/>);
+stories.add("Urun sepete eklendi", () => <PopupBasketWrapper closeOnOverlayClick={true} />);
