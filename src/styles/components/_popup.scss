@@ -31,7 +31,8 @@
     display: flex;
     justify-content: flex-end;
     width: 16px;
-    margin-left: auto;
+    position: absolute;
+    right: 0;
   }
 
   .q-popup-icon-left {
@@ -66,4 +67,20 @@ html.q-disable-scroll {
   overflow: hidden;
   height: 100%;
   width: 100%;
+}
+
+.q-popup-header {
+  display: flex;
+  align-items: center;
+  position: relative;
+  margin-bottom: $space-medium;
+  min-height: 16px;
+
+  &-text {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin: 0 auto;
+    padding: 0 $space-large;
+  }
 }
