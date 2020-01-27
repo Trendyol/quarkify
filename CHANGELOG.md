@@ -4,6 +4,10 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
+## [1.17.11] - 2020-01-27
+### Changed
+- Text color of the gray variant button is set to dark-gray
+
 ## [1.17.10] - 2020-01-16
 ### Added
 - Title prop added to popup component
