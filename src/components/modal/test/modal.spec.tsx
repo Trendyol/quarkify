@@ -136,4 +136,11 @@ describe("modal specs", () => {
 
     expect(wrapper.hasClass(fakeClass)).toBe(true);
   });
+
+  it("Modal.Header component should accept additional classNames", () => {
+    const fakeClass = faker.lorem.word();
+    const wrapper = mount(<Modal.Header className={fakeClass}/>);
+
+    expect(wrapper.hasClass(fakeClass)).toBe(true);
+  });
 });

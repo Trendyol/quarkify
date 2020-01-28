@@ -10,8 +10,9 @@ export default class Header extends PureComponent<IHeaderProps> {
       leftIcon,
       leftIconOnClick,
       rightIconOnClick,
+      className,
     } = this.props;
-    const headerClasses = classNames("q-modal-header", leftIcon && "q-has-left-icon");
+    const headerClasses = classNames("q-modal-header", leftIcon && "q-has-left-icon", className);
     return (
       <div className={headerClasses}>
         {leftIcon &&
@@ -28,8 +29,7 @@ export default class Header extends PureComponent<IHeaderProps> {
 export interface IHeaderProps {
   leftIcon?: string;
   rightIcon?: string;
-
+  className?: string;
   leftIconOnClick?: (event: any) => any;
-
   rightIconOnClick?: (event: any) => any;
 }
