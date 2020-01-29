@@ -23,6 +23,15 @@ describe("popup specs", () => {
     expect(wrapper.exists(".q-popup-main")).toEqual(true);
   });
 
+  it("should take additional style and remove", () => {
+    const wrapper = mount(<Popup onChange={closePopup} show={false} />);
+    wrapper.setProps({ show: true });
+    const body = (global as any).window.document.querySelector("body");
+    expect(body.style.overflow).toEqual("hidden");
+    wrapper.setProps({ show: false });
+    expect(body.style.overflow).toEqual("");
+  });
+
   it("should not render popup component when show prop is false", () => {
     const wrapper = mount(<Popup onChange={closePopup} show={false}/>);
     expect(wrapper.exists(".q-popup-main")).toEqual(false);

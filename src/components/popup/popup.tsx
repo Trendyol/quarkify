@@ -4,7 +4,6 @@ import ReactDOM from "react-dom";
 import { CSSTransition } from "react-transition-group";
 import "../../styles/components/_popup.scss";
 import Icon from "../icon";
-import Typography from "../typography";
 
 export default class Popup extends PureComponent<IPopupProps> {
 
@@ -13,6 +12,12 @@ export default class Popup extends PureComponent<IPopupProps> {
     this.handleTouchMove = this.handleTouchMove.bind(this);
     this.onEnter = this.onEnter.bind(this);
     this.onExit = this.onExit.bind(this);
+  }
+
+  public componentDidMount() {
+    if (this.props.show) {
+      window.document.body.style.overflow = "hidden";
+    }
   }
 
   public componentDidUpdate(
@@ -26,7 +31,8 @@ export default class Popup extends PureComponent<IPopupProps> {
   }
 
   public componentWillUnmount(): void {
-    document.removeEventListener("touchmove", this.handleTouchMove);
+    window.document.removeEventListener("touchmove", this.handleTouchMove);
+    window.document.body.style.removeProperty("overflow");
   }
 
   public handleTouchMove(e: Event): void {
@@ -38,11 +44,13 @@ export default class Popup extends PureComponent<IPopupProps> {
   }
 
   public onEnter(): void {
-    document.addEventListener("touchmove", this.handleTouchMove, { passive: false });
+    window.document.addEventListener("touchmove", this.handleTouchMove, { passive: false });
+    window.document.body.style.overflow = "hidden";
   }
 
   public onExit(): void {
-    document.removeEventListener("touchmove", this.handleTouchMove);
+    window.document.removeEventListener("touchmove", this.handleTouchMove);
+    window.document.body.style.removeProperty("overflow");
   }
 
   public render() {
@@ -118,7 +126,7 @@ export default class Popup extends PureComponent<IPopupProps> {
           </div>
         </div>
       </CSSTransition>,
-      document.body,
+      window.document.body,
     );
   }
 
