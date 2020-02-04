@@ -26,10 +26,10 @@ export default class Modal extends React.Component<IModalProps> {
     if (nextProps.show !== this.props.show && this.props.onChange) {
       this.props.onChange();
     }
-    if (nextProps.show && typeof window !== "undefined") {
+    if (nextProps.show !== this.props.show && nextProps.show && typeof window !== "undefined") {
       document.body.classList.add("q-disable-scroll");
       document.documentElement.classList.add("q-disable-scroll");
-    } else if (typeof window !== "undefined") {
+    } else if (nextProps.show !== this.props.show && !nextProps.show && typeof window !== "undefined") {
       document.body.classList.remove("q-disable-scroll");
       document.documentElement.classList.remove("q-disable-scroll");
     }
