@@ -12,6 +12,26 @@ export default class BottomSheet extends PureComponent<IBottomSheetProps> {
     this.onExit = this.onExit.bind(this);
   }
 
+  public componentDidMount(): void {
+    if (this.props.show && typeof window !== "undefined") {
+      document.body.classList.add("q-disable-scroll");
+    }
+  }
+
+  public componentWillUpdate(
+    nextProps: Readonly<IBottomSheetProps>,
+    nextState: Readonly<{}>,
+    nextContext: any,
+  ) {
+    if (nextProps.show !== this.props.show && nextProps.show && typeof window !== "undefined") {
+      document.body.classList.add("q-disable-scroll");
+      document.documentElement.classList.add("q-disable-scroll");
+    } else if (nextProps.show !== this.props.show && !nextProps.show && typeof window !== "undefined") {
+      document.body.classList.remove("q-disable-scroll");
+      document.documentElement.classList.remove("q-disable-scroll");
+    }
+  }
+
   public componentDidUpdate(
     prevProps: Readonly<IBottomSheetProps>,
   ): void {
@@ -37,6 +57,14 @@ export default class BottomSheet extends PureComponent<IBottomSheetProps> {
   public onExit(): void {
     document.removeEventListener("touchmove", this.handleTouchMove);
   }
+
+  public componentWillUnmount(): void {
+    document.removeEventListener("touchmove", this.handleTouchMove);
+    window.document.removeEventListener("touchmove", this.handleTouchMove);
+    document.body.classList.remove("q-disable-scroll");
+    document.documentElement.classList.remove("q-disable-scroll");
+  }
+
   public render() {
     if (typeof window === "undefined") {
       return null;
