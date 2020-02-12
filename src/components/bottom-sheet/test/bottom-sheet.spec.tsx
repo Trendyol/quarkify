@@ -34,22 +34,18 @@ describe("bottom sheet specs", () => {
     expect(wrapper.exists(".q-bottom-sheet-main")).toEqual(true);
   });
 
-  it("should remove overflow property when bottom-sheet is closed", () => {
-    const wrapper = shallow(<BottomSheet show={true} onClose={handleChange} />);
+  it("should add disable-scroll class when bottom-sheet is shown", () => {
+    const wrapper = shallow(<BottomSheet show={false} onClose={handleChange} />);
+    wrapper.setProps({ show: true });
 
-    const body = (global as any).window.document.querySelector("body");
-    expect(body.style.overflow).toEqual("hidden");
-    wrapper.setProps({ show: false });
-    expect(body.style.overflow).toEqual("");
+    expect(document.body.classList.contains("q-disable-scroll")).toBe(true);
   });
 
-  it("should remove overflow property when bottom-sheet is opened", () => {
-    const wrapper = shallow(<BottomSheet show={false} onClose={handleChange} />);
+  it("should remove disable-scroll class when bottom-sheet is hidden", () => {
+    const wrapper = shallow(<BottomSheet show={true} onClose={handleChange} />);
+    wrapper.setProps({ show: false });
 
-    const body = (global as any).window.document.querySelector("body");
-    expect(body.style.overflow).toEqual("");
-    wrapper.setProps({ show: true });
-    expect(body.style.overflow).toEqual("hidden");
+    expect(document.body.classList.contains("q-disable-scroll")).toBe(false);
   });
 
   it("should call onChange when overlay is clicked", () => {

@@ -39,3 +39,11 @@
   justify-content: center;
   align-items: center;
 }
+
+body.q-disable-scroll {
+  overflow: hidden;
+}
+
+html.q-disable-scroll {
+  overflow: hidden;
+}
