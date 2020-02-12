@@ -57,6 +57,13 @@ export default class BottomSheet extends PureComponent<IBottomSheetProps> {
   public onExit(): void {
     document.removeEventListener("touchmove", this.handleTouchMove);
   }
+
+  public componentWillUnmount(): void {
+    document.removeEventListener("touchmove", this.handleTouchMove);
+    window.document.removeEventListener("touchmove", this.handleTouchMove);
+    window.document.body.style.removeProperty("overflow");
+  }
+
   public render() {
     if (typeof window === "undefined") {
       return null;
