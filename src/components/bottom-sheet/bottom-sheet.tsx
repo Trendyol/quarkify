@@ -14,7 +14,7 @@ export default class BottomSheet extends PureComponent<IBottomSheetProps> {
 
   public componentDidMount(): void {
     if (this.props.show && typeof window !== "undefined") {
-      window.document.body.style.overflow = "hidden";
+      document.body.classList.add("q-disable-scroll");
     }
   }
 
@@ -24,9 +24,11 @@ export default class BottomSheet extends PureComponent<IBottomSheetProps> {
     nextContext: any,
   ) {
     if (nextProps.show !== this.props.show && nextProps.show && typeof window !== "undefined") {
-      window.document.body.style.overflow = "hidden";
+      document.body.classList.add("q-disable-scroll");
+      document.documentElement.classList.add("q-disable-scroll");
     } else if (nextProps.show !== this.props.show && !nextProps.show && typeof window !== "undefined") {
-      window.document.body.style.removeProperty("overflow");
+      document.body.classList.remove("q-disable-scroll");
+      document.documentElement.classList.remove("q-disable-scroll");
     }
   }
 
@@ -58,8 +60,8 @@ export default class BottomSheet extends PureComponent<IBottomSheetProps> {
 
   public componentWillUnmount(): void {
     document.removeEventListener("touchmove", this.handleTouchMove);
-    window.document.removeEventListener("touchmove", this.handleTouchMove);
-    window.document.body.style.removeProperty("overflow");
+    document.body.classList.remove("q-disable-scroll");
+    document.documentElement.classList.remove("q-disable-scroll");
   }
 
   public render() {
