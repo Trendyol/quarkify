@@ -29,6 +29,7 @@ class BottomSheetWrapper extends PureComponent<IProps, IState> {
   public render() {
     return (
       <>
+        <span style={{ padding: `5000px` }}>WebKit Scroll Bug Test</span>
         <Button onClick={this.handleChange}>Toggle Me</Button>
         <BottomSheet show={this.state.show} onClose={this.handleChange}>
           <Icon name="close" onClick={this.handleChange}/>
