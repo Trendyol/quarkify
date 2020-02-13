@@ -30,6 +30,7 @@ class BottomSheetWrapper extends PureComponent<IProps, IState> {
     return (
       <>
         <Button onClick={this.handleChange}>Toggle Me</Button>
+        <span style={{ padding: `5000px` }}>HI</span>
         <BottomSheet show={this.state.show} onClose={this.handleChange}>
           <Icon name="close" onClick={this.handleChange}/>
           <p>Some stuff</p>
