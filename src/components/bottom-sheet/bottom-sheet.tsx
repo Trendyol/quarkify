@@ -31,8 +31,10 @@ export default class BottomSheet extends PureComponent<IBottomSheetProps> {
       window.document.body.style.top = `-${window.scrollY}px`;
     } else if (nextProps.show !== this.props.show && !nextProps.show && typeof window !== "undefined") {
       window.document.body.style.removeProperty("overflow");
+      const scrollY = document.body.style.top;
       window.document.body.style.position = "";
       window.document.body.style.top = "";
+      window.scrollTo(0, parseInt(scrollY || "0", 10) * -1);
     }
   }
 
@@ -65,8 +67,10 @@ export default class BottomSheet extends PureComponent<IBottomSheetProps> {
   public componentWillUnmount(): void {
     document.removeEventListener("touchmove", this.handleTouchMove);
     window.document.body.style.removeProperty("overflow");
+    const scrollY = document.body.style.top;
     window.document.body.style.position = "";
     window.document.body.style.top = "";
+    window.scrollTo(0, parseInt(scrollY || "0", 10) * -1);
   }
 
   public render() {
