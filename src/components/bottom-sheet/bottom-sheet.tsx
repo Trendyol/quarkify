@@ -26,15 +26,9 @@ export default class BottomSheet extends PureComponent<IBottomSheetProps> {
     nextContext: any,
   ) {
     if (nextProps.show !== this.props.show && nextProps.show && typeof window !== "undefined") {
-      window.document.body.style.overflow = "hidden";
-      window.document.body.style.position = "fixed";
-      window.document.body.style.top = `-${window.scrollY}px`;
+      this.lockWebKitBodyScrolling();
     } else if (nextProps.show !== this.props.show && !nextProps.show && typeof window !== "undefined") {
-      window.document.body.style.removeProperty("overflow");
-      const scrollY = document.body.style.top;
-      window.document.body.style.position = "";
-      window.document.body.style.top = "";
-      window.scrollTo(0, parseInt(scrollY || "0", 10) * -1);
+      this.unlockWebKitBodyScrolling();
     }
   }
 
@@ -64,13 +58,23 @@ export default class BottomSheet extends PureComponent<IBottomSheetProps> {
     document.removeEventListener("touchmove", this.handleTouchMove);
   }
 
-  public componentWillUnmount(): void {
-    document.removeEventListener("touchmove", this.handleTouchMove);
-    window.document.body.style.removeProperty("overflow");
+  public lockWebKitBodyScrolling(): void {
+    window.document.body.style.overflow = "hidden";
+    window.document.body.style.position = "fixed";
+    window.document.body.style.top = `-${window.scrollY}px`;
+  }
+
+  public unlockWebKitBodyScrolling(): void {
     const scrollY = document.body.style.top;
     window.document.body.style.position = "";
     window.document.body.style.top = "";
     window.scrollTo(0, parseInt(scrollY || "0", 10) * -1);
+    window.document.body.style.removeProperty("overflow");
+  }
+
+  public componentWillUnmount(): void {
+    document.removeEventListener("touchmove", this.handleTouchMove);
+    this.unlockWebKitBodyScrolling();
   }
 
   public render() {
