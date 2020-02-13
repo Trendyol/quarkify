@@ -14,9 +14,7 @@ export default class BottomSheet extends PureComponent<IBottomSheetProps> {
 
   public componentDidMount(): void {
     if (this.props.show && typeof window !== "undefined") {
-      window.document.body.style.overflow = "hidden";
-      window.document.body.style.position = "fixed";
-      window.document.body.style.top = `-${window.scrollY}px`;
+      this.lockWebKitBodyScrolling();
     }
   }
 
