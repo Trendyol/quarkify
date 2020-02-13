@@ -58,15 +58,9 @@ export default class BottomSheet extends PureComponent<IBottomSheetProps> {
 
   public lockWebKitBodyScrolling(): void {
     window.document.body.style.overflow = "hidden";
-    window.document.body.style.position = "fixed";
-    window.document.body.style.top = `-${window.scrollY}px`;
   }
 
   public unlockWebKitBodyScrolling(): void {
-    const scrollY = document.body.style.top;
-    window.document.body.style.position = "";
-    window.document.body.style.top = "";
-    window.scrollTo(0, parseInt(scrollY || "0", 10) * -1);
     window.document.body.style.removeProperty("overflow");
   }
 
