@@ -1,5 +1,5 @@
-@import '../mixins/_color-scheme';
-@import '../mixins/_fluid.scss';
+@import "../mixins/_color-scheme";
+@import "../mixins/_fluid.scss";
 
 .q-button {
   cursor: pointer;
@@ -17,24 +17,24 @@
   text-align: center;
   border-radius: $border-radius;
 
-  &.q-button-large{
+  &.q-button-large {
     height: $button-height-large;
-    font-size: $button-font-size-large
+    font-size: $button-font-size-large;
   }
 
-  &.q-button-medium{
+  &.q-button-medium {
     height: $button-height-medium;
     font-size: $button-font-size-medium;
   }
 
-  &.q-button-small{
+  &.q-button-small {
     height: $button-height-small;
-    font-size: $button-font-size-small
+    font-size: $button-font-size-small;
   }
 
-  &.q-button-xsmall{
+  &.q-button-xsmall {
     height: $button-height-xsmall;
-    font-size: $button-font-size-small
+    font-size: $button-font-size-small;
   }
 
   &.q-primary {
@@ -90,6 +90,7 @@
   &.loading {
     .q-loader {
       background-color: transparent;
+      transform: scale(0.4);
     }
 
     //Hide button contents
@@ -97,6 +98,4 @@
       opacity: 0;
     }
   }
-
 }
-

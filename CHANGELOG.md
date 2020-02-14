@@ -4,6 +4,12 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
+## [1.17.20] - 2020-02-14 (Happy Valentines Day!)
+### Fixed
+- Fix size of Loading icons in Button components
+
+...
+
 ## [1.17.14] - 2020-02-04
 ### Fixed
 - Scrolling problem when modal is showed up
