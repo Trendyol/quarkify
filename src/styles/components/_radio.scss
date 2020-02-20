@@ -20,15 +20,17 @@
   }
 
   .q-input[type=radio] + .q-label::before {
-    padding-right: 5px;
-    color: $primary;
-    font-family: icomoon !important;
-    content: "\E93C";
-    line-height: $radio-line-height;
+    color: $light-gray;
+    content: "";
     display: inline-block;
     vertical-align: text-top;
-
     transition: 0.1s;
+    border: 2px solid gray;
+    border-radius: 50%;
+    width: 21px;
+    height: 21px;
+    margin-right: 5px;
+    padding: 5px;
   }
 
   .q-input[type=radio]:active + .q-label::before {
@@ -36,8 +38,15 @@
   }
 
   .q-input[type=radio]:checked + .q-label::before {
-    content: "\E93D";
     transform: scale(1);
+    color: $primary;
+    content: "\2022";
+    font-size: 35px;
+    display: inline-flex;
+    border-color: $primary;
+    align-items: center;
+    justify-content: center;
+    padding-top: 0;
   }
 
   .q-input[type=radio]:disabled + .q-label {
@@ -49,6 +58,11 @@
   }
 
   .q-input[type=radio]:disabled + .q-label::before {
+    transform: scale(1);
+    color: $border-gray;
+  }
+
+  .q-input[type=radio]:disabled + .q-label .q-typography {
     transform: scale(1);
     color: $light-gray;
   }
@@ -63,13 +77,15 @@
     color: $red;
 
     .q-input[type=radio] + .q-label::before {
+      transform: scale(1);
       color: $red;
-      content: "\E93C";
-    }
-
-    .q-input[type=radio]:checked + .q-label::before {
-      content: "\E93D";
-      color: $red;
+      content: "\2022";
+      font-size: 35px;
+      display: inline-flex;
+      border-color: $red;
+      align-items: center;
+      justify-content: center;
+      padding-top: 0;
     }
   }
 }

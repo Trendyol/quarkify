@@ -13,7 +13,7 @@
   -moz-appearance: none;
   appearance: none;
   border-radius: $border-radius;
-  background-color: $white;
+  background-color: $background-gray;
   border: 1px solid $border-gray-two;
   color: $dark-gray;
 
@@ -58,7 +58,7 @@
   }
 
   .select-left-padding {
-    padding-left: 20px;
+    padding-left: 10px;
   }
 
   .select-right-padding {
@@ -66,7 +66,7 @@
   }
 
   .q-select-icon {
-    font-size: $font-size-small-paragraph;
+    font-size: 15px;
     pointer-events: none;
     position: absolute;
   }

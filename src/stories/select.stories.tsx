@@ -34,7 +34,7 @@ stories.add("Icon", () => (
     <Select items={items} value={"id"} leftIcon={"close"} selected={"3"}/>
     <br/>
     <br/>
-    <Select items={items} value={"id"} rightIcon={"filter"} rightIconColor={"primary"} selected={"3"}/>
+    <Select items={items} value={"id"} rightIcon={"chevron-down"} selected={"3"}/>
     <br/>
     <br/>
     {/* tslint:disable-next-line:max-line-length */}
