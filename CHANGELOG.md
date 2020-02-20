@@ -4,6 +4,10 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
+## [1.17.21] - 2020-02-20
+### Changed
+- Select and radio components styles have changed
+
 ## [1.17.20] - 2020-02-14 (Happy Valentines Day!)
 ### Fixed
 - Fix size of Loading icons in Button components
