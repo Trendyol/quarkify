@@ -15,7 +15,7 @@ describe("radio specs", () => {
   });
 
   it("should render radio component", () => {
-    const wrapper = shallow(<Radio value={"test"}/>);
+    const wrapper = shallow(<Radio value={"test"} />);
 
     expect(wrapper).toHaveLength(1);
   });
@@ -23,18 +23,18 @@ describe("radio specs", () => {
   it("should call onChange function ", () => {
     const spy = sandbox.spy();
     const text = faker.random.word();
-    const wrapper = shallow(<Radio value={"test"} onChange={spy}/>);
+    const wrapper = shallow(<Radio value={"test"} onChange={spy} />);
     const event = { target: { value: text } };
 
     wrapper.find("input").simulate("change", event);
 
-    expect(spy.calledOnce).toBe(true);
+    expect(spy.calledWithExactly(event));
   });
 
   it("should not call callback function when changed and input is disabled", () => {
     const spy = sandbox.spy();
     const text = faker.random.word();
-    const wrapper = shallow(<Radio value={"test"} disabled/>);
+    const wrapper = shallow(<Radio value={"test"} disabled onChange={spy} />);
     const event = { target: { value: text } };
 
     wrapper.simulate("change", event);
@@ -44,25 +44,25 @@ describe("radio specs", () => {
 
   it("should render a label", () => {
     const text = faker.random.word();
-    const wrapper = shallow(<Radio value={"test"} label={text}/>);
+    const wrapper = shallow(<Radio value={"test"} label={text} />);
 
     expect(wrapper.find("label")).toHaveLength(1);
   });
 
   it("should accept additional classNames", () => {
     const testClass = faker.lorem.word();
-    const wrapper = shallow(<Radio value={"test"} className={testClass}/>);
+    const wrapper = shallow(<Radio value={"test"} className={testClass} />);
     expect(wrapper.find(`.${testClass}`)).toHaveLength(1);
   });
 
   it("should convert text type prop to radio type prop", () => {
-    const wrapper = shallow(<Radio value={"test"} type="text"/>);
+    const wrapper = shallow(<Radio value={"test"} type="text" />);
     const inputElement = wrapper.find("input");
     expect(inputElement.prop("type")).toBe("radio");
   });
 
   it("should have error className when error prop is passed", () => {
-    const wrapper = shallow(<Radio value={"test"} error/>);
+    const wrapper = shallow(<Radio value={"test"} error />);
 
     expect(wrapper.hasClass("q-error")).toBe(true);
   });

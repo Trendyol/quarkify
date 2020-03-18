@@ -14,7 +14,7 @@ export default class Radio extends PureComponent<IProps> {
       error,
       label,
       labelVariant = "body",
-      labelColor= "black",
+      labelColor = "black",
       type,
       value,
       className,
@@ -32,6 +32,7 @@ export default class Radio extends PureComponent<IProps> {
           className={"q-input"}
           id={`radio-${value}`}
           type="radio"
+          value={value}
           {...props}
           checked={checked}
         />
