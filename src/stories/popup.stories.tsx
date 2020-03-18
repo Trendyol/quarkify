@@ -18,7 +18,7 @@ class PopupWrapper extends PureComponent<any, any> {
   }
 
   public render() {
-    const { closeOnOverlayClick } = this.props;
+    const { closeOnOverlayClick, withTitleBorder } = this.props;
     return (
       <>
         {Array.from({ length: 15 }, (_, i) => <p>Down {i}</p>)}
@@ -29,6 +29,7 @@ class PopupWrapper extends PureComponent<any, any> {
           onChange={this.handleChange}
           closeOnOverlayClick={closeOnOverlayClick}
           title={<Typography variant={"body"}>Kullanıcı Sözleşmesi</Typography>}
+          withTitleBorder={withTitleBorder}
         >
           {Array.from({ length: 30 }, (_, i) => <p>Line {i}</p>)}
         </Popup>
@@ -69,7 +70,7 @@ class PopupBasketWrapper extends PureComponent<any, any> {
           onChange={this.handleChange}
           closeOnOverlayClick={false}
         >
-          <Icon name="basket" style={{ fontSize: "6rem" }}/>
+          <Icon name="basket" style={{ fontSize: "6rem" }} />
           <h1>URUN SEPETINE EKLENDI</h1>
           <h4 style={{ color: "grey" }}>
             Alışverişe devam etmek mi istersin sepete gitmek mi?
@@ -107,7 +108,6 @@ class PopupBasketWrapper extends PureComponent<any, any> {
 }
 
 stories.add("Default", () => <PopupWrapper closeOnOverlayClick={true} />);
-stories.add("CloseOnOverlayClick disabled", () => (
-  <PopupWrapper closeOnOverlayClick={false}/>
-));
+stories.add("CloseOnOverlayClick disabled", () => <PopupWrapper closeOnOverlayClick={false} />);
 stories.add("Urun sepete eklendi", () => <PopupBasketWrapper closeOnOverlayClick={true} />);
+stories.add("Default with bordered title", () => <PopupWrapper closeOnOverlayClick withTitleBorder />);

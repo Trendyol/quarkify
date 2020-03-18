@@ -1,6 +1,6 @@
 @import "../animations/_popup.scss";
-@import '../_colors';
-@import '../variables';
+@import "../_colors";
+@import "../variables";
 
 .q-popup-main {
   position: absolute;
@@ -50,14 +50,14 @@
   top: 0;
   left: 0;
   z-index: 1030;
-  background-color: rgba(0, 0, 0, .5);
+  background-color: rgba(0, 0, 0, 0.5);
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
 body.q-disable-scroll {
-  overflow: hidden; 
+  overflow: hidden;
 }
 
 .q-popup-header {
@@ -66,6 +66,16 @@ body.q-disable-scroll {
   position: relative;
   margin-bottom: $space-medium;
   min-height: 16px;
+
+  &.with-border {
+    padding-bottom: $popup-padding;
+    border-bottom: 1px solid $border-gray;
+    margin: 0 -$popup-padding $space-medium -$popup-padding !important;
+
+    .q-popup-icon-position {
+      right: $popup-padding !important;
+    }
+  }
 
   &-text {
     white-space: nowrap;
