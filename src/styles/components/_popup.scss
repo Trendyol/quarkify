@@ -70,7 +70,8 @@ body.q-disable-scroll {
   &.with-border {
     padding-bottom: $popup-padding;
     border-bottom: 1px solid $border-gray;
-    margin: 0 -$popup-padding $space-medium -$popup-padding !important;
+    margin-left: -$popup-padding;
+    margin-right: -$popup-padding;
 
     .q-popup-icon-position {
       right: $popup-padding !important;
