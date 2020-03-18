@@ -6,7 +6,6 @@ import "../../styles/components/_popup.scss";
 import Icon from "../icon";
 
 export default class Popup extends PureComponent<IPopupProps> {
-
   constructor(props: IPopupProps) {
     super(props);
     this.handleTouchMove = this.handleTouchMove.bind(this);
@@ -68,12 +67,14 @@ export default class Popup extends PureComponent<IPopupProps> {
       className,
       contentClassName,
       title,
+      withTitleBorder,
     } = this.props;
 
     const popupClasses = classNames(
       "q-popup-overlay",
       className,
     );
+
     const popupIconClasses = classNames(
       iconLeft && "q-popup-icon-left",
       "icon-close",
@@ -84,6 +85,11 @@ export default class Popup extends PureComponent<IPopupProps> {
       contentClassName,
       "q-popup-content",
     );
+
+    const popupTitleClasses = classNames({
+      "q-popup-header": true,
+      "with-border": withTitleBorder === true,
+    });
 
     const overlayClick = () => {
       if (closeOnOverlayClick) {
@@ -106,8 +112,8 @@ export default class Popup extends PureComponent<IPopupProps> {
       >
         <div className={popupClasses} onClick={overlayClick}>
           <div className="q-popup-main" onClick={this.popupBodyClick}>
-            {
-              (!noIcon || title) && <div className="q-popup-header">
+            {(!noIcon || title) && (
+              <div className={popupTitleClasses}>
                 <div className="q-popup-header-text">
                   {title}
                 </div>
@@ -119,7 +125,7 @@ export default class Popup extends PureComponent<IPopupProps> {
                   />
                 )}
               </div>
-            }
+            )}
             <div className={popupContentClasses}>
               {children}
             </div>
@@ -133,7 +139,6 @@ export default class Popup extends PureComponent<IPopupProps> {
   private popupBodyClick = (event: React.SyntheticEvent) => {
     event.stopPropagation();
   }
-
 }
 
 interface IPopupProps {
@@ -145,4 +150,5 @@ interface IPopupProps {
   className?: string;
   contentClassName?: string;
   title?: React.ReactElement | string;
+  withTitleBorder?: boolean;
 }
