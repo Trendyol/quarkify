@@ -30,7 +30,7 @@
     width: 21px;
     height: 21px;
     margin-right: 5px;
-    padding: 5px;
+    padding: 5px 4px 5px 5px;
     box-sizing: border-box;
   }
 
@@ -61,11 +61,13 @@
   .q-input[type=radio]:disabled + .q-label::before {
     transform: scale(1);
     color: $border-gray;
+    opacity: .4;
   }
 
   .q-input[type=radio]:disabled + .q-label .q-typography {
     transform: scale(1);
     color: $light-gray;
+    opacity: .4;
   }
 
   .q-input[type=radio]:checked:disabled + .q-label::before {
