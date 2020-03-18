@@ -32,9 +32,9 @@ export default class Radio extends PureComponent<IProps> {
           className={"q-input"}
           id={`radio-${value}`}
           type="radio"
+          value={value}
           {...props}
           checked={checked}
-          value={value}
         />
         {label && <label className={"q-label"} htmlFor={`radio-${value}`}>
           <Typography variant={labelVariant} color={labelColor} display={"inline"}>
