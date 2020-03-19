@@ -20,6 +20,9 @@ stories.add("Default", () => (
       <br />
       <br />
       <Radio name={"gender"} value={"disabled"} label={"Disabled"} disabled />
+      <br/>
+      <br/>
+      <Radio name={"gender-2"} value={"disabled-2"} label={"Disabled"} disabled checked/>
     </form>
   </div>
 ));
