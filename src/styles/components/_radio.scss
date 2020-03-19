@@ -2,7 +2,6 @@
 
 .q-radio-wrapper {
   display: inline-flex;
-  align-items: center;
 
   .q-input[type=radio] {
     opacity: 0;
@@ -13,82 +12,92 @@
     outline: none !important;
   }
 
-  .q-label {
-    font-weight: 500;
-    font-size: $font-size-base;
-    margin: 0;
+  .q-input[type=radio]:checked + .q-label > span::before {
+    border-color: $primary;
   }
 
-  .q-input[type=radio] + .q-label::before {
-    color: $light-gray;
-    content: "";
-    display: inline-block;
-    vertical-align: text-top;
-    transition: 0.1s;
-    border: 2px solid gray;
+  .q-input[type=radio]:checked + .q-label > span::after {
+    transform: scale(1);
+  }
+
+  span::before, span::after {
+    position: absolute;
+    content: '';
     border-radius: 50%;
-    width: 21px;
-    height: 21px;
-    margin-right: 5px;
-    padding: 5px 4px 5px 5px;
+    display: block;
     box-sizing: border-box;
   }
 
-  .q-input[type=radio]:active + .q-label::before {
-    transform: scale(0.2);
+  span::after {
+    top: 6px;
+    left: 6px;
+    width: 8px;
+    height: 8px;
   }
 
-  .q-input[type=radio]:checked + .q-label::before {
-    transform: scale(1);
-    color: $primary;
-    content: "\2022";
-    font-size: 35px;
-    display: inline-flex;
-    border-color: $primary;
-    align-items: center;
-    justify-content: center;
-    padding-top: 0;
+  span {
+    width: 25px;
+    height: 25px;
+    vertical-align: middle;
+    display: inline-block;
+    position: relative;
+    cursor: pointer;
+    outline: none;
+    user-select: none;
+
+    &::before {
+      left: 0;
+      top: 0;
+      width: 20px;
+      height: 20px;
+      border: 2px solid rgba(0,0,0,.54);
+    }
+
+    &::after {
+      transform: scale(0);
+      background: $primary;
+    }
   }
 
-  .q-input[type=radio]:disabled + .q-label {
-    color: $light-gray;
+  .q-input[type=radio]:checked:disabled {
+    & + .q-label > span {
+      color: $light-gray;
+    }
+
+    & + .q-label span::before {
+      border-color: $light-gray;
+    }
+
+    & + .q-label span::after {
+      background: $light-gray;
+      opacity: .4;
+    }
   }
 
-  .q-input[type=radio]:checked:disabled + .q-label {
-    color: $light-gray;
-  }
+  .q-input[type=radio]:disabled {
+    & + .q-label > span::before {
+      opacity: .4;
+    }
 
-  .q-input[type=radio]:disabled + .q-label::before {
-    transform: scale(1);
-    color: $border-gray;
-    opacity: .4;
-  }
+    & + .q-label > span {
+      color: $light-gray;
+    }
 
-  .q-input[type=radio]:disabled + .q-label .q-typography {
-    transform: scale(1);
-    color: $light-gray;
-    opacity: .4;
-  }
-
-  .q-input[type=radio]:checked:disabled + .q-label::before {
-    transform: scale(1);
-    background-color: $light-gray;
-    border-color: $light-gray;
+    & + .q-label .q-typography {
+      color: $light-gray;
+      opacity: .4;
+    }
   }
 
   &.q-error {
     color: $red;
 
-    .q-input[type=radio] + .q-label::before {
-      transform: scale(1);
-      color: $red;
-      content: "\2022";
-      font-size: 35px;
-      display: inline-flex;
-      border-color: $red;
-      align-items: center;
-      justify-content: center;
-      padding-top: 0;
+    .q-input[type=radio] + .q-label > span::before {
+      border: 2px solid $red;
+    }
+
+    .q-input[type=radio] + .q-label > span::after {
+      background: $red;
     }
   }
 }
