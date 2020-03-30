@@ -1,0 +1,23 @@
+.q-qs-main {
+	display: flex;
+	border-radius: 3px;
+	border: solid 1px #f27a1a;
+	justify-content: space-between;
+}
+
+.q-qs-main > div {
+	margin: 5px;
+}
+
+.q-qs-middle {
+    color: #333333;
+	text-align: center;
+}
+
+.q-qs-left, .q-qs-right {
+    color: #f27a1a;
+}
+
+.q-qs-left:hover, .q-qs-right:hover{
+    cursor: pointer;
+}
