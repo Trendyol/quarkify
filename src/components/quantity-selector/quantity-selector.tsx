@@ -3,7 +3,7 @@ import "../../styles/components/_quantity-selector.scss";
 import Icon from "../icon";
 import { IProps as IIConProps } from "../icon/icon";
 
-export default class QuantitySelector extends PureComponent<IQuantitySelectorProps, any> {
+export default class QuantitySelector extends PureComponent<IQuantitySelectorProps> {
     public render() {
         const { count } = this.props;
 
@@ -24,7 +24,6 @@ export default class QuantitySelector extends PureComponent<IQuantitySelectorPro
 
     private renderDecrementIcon() {
         const { onDecrement, count, iconProps } = this.props;
-
         const disabled = !count;
         const className = count === 1 ? "icon-trash" : "icon-minus";
         const name = count === 1 ? "trash" : "minus";
@@ -54,5 +53,5 @@ interface IQuantitySelectorProps {
     onIncrement: () => void;
     onDecrement: () => void;
     count?: number;
-    iconProps?: IIConProps;
+    iconProps?: IIConProps | any;
 }
