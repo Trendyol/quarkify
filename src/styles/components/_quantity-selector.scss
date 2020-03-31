@@ -1,21 +1,24 @@
+@import "../_colors";
+@import "../variables";
+
 .q-qs-main {
 	display: flex;
 	border-radius: 3px;
-	border: solid 1px #f27a1a;
+	border: solid 1px $primary;
 	justify-content: space-between;
 }
 
 .q-qs-main > div {
-	margin: 5px;
+	margin: $space-small;
 }
 
 .q-qs-middle {
-    color: #333333;
+    color: $black;
 	text-align: center;
 }
 
 .q-qs-left, .q-qs-right {
-    color: #f27a1a;
+    color: $primary;
 }
 
 .q-qs-left:hover, .q-qs-right:hover{

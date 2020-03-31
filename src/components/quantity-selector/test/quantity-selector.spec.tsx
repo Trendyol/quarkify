@@ -1,6 +1,5 @@
 import Enzyme, { mount, shallow } from "enzyme";
 import Adapter from "enzyme-adapter-react-16";
-import faker from "faker";
 import React from "react";
 import sinon from "sinon";
 import QuantitySelector from "../quantity-selector";
@@ -20,9 +19,8 @@ describe("quantity selector specs", () => {
         const spyDec = sandbox.spy();
 
         const wrapper = mount(<QuantitySelector
-            onIncrementClick={spyInc}
-            onDecrementClick={spyDec}
-            buttonText="Sepete Ekle"
+            onIncrement={spyInc}
+            onDecrement={spyDec}
             count={count}
         />);
 
@@ -35,9 +33,8 @@ describe("quantity selector specs", () => {
         const spyInc = sandbox.spy();
         const spyDec = sandbox.spy();
         const wrapper = mount(<QuantitySelector
-            onIncrementClick={spyInc}
-            onDecrementClick={spyDec}
-            buttonText="Sepete Ekle"
+            onIncrement={spyInc}
+            onDecrement={spyDec}
             count={2}
         />);
 
@@ -45,35 +42,33 @@ describe("quantity selector specs", () => {
         expect(wrapper.exists(".icon-plus")).toEqual(true);
     });
 
-    it("should render Button component when initial count is 0", () => {
+    it("should render disabled decrement icon when initial count is 0", () => {
         const spyInc = sandbox.spy();
         const spyDec = sandbox.spy();
 
         const wrapper = mount(<QuantitySelector
-            onIncrementClick={spyInc}
-            onDecrementClick={spyDec}
-            buttonText="Sepete Ekle"
+            onIncrement={spyInc}
+            onDecrement={spyDec}
             count={0}
         />);
 
-        expect(wrapper.exists(".icon-minus")).toEqual(false);
-        expect(wrapper.exists(".icon-plus")).toEqual(false);
-        expect(wrapper.exists("Button")).toEqual(true);
+        expect(wrapper.find(".icon-minus").first().props().disabled).toEqual(true);
+        expect(wrapper.exists(".icon-minus")).toEqual(true);
+        expect(wrapper.exists(".icon-plus")).toEqual(true);
     });
 
-    it("should render Button component when initial count is not specified", () => {
+    it("should render disabled decrement icon when initial count is not specified", () => {
         const spyInc = sandbox.spy();
         const spyDec = sandbox.spy();
 
         const wrapper = mount(<QuantitySelector
-            onIncrementClick={spyInc}
-            onDecrementClick={spyDec}
-            buttonText="Sepete Ekle"
+            onIncrement={spyInc}
+            onDecrement={spyDec}
         />);
 
-        expect(wrapper.exists(".icon-minus")).toEqual(false);
-        expect(wrapper.exists(".icon-plus")).toEqual(false);
-        expect(wrapper.exists("Button")).toEqual(true);
+        expect(wrapper.find(".icon-minus").first().props().disabled).toEqual(true);
+        expect(wrapper.exists(".icon-minus")).toEqual(true);
+        expect(wrapper.exists(".icon-plus")).toEqual(true);
     });
 
     it("should call decrement callback function when minus icon clicked", () => {
@@ -81,9 +76,8 @@ describe("quantity selector specs", () => {
         const spyDec = sandbox.spy();
 
         const wrapper = shallow(<QuantitySelector
-            onIncrementClick={spyInc}
-            onDecrementClick={spyDec}
-            buttonText="Sepete Ekle"
+            onIncrement={spyInc}
+            onDecrement={spyDec}
             count={2}
         />);
 
@@ -96,9 +90,8 @@ describe("quantity selector specs", () => {
         const spyDec = sandbox.spy();
 
         const wrapper = shallow(<QuantitySelector
-            onIncrementClick={spyInc}
-            onDecrementClick={spyDec}
-            buttonText="Sepete Ekle"
+            onIncrement={spyInc}
+            onDecrement={spyDec}
             count={2}
         />);
 
@@ -111,29 +104,12 @@ describe("quantity selector specs", () => {
         const spyDec = sandbox.spy();
 
         const wrapper = shallow(<QuantitySelector
-            onIncrementClick={spyInc}
-            onDecrementClick={spyDec}
-            buttonText="Sepete Ekle"
+            onIncrement={spyInc}
+            onDecrement={spyDec}
             count={1}
         />);
 
         wrapper.find(".icon-trash").simulate("click");
         expect(spyDec.calledOnce).toEqual(true);
-    });
-
-    it("should call increment callback function when button clicked", () => {
-        const spyInc = sandbox.spy();
-        const spyDec = sandbox.spy();
-
-        const wrapper = shallow(<QuantitySelector
-            onIncrementClick={spyInc}
-            onDecrementClick={spyDec}
-            buttonText="Sepete Ekle"
-            count={0}
-        />);
-
-        wrapper.find("Button").simulate("click");
-        expect(spyInc.calledOnce).toEqual(true);
-        expect(spyDec.calledOnce).toEqual(false);
     });
 });

@@ -5,13 +5,13 @@ QuantitySelector is an component capable of incrementing and decrementing the co
 ```html
        <QuantitySelector
             count={0}
-            onIncrementClick={() => {
-                console.log("onIncrementClick");
+            onIncrement={() => {
+                console.log("onIncrement");
             }}
-            onDecrementClick={() => {
-                console.log("onDecrementClick");
+            onDecrement={() => {
+                console.log("onDecrement");
             }}
-            buttonText="Sepete Ekle" />
+            iconProps={ } />
 ```
 
 ### Props
@@ -19,8 +19,8 @@ QuantitySelector is an component capable of incrementing and decrementing the co
 | prop                      | description                                            |
 | -------------             |:-------------:                                         |
 | _count_                   | specifies the initial count to be displayed on element |
-| _buttonText_ (*)          | text to be displayed on button when count is 0         |
-| _onDecrementClick_(*)     | decrement callback                                     |
-| _onIncrementClick_(*)     | increment callback                                     |
+| _iconProps_ (*)           | common icon properties                                 |
+| _onDecrement_(*)          | decrement callback                                     |
+| _onIncrement_(*)          | increment callback                                     |
 
 (*) required
