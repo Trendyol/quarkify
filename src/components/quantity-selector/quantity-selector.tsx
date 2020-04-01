@@ -1,7 +1,7 @@
 import React, { PureComponent } from "react";
 import "../../styles/components/_quantity-selector.scss";
 import Icon from "../icon";
-import { IProps as IIConProps } from "../icon/icon";
+import { IProps as IIconProps } from "../icon/icon";
 
 export default class QuantitySelector extends PureComponent<IQuantitySelectorProps> {
     public render() {
@@ -53,5 +53,5 @@ interface IQuantitySelectorProps {
     onIncrement: () => void;
     onDecrement: () => void;
     count?: number;
-    iconProps?: IIConProps | any;
+    iconProps?: IIconProps | any;
 }
