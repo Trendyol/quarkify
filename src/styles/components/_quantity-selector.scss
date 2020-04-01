@@ -1,0 +1,26 @@
+@import "../_colors";
+@import "../variables";
+
+.q-qs-main {
+	display: flex;
+	border-radius: 3px;
+	border: solid 1px $primary;
+	justify-content: space-between;
+}
+
+.q-qs-main > div {
+	margin: $space-small;
+}
+
+.q-qs-middle {
+    color: $black;
+	text-align: center;
+}
+
+.q-qs-left, .q-qs-right {
+    color: $primary;
+}
+
+.q-qs-left:hover, .q-qs-right:hover{
+    cursor: pointer;
+}
