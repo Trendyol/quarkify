@@ -112,7 +112,7 @@ describe("quantity selector specs", () => {
         expect(wrapper.find(".icon-trash[disabled]")).toHaveLength(1);
     });
 
-    it.only("should render Loader component when loading prop is passed", () => {
+    it("should render Loader component when loading prop is passed", () => {
         const wrapper = shallow(<QuantitySelector
             onIncrement={spyInc}
             onDecrement={spyDec}
@@ -121,6 +121,16 @@ describe("quantity selector specs", () => {
         />);
 
         expect(wrapper.find(".loading")).toHaveLength(1);
+    });
+
+    it("should not render Loader component when loading prop is not specified", () => {
+        const wrapper = shallow(<QuantitySelector
+            onIncrement={spyInc}
+            onDecrement={spyDec}
+            count={1}
+        />);
+
+        expect(wrapper.find(".loading")).toHaveLength(0);
     });
 
     it("should have className fluid when given fluid prop", () => {
@@ -132,5 +142,17 @@ describe("quantity selector specs", () => {
         />);
 
         expect(wrapper.exists(".q-fluid")).toEqual(true);
+    });
+
+    it("should apply given size prop", () => {
+        const size = "small";
+        const wrapper = shallow(<QuantitySelector
+            onIncrement={spyInc}
+            onDecrement={spyDec}
+            size={size}
+            count={1}
+        />);
+
+        expect(wrapper.exists(".q-small")).toEqual(true);
     });
 });
