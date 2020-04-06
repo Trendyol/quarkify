@@ -1,14 +1,29 @@
+import classNames from "classnames";
 import React, { PureComponent } from "react";
 import "../../styles/components/_quantity-selector.scss";
+import { qsSize } from "../../types/quantity-selector";
+import classNamesDefault from "../../utils/class-names-default";
 import Icon from "../icon";
 import { IProps as IIconProps } from "../icon/icon";
+import Loader from "../loader";
 
 export default class QuantitySelector extends PureComponent<IQuantitySelectorProps> {
     public render() {
-        const { count } = this.props;
+        const { count,
+                fluid,
+                size = "medium",
+                loading = false,
+        } = this.props;
+
+        const qsClasses = classNames(
+            classNamesDefault({ fluid }),
+            size && `q-${size}`,
+            loading && "loading", "q-qs-main",
+        );
 
         return (
-            <div className="q-qs-main">
+            <div className={qsClasses}>
+                <Loader active={loading} />
                 <div className="q-qs-left">
                     {this.renderDecrementIcon()}
                 </div>
@@ -18,13 +33,13 @@ export default class QuantitySelector extends PureComponent<IQuantitySelectorPro
                 <div className="q-qs-right">
                     {this.renderIncrementIcon()}
                 </div>
-            </div>
+            </div >
         );
     }
 
     private renderDecrementIcon() {
-        const { onDecrement, count, iconProps } = this.props;
-        const disabled = !count;
+        const { onDecrement, count, iconProps, loading } = this.props;
+        const disabled = !count || loading;
         const className = count === 1 ? "icon-trash" : "icon-minus";
         const name = count === 1 ? "trash" : "minus";
 
@@ -38,11 +53,12 @@ export default class QuantitySelector extends PureComponent<IQuantitySelectorPro
     }
 
     private renderIncrementIcon() {
-        const { onIncrement, iconProps } = this.props;
+        const { onIncrement, iconProps, loading } = this.props;
 
         return <Icon
             {...iconProps}
             name="plus"
+            disabled={loading}
             className={"icon-plus"}
             onClick={onIncrement}
         />;
@@ -53,5 +69,8 @@ interface IQuantitySelectorProps {
     onIncrement: () => void;
     onDecrement: () => void;
     count?: number;
+    size?: qsSize;
+    fluid?: boolean;
+    loading?: boolean;
     iconProps?: IIconProps | any;
 }
