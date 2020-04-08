@@ -1,15 +1,15 @@
 import Enzyme, { mount, shallow } from "enzyme";
 import Adapter from "enzyme-adapter-react-16";
 import React from "react";
-import sinon from "sinon";
+import sinon, { SinonSpy } from "sinon";
 import QuantitySelector from "../quantity-selector";
 
 Enzyme.configure({ adapter: new Adapter() });
 
 describe("quantity selector specs", () => {
     const sandbox = sinon.createSandbox();
-    let spyInc: any;
-    let spyDec: any;
+    let spyInc: SinonSpy;
+    let spyDec: SinonSpy;
 
     beforeEach(() => {
         spyInc = sandbox.spy();
