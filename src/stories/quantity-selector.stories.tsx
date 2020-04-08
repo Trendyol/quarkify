@@ -65,18 +65,6 @@ stories.add("Fluid", () => (
     </div >
 ));
 
-stories.add("Loading", () => (
-    <div style={wrapperClasses}>
-        <QuantitySelector
-            size={"small"}
-            fluid={true}
-            loading={true}
-            onIncrement={onIncrement}
-            onDecrement={onDecrement}
-        />
-    </div >
-));
-
 stories.add("Sizes", () => (
     <div>
         <p>large</p>

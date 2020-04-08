@@ -100,39 +100,6 @@ describe("quantity selector specs", () => {
         expect(spyDec.calledOnce).toEqual(true);
     });
 
-    it("should be disable icons when loading", () => {
-        const wrapper = shallow(<QuantitySelector
-            onIncrement={spyInc}
-            onDecrement={spyDec}
-            loading={true}
-            count={1}
-        />);
-
-        expect(wrapper.find(".icon-plus[disabled]")).toHaveLength(1);
-        expect(wrapper.find(".icon-trash[disabled]")).toHaveLength(1);
-    });
-
-    it("should render Loader component when loading prop is passed", () => {
-        const wrapper = shallow(<QuantitySelector
-            onIncrement={spyInc}
-            onDecrement={spyDec}
-            loading={true}
-            count={1}
-        />);
-
-        expect(wrapper.find(".loading")).toHaveLength(1);
-    });
-
-    it("should not render Loader component when loading prop is not specified", () => {
-        const wrapper = shallow(<QuantitySelector
-            onIncrement={spyInc}
-            onDecrement={spyDec}
-            count={1}
-        />);
-
-        expect(wrapper.find(".loading")).toHaveLength(0);
-    });
-
     it("should have className fluid when given fluid prop", () => {
         const wrapper = shallow(<QuantitySelector
             onIncrement={spyInc}
