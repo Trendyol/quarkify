@@ -22,5 +22,7 @@ QuantitySelector is an component capable of incrementing and decrementing the co
 | _iconProps_ (*)           | common icon properties                                 |
 | _onDecrement_(*)          | decrement callback                                     |
 | _onIncrement_(*)          | increment callback                                     |
+| _fluid_                   | whether to fill full-width of relative container       |
+| _size_                    | "large" | "medium" | "small" | "xsmall"                |
 
 (*) required

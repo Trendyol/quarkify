@@ -1,26 +1,67 @@
 @import "../_colors";
 @import "../variables";
+@import "../mixins/flex";
+@import "../mixins/_fluid.scss";
 
 .q-qs-main {
 	display: flex;
-	border-radius: 3px;
-	border: solid 1px $primary;
 	justify-content: space-between;
-}
+	position: relative;
+    border-radius: $border-radius;
+	border: solid 1px $primary;
 
-.q-qs-main > div {
-	margin: $space-small;
-}
+	//Loader
+	&.loading {
+		.q-loader {
+		background-color: transparent;
+		transform: scale(0.4);
+		}
 
-.q-qs-middle {
-    color: $black;
-	text-align: center;
-}
+		//Hide qs contents
+		.q-loader ~ div {
+			opacity: 0;
+		}
+	}
 
-.q-qs-left, .q-qs-right {
-    color: $primary;
-}
+	&.q-large {
+		height: $button-height-large;
+		font-size: $button-font-size-large;
+	}
 
-.q-qs-left:hover, .q-qs-right:hover{
-    cursor: pointer;
+	&.q-medium {
+		height: $button-height-medium;
+		font-size: $button-font-size-medium;
+	}
+
+	&.q-small {
+		height: $button-height-small;
+		font-size: $button-font-size-small;
+	}
+
+	&.q-xsmall {
+		height: $button-height-xsmall;
+		font-size: $button-font-size-small;
+	}
+
+	&.q-fluid {
+		@include fluid;
+	}
+
+	.q-qs-middle {
+		@include flex-center;
+		margin: $space-small;
+		color: $black;
+	}
+
+	.q-qs-left,
+	.q-qs-right {
+		@include flex-center;
+		margin: $space-small;
+		color: $primary;
+	}
+
+	.q-qs-left:hover,
+	.q-qs-right:hover {
+		cursor: pointer;
+	}
 }

@@ -1,13 +1,20 @@
 import Enzyme, { mount, shallow } from "enzyme";
 import Adapter from "enzyme-adapter-react-16";
 import React from "react";
-import sinon from "sinon";
+import sinon, { SinonSpy } from "sinon";
 import QuantitySelector from "../quantity-selector";
 
 Enzyme.configure({ adapter: new Adapter() });
 
 describe("quantity selector specs", () => {
     const sandbox = sinon.createSandbox();
+    let spyInc: SinonSpy;
+    let spyDec: SinonSpy;
+
+    beforeEach(() => {
+        spyInc = sandbox.spy();
+        spyDec = sandbox.spy();
+    });
 
     afterEach(() => {
         sandbox.verifyAndRestore();
@@ -15,9 +22,6 @@ describe("quantity selector specs", () => {
 
     it("should render trash and plus icon when initial count is 1", () => {
         const count = 1;
-        const spyInc = sandbox.spy();
-        const spyDec = sandbox.spy();
-
         const wrapper = mount(<QuantitySelector
             onIncrement={spyInc}
             onDecrement={spyDec}
@@ -30,8 +34,6 @@ describe("quantity selector specs", () => {
     });
 
     it("should render minus and plus icon when initial count is higher then 1", () => {
-        const spyInc = sandbox.spy();
-        const spyDec = sandbox.spy();
         const wrapper = mount(<QuantitySelector
             onIncrement={spyInc}
             onDecrement={spyDec}
@@ -43,9 +45,6 @@ describe("quantity selector specs", () => {
     });
 
     it("should render disabled decrement icon when initial count is 0", () => {
-        const spyInc = sandbox.spy();
-        const spyDec = sandbox.spy();
-
         const wrapper = mount(<QuantitySelector
             onIncrement={spyInc}
             onDecrement={spyDec}
@@ -58,9 +57,6 @@ describe("quantity selector specs", () => {
     });
 
     it("should render disabled decrement icon when initial count is not specified", () => {
-        const spyInc = sandbox.spy();
-        const spyDec = sandbox.spy();
-
         const wrapper = mount(<QuantitySelector
             onIncrement={spyInc}
             onDecrement={spyDec}
@@ -72,9 +68,6 @@ describe("quantity selector specs", () => {
     });
 
     it("should call decrement callback function when minus icon clicked", () => {
-        const spyInc = sandbox.spy();
-        const spyDec = sandbox.spy();
-
         const wrapper = shallow(<QuantitySelector
             onIncrement={spyInc}
             onDecrement={spyDec}
@@ -86,9 +79,6 @@ describe("quantity selector specs", () => {
     });
 
     it("should call increment callback function when plus icon clicked", () => {
-        const spyInc = sandbox.spy();
-        const spyDec = sandbox.spy();
-
         const wrapper = shallow(<QuantitySelector
             onIncrement={spyInc}
             onDecrement={spyDec}
@@ -100,9 +90,6 @@ describe("quantity selector specs", () => {
     });
 
     it("should call decrement callback function when trash icon clicked", () => {
-        const spyInc = sandbox.spy();
-        const spyDec = sandbox.spy();
-
         const wrapper = shallow(<QuantitySelector
             onIncrement={spyInc}
             onDecrement={spyDec}
@@ -111,5 +98,28 @@ describe("quantity selector specs", () => {
 
         wrapper.find(".icon-trash").simulate("click");
         expect(spyDec.calledOnce).toEqual(true);
+    });
+
+    it("should have className fluid when given fluid prop", () => {
+        const wrapper = shallow(<QuantitySelector
+            onIncrement={spyInc}
+            onDecrement={spyDec}
+            fluid={true}
+            count={1}
+        />);
+
+        expect(wrapper.exists(".q-fluid")).toEqual(true);
+    });
+
+    it("should apply given size prop", () => {
+        const size = "small";
+        const wrapper = shallow(<QuantitySelector
+            onIncrement={spyInc}
+            onDecrement={spyDec}
+            size={size}
+            count={1}
+        />);
+
+        expect(wrapper.exists(".q-small")).toEqual(true);
     });
 });
