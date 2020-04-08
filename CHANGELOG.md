@@ -6,8 +6,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [1.19.1] - 2020-04-06
 ### Changed
-- Add fluid, size and loading capabilities to quantity selector component
-
+- Add fluid, size capabilities to quantity selector component
+"
 ## [1.19.0] - 2020-04-01
 ### Added
 - Add quantity selector component
