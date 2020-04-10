@@ -7,23 +7,26 @@ import { variantTypes } from "../../types/typography";
 import classNamesDefault from "../../utils/class-names-default";
 import Typography from "../typography";
 
-export default  class CheckBox extends PureComponent<IProps> {
+export default class CheckBox extends PureComponent<IProps> {
   public render() {
     const {
       checked,
       error,
       label,
       labelVariant = "body",
-      labelColor= "black",
+      labelColor = "black",
       type,
       value,
       className,
       ...props
     } = this.props;
+
     const checkBoxClasses = classNames(
       "q-checkbox-wrapper",
       classNamesDefault({ error }),
-      className);
+      className,
+    );
+
     return (
       <div className={checkBoxClasses}>
         <input
@@ -31,16 +34,15 @@ export default  class CheckBox extends PureComponent<IProps> {
           className={"q-input"}
           id={`checkbox-${this.props.value}`}
           type="checkbox"
+          checked={checked}
           {...props}
-          defaultChecked={checked}
         />
-        {label && (
-          <label className={"q-label"} htmlFor={`checkbox-${value}`}>
-            <Typography variant={labelVariant} color={labelColor} display={"inline"}>
-              {label}
-            </Typography>
-          </label>
-        )}
+
+        <label className={"q-label"} htmlFor={`checkbox-${value}`}>
+          <Typography variant={labelVariant} color={labelColor} display={"inline"}>
+            {label || ""}
+          </Typography>
+        </label>
       </div>
     );
   }
