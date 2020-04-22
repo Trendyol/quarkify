@@ -1,0 +1,10 @@
+@import "../_variables";
+
+.q-spb{
+    @each $color, $value in $colors {
+        &.#{$color} {
+          color: $value;
+          border: 1px solid $value;
+        }
+      }
+}
