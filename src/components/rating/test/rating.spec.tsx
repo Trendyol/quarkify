@@ -1,4 +1,4 @@
-import Enzyme, { mount, shallow } from "enzyme";
+import Enzyme, { mount } from "enzyme";
 import Adapter from "enzyme-adapter-react-16";
 import faker from "faker";
 import React from "react";
