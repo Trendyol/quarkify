@@ -11,7 +11,8 @@
   },
   "linterOptions": {
     "exclude": [
-      "src/*.spec.tsx"
+      "src/*.spec.tsx",
+      "src/stories/*"
     ]
   }
 }

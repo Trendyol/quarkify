@@ -10,7 +10,6 @@ import Typography from "../typography";
 export default class Radio extends PureComponent<IProps> {
   public render() {
     const {
-      checked,
       error,
       label,
       labelVariant = "body",
@@ -34,14 +33,13 @@ export default class Radio extends PureComponent<IProps> {
           type="radio"
           value={value}
           {...props}
-          checked={checked}
         />
-        {label && <label className={"q-label"} htmlFor={`radio-${value}`}>
+        <label className={"q-label"} htmlFor={`radio-${value}`}>
           <span />
           <Typography variant={labelVariant} color={labelColor} display={"inline"}>
             {label}
           </Typography>
-        </label>}
+        </label>
       </div>
     );
   }
