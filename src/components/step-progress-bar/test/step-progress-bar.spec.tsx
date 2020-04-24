@@ -8,7 +8,7 @@ import StepProgressBar from "../step-progress-bar";
 
 Enzyme.configure({ adapter: new Adapter() });
 
-const { lorem: { word } } = faker;
+const { lorem: { word }, random } = faker;
 
 describe("step progress bar specs", () => {
   const sandbox = sinon.createSandbox();
@@ -27,7 +27,7 @@ describe("step progress bar specs", () => {
   });
 
   it("should render additional steps", () => {
-    const steps = Array.from({ length: faker.random.number({max: 100}) }, () => word());
+    const steps = Array.from({ length: random.number({max: 100}) }, () => word());
 
     const wrapper = mount(
       <StepProgressBar>
