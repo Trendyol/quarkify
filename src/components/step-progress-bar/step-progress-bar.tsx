@@ -1,39 +1,35 @@
 import classNames from "classnames";
 import React, { PureComponent } from "react";
-import IDiv from "../../interfaces/div";
-import "../../styles/components/_rating.scss";
+import IList from "../../interfaces/list";
+import "../../styles/components/_step-progress-bar.scss";
 import { colorTypes } from "../../types/color";
-import { ratingSize } from "../../types/rating";
-import classNamesDefault from "../../utils/class-names-default";
+import Step from "./step";
 
 export default class StepProgressBar extends PureComponent<IProps> {
 
   public render() {
     const {
-      value = 0,
-      size = "medium",
       color = "green",
-      disabled,
+      children,
       className,
       ...props } = this.props;
 
     const stepProgressBarClasses = classNames(
       "q-spb",
-      classNamesDefault({ disabled, size }),
       color && `${color}`,
       className,
     );
 
     return (
-      <div className={stepProgressBarClasses} {...props} />
+      <ul className={stepProgressBarClasses} {...props} >
+        {children}
+      </ul>
     );
   }
 }
 
-interface IProps extends IDiv {
-  value?: number;
-  size?: ratingSize;
+interface IProps extends IList {
   color?: colorTypes;
-  disabled?: boolean;
+  children: Step;
   className?: string;
 }

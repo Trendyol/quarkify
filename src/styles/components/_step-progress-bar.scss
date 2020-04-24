@@ -1,10 +1,66 @@
 @import "../_variables";
 
-.q-spb{
-    @each $color, $value in $colors {
-        &.#{$color} {
-          color: $value;
-          border: 1px solid $value;
-        }
+.q-spb {
+  display: flex;
+  justify-content: space-between;
+
+  li {
+    width: 100%;
+    color: $border-gray;
+    font-size: $font-size-small-paragraph;
+    list-style-type: none;
+    text-align: center;
+    position: relative;
+  }
+
+  li:before {
+    content: '';
+    width: $space-large;
+    height: $space-large;
+    line-height: $line-height-header-2;
+    border: 2px solid $border-gray;
+    background-color: $border-gray;
+    display: block;
+    text-align: center;
+    margin: 0 auto $space-medium auto;
+    border-radius: 50%;
+    transition: all .7s;
+  }
+
+  li:after {
+    content: '';
+    width: 100%;
+    height: 2px;
+    position: absolute;
+    background-color: $border-gray;
+    top: 7px;
+    left: -50%;
+    transition: all .7s;
+    z-index: -1;
+  }
+
+  li:first-child:after {
+    content: none;
+  }
+
+  @each $color,
+  $value in $colors {
+    &.#{$color} {
+
+      li.active {
+        color: $value;
       }
+
+      li.active:before {
+        border-color: $value;
+        background-color: $value;
+        transition: all .7s;
+      }
+
+      li.active:after {
+        background-color: $value;
+        transition: all .7s;
+      }
+    }
+  }
 }

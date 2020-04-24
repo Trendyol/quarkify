@@ -1,3 +1,7 @@
+import Step from "./step";
 import StepProgressBar from "./step-progress-bar";
 
-export default StepProgressBar;
+export default {
+    Step,
+    StepProgressBar,
+};
