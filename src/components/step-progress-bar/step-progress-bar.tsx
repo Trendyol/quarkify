@@ -1,9 +1,8 @@
 import classNames from "classnames";
-import React, { PureComponent } from "react";
+import React, { PureComponent, ReactNode } from "react";
 import IList from "../../interfaces/list";
 import "../../styles/components/_step-progress-bar.scss";
 import { colorTypes } from "../../types/color";
-import Step from "./step";
 
 export default class StepProgressBar extends PureComponent<IProps> {
 
@@ -30,6 +29,6 @@ export default class StepProgressBar extends PureComponent<IProps> {
 
 interface IProps extends IList {
   color?: colorTypes;
-  children: Step;
+  children: ReactNode;
   className?: string;
 }
