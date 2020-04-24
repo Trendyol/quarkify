@@ -26,7 +26,7 @@ Select component has one required property which is items. Items takes an array 
 Boolean fields are not required and it is possible to give any other HTML properties by passing as a prop.
 
 ## Value
-If you want to dynamically change the value name, you can give value prop as a string. By default, it is set to "value"
+If you want to dynamically change the value name, you can give valueKey prop as a string. By default, it is set to "value"
 
 ```
 const items = [
@@ -37,7 +37,7 @@ const items = [
         variant: "secondary",
     }
 ]
-<Select items={items} value="id"/>
+<Select items={items} valueKey="id"/>
 ```
 
 ## Name
