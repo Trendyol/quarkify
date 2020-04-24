@@ -7,10 +7,6 @@ import Link from "../link";
 
 Enzyme.configure({ adapter: new Adapter() });
 
-const onClick = () => {
-  alert("test");
-};
-
 describe("link specs", () => {
   const sandbox = sinon.createSandbox();
 

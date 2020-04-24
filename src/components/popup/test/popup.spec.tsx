@@ -7,10 +7,6 @@ import Popup from "../index";
 
 Enzyme.configure({ adapter: new Adapter() });
 
-// tslint:disable-next-line:no-empty
-const closePopup = () => {
-};
-
 describe("popup specs", () => {
   const sandbox = sinon.createSandbox();
 
@@ -19,12 +15,12 @@ describe("popup specs", () => {
   });
 
   it("should render popup component", () => {
-    const wrapper = shallow(<Popup onChange={closePopup} show={true} />);
+    const wrapper = shallow(<Popup onChange={sandbox.spy()} show={true} />);
     expect(wrapper.exists(".q-popup-main")).toEqual(true);
   });
 
   it("should take additional style and remove", () => {
-    const wrapper = mount(<Popup onChange={closePopup} show={false} />);
+    const wrapper = mount(<Popup onChange={sandbox.spy()} show={false} />);
     wrapper.setProps({ show: true });
     const body = (global as any).window.document.querySelector("body");
     expect(body.style.overflow).toEqual("hidden");
@@ -33,12 +29,12 @@ describe("popup specs", () => {
   });
 
   it("should not render popup component when show prop is false", () => {
-    const wrapper = mount(<Popup onChange={closePopup} show={false} />);
+    const wrapper = mount(<Popup onChange={sandbox.spy()} show={false} />);
     expect(wrapper.exists(".q-popup-main")).toEqual(false);
   });
 
   it("should render close icon", () => {
-    const wrapper = shallow(<Popup onChange={closePopup} show={true} />);
+    const wrapper = shallow(<Popup onChange={sandbox.spy()} show={true} />);
     expect(wrapper.childAt(0).exists(".icon-close")).toEqual(true);
   });
 

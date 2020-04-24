@@ -3,7 +3,6 @@ import Adapter from "enzyme-adapter-react-16";
 import faker from "faker";
 import React from "react";
 import sinon from "sinon";
-import { BoxGroup } from "../../box";
 import { Accordion, AccordionGroup } from "../index";
 
 Enzyme.configure({ adapter: new Adapter() });

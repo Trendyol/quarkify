@@ -2,7 +2,6 @@ import { storiesOf } from "@storybook/react";
 import React from "react";
 import Button from "../components/button";
 import Select from "../components/select";
-import "./styles/select.css";
 
 const stories = storiesOf("Select", module);
 const items = [
