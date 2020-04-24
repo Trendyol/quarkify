@@ -6,7 +6,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [1.21.0] - 2020-04-24
 ### Changed
-- CheckBox and Radio component issues fixed -- defaultValue no longer supported
+- CheckBox and Radio component issues fixed -- checked no longer supported
 - see related stories for more information
 
 ## [1.20.1] - 2020-04-24
