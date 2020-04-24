@@ -48,7 +48,7 @@ stories.add("General Usage", () => {
       </form>
       <select name="gender-selector" value={selected} onChange={(e) => setSelected(e.target.value)}>
         {exampleArray.map(({ label, value }) => (
-          <option value={value}>{label}</option>
+          <option key={value} value={value}>{label}</option>
         ))}
       </select>
     </div >

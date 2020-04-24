@@ -3,6 +3,7 @@
   "rules": {
     // override tslint-react rules here
     "jsx-wrap-multiline": false,
+    "jsx-no-lambda": false,
     "quotemark": [true, "double", "jsx-double"],
     "jsx-boolean-value": false,
     "no-implicit-dependencies": [true, "dev"],
@@ -11,8 +12,7 @@
   },
   "linterOptions": {
     "exclude": [
-      "src/*.spec.tsx",
-      "src/stories/*"
+      "src/*.spec.tsx"
     ]
   }
 }

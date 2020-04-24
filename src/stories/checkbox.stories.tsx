@@ -68,11 +68,10 @@ stories.add("General Usage", () => {
       </form>
       <Button
         onClick={() => setSelecteds(selecteds.includes("female") ?
-        selecteds.filter((s) => s !== "female") :
-        ([...selecteds, "female"]))}
+          selecteds.filter((s) => s !== "female") : ([...selecteds, "female"]))}
       >
         Toggle Female Select
-        </Button>
+      </Button>
     </div >
   );
 });
