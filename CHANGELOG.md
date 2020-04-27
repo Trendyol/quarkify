@@ -4,10 +4,22 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
+## [1.20.2] - 2020-04-24
+### Changed
+- CheckBox and Radio component issues fixed -- checked no longer supported
+- see related stories for more information
+
+## [1.20.1] - 2020-04-24
+### Added
+- Add step progress bar component
+### Changed
+- Remove unnecessary imports from component styles
+
+
 ## [1.19.1] - 2020-04-06
 ### Changed
 - Add fluid, size capabilities to quantity selector component
-"
+
 ## [1.19.0] - 2020-04-01
 ### Added
 - Add quantity selector component

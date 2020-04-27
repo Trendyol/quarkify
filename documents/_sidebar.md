@@ -19,6 +19,7 @@
   - [Radio](components/radio.md)
   - [Select](components/select.md)
   - [SubHeader](components/subheader.md)
+  - [StepProgressBar](components/step-progress-bar.md)
   - [Switch](components/switch.md)
   - [Typography](components/typography.md)
   

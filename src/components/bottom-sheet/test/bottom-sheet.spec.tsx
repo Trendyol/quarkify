@@ -3,7 +3,6 @@ import Adapter from "enzyme-adapter-react-16";
 import faker from "faker";
 import React from "react";
 import sinon from "sinon";
-import Popup from "../../popup";
 import BottomSheet from "../bottom-sheet";
 
 Enzyme.configure({ adapter: new Adapter() });
