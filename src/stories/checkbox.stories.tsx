@@ -47,6 +47,10 @@ stories.add("General Usage", () => {
     setSelecteds(newSelecteds);
   };
 
+  const handleButtonClick = () => {
+    setSelecteds(selecteds.includes("female") ? selecteds.filter((s) => s !== "female") : ([...selecteds, "female"]));
+  };
+
   return (
     <div>
       <form>
@@ -67,8 +71,7 @@ stories.add("General Usage", () => {
         <CheckBox name={"gender"} value={"disabled"} label={"Disabled"} disabled />
       </form>
       <Button
-        onClick={() => setSelecteds(selecteds.includes("female") ?
-          selecteds.filter((s) => s !== "female") : ([...selecteds, "female"]))}
+        onClick={handleButtonClick}
       >
         Toggle Female Select
       </Button>

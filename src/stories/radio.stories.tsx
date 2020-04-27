@@ -27,6 +27,15 @@ stories.add("Default", () => (
 stories.add("General Usage", () => {
   const [selected, setSelected] = React.useState("male");
   const exampleArray = [{ value: "female", label: "Female" }, { value: "male", label: "Male" }, { value: "other", label: "Other" }, { value: "error", label: "Error" }];
+
+  const handleSelect = (e: any) => {
+    setSelected(e.target.value);
+  };
+
+  const handleRadio = (e: any) => {
+    setSelected(e.target.value);
+  };
+
   return (
     <div>
       <div>Selecteds: {selected}</div>
@@ -39,14 +48,14 @@ stories.add("General Usage", () => {
               value={value}
               label={label}
               checked={value === selected}
-              onChange={() => setSelected(value)}
+              onChange={handleRadio}
             />
             <br /><br />
           </React.Fragment>
         ))}
         <Radio name={"gender"} value={"disabled"} label={"Disabled"} disabled />
       </form>
-      <select name="gender-selector" value={selected} onChange={(e) => setSelected(e.target.value)}>
+      <select name="gender-selector" value={selected} onChange={handleSelect}>
         {exampleArray.map(({ label, value }) => (
           <option key={value} value={value}>{label}</option>
         ))}
