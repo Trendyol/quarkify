@@ -8,6 +8,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ### Breaking Changes
 - Select component issues fixed -- selected no longer supported
 - see related stories for more information
+### Changed
+- Removed default import from StepProgressBar index
 
 ## [1.20.2] - 2020-04-24
 ### Changed
