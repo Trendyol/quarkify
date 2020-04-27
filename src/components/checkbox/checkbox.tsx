@@ -10,7 +10,6 @@ import Typography from "../typography";
 export default class CheckBox extends PureComponent<IProps> {
   public render() {
     const {
-      checked,
       error,
       label,
       labelVariant = "body",
@@ -34,7 +33,7 @@ export default class CheckBox extends PureComponent<IProps> {
           className={"q-input"}
           id={`checkbox-${this.props.value}`}
           type="checkbox"
-          checked={checked}
+          value={value}
           {...props}
         />
 
