@@ -13,22 +13,17 @@ export default class Select extends PureComponent<IProps> {
       items,
       variant,
       fluid,
-      name,
-      value,
+      name = "name",
       leftIcon,
       rightIcon,
       rightIconColor,
       leftIconColor,
       className,
       disabled,
-      selected,
       error,
-      onChange,
+      valueKey = "value",
       ...props
     } = this.props;
-    const nameKey = name === undefined ? "name" : name;
-    const valueKey =
-      value === undefined ? "value" : value;
     const selectDivClasses = classNames(
       "q-select-wrapper",
       classNamesDefault({ fluid, disabled }),
@@ -42,8 +37,8 @@ export default class Select extends PureComponent<IProps> {
     );
     return (
       <div className={selectDivClasses}>
-        {leftIcon && <Icon className={"q-select-icon-left"} name={leftIcon} color={leftIconColor}/>}
-        <select value={selected} className={selectClasses} disabled={disabled} onChange={onChange} {...props}>
+        {leftIcon && <Icon className={"q-select-icon-left"} name={leftIcon} color={leftIconColor} />}
+        <select className={selectClasses} disabled={disabled} {...props}>
           {items.map((item, index) => {
             return (
               <option
@@ -52,12 +47,12 @@ export default class Select extends PureComponent<IProps> {
                 disabled={item.disabled}
                 className={classNamesDefault({ variant: item.variant })}
               >
-                {item[nameKey]}
+                {item[name]}
               </option>
             );
           })}
         </select>
-        {rightIcon && <Icon className={"q-select-icon-right"} name={rightIcon} color={rightIconColor}/>}
+        {rightIcon && <Icon className={"q-select-icon-right"} name={rightIcon} color={rightIconColor} />}
       </div>
     );
   }
@@ -68,6 +63,7 @@ interface IProps extends ISelect {
   items: any[];
   fluid?: boolean;
   value?: string;
+  valueKey?: string;
   name?: string;
   error?: boolean;
   rightIcon?: string;

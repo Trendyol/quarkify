@@ -65,7 +65,7 @@ describe("select specs", () => {
   });
 
   it("should find selected item as 'Plane'", () => {
-    const wrapper = shallow(<Select items={items} selected={"3"}/>);
+    const wrapper = shallow(<Select items={items} value={"3"}/>);
     expect(
       wrapper
         .render()
@@ -75,7 +75,7 @@ describe("select specs", () => {
   });
 
   it("should find selected item's value as 3", () => {
-    const wrapper = shallow(<Select items={items} selected={"3"}/>);
+    const wrapper = shallow(<Select items={items} value={"3"}/>);
     expect(
       wrapper
         .render()
@@ -85,7 +85,7 @@ describe("select specs", () => {
   });
 
   it("should find selected item's class name as secondary", () => {
-    const wrapper = shallow(<Select items={items} selected={"3"}/>);
+    const wrapper = shallow(<Select items={items} value={"3"}/>);
     expect(
       wrapper
         .render()
@@ -112,7 +112,7 @@ describe("select specs", () => {
 
   it("should set values and names properly", () => {
     const wrapper = shallow(
-      <Select items={customItems} value={"id"} name={"vehicle"} fluid selected={"3"}/>,
+      <Select items={customItems} valueKey={"id"} name={"vehicle"} fluid value={"3"}/>,
     );
     expect(
       wrapper

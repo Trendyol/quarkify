@@ -4,6 +4,13 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
+## [2.0.0] - 2020-04-27
+### Breaking Changes
+- Select component issues fixed -- selected no longer supported
+- see related stories for more information
+### Changed
+- Removed default import from StepProgressBar index
+
 ## [1.20.2] - 2020-04-24
 ### Changed
 - CheckBox and Radio component issues fixed -- checked no longer supported
