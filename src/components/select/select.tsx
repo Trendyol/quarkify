@@ -13,7 +13,7 @@ export default class Select extends PureComponent<IProps> {
       items,
       variant,
       fluid,
-      name,
+      name = "name",
       leftIcon,
       rightIcon,
       rightIconColor,
@@ -21,11 +21,9 @@ export default class Select extends PureComponent<IProps> {
       className,
       disabled,
       error,
-      valueKey,
+      valueKey = "value",
       ...props
     } = this.props;
-    const nameKey = name || "name";
-    const valueMapperKey = valueKey || "value";
     const selectDivClasses = classNames(
       "q-select-wrapper",
       classNamesDefault({ fluid, disabled }),
@@ -45,11 +43,11 @@ export default class Select extends PureComponent<IProps> {
             return (
               <option
                 key={index}
-                value={item[valueMapperKey]}
+                value={item[valueKey]}
                 disabled={item.disabled}
                 className={classNamesDefault({ variant: item.variant })}
               >
-                {item[nameKey]}
+                {item[name]}
               </option>
             );
           })}
