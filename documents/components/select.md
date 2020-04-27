@@ -18,7 +18,6 @@ const items = [
 ## Items
 Select component has one required property which is items. Items takes an array of JSON objects which keys of each object must be:
 - name: string
-- selected: boolean
 - value: any
 - variant: "primary" | "secondary" | string
 - disabled: boolean
@@ -32,7 +31,6 @@ If you want to dynamically change the value name, you can give valueKey prop as 
 const items = [
     {
         name: "Plane",
-        selected: true,
         id: 3,
         variant: "secondary",
     }
@@ -47,13 +45,51 @@ Similarly, if you want to dynamically change the name, you can give this prop as
 const items = [
     {
         myNewName: "Plane",
-        selected: true,
         id: 3,
         variant: "secondary",
     }
 ]
 <Select items={items} name="myNewName" value="id"/>
 ``` 
+
+## Default Selected Value
+To display select component with a default selected value, you must give it a value prop controlled by external structure ( e.g. states).
+
+The example below renders the Select component and gives it a initial selected default value "Bike" by using states.
+
+const items = [
+  {
+    id: 1,
+    name: "Car",
+    variant: "primary",
+  },
+  {
+    id: 2,
+    name: "Bike",
+    variant: "primary",
+  }
+];
+
+// Default state value 2 sets the select component to 
+// have a default vlaue from the provided items array 
+// with the id 2.
+ const [value, setValue] = React.useState("2"); 
+
+  const handleSelect = (e: any) => {
+    setValue(e.target.value);
+  };
+
+
+  return (
+      ```html
+            <Select
+                items={items}
+                valueKey="id"
+                value={value}
+                onChange={handleSelect}
+            />
+      ```
+  );
 
 ## Error
 Select can be displayed in an error state
