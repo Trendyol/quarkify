@@ -1,6 +1,8 @@
 @import "../_variables";
 
 .q-spb {
+  width: 100%;
+  padding-inline-start: 0;
   display: flex;
   justify-content: space-between;
 
@@ -25,6 +27,8 @@
     margin: 0 auto $space-medium auto;
     border-radius: 50%;
     transition: all .7s;
+    position: relative;
+    z-index: 1;
   }
 
   li:after {
@@ -36,7 +40,6 @@
     top: 7px;
     left: -50%;
     transition: all .7s;
-    z-index: -1;
   }
 
   li:first-child:after {
