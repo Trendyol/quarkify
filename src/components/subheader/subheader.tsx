@@ -3,6 +3,7 @@ import React, { PureComponent } from "react";
 import IDiv from "../../interfaces/div";
 import "../../styles/components/_subheader.scss";
 import { sizeTypes } from "../../types/icon";
+import { variantTypes } from "../../types/typography";
 import Icon from "../icon";
 import Typography from "../typography";
 
@@ -10,6 +11,7 @@ export default class SubHeader extends PureComponent<ISubHeader> {
   public render() {
     const {
       title,
+      titleComponent,
       subTitle,
       rightIcon,
       leftIcon,
@@ -28,13 +30,13 @@ export default class SubHeader extends PureComponent<ISubHeader> {
           </div>
           {subTitle &&
           <div className="title-group">
-            <Typography variant={"body"} color={"zero"}>{title}</Typography>
+            <Typography variant={"body"} component={titleComponent} color={"zero"}>{title}</Typography>
             <Typography variant={"subtitle"} color={"light-gray"}>{subTitle}</Typography>
           </div>
           }
           {!subTitle &&
           <div className="title" >
-            <Typography variant={"body"} color={"zero"}>{title}</Typography>
+            <Typography variant={"body"} component={titleComponent} color={"zero"}>{title}</Typography>
           </div>
           }
           <div className="right-icon" onClick={rightIconOnClick}>
@@ -48,6 +50,7 @@ export default class SubHeader extends PureComponent<ISubHeader> {
 
 interface ISubHeader extends IDiv {
   title: string;
+  titleComponent?: variantTypes;
   subTitle?: string;
   leftIcon?: string;
   rightIcon?: string;
