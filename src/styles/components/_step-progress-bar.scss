@@ -26,6 +26,7 @@
     text-align: center;
     margin: 0 auto $space-medium auto;
     border-radius: 50%;
+    border: 2px solid $white;
     transition: all .7s;
     position: relative;
     z-index: 1;
@@ -37,7 +38,7 @@
     height: 2px;
     position: absolute;
     background-color: $border-gray;
-    top: 7px;
+    top: 6.5px;
     left: -50%;
     transition: all .7s;
   }
@@ -58,6 +59,7 @@
         border-color: $value;
         background-color: $value;
         transition: all .7s;
+        border: 2px solid $white;
       }
 
       li.active:after {
