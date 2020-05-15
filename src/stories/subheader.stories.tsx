@@ -22,6 +22,15 @@ stories.add("Subtitle", () => (
   </div>
 ));
 
+stories.add("Subtitle with default/overriden title tag", () => (
+  <div>
+    <SubHeader title={faker.lorem.words(10)} subTitle={faker.lorem.words(10)} />
+    <br />
+    <br />
+    <SubHeader title={faker.lorem.words(10)} titleComponent={"h1"} subTitle={faker.lorem.words(10)} />
+  </div>
+));
+
 stories.add("Icons", () => (
   <div>
     <SubHeader leftIcon="back-button" title={faker.lorem.lines(1)}/>

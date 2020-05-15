@@ -89,4 +89,10 @@ describe("subheader specs", () => {
     const wrapper = mount(<SubHeader title={text} rightIcon={"close"} rightIconSize={iconSize} />);
     expect(wrapper.find(`.q-icon-${iconSize}`)).toHaveLength(1);
   });
+
+  it("should take given tag for title", () => {
+    const text = faker.random.word();
+    const wrapper = mount(<SubHeader title={text} titleComponent={"h1"} />);
+    expect(wrapper.find("h1.q-typography")).toHaveLength(1);
+  });
 });
