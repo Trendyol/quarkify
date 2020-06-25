@@ -10,6 +10,11 @@
   align-items: center;
   justify-content: center;
   z-index: 1050;
+
+  &.q-loader-fixed {
+    position: fixed;
+  }
+
   .q-loader-parent {
     width: 100px;
     height: 100px;
@@ -156,4 +161,8 @@
       }
     }
   }
+}
+
+body.q-disable-loader-scroll {
+  overflow: hidden;
 }
