@@ -1,7 +1,6 @@
 import classNames from "classnames";
 import React, { PureComponent } from "react";
 import IDiv from "../../interfaces/div";
-import "../../styles/components/_scroll-to-top.scss";
 import { detectPassiveEvents } from "../../utils/detectPassiveEvents";
 import Icon from "../icon";
 

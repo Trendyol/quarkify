@@ -1,7 +1,6 @@
 import classNames from "classnames";
 import React, { PureComponent } from "react";
 import IInput from "../../interfaces/input";
-import "../../styles/components/_input.scss";
 import classNamesDefault from "../../utils/class-names-default";
 
 export default class Input extends PureComponent<IProps> {

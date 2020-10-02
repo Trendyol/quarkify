@@ -1,7 +1,6 @@
 import classNames from "classnames";
 import React, { PureComponent } from "react";
 import IDiv from "../../interfaces/div";
-import "../../styles/components/_subheader.scss";
 import { sizeTypes } from "../../types/icon";
 import { variantTypes } from "../../types/typography";
 import Icon from "../icon";

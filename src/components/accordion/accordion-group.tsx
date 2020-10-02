@@ -1,7 +1,6 @@
 import classNames from "classnames";
 import React, { PureComponent } from "react";
 import IDiv from "../../interfaces/div";
-import "../../styles/components/_box.scss";
 
 export default class AccordionGroup extends PureComponent<IAccordionGroupProps> {
   public render() {

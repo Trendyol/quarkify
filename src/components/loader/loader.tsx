@@ -1,7 +1,6 @@
 import classnames from "classnames";
 import React, { PureComponent } from "react";
 import IDiv from "../../interfaces/div";
-import "../../styles/components/_loader.scss";
 
 export default class Loader extends PureComponent<ILoaderProps> {
   public componentDidUpdate(prevProps: ILoaderProps) {

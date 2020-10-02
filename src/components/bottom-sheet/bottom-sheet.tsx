@@ -1,7 +1,6 @@
 import classNames from "classnames";
 import React, { PureComponent, ReactNode } from "react";
 import { CSSTransition } from "react-transition-group";
-import "../../styles/components/_bottom-sheet.scss";
 
 export default class BottomSheet extends PureComponent<IBottomSheetProps> {
 

@@ -1,7 +1,6 @@
 import classNames from "classnames";
 import React, { PureComponent } from "react";
 import ISelect from "../../interfaces/select";
-import "../../styles/components/_select.scss";
 import { colorTypes } from "../../types/color";
 import { variantTypes } from "../../types/select";
 import classNamesDefault from "../../utils/class-names-default";
