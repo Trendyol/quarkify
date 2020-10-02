@@ -1,7 +1,6 @@
 import classNames from "classnames";
 import React, { PureComponent } from "react";
 import ITypography from "../../interfaces/typography";
-import "../../styles/components/_typography.scss";
 import { colorTypes } from "../../types/color";
 import { displayTypes, variantTypes } from "../../types/typography";
 import classNamesDefault from "../../utils/class-names-default";

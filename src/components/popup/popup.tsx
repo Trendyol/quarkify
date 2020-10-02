@@ -2,7 +2,6 @@ import classNames from "classnames";
 import React, { PureComponent } from "react";
 import ReactDOM from "react-dom";
 import { CSSTransition } from "react-transition-group";
-import "../../styles/components/_popup.scss";
 import Icon from "../icon";
 
 export default class Popup extends PureComponent<IPopupProps> {

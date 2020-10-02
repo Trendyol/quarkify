@@ -1,7 +1,6 @@
 import classNames from "classnames";
 import React, { PureComponent } from "react";
 import IInput from "../../interfaces/input";
-import "../../styles/components/_checkbox.scss";
 import { colorTypes } from "../../types/color";
 import { variantTypes } from "../../types/typography";
 import classNamesDefault from "../../utils/class-names-default";

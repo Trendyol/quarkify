@@ -1,7 +1,6 @@
 import classNames from "classnames";
 import React, { PureComponent } from "react";
 import IDiv from "../../interfaces/div";
-import "../../styles/components/_rating.scss";
 import { colorTypes } from "../../types/color";
 import { ratingSize } from "../../types/rating";
 import classNamesDefault from "../../utils/class-names-default";

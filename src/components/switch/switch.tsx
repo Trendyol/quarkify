@@ -1,7 +1,6 @@
 import classNames from "classnames";
 import React, { PureComponent } from "react";
 import IInput from "../../interfaces/input";
-import "../../styles/components/_switch.scss";
 import { switchTypes, variantTypes } from "../../types/switch";
 import classNamesDefault from "../../utils/class-names-default";
 

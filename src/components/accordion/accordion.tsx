@@ -1,6 +1,5 @@
 import classNames from "classnames";
 import React, { PureComponent } from "react";
-import "../../styles/components/_accordion.scss";
 import Content from "./accordion-content";
 import Header from "./accordion-header";
 

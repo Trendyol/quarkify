@@ -1,6 +1,5 @@
 import classNames from "classnames";
 import React, { PureComponent } from "react";
-import "../../styles/components/_quantity-selector.scss";
 import { qsSize } from "../../types/quantity-selector";
 import classNamesDefault from "../../utils/class-names-default";
 import Icon from "../icon";

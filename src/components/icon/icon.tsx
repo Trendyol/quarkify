@@ -1,7 +1,6 @@
 import classNames from "classnames";
 import React, { PureComponent } from "react";
 import IIcon from "../../interfaces/icon";
-import "../../styles/components/_icon.scss";
 import { colorTypes } from "../../types/color";
 import { sizeTypes } from "../../types/icon";
 import classNamesDefault from "../../utils/class-names-default";

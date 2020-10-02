@@ -1,7 +1,6 @@
 import classNames from "classnames";
 import React, { ReactNode } from "react";
 import { CSSTransition } from "react-transition-group";
-import "../../styles/components/_modal.scss";
 import { animationTypes } from "../../types/modal";
 import Actions from "./modal-actions";
 import Content from "./modal-content";

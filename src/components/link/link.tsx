@@ -1,7 +1,6 @@
 import classNames from "classnames";
 import React, { PureComponent } from "react";
 import ILink from "../../interfaces/link";
-import "../../styles/components/_link.scss";
 import { buttonSize, variantTypes } from "../../types/button";
 import classNamesDefault from "../../utils/class-names-default";
 import Icon from "../icon";
