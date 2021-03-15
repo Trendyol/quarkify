@@ -2,13 +2,16 @@ import classNames from "classnames";
 import React, { PureComponent, ReactNode } from "react";
 import { CSSTransition } from "react-transition-group";
 
-export default class BottomSheet extends PureComponent<IBottomSheetProps> {
-
+export default class BottomSheet extends PureComponent<
+  IBottomSheetProps,
+  IBottomSheetState
+> {
   constructor(props: IBottomSheetProps) {
     super(props);
     this.handleTouchMove = this.handleTouchMove.bind(this);
     this.onEnter = this.onEnter.bind(this);
     this.onExit = this.onExit.bind(this);
+    this.state = { scrollPosition: 0 };
   }
 
   public componentDidMount(): void {
@@ -22,16 +25,22 @@ export default class BottomSheet extends PureComponent<IBottomSheetProps> {
     nextState: Readonly<{}>,
     nextContext: any,
   ) {
-    if (nextProps.show !== this.props.show && nextProps.show && typeof window !== "undefined") {
+    if (
+      nextProps.show !== this.props.show &&
+      nextProps.show &&
+      typeof window !== "undefined"
+    ) {
       this.lockWebKitBodyScrolling();
-    } else if (nextProps.show !== this.props.show && !nextProps.show && typeof window !== "undefined") {
+    } else if (
+      nextProps.show !== this.props.show &&
+      !nextProps.show &&
+      typeof window !== "undefined"
+    ) {
       this.unlockWebKitBodyScrolling();
     }
   }
 
-  public componentDidUpdate(
-    prevProps: Readonly<IBottomSheetProps>,
-  ): void {
+  public componentDidUpdate(prevProps: Readonly<IBottomSheetProps>): void {
     if (prevProps.show !== this.props.show) {
       if (prevProps.onChange) {
         prevProps.onChange(this.props.show);
@@ -56,11 +65,21 @@ export default class BottomSheet extends PureComponent<IBottomSheetProps> {
   }
 
   public lockWebKitBodyScrolling(): void {
+    const scrollPosition = window.pageYOffset;
+    this.setState({ scrollPosition });
+
     window.document.body.style.overflow = "hidden";
+    window.document.body.style.position = "fixed";
+    window.document.body.style.top = `-${scrollPosition}px`;
+    window.document.body.style.width = "100%";
   }
 
   public unlockWebKitBodyScrolling(): void {
     window.document.body.style.removeProperty("overflow");
+    window.document.body.style.removeProperty("position");
+    window.document.body.style.removeProperty("top");
+    window.document.body.style.removeProperty("width");
+    window.scrollTo(0, this.state.scrollPosition);
   }
 
   public componentWillUnmount(): void {
@@ -73,39 +92,36 @@ export default class BottomSheet extends PureComponent<IBottomSheetProps> {
       return null;
     }
 
-    const {
-      show,
-      children,
-      onClose,
-      className,
-    } = this.props;
+    const { show, children, onClose, className } = this.props;
 
-    const bottomSheetClasses = classNames(
-      "q-bottom-sheet-main",
-      className,
-    );
+    const bottomSheetClasses = classNames("q-bottom-sheet-main", className);
 
     const overlayClick = () => {
       onClose();
     };
 
-    return <CSSTransition
-      in={show}
-      onEnter={this.onEnter}
-      onExit={this.onExit}
-      unmountOnExit
-      timeout={{
-        enter: 0,
-        exit: 500,
-      }}
-      classNames="q-slideInDown q-bottom-sheet"
-    >
-      <div className={"q-bottom-sheet-overlay"} onClick={overlayClick}>
-        <div className={bottomSheetClasses} onClick={this.bottomSheetBodyClick}>
+    return (
+      <CSSTransition
+        in={show}
+        onEnter={this.onEnter}
+        onExit={this.onExit}
+        unmountOnExit
+        timeout={{
+          enter: 0,
+          exit: 500,
+        }}
+        classNames="q-slideInDown q-bottom-sheet"
+      >
+        <div className={"q-bottom-sheet-overlay"} onClick={overlayClick}>
+          <div
+            className={bottomSheetClasses}
+            onClick={this.bottomSheetBodyClick}
+          >
             {children}
+          </div>
         </div>
-      </div>
-    </CSSTransition>;
+      </CSSTransition>
+    );
   }
   private bottomSheetBodyClick = (event: React.SyntheticEvent) => {
     event.stopPropagation();
@@ -118,4 +134,8 @@ interface IBottomSheetProps {
   onChange?: (status: boolean) => void;
   className?: string;
   onClose: () => void;
+}
+
+interface IBottomSheetState {
+  scrollPosition: number;
 }
