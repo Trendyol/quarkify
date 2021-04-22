@@ -4,23 +4,42 @@ import ReactDOM from "react-dom";
 import { CSSTransition } from "react-transition-group";
 import Icon from "../icon";
 
-export default class Popup extends PureComponent<IPopupProps> {
+export default class Popup extends PureComponent<IPopupProps, IPopupState> {
   constructor(props: IPopupProps) {
     super(props);
     this.handleTouchMove = this.handleTouchMove.bind(this);
     this.onEnter = this.onEnter.bind(this);
     this.onExit = this.onExit.bind(this);
+    this.state = { scrollPosition: 0 };
   }
 
   public componentDidMount() {
-    if (this.props.show) {
-      window.document.body.style.overflow = "hidden";
+    if (this.props.show && typeof window !== "undefined") {
+      this.lockWebKitBodyScrolling();
     }
   }
 
-  public componentDidUpdate(
-    prevProps: Readonly<IPopupProps>,
-  ): void {
+  public componentWillUpdate(
+    nextProps: Readonly<IPopupProps>,
+    nextState: Readonly<{}>,
+    nextContext: any,
+  ) {
+    if (
+      nextProps.show !== this.props.show &&
+      nextProps.show &&
+      typeof window !== "undefined"
+    ) {
+      this.lockWebKitBodyScrolling();
+    } else if (
+      nextProps.show !== this.props.show &&
+      !nextProps.show &&
+      typeof window !== "undefined"
+    ) {
+      this.unlockWebKitBodyScrolling();
+    }
+  }
+
+  public componentDidUpdate(prevProps: Readonly<IPopupProps>): void {
     if (prevProps.show !== this.props.show) {
       if (prevProps.onChange) {
         prevProps.onChange(this.props.show);
@@ -30,7 +49,7 @@ export default class Popup extends PureComponent<IPopupProps> {
 
   public componentWillUnmount(): void {
     window.document.removeEventListener("touchmove", this.handleTouchMove);
-    window.document.body.style.removeProperty("overflow");
+    this.unlockWebKitBodyScrolling();
   }
 
   public handleTouchMove(e: Event): void {
@@ -42,13 +61,31 @@ export default class Popup extends PureComponent<IPopupProps> {
   }
 
   public onEnter(): void {
-    window.document.addEventListener("touchmove", this.handleTouchMove, { passive: false });
-    window.document.body.style.overflow = "hidden";
+    window.document.addEventListener("touchmove", this.handleTouchMove, {
+      passive: false,
+    });
   }
 
   public onExit(): void {
     window.document.removeEventListener("touchmove", this.handleTouchMove);
+  }
+
+  public lockWebKitBodyScrolling(): void {
+    const scrollPosition = window.pageYOffset;
+    this.setState({ scrollPosition });
+
+    window.document.body.style.overflow = "hidden";
+    window.document.body.style.position = "fixed";
+    window.document.body.style.top = `-${scrollPosition}px`;
+    window.document.body.style.width = "100%";
+  }
+
+  public unlockWebKitBodyScrolling(): void {
     window.document.body.style.removeProperty("overflow");
+    window.document.body.style.removeProperty("position");
+    window.document.body.style.removeProperty("top");
+    window.document.body.style.removeProperty("width");
+    window.scrollTo(0, this.state.scrollPosition);
   }
 
   public render() {
@@ -69,10 +106,7 @@ export default class Popup extends PureComponent<IPopupProps> {
       withTitleBorder,
     } = this.props;
 
-    const popupClasses = classNames(
-      "q-popup-overlay",
-      className,
-    );
+    const popupClasses = classNames("q-popup-overlay", className);
 
     const popupIconClasses = classNames(
       iconLeft && "q-popup-icon-left",
@@ -80,10 +114,7 @@ export default class Popup extends PureComponent<IPopupProps> {
       "q-popup-icon-position",
     );
 
-    const popupContentClasses = classNames(
-      contentClassName,
-      "q-popup-content",
-    );
+    const popupContentClasses = classNames(contentClassName, "q-popup-content");
 
     const popupTitleClasses = classNames({
       "q-popup-header": true,
@@ -113,9 +144,7 @@ export default class Popup extends PureComponent<IPopupProps> {
           <div className="q-popup-main" onClick={this.popupBodyClick}>
             {(!noIcon || title) && (
               <div className={popupTitleClasses}>
-                <div className="q-popup-header-text">
-                  {title}
-                </div>
+                <div className="q-popup-header-text">{title}</div>
                 {!noIcon && (
                   <Icon
                     className={popupIconClasses}
@@ -125,9 +154,7 @@ export default class Popup extends PureComponent<IPopupProps> {
                 )}
               </div>
             )}
-            <div className={popupContentClasses}>
-              {children}
-            </div>
+            <div className={popupContentClasses}>{children}</div>
           </div>
         </div>
       </CSSTransition>,
@@ -137,7 +164,7 @@ export default class Popup extends PureComponent<IPopupProps> {
 
   private popupBodyClick = (event: React.SyntheticEvent) => {
     event.stopPropagation();
-  }
+  };
 }
 
 interface IPopupProps {
@@ -150,4 +177,8 @@ interface IPopupProps {
   contentClassName?: string;
   title?: React.ReactElement | string;
   withTitleBorder?: boolean;
+}
+
+interface IPopupState {
+  scrollPosition: number;
 }
