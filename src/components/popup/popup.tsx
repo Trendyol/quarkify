@@ -164,7 +164,7 @@ export default class Popup extends PureComponent<IPopupProps, IPopupState> {
 
   private popupBodyClick = (event: React.SyntheticEvent) => {
     event.stopPropagation();
-  };
+  }
 }
 
 interface IPopupProps {
