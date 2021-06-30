@@ -92,7 +92,7 @@ export default class BottomSheet extends PureComponent<
       return null;
     }
 
-    const { show, children, onClose, className } = this.props;
+    const { show, children, onClose, className, transitionTimeout } = this.props;
 
     const bottomSheetClasses = classNames("q-bottom-sheet-main", className);
 
@@ -108,7 +108,8 @@ export default class BottomSheet extends PureComponent<
         unmountOnExit
         timeout={{
           enter: 0,
-          exit: 500,
+          exit: 200,
+          ...transitionTimeout,
         }}
         classNames="q-slideInDown q-bottom-sheet"
       >
@@ -134,6 +135,10 @@ interface IBottomSheetProps {
   onChange?: (status: boolean) => void;
   className?: string;
   onClose: () => void;
+  transitionTimeout?: {
+    enter: number;
+    exit: number;
+  };
 }
 
 interface IBottomSheetState {
