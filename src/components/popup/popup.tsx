@@ -150,6 +150,7 @@ export default class Popup extends PureComponent<IPopupProps, IPopupState> {
                     className={popupIconClasses}
                     onClick={handleIconClick}
                     name="close"
+                    sizePixel={10}
                   />
                 )}
               </div>
