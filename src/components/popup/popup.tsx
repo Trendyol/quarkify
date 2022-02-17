@@ -85,7 +85,9 @@ export default class Popup extends PureComponent<IPopupProps, IPopupState> {
     window.document.body.style.removeProperty("position");
     window.document.body.style.removeProperty("top");
     window.document.body.style.removeProperty("width");
-    window.scrollTo(0, this.state.scrollPosition);
+    if (this.state.scrollPosition) {
+      window.scrollTo(0, this.state.scrollPosition);
+    }
   }
 
   public render() {
