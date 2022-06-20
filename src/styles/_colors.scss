@@ -1,6 +1,6 @@
 $primary: #f27a1a;
 $green: #0bc15c;
-$red: #b30000;
+$red: #bb0000;
 $black: #333333;
 $dark-gray: #666666;
 $light-gray: #999999;
@@ -8,18 +8,28 @@ $border-gray: #e6e6e6;
 $white: #ffffff;
 $yellow: #ffc000;
 $zero: #000000;
+$border-second: #deddbe;
+$warning: #fffff1;
+$supporter-blue: #4d8ee1;
+$supporter-gray: #d8d8d8;
+$supporter-red: #ec1C36;
 
 $colors: () !default;
 $colors: map_merge((
-  "primary": $primary,
-  "green": $green,
-  "red": $red,
-  "black": $black,
-  "dark-gray": $dark-gray,
-  "light-gray": $light-gray,
-  "border-gray": $border-gray,
-  "white": $white,
-  "yellow": $yellow,
-  "zero": $zero,
-  ), $colors
+        "primary": $primary,
+        "green": $green,
+        "red": $red,
+        "black": $black,
+        "dark-gray": $dark-gray,
+        "light-gray": $light-gray,
+        "border-gray": $border-gray,
+        "white": $white,
+        "yellow": $yellow,
+        "zero": $zero,
+        "border-second": $border-second,
+        "warning": $warning,
+        "supporter-blue": $supporter-blue,
+        "supporter-gray": $supporter-gray,
+        "supporter-red": $supporter-red
+), $colors
 );
