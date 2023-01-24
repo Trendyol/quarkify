@@ -123,7 +123,8 @@ export default class Popup extends PureComponent<IPopupProps, IPopupState> {
       "with-border": withTitleBorder === true,
     });
 
-    const overlayClick = () => {
+    const overlayClick = (e: React.MouseEvent) => {
+      e.stopPropagation();
       if (closeOnOverlayClick) {
         onChange(false);
       }

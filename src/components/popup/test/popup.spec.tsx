@@ -48,7 +48,9 @@ describe("popup specs", () => {
   it("should call onChange when overlay is clicked", () => {
     const onChange = sandbox.spy();
     const wrapper = shallow(<Popup onChange={onChange} show={true} />);
-    wrapper.find(".q-popup-overlay").simulate("click");
+    wrapper.find(".q-popup-overlay").simulate("click", {
+      stopPropagation: jest.fn()
+    });
     expect(onChange.calledOnce).toEqual(true);
   });
 
@@ -57,7 +59,9 @@ describe("popup specs", () => {
     const wrapper = shallow(
       <Popup onChange={onChange} show={true} closeOnOverlayClick={false} />,
     );
-    wrapper.find(".q-popup-overlay").simulate("click");
+    wrapper.find(".q-popup-overlay").simulate("click", {
+      stopPropagation: jest.fn()
+    });
     expect(onChange.calledOnce).toEqual(false);
   });
 
