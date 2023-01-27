@@ -57,7 +57,7 @@ jobs:
           command: ls
       - run:
           name: Authenticate with registry
-          command: echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" > .npmrc
+          command: echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN_STOREFRONT_TR" > .npmrc
       - run:
           name: Publish package
           command: npm publish
