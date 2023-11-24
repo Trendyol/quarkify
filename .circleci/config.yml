@@ -3,7 +3,7 @@ version: 2.1
 
 defaults: &defaults
   docker:
-    - image: circleci/node:10
+    - image: cimg/node:20.10
 
 
 orbs:
