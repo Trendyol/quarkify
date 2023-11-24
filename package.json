@@ -23,7 +23,7 @@
   },
   "dependencies": {
     "@types/jest": "24.0.15",
-    "@types/node": "18.14.2",
+    "@types/node": "20.9.5",
     "@types/react": "16.8.6",
     "@types/react-dom": "16.0.11",
     "@types/react-transition-group": "^4.2.0",
@@ -39,7 +39,7 @@
     "@types/enzyme-adapter-react-16": "^1.0.5",
     "@types/faker": "^4.1.5",
     "@types/sinon": "^7.0.13",
-    "css-loader": "^1.0.1",
+    "css-loader": "^6.8.1",
     "enzyme": "^3.10.0",
     "enzyme-adapter-react-16": "^1.14.0",
     "faker": "^4.1.0",
@@ -50,7 +50,12 @@
     "ts-loader": "^6.0.4",
     "tslint": "^5.18.0",
     "tslint-react": "^4.0.0",
-    "typescript": "4.9.5"
+    "typescript": "5.3.2"
+  },
+  "overrides": {
+    "react-scripts": {
+      "typescript": "^5"
+    }
   },
   "jest": {
     "collectCoverageFrom": [
