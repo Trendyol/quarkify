@@ -1,6 +1,6 @@
 {
   "name": "quarkify",
-  "version": "3.2.5",
+  "version": "4.0.0",
   "license": "MIT",
   "description": "An awesome lightweight React UI Component library",
   "repository": "https://github.com/Trendyol/quarkify",
@@ -16,7 +16,6 @@
     "test": "react-scripts test",
     "test:ci": "react-scripts test --silent --runInBand --watchAll=false",
     "eject": "react-scripts eject",
-    "build-storybook": "build-storybook -c .storybook -o docs -s public",
     "coverage": "npm test -- --coverage --silent --watchAll=false --bail",
     "coverage:ci": "CI=true npm test -- --coverage --silent --watchAll=false",
     "lint": "tslint -c tslint.json 'src/**/*.tsx' --fix",
@@ -24,38 +23,34 @@
   },
   "dependencies": {
     "@types/jest": "24.0.15",
-    "@types/node": "12.0.10",
+    "@types/node": "18.14.2",
     "@types/react": "16.8.6",
     "@types/react-dom": "16.0.11",
     "@types/react-transition-group": "^4.2.0",
     "classnames": "^2.2.6",
-    "node-sass": "^4.12.0",
     "react": "16.9.0",
     "react-dom": "16.9.0",
-    "react-scripts": "3.0.1",
-    "react-transition-group": "^4.2.0"
+    "react-scripts": "^5.0.1",
+    "react-transition-group": "^4.2.0",
+    "sass": "^1.69.5"
   },
   "devDependencies": {
-    "@storybook/addon-viewport": "^5.1.9",
-    "@storybook/react": "5.3.19",
     "@types/classnames": "^2.2.8",
     "@types/enzyme-adapter-react-16": "^1.0.5",
     "@types/faker": "^4.1.5",
     "@types/sinon": "^7.0.13",
-    "@types/storybook__react": "^4.0.2",
     "css-loader": "^1.0.1",
     "enzyme": "^3.10.0",
     "enzyme-adapter-react-16": "^1.14.0",
-    "extract-text-webpack-plugin": "^3.0.2",
     "faker": "^4.1.0",
     "husky": "^3.0.0",
     "lint-staged": "^9.1.0",
     "sinon": "^7.3.2",
-    "source-map-loader": "^0.2.4",
+    "source-map-loader": "^4.0.1",
     "ts-loader": "^6.0.4",
     "tslint": "^5.18.0",
     "tslint-react": "^4.0.0",
-    "typescript": "^3.5.2"
+    "typescript": "4.9.5"
   },
   "jest": {
     "collectCoverageFrom": [
