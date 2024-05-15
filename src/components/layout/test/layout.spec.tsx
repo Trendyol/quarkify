@@ -1,6 +1,6 @@
 import Enzyme, { shallow } from "enzyme";
-import Adapter from "enzyme-adapter-react-16";
-import faker from "faker";
+import Adapter from "@cfaester/enzyme-adapter-react-18";
+import { faker } from '@faker-js/faker';
 import React from "react";
 import sinon from "sinon";
 import Layout from "../layout";

@@ -1,6 +1,6 @@
 import Enzyme, { mount } from "enzyme";
-import Adapter from "enzyme-adapter-react-16";
-import faker from "faker";
+import Adapter from "@cfaester/enzyme-adapter-react-18";
+import { faker } from '@faker-js/faker';
 import React from "react";
 import sinon from "sinon";
 import Modal from "../index";
@@ -34,7 +34,7 @@ describe("modal specs", () => {
   });
 
   it("should render content sub component", () => {
-    const text = faker.random.word();
+    const text = faker.lorem.word();
     const wrapper = mount(
       <Modal show={true}>
         <Modal.Content>
@@ -46,7 +46,7 @@ describe("modal specs", () => {
   });
 
   it("should render actions sub component", () => {
-    const text = faker.random.word();
+    const text = faker.lorem.word();
     const wrapper = mount(
       <Modal show={true}>
         <Modal.Actions>

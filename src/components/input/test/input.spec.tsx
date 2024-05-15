@@ -1,6 +1,6 @@
 import Enzyme, { shallow } from "enzyme";
-import Adapter from "enzyme-adapter-react-16";
-import faker from "faker";
+import Adapter from "@cfaester/enzyme-adapter-react-18";
+import { faker } from '@faker-js/faker';
 import React from "react";
 import sinon from "sinon";
 import Input from "../input";
@@ -28,7 +28,7 @@ describe("input specs", () => {
 
   it("should call onChange function ", () => {
     const spy = sandbox.spy();
-    const text = faker.random.word();
+    const text = faker.lorem.word();
     const wrapper = shallow(<Input onChange={spy}/>);
     const event = { target: { value: text } };
 
@@ -39,7 +39,7 @@ describe("input specs", () => {
 
   it("should not call callback function when changed and input is disabled", () => {
     const spy = sandbox.spy();
-    const text = faker.random.word();
+    const text = faker.lorem.word();
     const wrapper = shallow(<Input disabled/>);
     const event = { target: { value: text } };
 
@@ -49,14 +49,14 @@ describe("input specs", () => {
   });
 
   it("should render a subtext", () => {
-    const text = faker.random.word();
+    const text = faker.lorem.word();
     const wrapper = shallow(<Input subtext={text}/>);
 
     expect(wrapper.find(".q-input-subtext")).toHaveLength(1);
   });
 
   it("should render an error subtext", () => {
-    const text = faker.random.word();
+    const text = faker.lorem.word();
     const wrapper = shallow(<Input error errorMessage={text}/>);
 
     expect(wrapper.find(".q-input-error")).toHaveLength(1);
@@ -87,7 +87,7 @@ describe("input specs", () => {
   });
 
   it("should render a label when given label prop", () => {
-    const labelText = faker.random.word();
+    const labelText = faker.lorem.word();
     const wrapper = shallow(<Input label={labelText}/>);
     const labelWrapper = wrapper.find("label");
     expect(labelWrapper.text()).toBe(labelText);

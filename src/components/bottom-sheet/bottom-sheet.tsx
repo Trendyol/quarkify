@@ -50,14 +50,18 @@ export default class BottomSheet extends PureComponent<
 
   public handleTouchMove(e: Event): void {
     e.stopImmediatePropagation();
-    const scrollElement = document.getElementsByClassName("q-bottom-sheet-main")[0];
+    const scrollElement = document.getElementsByClassName(
+      "q-bottom-sheet-main",
+    )[0];
     if (!e.composedPath().includes(scrollElement as EventTarget)) {
       e.preventDefault();
     }
   }
 
   public onEnter(): void {
-    document.addEventListener("touchmove", this.handleTouchMove, { passive: false });
+    document.addEventListener("touchmove", this.handleTouchMove, {
+      passive: false,
+    });
   }
 
   public onExit(): void {
@@ -92,7 +96,8 @@ export default class BottomSheet extends PureComponent<
       return null;
     }
 
-    const { show, children, onClose, className, transitionTimeout } = this.props;
+    const { show, children, onClose, className, transitionTimeout } =
+      this.props;
 
     const bottomSheetClasses = classNames("q-bottom-sheet-main", className);
 
@@ -126,7 +131,7 @@ export default class BottomSheet extends PureComponent<
   }
   private bottomSheetBodyClick = (event: React.SyntheticEvent) => {
     event.stopPropagation();
-  }
+  };
 }
 
 interface IBottomSheetProps {

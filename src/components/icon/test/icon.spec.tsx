@@ -1,6 +1,6 @@
 import Enzyme, { shallow } from "enzyme";
-import Adapter from "enzyme-adapter-react-16";
-import faker from "faker";
+import Adapter from "@cfaester/enzyme-adapter-react-18";
+import { faker } from '@faker-js/faker';
 import React from "react";
 import sinon from "sinon";
 import Icon from "../icon";
@@ -41,6 +41,7 @@ describe("icon specs", () => {
 
   it("should have the given color prop as the className", () => {
     const fakeIconName = faker.lorem.word();
+    
     const wrapper = shallow(<Icon name={fakeIconName} color="red"/>);
 
     expect(wrapper.exists(".red")).toBe(true);
@@ -55,7 +56,7 @@ describe("icon specs", () => {
 
   it("should create correct amount of strokes", () => {
     const fakeClass = faker.lorem.word();
-    const randomStrokes = faker.random.number({min: 1, max: 10});
+    const randomStrokes = faker.number.int({min: 1, max: 10});
     const wrapper = shallow(<Icon name="search" stroke={randomStrokes} className={fakeClass}/>);
 
     expect(wrapper.find(`.${fakeClass} > span`)).toHaveLength(randomStrokes);

@@ -1,5 +1,5 @@
 import Enzyme, { mount, shallow } from "enzyme";
-import Adapter from "enzyme-adapter-react-16";
+import Adapter from "@cfaester/enzyme-adapter-react-18";
 import React from "react";
 import sinon, { SinonSpy } from "sinon";
 import QuantitySelector from "../quantity-selector";

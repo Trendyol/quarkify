@@ -1,6 +1,6 @@
 import Enzyme, { mount, shallow } from "enzyme";
-import Adapter from "enzyme-adapter-react-16";
-import faker from "faker";
+import Adapter from "@cfaester/enzyme-adapter-react-18";
+import { faker } from '@faker-js/faker';
 import React from "react";
 import sinon from "sinon";
 import Button from "../button";
@@ -19,7 +19,7 @@ describe("button specs", () => {
   });
 
   it("should render button component", () => {
-    const text = faker.random.word();
+    const text = faker.lorem.word();
     const wrapper = shallow(<Button onClick={onClick}>{text}</Button>);
 
     expect(wrapper.find("button")).toHaveLength(1);

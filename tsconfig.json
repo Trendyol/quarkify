@@ -20,7 +20,7 @@
     "jsx": "preserve",
     "types": [
       "node",
-      "jest"
+      "vitest/globals"
     ]
   },
   "include": [
