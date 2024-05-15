@@ -1,5 +1,5 @@
 import classNames from "classnames";
-import React, { PureComponent, ReactNode } from "react";
+import React, { PureComponent } from "react";
 import { CSSTransition } from "react-transition-group";
 
 export default class BottomSheet extends PureComponent<
@@ -131,7 +131,7 @@ export default class BottomSheet extends PureComponent<
 
 interface IBottomSheetProps {
   show: boolean;
-  children?: ReactNode;
+  children?: React.ReactNode;
   onChange?: (status: boolean) => void;
   className?: string;
   onClose: () => void;

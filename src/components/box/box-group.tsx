@@ -23,4 +23,5 @@ export default class BoxGroup extends PureComponent<IBoxGroupProps> {
 
 // tslint:disable-next-line:no-empty-interface
 interface IBoxGroupProps extends IDiv {
+    children?: React.ReactNode;
 }

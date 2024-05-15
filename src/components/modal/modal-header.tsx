@@ -30,6 +30,7 @@ export interface IHeaderProps {
   leftIcon?: string;
   rightIcon?: string;
   className?: string;
+  children?: React.ReactNode;
   leftIconOnClick?: (event: any) => any;
   rightIconOnClick?: (event: any) => any;
 }

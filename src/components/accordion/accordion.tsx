@@ -63,6 +63,7 @@ export default class Accordion extends PureComponent<IAccordionProps, IAccordion
 interface IAccordionProps {
   className?: string;
   expanded?: boolean;
+  children?: React.ReactNode;
   onChange?: (expanded: boolean) => void;
 }
 

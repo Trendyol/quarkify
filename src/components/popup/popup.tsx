@@ -1,10 +1,10 @@
 import classNames from "classnames";
-import React, { PureComponent } from "react";
+import React, { PropsWithChildren, PureComponent } from "react";
 import ReactDOM from "react-dom";
 import { CSSTransition } from "react-transition-group";
 import Icon from "../icon";
 
-export default class Popup extends PureComponent<IPopupProps, IPopupState> {
+export default class Popup extends PureComponent<PropsWithChildren<IPopupProps>, IPopupState> {
   constructor(props: IPopupProps) {
     super(props);
     this.handleTouchMove = this.handleTouchMove.bind(this);
@@ -181,6 +181,7 @@ interface IPopupProps {
   contentClassName?: string;
   title?: React.ReactElement | string;
   withTitleBorder?: boolean;
+  children?: React.ReactNode;
 }
 
 interface IPopupState {

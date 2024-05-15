@@ -23,4 +23,5 @@ export default class AccordionGroup extends PureComponent<IAccordionGroupProps> 
 
 // tslint:disable-next-line:no-empty-interface
 interface IAccordionGroupProps extends IDiv {
+  children?: React.ReactNode;
 }

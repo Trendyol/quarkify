@@ -59,4 +59,5 @@ interface ILinkProps extends ILink {
   className?: string;
   loading?: boolean;
   to: string;
+  children?: React.ReactNode;
 }

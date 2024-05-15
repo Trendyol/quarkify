@@ -46,4 +46,5 @@ export interface IProps extends IIcon {
   onClick?: (event: any) => any;
   stroke?: number;
   className?: string;
+  children?: React.ReactNode;
 }

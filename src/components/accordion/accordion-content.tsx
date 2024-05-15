@@ -24,7 +24,8 @@ export default class Content extends PureComponent<IAccordionContentProps> {
 
 interface IAccordionContentProps extends IDiv {
   animation?: animationTypes;
-  onChange?: () => void;
   className?: string;
   expanded?: boolean;
+  children?: React.ReactNode;
+  onChange?: () => void;
 }

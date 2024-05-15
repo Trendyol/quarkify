@@ -112,8 +112,9 @@ export interface IRipplesProps {
   during?: number;
   display?: string;
   color?: string;
-  onClick?: (event: React.MouseEvent<HTMLDivElement>) => any;
   className?: string;
+  children?: React.ReactNode;
+  onClick?: (event: React.MouseEvent<HTMLDivElement>) => any;
 }
 
 type IRippleState = Readonly<{
