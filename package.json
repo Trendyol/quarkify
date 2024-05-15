@@ -1,6 +1,6 @@
 {
   "name": "quarkify",
-  "version": "4.0.1",
+  "version": "5.0.0",
   "license": "MIT",
   "description": "An awesome lightweight React UI Component library",
   "repository": "https://github.com/Trendyol/quarkify",
@@ -15,7 +15,7 @@
     "build:dev": "npm run rm:dist && npm run build:tsc:dev && cp -r ./src/styles ./dist",
     "test": "vitest run",
     "test:watch": "vitest",
-    "test:ci": "vitest --environment=jsdom --silent --runInBand --watch=false",
+    "test:ci": "vitest run",
     "eject": "react-scripts eject",
     "coverage": "vitest run --coverage",
     "coverage:ci": "CI=true vitest run --coverage",
