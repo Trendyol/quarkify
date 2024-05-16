@@ -25,6 +25,7 @@ export default  class Header extends PureComponent<IHeaderProps> {
 export interface IHeaderProps extends IDiv {
   icon?: string;
   expanded?: boolean;
-  handleClick?: () => void;
   className?: string;
+  children?: React.ReactNode;
+  handleClick?: () => void;
 }

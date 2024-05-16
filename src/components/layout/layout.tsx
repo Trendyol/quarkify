@@ -31,4 +31,5 @@ export default class Layout extends PureComponent<ILayoutProps> {
 interface ILayoutProps extends IDiv {
   fitted?: boolean;
   fullScreen?: boolean;
+  children?: React.ReactNode;
 }

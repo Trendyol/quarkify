@@ -31,4 +31,5 @@ interface IBoxProps extends IDiv {
     fitted?: boolean;
     textAlign?: textAlignTypes;
     className?: string;
+    children?: React.ReactNode;
 }

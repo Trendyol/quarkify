@@ -64,4 +64,5 @@ interface IProps extends IDiv {
   className?: string;
   margin?: number;
   stars?: number;
+  children?: React.ReactNode;
 }

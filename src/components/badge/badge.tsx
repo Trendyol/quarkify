@@ -35,4 +35,5 @@ interface IBadgeProps extends IDiv {
   className?: string;
   color?: colorTypes;
   icon?: string;
+  children?: React.ReactNode;
 }

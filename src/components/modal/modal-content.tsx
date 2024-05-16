@@ -9,4 +9,5 @@ export default class Content extends PureComponent<IModalContentProps> {
 
 interface IModalContentProps {
   className?: string;
+  children?: React.ReactNode;
 }

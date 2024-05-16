@@ -6,7 +6,7 @@ import { displayTypes, variantTypes } from "../../types/typography";
 import classNamesDefault from "../../utils/class-names-default";
 
 export default class Typography extends PureComponent<ITypographyProps> {
-
+  
   public render() {
     const {
       variant,
@@ -57,4 +57,5 @@ interface ITypographyProps extends ITypography {
   display?: displayTypes;
   color?: colorTypes;
   className?: string;
+  children?: React.ReactNode;
 }

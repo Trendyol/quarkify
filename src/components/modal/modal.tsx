@@ -1,5 +1,5 @@
 import classNames from "classnames";
-import React, { ReactNode } from "react";
+import React from "react";
 import { CSSTransition } from "react-transition-group";
 import { animationTypes } from "../../types/modal";
 import Actions from "./modal-actions";
@@ -54,7 +54,7 @@ export default class Modal extends React.Component<IModalProps> {
 interface IModalProps {
   show: boolean;
   animation?: animationTypes;
-  children?: ReactNode;
+  children?: React.ReactNode;
   onChange?: () => void;
   className?: string;
 }

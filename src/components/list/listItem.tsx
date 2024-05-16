@@ -30,4 +30,5 @@ interface IItemProps extends IListItem {
   icon?: string;
   iconColor?: colorTypes;
   className?: string;
+  children?: React.ReactNode;
 }
