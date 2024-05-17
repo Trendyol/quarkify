@@ -1,6 +1,6 @@
 import Enzyme, { shallow } from "enzyme";
-import Adapter from "enzyme-adapter-react-16";
-import faker from "faker";
+import Adapter from "@cfaester/enzyme-adapter-react-18";
+import { faker } from '@faker-js/faker';
 import React from "react";
 import sinon from "sinon";
 import Radio from "../radio";
@@ -22,7 +22,7 @@ describe("radio specs", () => {
 
   it("should call onChange function ", () => {
     const spy = sandbox.spy();
-    const text = faker.random.word();
+    const text = faker.lorem.word();
     const wrapper = shallow(<Radio value={"test"} onChange={spy} />);
     const event = { target: { value: text } };
 
@@ -33,7 +33,7 @@ describe("radio specs", () => {
 
   it("should not call callback function when changed and input is disabled", () => {
     const spy = sandbox.spy();
-    const text = faker.random.word();
+    const text = faker.lorem.word();
     const wrapper = shallow(<Radio value={"test"} disabled onChange={spy} />);
     const event = { target: { value: text } };
 
@@ -43,7 +43,7 @@ describe("radio specs", () => {
   });
 
   it("should render a label", () => {
-    const text = faker.random.word();
+    const text = faker.lorem.word();
     const wrapper = shallow(<Radio value={"test"} label={text} />);
 
     expect(wrapper.find("label")).toHaveLength(1);

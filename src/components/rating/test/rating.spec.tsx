@@ -1,6 +1,6 @@
 import Enzyme, { mount } from "enzyme";
-import Adapter from "enzyme-adapter-react-16";
-import faker from "faker";
+import Adapter from "@cfaester/enzyme-adapter-react-18";
+import { faker } from '@faker-js/faker';
 import React from "react";
 import sinon from "sinon";
 import Rating from "../rating";
@@ -20,7 +20,7 @@ describe("radio specs", () => {
   });
 
   it("should render rating component with x stars", () => {
-    const stars = faker.random.number({
+    const stars = faker.number.int({
       max: 10,
       min: 1,
     });
@@ -39,7 +39,7 @@ describe("radio specs", () => {
   });
 
   it("should have full amount of stars filled in x stars", () => {
-    const stars = faker.random.number({
+    const stars = faker.number.int({
       max: 10,
       min: 1,
     });
@@ -58,7 +58,7 @@ describe("radio specs", () => {
   });
 
   it("should receive proper margin prop", () => {
-    const margin = faker.random.number({
+    const margin = faker.number.int({
       max: 50,
       min: 1,
     });

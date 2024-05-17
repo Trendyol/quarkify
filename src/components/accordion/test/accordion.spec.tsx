@@ -1,6 +1,6 @@
 import Enzyme, { mount, shallow } from "enzyme";
-import Adapter from "enzyme-adapter-react-16";
-import faker from "faker";
+import Adapter from "@cfaester/enzyme-adapter-react-18";
+import { faker } from '@faker-js/faker';
 import React from "react";
 import sinon from "sinon";
 import { Accordion, AccordionGroup } from "../index";
@@ -15,7 +15,7 @@ describe("accordion specs", () => {
   });
 
   it("should render correctly", () => {
-    const text = faker.random.word();
+    const text = faker.lorem.word();
     const wrapper = shallow(
       <Accordion>
         <Accordion.Header>
@@ -30,7 +30,7 @@ describe("accordion specs", () => {
   });
 
   it("should expand and show the contents when clicked", () => {
-    const text = faker.random.word();
+    const text = faker.lorem.word();
     const wrapper = mount(
       <Accordion>
         <Accordion.Header>

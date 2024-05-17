@@ -1,6 +1,6 @@
 import Enzyme, { mount, shallow } from "enzyme";
-import Adapter from "enzyme-adapter-react-16";
-import faker from "faker";
+import Adapter from "@cfaester/enzyme-adapter-react-18";
+import { faker } from '@faker-js/faker';
 import React from "react";
 import sinon from "sinon";
 import Step from "../step";
@@ -8,7 +8,7 @@ import StepProgressBar from "../step-progress-bar";
 
 Enzyme.configure({ adapter: new Adapter() });
 
-const { lorem: { word }, random } = faker;
+const { lorem: { word }, number } = faker;
 
 describe("step progress bar specs", () => {
   const sandbox = sinon.createSandbox();
@@ -27,7 +27,7 @@ describe("step progress bar specs", () => {
   });
 
   it("should render additional steps", () => {
-    const steps = Array.from({ length: random.number({max: 100}) }, () => word());
+    const steps = Array.from({ length: number.int({max: 100}) }, () => word());
 
     const wrapper = mount(
       <StepProgressBar>

@@ -30,14 +30,23 @@ class ScrollToTop extends PureComponent<IScrollToTopProps, IScrollToTopState> {
     this.stopScrolling = this.stopScrolling.bind(this);
   }
 
-  public componentDidMount(): void  {
+  public componentDidMount(): void {
     // this.handleScroll();
-    window.document.addEventListener("scroll", this.handleScroll, detectPassiveEvents() ? { passive: true} : false);
-    window.document.addEventListener("wheel", this.stopScrolling, detectPassiveEvents() ? { passive: true } : false);
+    window.document.addEventListener(
+      "scroll",
+      this.handleScroll,
+      detectPassiveEvents() ? { passive: true } : false,
+    );
+    window.document.addEventListener(
+      "wheel",
+      this.stopScrolling,
+      detectPassiveEvents() ? { passive: true } : false,
+    );
     window.document.addEventListener(
       "touchstart",
       this.stopScrolling,
-      detectPassiveEvents() ? { passive: true } : false);
+      detectPassiveEvents() ? { passive: true } : false,
+    );
   }
 
   public componentWillUnmount(): void {
@@ -55,7 +64,7 @@ class ScrollToTop extends PureComponent<IScrollToTopProps, IScrollToTopState> {
 
     return (
       <div className={scrollToTopClasses} onClick={this.handleClick}>
-        <Icon name="arrow-top" color="white"/>
+        <Icon name="arrow-top" color="white" />
       </div>
     );
   }
@@ -67,13 +76,15 @@ class ScrollToTop extends PureComponent<IScrollToTopProps, IScrollToTopState> {
       // Scroll without animation
       window.scrollTo(0, 0);
     } else {
-      this.requestAnimationFrameId = window.requestAnimationFrame(this.scrollStep);
+      this.requestAnimationFrameId = window.requestAnimationFrame(
+        this.scrollStep,
+      );
     }
   }
 
   private handleScroll(): void {
-
-    this.setState({show:
+    this.setState({
+      show:
         window.pageYOffset <= this.lastScrollPosition &&
         window.pageYOffset > this.props.showUnder!,
     });
@@ -82,15 +93,20 @@ class ScrollToTop extends PureComponent<IScrollToTopProps, IScrollToTopState> {
 
   private scrollStep(timestamp: number): void {
     window.document.removeEventListener("scroll", this.handleScroll);
-    if (!this.startTime) { this.startTime = timestamp; }
+    if (!this.startTime) {
+      this.startTime = timestamp;
+    }
     const scrollPosition = this.easeOutCubic(
       timestamp - this.startTime!,
       this.initialPosition,
       this.props.duration!,
     );
+
     if (window.pageYOffset > 0) {
       window.scrollTo(0, scrollPosition);
-      this.requestAnimationFrameId = window.requestAnimationFrame(this.scrollStep);
+      this.requestAnimationFrameId = window.requestAnimationFrame(
+        this.scrollStep,
+      );
     } else {
       this.stopScrolling();
     }
@@ -99,15 +115,30 @@ class ScrollToTop extends PureComponent<IScrollToTopProps, IScrollToTopState> {
   private stopScrolling() {
     if (this.requestAnimationFrameId) {
       window.cancelAnimationFrame(this.requestAnimationFrameId);
-      window.document.addEventListener("scroll", this.handleScroll, detectPassiveEvents() ? { passive: true } : false);
-      this.setState({show: false});
+      window.document.addEventListener(
+        "scroll",
+        this.handleScroll,
+        detectPassiveEvents() ? { passive: true } : false,
+      );
+      this.setState({ show: false });
       this.requestAnimationFrameId = null;
     }
   }
 
-  private easeOutCubic(currentTime: number, initialPosition: number, duration: number): number {
+  private easeOutCubic(
+    currentTime: number,
+    initialPosition: number,
+    duration: number,
+  ): number {
     const c = 0 - initialPosition;
-    return c * ((currentTime = currentTime / duration - 1) * currentTime * currentTime + 1) + initialPosition;
+    return (
+      c *
+        ((currentTime = currentTime / duration - 1) *
+          currentTime *
+          currentTime +
+          1) +
+      initialPosition
+    );
   }
 }
 

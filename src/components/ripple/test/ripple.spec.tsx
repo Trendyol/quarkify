@@ -1,6 +1,6 @@
 import Enzyme, { shallow } from "enzyme";
-import Adapter from "enzyme-adapter-react-16";
-import faker from "faker";
+import Adapter from "@cfaester/enzyme-adapter-react-18";
+import { faker } from '@faker-js/faker';
 import React from "react";
 import sinon from "sinon";
 import Ripple from "../ripple";
@@ -27,7 +27,7 @@ const createMockDiv = (width: number, height: number) => {
 
 describe("ripple specs", () => {
   const sandbox = sinon.createSandbox();
-  jest.useFakeTimers();
+  vi.useFakeTimers();
 
   afterEach(() => {
     sandbox.verifyAndRestore();
@@ -55,7 +55,7 @@ describe("ripple specs", () => {
   it("should extend onClick", () => {
     const stub = sandbox.stub();
     const event = {
-      currentTarget: createMockDiv(faker.random.number(), faker.random.number()),
+      currentTarget: createMockDiv(faker.number.int(), faker.number.int()),
       stopPropagation: sandbox.stub(),
     };
     const wrapper = shallow(<Ripple onClick={stub}/>);
@@ -66,7 +66,7 @@ describe("ripple specs", () => {
 
   it("should not propagate the event", () => {
     const event = {
-      currentTarget: createMockDiv(faker.random.number(), faker.random.number()),
+      currentTarget: createMockDiv(faker.number.int(), faker.number.int()),
       stopPropagation: sandbox.stub(),
     };
     const wrapper = shallow(<Ripple/>);
@@ -77,13 +77,13 @@ describe("ripple specs", () => {
 
   it("should disappear after animation ends", () => {
     const event = {
-      currentTarget: createMockDiv(faker.random.number(), faker.random.number()),
+      currentTarget: createMockDiv(faker.number.int(), faker.number.int()),
       stopPropagation: sandbox.stub(),
     };
     const wrapper = shallow(<Ripple/>);
 
     wrapper.find(".q-ripple").simulate("click", event);
-    jest.runAllTimers();
+    vi.runAllTimers();
     const rippleStyle: {opacity: number} = wrapper.state("rippleStyle");
     expect(rippleStyle.opacity).toBe(0);
   });

@@ -1,6 +1,6 @@
 import Enzyme, { mount, shallow } from "enzyme";
-import Adapter from "enzyme-adapter-react-16";
-import faker from "faker";
+import Adapter from "@cfaester/enzyme-adapter-react-18";
+import { faker } from '@faker-js/faker';
 import React from "react";
 import sinon from "sinon";
 import List from "../list";
@@ -27,7 +27,7 @@ describe("list specs", () => {
   });
 
   it("should render list item component with no dots", () => {
-    const text = faker.random.word();
+    const text = faker.lorem.word();
     const wrapper = shallow(<List noDot><List.Item>{text}</List.Item></List>);
 
     expect(wrapper.find(".q-no-dot")).toHaveLength(1);

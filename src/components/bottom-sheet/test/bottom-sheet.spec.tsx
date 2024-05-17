@@ -1,7 +1,7 @@
 import Enzyme, { mount, shallow } from "enzyme";
-import Adapter from "enzyme-adapter-react-16";
-import faker from "faker";
-import React from "react";
+import Adapter from "@cfaester/enzyme-adapter-react-18";
+import { faker } from '@faker-js/faker';
+import React, { act } from "react";
 import sinon from "sinon";
 import BottomSheet from "../bottom-sheet";
 
@@ -80,9 +80,17 @@ describe("bottom sheet specs", () => {
     const wrapper = mount(
       <BottomSheet onClose={handleChange} show={true} />,
     );
-    const spy = jest.spyOn(wrapper.instance(), "componentDidUpdate");
-    wrapper.instance().forceUpdate();
-    wrapper.find(".q-bottom-sheet-main").simulate("touchmove");
+    
+    const spy = vi.spyOn(wrapper.instance(), "componentDidUpdate");
+
+    act(() => {
+      wrapper.instance().forceUpdate();
+    });
+
+    act(() => {
+      wrapper.find(".q-bottom-sheet-main").simulate("touchmove");
+    });
+
     expect(spy).toHaveBeenCalled();
   });
 });

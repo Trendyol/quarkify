@@ -1,6 +1,6 @@
 import Enzyme, { mount, shallow } from "enzyme";
-import Adapter from "enzyme-adapter-react-16";
-import faker from "faker";
+import Adapter from "@cfaester/enzyme-adapter-react-18";
+import { faker } from '@faker-js/faker';
 import React from "react";
 import sinon from "sinon";
 import Popup from "../index";
@@ -49,7 +49,7 @@ describe("popup specs", () => {
     const onChange = sandbox.spy();
     const wrapper = shallow(<Popup onChange={onChange} show={true} />);
     wrapper.find(".q-popup-overlay").simulate("click", {
-      stopPropagation: jest.fn()
+      stopPropagation: vi.fn()
     });
     expect(onChange.calledOnce).toEqual(true);
   });
@@ -60,7 +60,7 @@ describe("popup specs", () => {
       <Popup onChange={onChange} show={true} closeOnOverlayClick={false} />,
     );
     wrapper.find(".q-popup-overlay").simulate("click", {
-      stopPropagation: jest.fn()
+      stopPropagation: vi.fn()
     });
     expect(onChange.calledOnce).toEqual(false);
   });

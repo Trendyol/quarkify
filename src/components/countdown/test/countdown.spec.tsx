@@ -1,6 +1,6 @@
 import Enzyme, { mount } from "enzyme";
-import Adapter from "enzyme-adapter-react-16";
-import faker from "faker";
+import Adapter from "@cfaester/enzyme-adapter-react-18";
+import { faker } from '@faker-js/faker';
 import React from "react";
 import Countdown from "../countdown";
 
@@ -77,7 +77,7 @@ describe("countdown specs", () => {
   });
 
   it("should receive 'minute' prop", () => {
-    const minute = faker.random.word();
+    const minute = faker.lorem.word();
     const wrapper = mount(<Countdown endDate={Date.now() + getMinute(30)} threshold={threshold} minute={minute} />);
     wrapper.update();
     const html = wrapper.html();
@@ -86,7 +86,7 @@ describe("countdown specs", () => {
   });
 
   it("should receive 'day' prop", () => {
-    const day = faker.random.word();
+    const day = faker.lorem.word();
     const wrapper = mount(<Countdown
       endDate={createBoutiqueEndDate() - getHour(18)}
       gmt={gmt}
@@ -100,7 +100,7 @@ describe("countdown specs", () => {
   });
 
   it("should receive 'hour' prop", () => {
-    const hour = faker.random.word();
+    const hour = faker.lorem.word();
     const wrapper = mount(<Countdown
       endDate={createBoutiqueEndDate() - getHour(40)}
       gmt={gmt}

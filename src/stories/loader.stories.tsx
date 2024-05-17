@@ -1,5 +1,5 @@
 import { storiesOf } from "@storybook/react";
-import faker from "faker";
+import { faker } from '@faker-js/faker';
 import React from "react";
 import { Box } from "../components/box";
 import Button from "../components/button";
