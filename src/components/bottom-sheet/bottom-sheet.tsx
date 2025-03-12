@@ -83,7 +83,9 @@ export default class BottomSheet extends PureComponent<
     window.document.body.style.removeProperty("position");
     window.document.body.style.removeProperty("top");
     window.document.body.style.removeProperty("width");
+    if (!this.props.disableScrollToTop) {
     window.scrollTo(0, this.state.scrollPosition);
+    }
   }
 
   public componentWillUnmount(): void {
@@ -144,6 +146,7 @@ interface IBottomSheetProps {
     enter: number;
     exit: number;
   };
+  disableScrollToTop?: boolean;
 }
 
 interface IBottomSheetState {
