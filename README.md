@@ -1,4 +1,6 @@
 
+[![OpenSSF Scorecard](https://api.scorecard.dev/projects/github.com/Trendyol/quarkify/badge)](https://scorecard.dev/viewer/?uri=github.com/Trendyol/quarkify)
+
 
 
 <!-- PROJECT LOGO -->
